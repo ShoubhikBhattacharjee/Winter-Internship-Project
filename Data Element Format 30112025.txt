@@ -1,0 +1,21 @@
+{
+  "id": "2025-11-25-001",
+  "question": "How do I restart ssh on Linux Mint?",
+  "answer": "...",
+  "tags": ["linux","ssh"],
+  "source": {
+    "type": "file",                   // "file" or "url"
+    "path": {				// used when type="file"
+		"<file_extension>": "/home/me/notes/linux.md",
+		...
+	    },
+    "url": null                       // used when type="url". If not null, it is a JSON boy like "path"
+  }
+}
+
+
+
+For a web-accessible file:
+"source": { "type": "url", "url": "https://example.com/private/linux.md" }
+
+
