@@ -90,7 +90,7 @@
     "notes": "Covers essential web security protocols and their default port differences."
   },
   {
-    "id": "2025-12-22-012",
+    "id": "2025-12-22-009",
     "question": "What are the four basic CRUD operations in SQL?",
     "answer": "CRUD stands for Create (INSERT), Read (SELECT), Update (UPDATE), and Delete (DELETE). These are the four fundamental functions used to manage persistent data in a relational database.",
     "tags": ["sql", "database", "data-management"],

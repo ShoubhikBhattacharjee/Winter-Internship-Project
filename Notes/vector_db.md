@@ -9,4 +9,4 @@ This file (`vector_db.md`) is linked to the `kb.json` file. The JSON acts as a s
 ## System Requirements
 - **Format:** All source files should use the `.md` extension.
 - **Pathing:** The system uses relative paths (e.g., `./Notes/vector_db.md`) to ensure the database remains functional across different environments.
-- **Metadata:** When the "Fetcher" script runs, it looks for the content in this file to supplement the short answer provided in the JSON.
+- **Metadata:** When the "Fetcher" script runs, it looks for the content in this file to supplement the short answer provided in the JSON.s
