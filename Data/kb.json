@@ -13,5 +13,95 @@
     },
     "created_at": "2025-11-25T20:40:00+05:30",
     "notes": "Helps retrieval and reduces hallucination when synthesizing answers."
+  },
+  {
+    "id": "2025-12-22-004",
+    "question": "What is the purpose of the Notes folder in this project?",
+    "answer": "The Notes folder stores the raw markdown files that serve as the primary source of truth for the knowledge base entries in kb.json.",
+    "tags": ["project-structure", "documentation"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/vector_db.md" 
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T15:45:00+05:30",
+    "notes": "Explains the relationship between the JSON index and the Markdown source files."
+  },
+  {
+    "id": "2025-12-22-005",
+    "question": "What is the difference between Type 1 and Type 2 hypervisors?",
+    "answer": "Type 1 hypervisors run directly on the system hardware (bare metal), while Type 2 hypervisors run as an application on top of an existing operating system.",
+    "tags": ["virtualization", "hypervisor", "infrastructure"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Hypervisors/types_comparison.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T16:00:00+05:30",
+    "notes": "Basic conceptual entry for the virtualization section."
+  },
+  {
+    "id": "2025-12-22-006",
+    "question": "How do I update the system packages on Linux Mint using the terminal?",
+    "answer": "To update Linux Mint, run 'sudo apt update' to refresh the package list and then 'sudo apt upgrade' to install the available updates.",
+    "tags": ["linux", "mint", "terminal", "updates"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Linux/updating_system.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T16:15:00+05:30",
+    "notes": "Standard maintenance command for Debian-based systems like Mint."
+  },
+  {
+    "id": "2025-12-22-007",
+    "question": "What is the difference between a List and a Tuple in Python?",
+    "answer": "The main difference is mutability: Lists are mutable (can be changed after creation), while Tuples are immutable (cannot be changed). Lists use square brackets [] and Tuples use parentheses ().",
+    "tags": ["python", "coding", "data-structures"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Python/lists_vs_tuples.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T16:45:00+05:30",
+    "notes": "Fundamental Python interview question and coding concept."
+  },
+  {
+    "id": "2025-12-22-008",
+    "question": "What is the difference between HTTP and HTTPS?",
+    "answer": "HTTP (Hypertext Transfer Protocol) transmits data in plain text, making it vulnerable to interception. HTTPS (Hypertext Transfer Protocol Secure) encrypts the data using SSL/TLS protocols to ensure secure communication.",
+    "tags": ["networking", "security", "web-protocols"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Networking/http_vs_https.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T17:15:00+05:30",
+    "notes": "Covers essential web security protocols and their default port differences."
+  },
+  {
+    "id": "2025-12-22-012",
+    "question": "What are the four basic CRUD operations in SQL?",
+    "answer": "CRUD stands for Create (INSERT), Read (SELECT), Update (UPDATE), and Delete (DELETE). These are the four fundamental functions used to manage persistent data in a relational database.",
+    "tags": ["sql", "database", "data-management"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Databases/sql_crud_basics.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T17:30:00+05:30",
+    "notes": "Fundamental database operations used for both RAG and traditional application development."
   }
 ]
