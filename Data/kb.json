@@ -103,5 +103,95 @@
     },
     "created_at": "2025-12-22T17:30:00+05:30",
     "notes": "Fundamental database operations used for both RAG and traditional application development."
+  },
+  {
+    "id": "2025-12-22-010",
+    "question": "What is the primary difference between Supervised and Unsupervised Learning?",
+    "answer": "The main difference is the use of labeled data: Supervised learning uses labeled input and output datasets to train models to predict outcomes, while Unsupervised learning analyzes unlabeled data to discover hidden patterns and structures.",
+    "tags": ["machine-learning", "ai", "data-science"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/AI/supervised_vs_unsupervised.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T17:45:00+05:30",
+    "notes": "Essential AI concept for understanding how models are trained for different tasks."
+  },
+  {
+    "id": "2025-12-22-011",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "answer": "SQL databases are relational, use structured schemas, and are best for complex queries. NoSQL databases are non-relational, have flexible schemas, and are designed for high-volume, unstructured data and horizontal scaling.",
+    "tags": ["databases", "sql", "nosql", "architecture"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Databases/sql_vs_nosql.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T18:45:00+05:30",
+    "notes": "Key architectural comparison for database selection."
+  },
+  {
+    "id": "2025-12-22-012",
+    "question": "What are Windows Environment Variables and how does the PATH variable work?",
+    "answer": "Environment variables are global strings used to store system-wide configuration. The 'PATH' variable is the most critical; it contains a list of directory paths that Windows searches through to find executable files when a command is entered into a shell without its full path.",
+    "tags": ["windows", "configuration", "path", "dev-ops"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/Windows/environment_variables.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T18:45:00+05:30",
+    "notes": "Fundamental for setting up development environments and CLI tools."
+  },
+  {
+    "id": "2025-12-22-013",
+    "question": "What is RAG (Retrieval-Augmented Generation) and why is it used?",
+    "answer": "RAG is an AI framework that retrieves relevant documents from an external knowledge base (like your Notes folder) and gives them to a Large Language Model (LLM) to generate an accurate answer. It prevents the AI from 'hallucinating' by grounding it in real facts.",
+    "tags": ["ai", "rag", "llm", "knowledge-base"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/AI/rag_explained.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T18:30:00+05:30",
+    "notes": "Explains the core architecture of the project the user is working on."
+  },
+  {
+    "id": "2025-12-22-014",
+    "question": "What is the difference between a Compiler and an Interpreter?",
+    "answer": "A compiler translates the entire source code into machine code all at once before execution (like C++), whereas an interpreter translates and executes the code line-by-line during runtime (like Python).",
+    "tags": ["programming", "computer-science", "software-engineering"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/SoftwareEng/compilers_vs_interpreters.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T19:30:00+05:30",
+    "notes": "Explains how different programming languages are processed by the CPU."
+  },
+  {
+    "id": "2025-12-22-015",
+    "question": "What is a Stack data structure and what is the LIFO principle?",
+    "answer": "A Stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. This means the last element added to the stack is the first one to be removed, similar to a stack of plates.",
+    "tags": ["data-structures", "programming", "algorithms"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".md": "./Notes/DataStructures/stack_basics.md"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T20:00:00+05:30",
+    "notes": "Covers a fundamental memory management concept used in recursion and undo operations."
   }
 ]
