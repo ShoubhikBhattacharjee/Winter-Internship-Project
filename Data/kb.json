@@ -97,7 +97,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Databases/sql_crud_basics.md"
+        ".docx": "./Notes/Databases/sql_crud_basics.docx"
       },
       "url": null
     },
@@ -112,7 +112,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/AI/supervised_vs_unsupervised.md"
+        ".docx": "./Notes/AI/supervised_vs_unsupervised.docx"
       },
       "url": null
     },
@@ -127,7 +127,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Databases/sql_vs_nosql.md"
+        ".docx": "./Notes/Databases/sql_vs_nosql.docx"
       },
       "url": null
     },
@@ -142,7 +142,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Windows/environment_variables.md"
+        ".docx": "./Notes/Windows/environment_variables.docx"
       },
       "url": null
     },
@@ -157,7 +157,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/AI/rag_explained.md"
+        ".docx": "./Notes/AI/rag_explained.docx"
       },
       "url": null
     },
@@ -172,7 +172,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/SoftwareEng/compilers_vs_interpreters.md"
+        ".docx": "./Notes/SoftwareEng/compilers_vs_interpreters.docx"
       },
       "url": null
     },
@@ -187,7 +187,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/DataStructures/stack_basics.md"
+        ".docx": "./Notes/DataStructures/stack_basics.docx"
       },
       "url": null
     },
