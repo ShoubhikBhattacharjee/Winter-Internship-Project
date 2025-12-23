@@ -27,6 +27,7 @@ CONFIDENCE_MESSAGES = {
 # Load FAISS index + KB metadata
 INDEX = faiss.read_index(str(DATA_DIR / "embeddings.faiss"))
 KB = json.loads((DATA_DIR / "meta.json").read_text())
+NOTES_BASE = Path(".")  # adjust if needed
 
 # Load model ONCE globally (much faster)
 from sentence_transformers import SentenceTransformer
@@ -81,10 +82,11 @@ async def handle_query(update: Update, ctx):
     )
 
 
-# ----- Handle file buttons -----
 async def handle_callback(update: Update, ctx):
-    data = update.callback_query.data
+    query = update.callback_query
+    data = query.data
 
+    # User clicked "Get Source Files"
     if data.startswith("src:"):
         item_id = data.split(":")[1]
         item = next(it for it in KB if it["id"] == item_id)
@@ -94,16 +96,37 @@ async def handle_callback(update: Update, ctx):
             buttons.append([
                 InlineKeyboardButton(
                     f"Get {ext.upper()}",
-                    url=f"http://localhost:8001/fetch?id={item_id}&ext={ext}"
+                    callback_data=f"getfile:{item_id}:{ext}"
                 )
             ])
 
-        await update.callback_query.edit_message_reply_markup(
+        await query.edit_message_reply_markup(
             InlineKeyboardMarkup(buttons)
         )
+        return
+
+    # User clicked "Get .MD / .PDF"
+    if data.startswith("getfile:"):
+        _, item_id, ext = data.split(":", 2)
+        item = next(it for it in KB if it["id"] == item_id)
+
+        file_path = Path(item["source"]["path"][ext])
+
+        if not file_path.exists():
+            await query.answer("File not found on disk.")
+            return
+
+        await ctx.bot.send_document(
+            chat_id=query.message.chat_id,
+            document=file_path.open("rb"),
+            filename=file_path.name
+        )
+
+        await query.answer("File sent 📎")
+
 
 async def start(update, ctx):
-    await update.message.reply_text("Hi! Just type anything to ask your KB.")
+    await update.message.reply_text("Hi! Just type anything to chat with me. I am willing to assist in any way I can.")
 
 def confidence_from_score(score: float) -> str:
     for threshold, level in CONFIDENCE_LEVELS:

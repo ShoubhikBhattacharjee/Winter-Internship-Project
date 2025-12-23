@@ -3,7 +3,7 @@ import faiss, json, numpy as np, os
 from pathlib import Path
 
 DATA_DIR = Path("./Data")
-KB_PATH = DATA_DIR / "knowledge.json"   # This is a relative path. It needs to be changed based on the directory in which you run this code.
+KB_PATH = DATA_DIR / "kb.json"   # This is a relative path. It needs to be changed based on the directory in which you run this code.
 print(f"Directory = {KB_PATH}")         # Directory Check. Always ensure the directory in which you run the code results in the path being translated to the correct directory.
 INDEX_PATH = DATA_DIR / "embeddings.faiss"
 META_PATH = DATA_DIR / "meta.json"
