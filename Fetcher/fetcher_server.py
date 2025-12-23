@@ -4,9 +4,9 @@ from pathlib import Path
 
 app = Flask(__name__)
 
-DATA_DIR = Path("../Data")
+DATA_DIR = Path("./Data")
 KB = json.loads((DATA_DIR / "meta.json").read_text())
-NOTES_DIR = Path("../Notes")
+NOTES_DIR = Path("./Notes")
 
 @app.get("/fetch")
 def fetch():
