@@ -7,7 +7,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "/Projects/personal_kb/ingest_guide.md"
+        ".docx": "/Projects/personal_kb/ingest_guide.docx"
       },
       "url": null
     },
@@ -22,7 +22,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/vector_db.md" 
+        ".docx": "./Notes/vector_db.docx"
       },
       "url": null
     },
@@ -37,7 +37,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Hypervisors/types_comparison.md"
+        ".docx": "./Notes/Hypervisors/types_comparison.docx"
       },
       "url": null
     },
@@ -52,7 +52,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Linux/updating_system.md"
+        ".docx": "./Notes/Linux/updating_system.docx"
       },
       "url": null
     },
@@ -67,7 +67,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Python/lists_vs_tuples.md"
+        ".docx": "./Notes/Python/lists_vs_tuples.docx"
       },
       "url": null
     },
@@ -82,7 +82,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".md": "./Notes/Networking/http_vs_https.md"
+        ".docx": "./Notes/Networking/http_vs_https.docx"
       },
       "url": null
     },
