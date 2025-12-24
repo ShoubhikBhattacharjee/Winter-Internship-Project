@@ -55,6 +55,7 @@ async def handle_query(update: Update, ctx):
     scores, idxs = semantic_search(query)
     best_score = scores[0]
     confidence = confidence_from_score(best_score)
+    intent = infer_intent(query)
 
     # If no confidence → refuse politely
     if confidence == "none":
@@ -76,8 +77,15 @@ async def handle_query(update: Update, ctx):
         callback_data=f"src:{item['id']}"
     )
 
+    # Frame an answer based on intent
+    framed = frame_answer(
+        answer=item["answer"],
+        intent=intent,
+        confidence=confidence
+    )
+
     await update.message.reply_text(
-        text,
+        framed,
         reply_markup=InlineKeyboardMarkup([[btn]])
     )
 
@@ -133,6 +141,36 @@ def confidence_from_score(score: float) -> str:
         if score >= threshold:
             return level
     return "none"
+
+
+def infer_intent(query: str) -> str:
+    q = query.lower()
+    if any(w in q for w in ["how", "steps", "do i", "procedure"]):
+        return "how"
+    if any(w in q for w in ["why", "reason", "cause"]):
+        return "why"
+    if any(w in q for w in ["check", "status", "verify"]):
+        return "check"
+    return "general"
+
+
+def frame_answer(answer: str, intent: str, confidence: str) -> str:
+    prefix = {
+        "high": "I’m confident this addresses what you’re asking.\n\n",
+        "medium": "This should help, though it may not cover every detail.\n\n",
+        "low": "This may be partially relevant.\n\n",
+    }.get(confidence, "")
+
+    intent_opening = {
+        "how": "Here’s how you can do it:\n\n",
+        "why": "Here’s the reasoning behind it:\n\n",
+        "check": "To check or verify this:\n\n",
+        "general": "Here’s the relevant information:\n\n",
+    }[intent]
+
+    return prefix + intent_opening + answer
+
+
 
 
 
