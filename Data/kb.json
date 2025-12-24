@@ -7,7 +7,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "/Projects/personal_kb/ingest_guide.docx"
+        ".docx": "./Notes/Projects/personal_kb/ingest_guide.docx"
       },
       "url": null
     },
