@@ -1,6 +1,6 @@
 [
     {
-    "id": "2025-11-25-003",
+    "id": "2025-11-25-001",
     "question": "How to chunk long notes when ingesting into a vector DB?",
     "answer": "Break long notes into 200–400 token chunks, keep `source` and `chunk_index` metadata, and include a short title for each chunk so you can cite the source chunk in UI.",
     "tags": ["nlp","ingest","chunking"],
