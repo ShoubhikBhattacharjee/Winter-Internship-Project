@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knowledge Base Admin</title>
+</head>
+<body>
+
+<h2>Add / Update Entry</h2>
+
+<form id="entryForm" enctype="multipart/form-data">
+  <input type="hidden" id="entryId">
+
+  <label>Question</label><br>
+  <input id="question" required><br><br>
+
+  <label>Answer</label><br>
+  <textarea id="answer" required></textarea><br><br>
+
+  <label>Tags (comma separated)</label><br>
+  <input id="tags"><br><br>
+
+  <label>Notes</label><br>
+  <input id="notes"><br><br>
+
+  <label>Source File</label><br>
+  <input type="file" id="file"><br><br>
+
+  <button type="submit">Save Entry</button>
+</form>
+
+<hr>
+
+<h2>Search Entries</h2>
+<input id="search" placeholder="Search by question or tag" oninput="loadEntries()">
+
+<h2>Entries</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Question</th>
+    <th>Tags</th>
+    <th>Source File</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+  <tbody id="table"></tbody>
+</table>
+
+<script src="/static/admin.js"></script>
+</body>
+</html>
