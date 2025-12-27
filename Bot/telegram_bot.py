@@ -27,7 +27,7 @@ CONFIDENCE_MESSAGES = {
 # Load FAISS index + KB metadata
 INDEX = faiss.read_index(str(DATA_DIR / "embeddings.faiss"))
 KB = json.loads((DATA_DIR / "meta.json").read_text())
-NOTES_BASE = Path(".")  # adjust if needed
+NOTES_BASE = Path("./Notes")  # adjust if needed
 
 # Load model ONCE globally (much faster)
 from sentence_transformers import SentenceTransformer

@@ -22,7 +22,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/vector_db.docx"
+        ".docx": "/vector_db.docx"
       },
       "url": null
     },
@@ -37,7 +37,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Hypervisors/types_comparison.docx"
+        ".docx": "/Hypervisors/types_comparison.docx"
       },
       "url": null
     },
@@ -52,7 +52,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Linux/updating_system.docx"
+        ".docx": "/Linux/updating_system.docx"
       },
       "url": null
     },
@@ -67,7 +67,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Python/lists_vs_tuples.docx"
+        ".docx": "/Python/lists_vs_tuples.docx"
       },
       "url": null
     },
@@ -82,7 +82,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Networking/http_vs_https.docx"
+        ".docx": "/Networking/http_vs_https.docx"
       },
       "url": null
     },
@@ -97,7 +97,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Databases/sql_crud_basics.docx"
+        ".docx": "/Databases/sql_crud_basics.docx"
       },
       "url": null
     },
@@ -112,7 +112,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/AI/supervised_vs_unsupervised.docx"
+        ".docx": "/AI/supervised_vs_unsupervised.docx"
       },
       "url": null
     },
@@ -127,7 +127,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Databases/sql_vs_nosql.docx"
+        ".docx": "/Databases/sql_vs_nosql.docx"
       },
       "url": null
     },
@@ -142,7 +142,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/Windows/environment_variables.docx"
+        ".docx": "/Windows/environment_variables.docx"
       },
       "url": null
     },
@@ -157,7 +157,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/AI/rag_explained.docx"
+        ".docx": "/AI/rag_explained.docx"
       },
       "url": null
     },
@@ -172,7 +172,7 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/SoftwareEng/compilers_vs_interpreters.docx"
+        ".docx": "/SoftwareEng/compilers_vs_interpreters.docx"
       },
       "url": null
     },
@@ -187,11 +187,42 @@
     "source": {
       "type": "file",
       "path": {
-        ".docx": "./Notes/DataStructures/stack_basics.docx"
+        ".docx": "/DataStructures/stack_basics.docx"
       },
       "url": null
     },
     "created_at": "2025-12-22T20:00:00+05:30",
     "notes": "Covers a fundamental memory management concept used in recursion and undo operations."
+  },
+  {
+    "id": "2025-12-24-001",
+    "question": "What are the basic linux commands?",
+    "answer": "Some of the basic linux commands are:\n1. touch\n2. cat\n3. cp\n4. mv\n5. rm\n6. mkdir\n7. rmdir\n8. cd\n9. pwd\n\nFile Manipulation Commands:\n1. chmod\n2. chown\n3. chgrp\n\nSystem calls:\n1.  open\n2.  read\n3.  write\n4.  close\n5.  getpid\n6.  setpid\n7.  getpid\n8.  setpid\n9.  getuid\n10. getgid\n11. getegid\n12. geteuid\n13. sort\n14. grep\n15. awk\n\n",
+    "tags": ["basic", "linux", "commands"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Linux/Basic Linux Commands 24122025-001.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-01-08T17:10:13+05:30",
+    "notes": "Covers basic linux operations. Specifically drafted with respect to Ubuntu OS. Private document under the ownership of Karamshi Jethabhai Somaiya Institute of Technology, Sion. Do not leak."
+  },
+  {
+    "id": "2025-12-24-002",
+    "question": "What's shell scripting?",
+    "answer": "A shell is the command-line interface (like bash, zsh, or sh) that lets you interact with your operating system.\nA shell script is simply a text file containing a sequence of commands you’d normally type manually, automated to run in order.",
+    "tags": ["linux", "shell", "scripting", "commands", "cheat", "sheet"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Linux/Shell Scripting Commands 24142025-002.docx",
+        ".pdf": "/Linux/Shell Scripting Commands 24142025-002.pdf"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-24T23:28:07+05:30",
+    "notes": "Covers basic shell scripting syntax used 90% of the time."
   }
 ]
