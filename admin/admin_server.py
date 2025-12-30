@@ -19,7 +19,7 @@ from werkzeug.utils import secure_filename
 # ===============================
 
 BASE_DIR = Path(__file__).parent
-ADMIN_DIR = BASE_DIR / "admin"
+ADMIN_DIR = BASE_DIR #/ "admin"
 TEMPLATE_DIR = ADMIN_DIR / "templates"
 STATIC_DIR = ADMIN_DIR / "static"
 

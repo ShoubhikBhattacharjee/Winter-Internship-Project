@@ -1,11 +1,47 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import *
-import faiss, json
-from pathlib import Path
-import numpy as np
+"""
+Personal Knowledge Base Telegram Bot
 
+This bot:
+- Runs locally using Telegram polling (no public server)
+- Uses FAISS + sentence-transformers for semantic retrieval
+- Answers only when confident
+- Can safely merge multiple KB entries into one response
+- Sends source files directly via Telegram callbacks
+
+Design goals:
+- No hallucination
+- No training data leakage
+- Honest confidence signaling
+- Long-term maintainability
+"""
+
+from pathlib import Path
+import json
+
+import faiss
+from sentence_transformers import SentenceTransformer
+
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    CallbackQueryHandler,
+    MessageHandler,
+    ContextTypes,
+    filters,
+)
+
+# ============================================================
+# Configuration
+# ============================================================
+
+#BOT_TOKEN = "PUT_YOUR_BOT_TOKEN_HERE"
 BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
+
 DATA_DIR = Path("./Data")
+
+TOP_K_RESULTS = 5
+MIN_MERGE_SCORE = 0.55
 
 CONFIDENCE_LEVELS = [
     (0.70, "high"),
@@ -20,123 +56,35 @@ CONFIDENCE_MESSAGES = {
     "none": (
         "😕 I couldn’t find anything relevant to that yet.\n\n"
         "I’m still learning — you could try rephrasing your question or using more specific terms."
-    )
+    ),
 }
 
+# ============================================================
+# Load models and data (once at startup)
+# ============================================================
 
-# Load FAISS index + KB metadata
 INDEX = faiss.read_index(str(DATA_DIR / "embeddings.faiss"))
-KB = json.loads((DATA_DIR / "meta.json").read_text())
-NOTES_BASE = Path("./Notes")  # adjust if needed
+KB = json.loads((DATA_DIR / "meta.json").read_text(encoding="utf-8"))
 
-# Load model ONCE globally (much faster)
-from sentence_transformers import SentenceTransformer
 EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
 
-# ----- Semantic search -----
-def semantic_search(query, top_k=3):
-    q = EMBED_MODEL.encode([query], convert_to_numpy=True)
-    faiss.normalize_L2(q)
-    scores, idx = INDEX.search(q, top_k)
-    return scores[0], idx[0]
+# ============================================================
+# Core retrieval & reasoning helpers
+# ============================================================
 
+def semantic_search(query: str, top_k: int):
+    """
+    Encode a query and retrieve top_k most similar KB entries.
+    Returns (scores, indices).
+    """
+    vector = EMBED_MODEL.encode([query], convert_to_numpy=True)
+    faiss.normalize_L2(vector)
+    scores, indices = INDEX.search(vector, top_k)
+    return scores[0], indices[0]
 
-# ----- Handle all user text -----
-async def handle_query(update: Update, ctx):
-    query = update.message.text.strip()
-
-    # Basic sanity check
-    if len(query) < 4:
-        await update.message.reply_text(
-            "😅 That doesn’t look like a meaningful question yet."
-        )
-        return
-
-    scores, idxs = semantic_search(query)
-    best_score = scores[0]
-    confidence = confidence_from_score(best_score)
-    intent = infer_intent(query)
-
-    # If no confidence → refuse politely
-    if confidence == "none":
-        await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
-        return
-
-    # Otherwise, answer using the BEST match only
-    item = KB[idxs[0]]
-    answer = item["answer"]
-
-    text = (
-        f"{CONFIDENCE_MESSAGES[confidence]}\n\n"
-        f"{answer}"
-    )
-
-    # Only show source button if we answered
-    btn = InlineKeyboardButton(
-        "Get Source Files",
-        callback_data=f"src:{item['id']}"
-    )
-
-    # Frame an answer based on intent
-    framed = frame_answer(
-        answer=item["answer"],
-        intent=intent,
-        confidence=confidence
-    )
-
-    await update.message.reply_text(
-        framed,
-        reply_markup=InlineKeyboardMarkup([[btn]])
-    )
-
-
-async def handle_callback(update: Update, ctx):
-    query = update.callback_query
-    data = query.data
-
-    # User clicked "Get Source Files"
-    if data.startswith("src:"):
-        item_id = data.split(":")[1]
-        item = next(it for it in KB if it["id"] == item_id)
-
-        buttons = []
-        for ext in item["source"]["path"]:
-            buttons.append([
-                InlineKeyboardButton(
-                    f"Get {ext.upper()}",
-                    callback_data=f"getfile:{item_id}:{ext}"
-                )
-            ])
-
-        await query.edit_message_reply_markup(
-            InlineKeyboardMarkup(buttons)
-        )
-        return
-
-    # User clicked "Get .MD / .PDF"
-    if data.startswith("getfile:"):
-        _, item_id, ext = data.split(":", 2)
-        item = next(it for it in KB if it["id"] == item_id)
-
-        file_path = Path(item["source"]["path"][ext])
-
-        if not file_path.exists():
-            await query.answer("File not found on disk.")
-            return
-
-        await ctx.bot.send_document(
-            chat_id=query.message.chat_id,
-            document=file_path.open("rb"),
-            filename=file_path.name
-        )
-
-        await query.answer("File sent 📎")
-
-
-async def start(update, ctx):
-    await update.message.reply_text("Hi! Just type anything to chat with me. I am willing to assist in any way I can.")
 
 def confidence_from_score(score: float) -> str:
+    """Map cosine similarity score to a confidence label."""
     for threshold, level in CONFIDENCE_LEVELS:
         if score >= threshold:
             return level
@@ -144,17 +92,22 @@ def confidence_from_score(score: float) -> str:
 
 
 def infer_intent(query: str) -> str:
+    """Lightweight intent inference based on keywords."""
     q = query.lower()
-    if any(w in q for w in ["how", "steps", "do i", "procedure"]):
+    if any(w in q for w in ("how", "steps", "do i", "procedure")):
         return "how"
-    if any(w in q for w in ["why", "reason", "cause"]):
+    if any(w in q for w in ("why", "reason", "cause")):
         return "why"
-    if any(w in q for w in ["check", "status", "verify"]):
+    if any(w in q for w in ("check", "status", "verify")):
         return "check"
     return "general"
 
 
 def frame_answer(answer: str, intent: str, confidence: str) -> str:
+    """
+    Frame a single KB answer based on user intent and confidence.
+    No factual rewriting is done here.
+    """
     prefix = {
         "high": "I’m confident this addresses what you’re asking.\n\n",
         "medium": "This should help, though it may not cover every detail.\n\n",
@@ -171,21 +124,132 @@ def frame_answer(answer: str, intent: str, confidence: str) -> str:
     return prefix + intent_opening + answer
 
 
+def merge_prefix(confidence: str) -> str:
+    """Intro text for merged answers."""
+    if confidence == "high":
+        return "I’m confident the following points together address your question:\n\n"
+    if confidence == "medium":
+        return "Here are a few related notes that together should help:\n\n"
+    return "I found several partially related notes. They may help when read together:\n\n"
 
 
+def merge_answers(results):
+    """
+    Merge multiple KB answers safely by concatenation.
+    results: list of (score, kb_item)
+    """
+    return "\n\n---\n\n".join(item["answer"].strip() for _, item in results)
 
-# ----- Main bot -----
+# ============================================================
+# Telegram handlers
+# ============================================================
+
+async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    """Handle all non-command text messages as KB queries."""
+    query = update.message.text.strip()
+
+    if len(query) < 4:
+        await update.message.reply_text(
+            "😅 That doesn’t look like a meaningful question yet."
+        )
+        return
+
+    scores, indices = semantic_search(query, TOP_K_RESULTS)
+
+    candidates = [(s, KB[i]) for s, i in zip(scores, indices)]
+    relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
+
+    if not relevant:
+        await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
+        return
+
+    best_score = relevant[0][0]
+    confidence = confidence_from_score(best_score)
+
+    # Single-answer path
+    if len(relevant) == 1:
+        item = relevant[0][1]
+        intent = infer_intent(query)
+
+        reply = frame_answer(
+            answer=item["answer"],
+            intent=intent,
+            confidence=confidence,
+        )
+
+        button = InlineKeyboardButton(
+            "Get Source Files",
+            callback_data=f"src:{item['id']}",
+        )
+
+        await update.message.reply_text(
+            reply,
+            reply_markup=InlineKeyboardMarkup([[button]]),
+        )
+        return
+
+    # Multi-answer merge path
+    merged = merge_prefix(confidence) + merge_answers(relevant)
+    await update.message.reply_text(merged)
+
+
+async def handle_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    """Handle inline keyboard callbacks."""
+    query = update.callback_query
+    data = query.data
+
+    if data.startswith("src:"):
+        item_id = data.split(":", 1)[1]
+        item = next(it for it in KB if it["id"] == item_id)
+
+        buttons = [
+            [
+                InlineKeyboardButton(
+                    f"Get {ext.upper()}",
+                    callback_data=f"getfile:{item_id}:{ext}",
+                )
+            ]
+            for ext in item["source"]["path"]
+        ]
+
+        await query.edit_message_reply_markup(
+            InlineKeyboardMarkup(buttons)
+        )
+        return
+
+    if data.startswith("getfile:"):
+        _, item_id, ext = data.split(":", 2)
+        item = next(it for it in KB if it["id"] == item_id)
+
+        file_path = Path(item["source"]["path"][ext])
+
+        if not file_path.exists():
+            await query.answer("File not found on disk.")
+            return
+
+        await ctx.bot.send_document(
+            chat_id=query.message.chat_id,
+            document=file_path.open("rb"),
+            filename=file_path.name,
+        )
+        await query.answer("File sent 📎")
+
+
+async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Hi! Just type anything — I’ll search my knowledge base and help if I can."
+    )
+
+# ============================================================
+# Entrypoint
+# ============================================================
+
 if __name__ == "__main__":
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
-    # Every text message = search query
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
-
-    # Callback buttons
-    app.add_handler(CallbackQueryHandler(handle_callback))
-
-    # Greet users with /start
     app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
+    app.add_handler(CallbackQueryHandler(handle_callback))
 
     print("Bot running... just message it anything!")
     app.run_polling()
