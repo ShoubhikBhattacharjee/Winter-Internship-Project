@@ -1,9 +1,9 @@
 [
-    {
+  {
     "id": "2025-11-25-001",
-    "question": "How to chunk long notes when ingesting into a vector DB?",
-    "answer": "Break long notes into 200–400 token chunks, keep `source` and `chunk_index` metadata, and include a short title for each chunk so you can cite the source chunk in UI.",
-    "tags": ["nlp","ingest","chunking"],
+    "question": "Chunking long documents for vector databases",
+    "answer": "Chunking is the process of splitting long documents into smaller pieces before embedding.\n\nKey points:\n- Use chunks of 200–400 tokens\n- Preserve source metadata\n- Store chunk index for traceability\n- Improves retrieval accuracy\n- Reduces hallucination during synthesis",
+    "tags": ["nlp", "vector-db", "ingestion"],
     "source": {
       "type": "file",
       "path": {
@@ -12,28 +12,14 @@
       "url": null
     },
     "created_at": "2025-11-25T20:40:00+05:30",
-    "notes": "Helps retrieval and reduces hallucination when synthesizing answers."
+    "notes": "Atomic concept describing document ingestion best practices."
   },
-  {
-    "id": "2025-12-22-004",
-    "question": "What is the purpose of the Notes folder in this project?",
-    "answer": "The Notes folder stores the raw markdown files that serve as the primary source of truth for the knowledge base entries in kb.json.",
-    "tags": ["project-structure", "documentation"],
-    "source": {
-      "type": "file",
-      "path": {
-        ".docx": "/vector_db.docx"
-      },
-      "url": null
-    },
-    "created_at": "2025-12-22T15:45:00+05:30",
-    "notes": "Explains the relationship between the JSON index and the Markdown source files."
-  },
+
   {
     "id": "2025-12-22-005",
-    "question": "What is the difference between Type 1 and Type 2 hypervisors?",
-    "answer": "Type 1 hypervisors run directly on the system hardware (bare metal), while Type 2 hypervisors run as an application on top of an existing operating system.",
-    "tags": ["virtualization", "hypervisor", "infrastructure"],
+    "question": "Type 1 hypervisor (bare-metal hypervisor)",
+    "answer": "A Type 1 hypervisor runs directly on system hardware without a host operating system.\n\nKey points:\n- Direct hardware access\n- High performance\n- Used in servers and data centers\n- Examples: VMware ESXi, Xen",
+    "tags": ["virtualization", "hypervisor"],
     "source": {
       "type": "file",
       "path": {
@@ -42,13 +28,30 @@
       "url": null
     },
     "created_at": "2025-12-22T16:00:00+05:30",
-    "notes": "Basic conceptual entry for the virtualization section."
+    "notes": "Atomic virtualization concept."
   },
+
+  {
+    "id": "2025-12-22-016",
+    "question": "Type 2 hypervisor (hosted hypervisor)",
+    "answer": "A Type 2 hypervisor runs as an application on top of a host operating system.\n\nKey points:\n- Depends on host OS\n- Easier to install\n- Slightly lower performance\n- Examples: VirtualBox, VMware Workstation",
+    "tags": ["virtualization", "hypervisor"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Hypervisors/types_comparison.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T16:00:00+05:30",
+    "notes": "Complementary atomic entry to Type 1 hypervisors."
+  },
+
   {
     "id": "2025-12-22-006",
-    "question": "How do I update the system packages on Linux Mint using the terminal?",
-    "answer": "To update Linux Mint, run 'sudo apt update' to refresh the package list and then 'sudo apt upgrade' to install the available updates.",
-    "tags": ["linux", "mint", "terminal", "updates"],
+    "question": "Updating system packages on Linux Mint",
+    "answer": "Linux Mint package updates are performed using APT.\n\nSteps:\n- `sudo apt update` refreshes package lists\n- `sudo apt upgrade` installs updates\n- Requires administrator privileges",
+    "tags": ["linux", "mint", "package-management"],
     "source": {
       "type": "file",
       "path": {
@@ -57,13 +60,14 @@
       "url": null
     },
     "created_at": "2025-12-22T16:15:00+05:30",
-    "notes": "Standard maintenance command for Debian-based systems like Mint."
+    "notes": "Standard system maintenance operation."
   },
+
   {
     "id": "2025-12-22-007",
-    "question": "What is the difference between a List and a Tuple in Python?",
-    "answer": "The main difference is mutability: Lists are mutable (can be changed after creation), while Tuples are immutable (cannot be changed). Lists use square brackets [] and Tuples use parentheses ().",
-    "tags": ["python", "coding", "data-structures"],
+    "question": "Python list (mutable sequence)",
+    "answer": "A list is a mutable, ordered collection in Python.\n\nKey points:\n- Elements can be modified\n- Allows duplicates\n- Supports indexing and slicing\n- Uses square brackets []",
+    "tags": ["python", "data-structures"],
     "source": {
       "type": "file",
       "path": {
@@ -72,13 +76,30 @@
       "url": null
     },
     "created_at": "2025-12-22T16:45:00+05:30",
-    "notes": "Fundamental Python interview question and coding concept."
+    "notes": "Atomic Python data structure."
   },
+
+  {
+    "id": "2025-12-22-017",
+    "question": "Python tuple (immutable sequence)",
+    "answer": "A tuple is an immutable, ordered collection in Python.\n\nKey points:\n- Cannot be modified after creation\n- Allows duplicates\n- Safer for fixed data\n- Uses parentheses ()",
+    "tags": ["python", "data-structures"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Python/lists_vs_tuples.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T16:45:00+05:30",
+    "notes": "Atomic Python data structure."
+  },
+
   {
     "id": "2025-12-22-008",
-    "question": "What is the difference between HTTP and HTTPS?",
-    "answer": "HTTP (Hypertext Transfer Protocol) transmits data in plain text, making it vulnerable to interception. HTTPS (Hypertext Transfer Protocol Secure) encrypts the data using SSL/TLS protocols to ensure secure communication.",
-    "tags": ["networking", "security", "web-protocols"],
+    "question": "HTTP (HyperText Transfer Protocol)",
+    "answer": "HTTP is a stateless protocol used to transfer data over the web.\n\nKey points:\n- Data sent in plain text\n- No encryption\n- Uses port 80 by default\n- Faster but insecure",
+    "tags": ["networking", "web", "protocol"],
     "source": {
       "type": "file",
       "path": {
@@ -87,13 +108,30 @@
       "url": null
     },
     "created_at": "2025-12-22T17:15:00+05:30",
-    "notes": "Covers essential web security protocols and their default port differences."
+    "notes": "Atomic web protocol concept."
   },
+
+  {
+    "id": "2025-12-22-018",
+    "question": "HTTPS (secure web protocol)",
+    "answer": "HTTPS is HTTP secured using TLS encryption.\n\nKey points:\n- Encrypts data in transit\n- Prevents eavesdropping\n- Uses digital certificates\n- Uses port 443",
+    "tags": ["networking", "security", "web"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Networking/http_vs_https.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T17:15:00+05:30",
+    "notes": "Secure counterpart to HTTP."
+  },
+
   {
     "id": "2025-12-22-009",
-    "question": "What are the four basic CRUD operations in SQL?",
-    "answer": "CRUD stands for Create (INSERT), Read (SELECT), Update (UPDATE), and Delete (DELETE). These are the four fundamental functions used to manage persistent data in a relational database.",
-    "tags": ["sql", "database", "data-management"],
+    "question": "CRUD operations in SQL",
+    "answer": "CRUD represents the four fundamental database operations.\n\nOperations:\n- Create → INSERT\n- Read → SELECT\n- Update → UPDATE\n- Delete → DELETE",
+    "tags": ["sql", "database"],
     "source": {
       "type": "file",
       "path": {
@@ -102,13 +140,14 @@
       "url": null
     },
     "created_at": "2025-12-22T17:30:00+05:30",
-    "notes": "Fundamental database operations used for both RAG and traditional application development."
+    "notes": "Core relational database concept."
   },
+
   {
     "id": "2025-12-22-010",
-    "question": "What is the primary difference between Supervised and Unsupervised Learning?",
-    "answer": "The main difference is the use of labeled data: Supervised learning uses labeled input and output datasets to train models to predict outcomes, while Unsupervised learning analyzes unlabeled data to discover hidden patterns and structures.",
-    "tags": ["machine-learning", "ai", "data-science"],
+    "question": "Supervised learning",
+    "answer": "Supervised learning trains models using labeled data.\n\nKey points:\n- Input-output pairs\n- Used for prediction\n- Examples: classification, regression",
+    "tags": ["machine-learning", "ai"],
     "source": {
       "type": "file",
       "path": {
@@ -117,13 +156,30 @@
       "url": null
     },
     "created_at": "2025-12-22T17:45:00+05:30",
-    "notes": "Essential AI concept for understanding how models are trained for different tasks."
+    "notes": "Atomic machine learning paradigm."
   },
+
+  {
+    "id": "2025-12-22-019",
+    "question": "Unsupervised learning",
+    "answer": "Unsupervised learning finds patterns in unlabeled data.\n\nKey points:\n- No predefined outputs\n- Used for clustering and discovery\n- Examples: k-means, PCA",
+    "tags": ["machine-learning", "ai"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/AI/supervised_vs_unsupervised.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T17:45:00+05:30",
+    "notes": "Atomic machine learning paradigm."
+  },
+
   {
     "id": "2025-12-22-011",
-    "question": "What is the difference between SQL and NoSQL databases?",
-    "answer": "SQL databases are relational, use structured schemas, and are best for complex queries. NoSQL databases are non-relational, have flexible schemas, and are designed for high-volume, unstructured data and horizontal scaling.",
-    "tags": ["databases", "sql", "nosql", "architecture"],
+    "question": "SQL databases (relational databases)",
+    "answer": "SQL databases store structured data using tables and fixed schemas.\n\nKey points:\n- Relational model\n- Strong consistency\n- Supports complex queries\n- Examples: MySQL, PostgreSQL",
+    "tags": ["databases", "sql"],
     "source": {
       "type": "file",
       "path": {
@@ -132,13 +188,30 @@
       "url": null
     },
     "created_at": "2025-12-22T18:45:00+05:30",
-    "notes": "Key architectural comparison for database selection."
+    "notes": "Atomic database category."
   },
+
+  {
+    "id": "2025-12-22-020",
+    "question": "NoSQL databases",
+    "answer": "NoSQL databases store data using flexible, non-relational models.\n\nKey points:\n- Schema-less or dynamic schemas\n- Horizontally scalable\n- Handles large volumes of data\n- Examples: MongoDB, Cassandra",
+    "tags": ["databases", "nosql"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Databases/sql_vs_nosql.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T18:45:00+05:30",
+    "notes": "Atomic database category."
+  },
+
   {
     "id": "2025-12-22-012",
-    "question": "What are Windows Environment Variables and how does the PATH variable work?",
-    "answer": "Environment variables are global strings used to store system-wide configuration. The 'PATH' variable is the most critical; it contains a list of directory paths that Windows searches through to find executable files when a command is entered into a shell without its full path.",
-    "tags": ["windows", "configuration", "path", "dev-ops"],
+    "question": "Windows environment variables",
+    "answer": "Environment variables are system-wide configuration values.\n\nKey points:\n- Accessible by processes\n- Store paths and settings\n- Used by shells and programs",
+    "tags": ["windows", "configuration"],
     "source": {
       "type": "file",
       "path": {
@@ -147,13 +220,30 @@
       "url": null
     },
     "created_at": "2025-12-22T18:45:00+05:30",
-    "notes": "Fundamental for setting up development environments and CLI tools."
+    "notes": "Operating system configuration concept."
   },
+
+  {
+    "id": "2025-12-22-021",
+    "question": "PATH environment variable (Windows)",
+    "answer": "PATH defines directories searched for executable files.\n\nKey points:\n- Used by command shells\n- Allows running programs without full paths\n- Order matters",
+    "tags": ["windows", "path"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/Windows/environment_variables.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T18:45:00+05:30",
+    "notes": "Critical environment variable for CLI usage."
+  },
+
   {
     "id": "2025-12-22-013",
-    "question": "What is RAG (Retrieval-Augmented Generation) and why is it used?",
-    "answer": "RAG is an AI framework that retrieves relevant documents from an external knowledge base (like your Notes folder) and gives them to a Large Language Model (LLM) to generate an accurate answer. It prevents the AI from 'hallucinating' by grounding it in real facts.",
-    "tags": ["ai", "rag", "llm", "knowledge-base"],
+    "question": "Retrieval-Augmented Generation (RAG)",
+    "answer": "RAG combines document retrieval with language models.\n\nKey points:\n- Retrieves relevant documents\n- Grounds responses in facts\n- Reduces hallucination\n- Used in knowledge-based AI systems",
+    "tags": ["ai", "rag", "knowledge-base"],
     "source": {
       "type": "file",
       "path": {
@@ -162,13 +252,14 @@
       "url": null
     },
     "created_at": "2025-12-22T18:30:00+05:30",
-    "notes": "Explains the core architecture of the project the user is working on."
+    "notes": "Core architectural concept."
   },
+
   {
     "id": "2025-12-22-014",
-    "question": "What is the difference between a Compiler and an Interpreter?",
-    "answer": "A compiler translates the entire source code into machine code all at once before execution (like C++), whereas an interpreter translates and executes the code line-by-line during runtime (like Python).",
-    "tags": ["programming", "computer-science", "software-engineering"],
+    "question": "Compiler (program translation model)",
+    "answer": "A compiler translates source code into machine code before execution.\n\nKey points:\n- One-time translation\n- Produces executable files\n- Faster runtime performance",
+    "tags": ["programming", "execution"],
     "source": {
       "type": "file",
       "path": {
@@ -177,13 +268,30 @@
       "url": null
     },
     "created_at": "2025-12-22T19:30:00+05:30",
-    "notes": "Explains how different programming languages are processed by the CPU."
+    "notes": "Atomic execution model."
   },
+
+  {
+    "id": "2025-12-22-022",
+    "question": "Interpreter (program execution model)",
+    "answer": "An interpreter executes code line-by-line at runtime.\n\nKey points:\n- No separate compilation step\n- Slower execution\n- Easier debugging",
+    "tags": ["programming", "execution"],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/SoftwareEng/compilers_vs_interpreters.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T19:30:00+05:30",
+    "notes": "Atomic execution model."
+  },
+
   {
     "id": "2025-12-22-015",
-    "question": "What is a Stack data structure and what is the LIFO principle?",
-    "answer": "A Stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. This means the last element added to the stack is the first one to be removed, similar to a stack of plates.",
-    "tags": ["data-structures", "programming", "algorithms"],
+    "question": "Stack data structure",
+    "answer": "A stack is a linear data structure following the LIFO principle.\n\nKey points:\n- Last-In, First-Out\n- Supports push and pop\n- Used in recursion and undo operations",
+    "tags": ["data-structures", "algorithms"],
     "source": {
       "type": "file",
       "path": {
@@ -192,13 +300,14 @@
       "url": null
     },
     "created_at": "2025-12-22T20:00:00+05:30",
-    "notes": "Covers a fundamental memory management concept used in recursion and undo operations."
+    "notes": "Fundamental data structure."
   },
+
   {
     "id": "2025-12-24-001",
-    "question": "What are the basic linux commands?",
-    "answer": "Some of the basic linux commands are:\n1. touch\n2. cat\n3. cp\n4. mv\n5. rm\n6. mkdir\n7. rmdir\n8. cd\n9. pwd\n\nFile Manipulation Commands:\n1. chmod\n2. chown\n3. chgrp\n\nSystem calls:\n1.  open\n2.  read\n3.  write\n4.  close\n5.  getpid\n6.  setpid\n7.  getpid\n8.  setpid\n9.  getuid\n10. getgid\n11. getegid\n12. geteuid\n13. sort\n14. grep\n15. awk\n\n",
-    "tags": ["basic", "linux", "commands"],
+    "question": "Basic Linux commands",
+    "answer": "Common Linux commands:\n- File operations: ls, cp, mv, rm, mkdir\n- Navigation: cd, pwd\n- Permissions: chmod, chown\n- Text processing: grep, awk, sort",
+    "tags": ["linux", "cli"],
     "source": {
       "type": "file",
       "path": {
@@ -207,13 +316,14 @@
       "url": null
     },
     "created_at": "2025-01-08T17:10:13+05:30",
-    "notes": "Covers basic linux operations. Specifically drafted with respect to Ubuntu OS. Private document under the ownership of Karamshi Jethabhai Somaiya Institute of Technology, Sion. Do not leak."
+    "notes": "Curated command overview for daily CLI usage."
   },
+
   {
     "id": "2025-12-24-002",
-    "question": "What's shell scripting?",
-    "answer": "A shell is the command-line interface (like bash, zsh, or sh) that lets you interact with your operating system.\nA shell script is simply a text file containing a sequence of commands you’d normally type manually, automated to run in order.",
-    "tags": ["linux", "shell", "scripting", "commands", "cheat", "sheet"],
+    "question": "Shell scripting",
+    "answer": "Shell scripting automates command execution in a shell.\n\nKey points:\n- Uses shell commands\n- Runs sequentially\n- Used for automation and system tasks",
+    "tags": ["linux", "shell", "automation"],
     "source": {
       "type": "file",
       "path": {
@@ -223,6 +333,1355 @@
       "url": null
     },
     "created_at": "2025-12-24T23:28:07+05:30",
-    "notes": "Covers basic shell scripting syntax used 90% of the time."
+    "notes": "Practical shell automation reference."
+  },
+  {
+    "id": "2025-12-26-001",
+    "question": "Process in Operating Systems",
+    "answer": "A process is a program in execution along with its current state.\n\nKey points:\n- Has its own address space\n- Contains program counter, registers, and stack\n- Managed by the operating system\n- Multiple processes can run concurrently",
+    "tags": ["operating-systems", "process-management"],
+    "source": {
+      "type": "file",
+      "path": null,
+      "url": null
+    },
+    "created_at": "2025-12-26T10:00:00+05:30",
+    "notes": "Fundamental OS execution unit."
+  },
+  {
+    "id": "2025-12-26-002",
+    "question": "Thread in Operating Systems",
+    "answer": "A thread is the smallest unit of execution within a process.\n\nKey points:\n- Shares process memory\n- Faster context switching than processes\n- Improves application responsiveness\n- Used in parallel programming",
+    "tags": ["operating-systems", "multithreading"],
+    "source": {
+      "type": "file",
+      "path": null,
+      "url": null
+    },
+    "created_at": "2025-12-26T10:05:00+05:30",
+    "notes": "Lightweight execution unit."
+  },
+  {
+    "id": "2025-12-27-001",
+    "question": "CPU scheduling algorithms",
+    "answer": "CPU scheduling algorithms decide which process gets CPU time.\n\nKey goals:\n- Maximize CPU utilization\n- Minimize waiting time\n- Minimize turnaround time\n- Ensure fairness",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:00:00+05:30",
+    "notes": "Parent concept for all scheduling algorithms."
+  },
+  {
+    "id": "2025-12-27-002",
+    "question": "First Come First Serve (FCFS) scheduling algorithm",
+    "answer": "FCFS schedules processes in order of arrival.\n\nCharacteristics:\n- Non-preemptive\n- Simple implementation\n- Long waiting time possible\n- Suffers from convoy effect",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:05:00+05:30",
+    "notes": "Baseline scheduling algorithm."
+  },
+  {
+    "id": "2025-12-27-003",
+    "question": "Shortest Job First (SJF) scheduling algorithm",
+    "answer": "SJF selects the process with the smallest CPU burst time.\n\nCharacteristics:\n- Can be preemptive or non-preemptive\n- Minimizes average waiting time\n- Requires burst time estimation\n- Risk of starvation",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:10:00+05:30",
+    "notes": "Optimal in theory for waiting time."
+  },
+  {
+    "id": "2025-12-27-004",
+    "question": "Shortest Remaining Time First (SRTF)",
+    "answer": "SRTF is the preemptive version of SJF.\n\nCharacteristics:\n- Preempts running process\n- Chooses smallest remaining burst time\n- Better response time\n- High context switching overhead",
+    "tags": ["operating-systems", "cpu-scheduling", "preemptive"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:15:00+05:30",
+    "notes": "Preemptive optimal scheduler."
+  },
+  {
+    "id": "2025-12-27-005",
+    "question": "Priority scheduling algorithm",
+    "answer": "Priority scheduling assigns CPU based on priority values.\n\nCharacteristics:\n- Higher priority runs first\n- Can be preemptive or non-preemptive\n- Starvation possible\n- Solved using aging",
+    "tags": ["operating-systems", "cpu-scheduling", "priority"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:20:00+05:30",
+    "notes": "Priority-based decision making."
+  },
+  {
+    "id": "2025-12-27-006",
+    "question": "Round Robin scheduling algorithm",
+    "answer": "Round Robin assigns CPU in time slices to each process.\n\nCharacteristics:\n- Preemptive\n- Uses time quantum\n- Fair scheduling\n- Performance depends on quantum size",
+    "tags": ["operating-systems", "cpu-scheduling", "round-robin"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:25:00+05:30",
+    "notes": "Used in time-sharing systems."
+  },
+  {
+    "id": "2025-12-27-007",
+    "question": "Multilevel queue scheduling",
+    "answer": "Processes are divided into multiple queues based on type.\n\nCharacteristics:\n- Fixed priority between queues\n- Each queue has its own algorithm\n- No movement between queues",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:30:00+05:30",
+    "notes": "Used in complex OS designs."
+  },
+  {
+    "id": "2025-12-27-008",
+    "question": "Multilevel feedback queue scheduling",
+    "answer": "Allows processes to move between queues based on behavior.\n\nCharacteristics:\n- Dynamic priorities\n- Prevents starvation\n- Adaptive scheduling\n- Complex to implement",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T09:35:00+05:30",
+    "notes": "Most flexible scheduling approach."
+  },
+  {
+    "id": "2025-12-27-020",
+    "question": "Normalization in DBMS",
+    "answer": "Normalization structures relational databases to reduce redundancy.\n\nObjectives:\n- Eliminate anomalies\n- Improve data consistency\n- Simplify maintenance",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:00:00+05:30",
+    "notes": "Parent concept for normal forms."
+  },
+  {
+    "id": "2025-12-27-021",
+    "question": "First Normal Form (1NF)",
+    "answer": "1NF requires atomic attribute values.\n\nRules:\n- No multivalued attributes\n- Each field contains single value\n- Each record is unique",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:05:00+05:30",
+    "notes": "Foundation of normalization."
+  },
+  {
+    "id": "2025-12-27-022",
+    "question": "Second Normal Form (2NF)",
+    "answer": "2NF removes partial dependency.\n\nRules:\n- Must be in 1NF\n- No non-prime attribute depends on part of a composite key",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:10:00+05:30",
+    "notes": "Eliminates partial dependency."
+  },
+  {
+    "id": "2025-12-27-023",
+    "question": "Third Normal Form (3NF)",
+    "answer": "3NF removes transitive dependency.\n\nRules:\n- Must be in 2NF\n- Non-prime attributes depend only on candidate keys",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:15:00+05:30",
+    "notes": "Most commonly used normal form."
+  },
+  {
+    "id": "2025-12-27-024",
+    "question": "Boyce-Codd Normal Form (BCNF)",
+    "answer": "BCNF is a stricter version of 3NF.\n\nRules:\n- Every determinant must be a candidate key\n- Eliminates remaining anomalies",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:20:00+05:30",
+    "notes": "Stronger than 3NF."
+  },
+  {
+    "id": "2025-12-27-025",
+    "question": "Fourth Normal Form (4NF)",
+    "answer": "4NF removes multivalued dependencies.\n\nRules:\n- Must be in BCNF\n- No non-trivial multivalued dependencies",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:25:00+05:30",
+    "notes": "Advanced normalization form."
+  },
+  {
+    "id": "2025-12-27-026",
+    "question": "Fifth Normal Form (5NF)",
+    "answer": "5NF removes join dependencies.\n\nRules:\n- Decomposition cannot be further lossless\n- Rarely required in practice",
+    "tags": ["dbms", "normalization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-27T10:30:00+05:30",
+    "notes": "Theoretical normalization level."
+  },
+  {
+    "id": "2025-12-28-001",
+    "question": "Deadlock in Operating Systems",
+    "answer": "A deadlock is a condition where a set of processes are blocked indefinitely.\n\nKey points:\n- Each process waits for resources held by others\n- No process can proceed\n- Occurs in concurrent systems",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:00:00+05:30",
+    "notes": "Parent concept for deadlock handling."
+  },
+  {
+    "id": "2025-12-28-002",
+    "question": "Necessary conditions for deadlock",
+    "answer": "Deadlock occurs only if all four conditions hold simultaneously.\n\nConditions:\n- Mutual exclusion\n- Hold and wait\n- No preemption\n- Circular wait",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:05:00+05:30",
+    "notes": "Coffman conditions."
+  },
+  {
+    "id": "2025-12-28-003",
+    "question": "Mutual exclusion condition",
+    "answer": "At least one resource must be held in a non-shareable mode.\n\nKey points:\n- Only one process can use the resource\n- Necessary for deadlock\n- Common with I/O devices",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:10:00+05:30",
+    "notes": "First deadlock condition."
+  },
+  {
+    "id": "2025-12-28-004",
+    "question": "Hold and wait condition",
+    "answer": "Processes hold allocated resources while waiting for others.\n\nKey points:\n- Partial allocation\n- Common cause of deadlocks\n- Can be prevented by requesting all resources at once",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:15:00+05:30",
+    "notes": "Second deadlock condition."
+  },
+  {
+    "id": "2025-12-28-005",
+    "question": "No preemption condition",
+    "answer": "Resources cannot be forcibly taken from a process.\n\nKey points:\n- Process must release resource voluntarily\n- Leads to indefinite waiting\n- Difficult to eliminate for some resources",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:20:00+05:30",
+    "notes": "Third deadlock condition."
+  },
+  {
+    "id": "2025-12-28-006",
+    "question": "Circular wait condition",
+    "answer": "Processes form a cycle waiting for resources.\n\nKey points:\n- Each process holds one resource\n- Waits for next process’s resource\n- Final condition for deadlock",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:25:00+05:30",
+    "notes": "Final deadlock condition."
+  },
+  {
+    "id": "2025-12-28-007",
+    "question": "Deadlock prevention",
+    "answer": "Deadlock prevention ensures at least one necessary condition never holds.\n\nTechniques:\n- Eliminate hold and wait\n- Allow preemption\n- Order resource requests",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:30:00+05:30",
+    "notes": "Proactive deadlock handling."
+  },
+  {
+    "id": "2025-12-28-008",
+    "question": "Deadlock avoidance",
+    "answer": "Deadlock avoidance ensures the system never enters an unsafe state.\n\nKey points:\n- Requires prior knowledge of resource needs\n- Checks safe state before allocation\n- Uses Banker’s Algorithm",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:35:00+05:30",
+    "notes": "Dynamic resource allocation strategy."
+  },
+  {
+    "id": "2025-12-28-009",
+    "question": "Safe state in deadlock avoidance",
+    "answer": "A safe state means the system can allocate resources without deadlock.\n\nKey points:\n- Exists safe sequence\n- Not all safe states are deadlocked\n- Used in Banker’s Algorithm",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:40:00+05:30",
+    "notes": "Core avoidance concept."
+  },
+  {
+    "id": "2025-12-28-010",
+    "question": "Banker’s Algorithm",
+    "answer": "Banker’s Algorithm avoids deadlock by checking safe state.\n\nKey points:\n- Requires maximum resource demand\n- Uses safety and request algorithms\n- Suitable for fixed number of processes",
+    "tags": ["operating-systems", "deadlock", "bankers-algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:45:00+05:30",
+    "notes": "Standard deadlock avoidance algorithm."
+  },
+  {
+    "id": "2025-12-28-011",
+    "question": "Deadlock detection",
+    "answer": "Deadlock detection allows deadlocks to occur and then detects them.\n\nKey points:\n- Uses resource allocation graph\n- Periodic checking\n- Used in databases",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:50:00+05:30",
+    "notes": "Reactive deadlock handling."
+  },
+  {
+    "id": "2025-12-28-012",
+    "question": "Deadlock recovery",
+    "answer": "Deadlock recovery restores system to normal operation.\n\nMethods:\n- Process termination\n- Resource preemption\n- Rollback to safe state",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T09:55:00+05:30",
+    "notes": "Final deadlock resolution stage."
+  },
+  {
+    "id": "2025-12-28-020",
+    "question": "Memory management in Operating Systems",
+    "answer": "Memory management handles allocation and deallocation of memory.\n\nObjectives:\n- Efficient memory utilization\n- Process isolation\n- Support multiprogramming",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:10:00+05:30",
+    "notes": "Parent memory management concept."
+  },
+  {
+    "id": "2025-12-28-021",
+    "question": "Contiguous memory allocation",
+    "answer": "Each process is allocated a single contiguous block of memory.\n\nKey points:\n- Simple implementation\n- Suffers from fragmentation\n- Requires compaction",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:15:00+05:30",
+    "notes": "Basic allocation scheme."
+  },
+  {
+    "id": "2025-12-28-022",
+    "question": "Internal fragmentation",
+    "answer": "Unused memory inside allocated partitions.\n\nKey points:\n- Caused by fixed-size allocation\n- Wastes memory\n- Common in paging",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:20:00+05:30",
+    "notes": "Memory wastage type."
+  },
+  {
+    "id": "2025-12-28-023",
+    "question": "External fragmentation",
+    "answer": "Free memory exists but is not contiguous.\n\nKey points:\n- Occurs in variable partitioning\n- Solved using paging or compaction",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:25:00+05:30",
+    "notes": "Memory allocation limitation."
+  },
+  {
+    "id": "2025-12-28-024",
+    "question": "Paging",
+    "answer": "Paging divides memory into fixed-size pages and frames.\n\nKey points:\n- Eliminates external fragmentation\n- Uses page table\n- Supports virtual memory",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:30:00+05:30",
+    "notes": "Primary virtual memory technique."
+  },
+  {
+    "id": "2025-12-28-025",
+    "question": "Page table",
+    "answer": "Page table maps logical pages to physical frames.\n\nKey points:\n- Stored in memory\n- Accessed for address translation\n- Adds memory overhead",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:35:00+05:30",
+    "notes": "Paging metadata structure."
+  },
+  {
+    "id": "2025-12-28-026",
+    "question": "Segmentation",
+    "answer": "Segmentation divides memory into variable-sized logical segments.\n\nKey points:\n- Matches programmer view\n- Supports protection\n- Suffers from external fragmentation",
+    "tags": ["operating-systems", "segmentation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:40:00+05:30",
+    "notes": "Logical memory management."
+  },
+  {
+    "id": "2025-12-28-027",
+    "question": "Virtual memory",
+    "answer": "Virtual memory allows execution beyond physical RAM size.\n\nKey points:\n- Uses disk as backing store\n- Demand paging\n- Improves system performance",
+    "tags": ["operating-systems", "virtual-memory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:45:00+05:30",
+    "notes": "Memory abstraction mechanism."
+  },
+  {
+    "id": "2025-12-28-028",
+    "question": "Page replacement algorithms",
+    "answer": "Page replacement algorithms decide which page to remove.\n\nGoals:\n- Minimize page faults\n- Improve memory efficiency",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:50:00+05:30",
+    "notes": "Parent page replacement concept."
+  },
+  {
+    "id": "2025-12-28-029",
+    "question": "FIFO page replacement algorithm",
+    "answer": "Replaces the oldest page in memory.\n\nCharacteristics:\n- Simple\n- Suffers from Belady’s anomaly\n- Poor performance",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T10:55:00+05:30",
+    "notes": "Baseline replacement algorithm."
+  },
+  {
+    "id": "2025-12-28-030",
+    "question": "Optimal page replacement algorithm",
+    "answer": "Replaces the page not needed for the longest time.\n\nCharacteristics:\n- Minimum page faults\n- Theoretical benchmark\n- Not implementable",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T11:00:00+05:30",
+    "notes": "Used for comparison."
+  },
+  {
+    "id": "2025-12-28-031",
+    "question": "Least Recently Used (LRU) page replacement",
+    "answer": "Replaces the page not used for the longest time.\n\nCharacteristics:\n- Good performance\n- Approximates optimal\n- High implementation cost",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-28T11:05:00+05:30",
+    "notes": "Practical replacement algorithm."
+  },
+  {
+    "id": "2025-12-29-001",
+    "question": "Sorting algorithms",
+    "answer": "Sorting algorithms arrange elements in a specific order (ascending or descending).\n\nObjectives:\n- Improve searching efficiency\n- Enable structured data processing\n- Reduce computational complexity in applications\n\nCategories:\n- Comparison-based sorting\n- Non-comparison-based sorting",
+    "tags": ["data-structures", "algorithms", "sorting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:00:00+05:30",
+    "notes": "Parent concept for all sorting techniques."
+  },
+
+  {
+    "id": "2025-12-29-002",
+    "question": "Bubble Sort algorithm",
+    "answer": "Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order.\n\nCharacteristics:\n- Comparison-based\n- Stable\n- In-place\n- Simple but inefficient\n\nTime Complexity:\n- Best: O(n)\n- Average: O(n²)\n- Worst: O(n²)\n\nPseudo-code:\n1. Repeat for i = 0 to n-1\n2.   For j = 0 to n-i-2\n3.     If arr[j] > arr[j+1]\n4.       Swap arr[j] and arr[j+1]\n5. End",
+    "tags": ["sorting", "bubble-sort", "algorithms"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:05:00+05:30",
+    "notes": "Elementary sorting algorithm."
+  },
+
+  {
+    "id": "2025-12-29-003",
+    "question": "Selection Sort algorithm",
+    "answer": "Selection Sort repeatedly selects the minimum element and places it at the beginning.\n\nCharacteristics:\n- Comparison-based\n- Not stable\n- In-place\n- Minimal swaps\n\nTime Complexity:\n- Best, Average, Worst: O(n²)\n\nPseudo-code:\n1. For i = 0 to n-2\n2.   min = i\n3.   For j = i+1 to n-1\n4.     If arr[j] < arr[min]\n5.       min = j\n6.   Swap arr[i] and arr[min]\n7. End",
+    "tags": ["sorting", "selection-sort", "algorithms"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:10:00+05:30",
+    "notes": "Swap-efficient sorting technique."
+  },
+
+  {
+    "id": "2025-12-29-004",
+    "question": "Insertion Sort algorithm",
+    "answer": "Insertion Sort builds the sorted array one element at a time. It works like shuffling a deck of cards, picking a card in the deck, sliding through cards, and placing the chosen card in its correct position.\n\nCharacteristics:\n- Comparison-based\n- Stable\n- In-place\n- Efficient for small or nearly sorted data\n\nTime Complexity:\n- Best: O(n)\n- Average, Worst: O(n²)\n\nPseudo-code:\n1. For i = 1 to n-1\n2.   key = arr[i]\n3.   j = i - 1\n4.   While j >= 0 and arr[j] > key\n5.     arr[j+1] = arr[j]\n6.     j = j - 1\n7.   arr[j+1] = key\n8. End",
+    "tags": ["sorting", "insertion-sort", "algorithms"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:15:00+05:30",
+    "notes": "Efficient for small datasets."
+  },
+
+  {
+    "id": "2025-12-29-005",
+    "question": "Merge Sort algorithm",
+    "answer": "Merge Sort is a divide-and-conquer algorithm that recursively splits and merges arrays.\n\nCharacteristics:\n- Comparison-based\n- Stable\n- Not in-place\n- Suitable for large datasets\n\nTime Complexity:\n- Best, Average, Worst: O(n log n)\n\nPseudo-code:\n1. If array size <= 1 return\n2. Divide array into left and right halves\n3. Recursively apply Merge Sort on both halves\n4. Merge the two sorted halves\n5. End",
+    "tags": ["sorting", "merge-sort", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:20:00+05:30",
+    "notes": "Guaranteed performance sorting algorithm."
+  },
+
+  {
+    "id": "2025-12-29-006",
+    "question": "Quick Sort algorithm",
+    "answer": "Quick Sort selects a pivot and partitions the array around it.\n\nCharacteristics:\n- Comparison-based\n- Not stable\n- In-place\n- Very fast in practice\n\nTime Complexity:\n- Best, Average: O(n log n)\n- Worst: O(n²)\n\nPseudo-code:\n1. Choose a pivot element\n2. Partition array into elements < pivot and > pivot\n3. Recursively apply Quick Sort on subarrays\n4. End",
+    "tags": ["sorting", "quick-sort", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:25:00+05:30",
+    "notes": "Most widely used internal sorting algorithm."
+  },
+
+  {
+    "id": "2025-12-29-007",
+    "question": "Heap Sort algorithm",
+    "answer": "Heap Sort uses a binary heap to sort elements.\n\nCharacteristics:\n- Comparison-based\n- Not stable\n- In-place\n- Uses heap data structure\n\nTime Complexity:\n- Best, Average, Worst: O(n log n)\n\nPseudo-code:\n1. Build a max heap from input array\n2. Swap root with last element\n3. Reduce heap size\n4. Heapify root\n5. Repeat until sorted\n6. End",
+    "tags": ["sorting", "heap-sort", "heap"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:30:00+05:30",
+    "notes": "Priority-based sorting algorithm."
+  },
+
+  {
+    "id": "2025-12-29-008",
+    "question": "Counting Sort algorithm",
+    "answer": "Counting Sort counts occurrences of elements to sort them.\n\nCharacteristics:\n- Non-comparison-based\n- Stable\n- Not in-place\n- Works for limited integer ranges\n\nTime Complexity:\n- O(n + k)\n\nPseudo-code:\n1. Create count array of size k\n2. Count occurrences of each element\n3. Compute cumulative count\n4. Place elements into output array\n5. Copy output back\n6. End",
+    "tags": ["sorting", "counting-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:35:00+05:30",
+    "notes": "Linear-time sorting algorithm."
+  },
+
+  {
+    "id": "2025-12-29-009",
+    "question": "Radix Sort algorithm",
+    "answer": "Radix Sort sorts numbers digit by digit using stable sub-sorts.\n\nCharacteristics:\n- Non-comparison-based\n- Stable\n- Uses Counting Sort internally\n- Efficient for large integers\n\nTime Complexity:\n- O(d(n + k))\n\nPseudo-code:\n1. Find maximum number of digits\n2. For each digit position\n3.   Apply stable Counting Sort\n4. End",
+    "tags": ["sorting", "radix-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:40:00+05:30",
+    "notes": "Digit-based sorting technique."
+  },
+
+  {
+    "id": "2025-12-29-010",
+    "question": "Bucket Sort algorithm",
+    "answer": "Bucket Sort distributes elements into buckets and sorts each bucket.\n\nCharacteristics:\n- Non-comparison-based\n- Stable (depends on bucket sort)\n- Not in-place\n- Best for uniformly distributed data\n\nTime Complexity:\n- Average: O(n + k)\n- Worst: O(n²)\n\nPseudo-code:\n1. Create k empty buckets\n2. Distribute elements into buckets\n3. Sort each bucket individually\n4. Concatenate buckets\n5. End",
+    "tags": ["sorting", "bucket-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-29T09:45:00+05:30",
+    "notes": "Distribution-based sorting algorithm."
+  },
+  {
+    "id": "2025-12-30-001",
+    "question": "Searching algorithms",
+    "answer": "Searching algorithms locate an element in a data structure.\n\nObjectives:\n- Efficient data retrieval\n- Reduce search time\n- Support large datasets\n\nCategories:\n- Linear searching\n- Divide-and-conquer searching\n- Hash-based searching",
+    "tags": ["data-structures", "algorithms", "searching"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:00:00+05:30",
+    "notes": "Parent concept for searching techniques."
+  },
+  {
+    "id": "2025-12-30-002",
+    "question": "Linear Search algorithm",
+    "answer": "Linear Search checks each element sequentially until the key is found.\n\nCharacteristics:\n- Works on unsorted data\n- Simple implementation\n- Inefficient for large datasets\n\nTime Complexity:\n- Best: O(1)\n- Average, Worst: O(n)\n\nPseudo-code:\n1. For i = 0 to n-1\n2.   If arr[i] == key\n3.     Return i\n4. Return -1\n5. End",
+    "tags": ["searching", "linear-search"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:05:00+05:30",
+    "notes": "Basic sequential searching."
+  },
+  {
+    "id": "2025-12-30-003",
+    "question": "Binary Search algorithm",
+    "answer": "Binary Search repeatedly divides a sorted array to find an element.\n\nCharacteristics:\n- Requires sorted data\n- Divide-and-conquer approach\n- Highly efficient\n\nTime Complexity:\n- Best: O(1)\n- Average, Worst: O(log n)\n\nPseudo-code:\n1. low = 0, high = n-1\n2. While low <= high\n3.   mid = (low + high) / 2\n4.   If arr[mid] == key return mid\n5.   Else if arr[mid] < key low = mid + 1\n6.   Else high = mid - 1\n7. Return -1\n8. End",
+    "tags": ["searching", "binary-search", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:10:00+05:30",
+    "notes": "Efficient searching on sorted data."
+  },
+  {
+    "id": "2025-12-30-004",
+    "question": "Hashing technique",
+    "answer": "Hashing maps keys to table indices using a hash function.\n\nKey points:\n- Enables constant-time access\n- Uses hash tables\n- Performance depends on hash function",
+    "tags": ["searching", "hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:15:00+05:30",
+    "notes": "Foundation for hash-based searching."
+  },
+  {
+    "id": "2025-12-30-005",
+    "question": "Hash function",
+    "answer": "A hash function converts a key into an index.\n\nProperties:\n- Deterministic\n- Uniform distribution\n- Minimizes collisions\n\nExample:\n- h(key) = key mod table_size",
+    "tags": ["searching", "hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:20:00+05:30",
+    "notes": "Core hashing component."
+  },
+  {
+    "id": "2025-12-30-006",
+    "question": "Collision in hashing",
+    "answer": "A collision occurs when two keys map to the same index.\n\nKey points:\n- Degrades performance\n- Unavoidable\n- Handled using collision resolution techniques",
+    "tags": ["searching", "hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:25:00+05:30",
+    "notes": "Major hashing limitation."
+  },
+  {
+    "id": "2025-12-30-007",
+    "question": "Linear probing (collision resolution)",
+    "answer": "Linear probing searches the next available slot sequentially.\n\nCharacteristics:\n- Simple implementation\n- Causes clustering\n- Performance degrades at high load\n\nPseudo-code:\n1. index = h(key)\n2. While table[index] is occupied\n3.   index = (index + 1) mod size\n4. Insert key\n5. End",
+    "tags": ["searching", "hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:30:00+05:30",
+    "notes": "Open addressing method."
+  },
+  {
+    "id": "2025-12-30-008",
+    "question": "Chaining (collision resolution)",
+    "answer": "Chaining stores multiple keys at the same index using linked lists.\n\nCharacteristics:\n- Avoids clustering\n- Requires extra memory\n- Easier deletion\n\nPseudo-code:\n1. index = h(key)\n2. Insert key at table[index] list\n3. End",
+    "tags": ["searching", "hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T09:35:00+05:30",
+    "notes": "Separate chaining technique."
+  },
+  {
+    "id": "2025-12-30-020",
+    "question": "Algorithm analysis",
+    "answer": "Algorithm analysis evaluates efficiency in terms of time and space.\n\nGoals:\n- Compare algorithms\n- Predict performance\n- Optimize resource usage",
+    "tags": ["algorithms", "analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:00:00+05:30",
+    "notes": "Parent analysis concept."
+  },
+  {
+    "id": "2025-12-30-021",
+    "question": "Time complexity",
+    "answer": "Time complexity measures execution time growth with input size.\n\nCases:\n- Best case\n- Average case\n- Worst case",
+    "tags": ["algorithms", "analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:05:00+05:30",
+    "notes": "Primary performance metric."
+  },
+  {
+    "id": "2025-12-30-022",
+    "question": "Space complexity",
+    "answer": "Space complexity measures memory usage by an algorithm.\n\nIncludes:\n- Input space\n- Auxiliary space\n- Recursive stack space",
+    "tags": ["algorithms", "analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:10:00+05:30",
+    "notes": "Memory efficiency metric."
+  },
+  {
+    "id": "2025-12-30-023",
+    "question": "Asymptotic analysis",
+    "answer": "Asymptotic analysis studies behavior for large inputs.\n\nKey points:\n- Ignores constants\n- Focuses on growth rate\n- Uses asymptotic notations",
+    "tags": ["algorithms", "analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:15:00+05:30",
+    "notes": "Foundation of complexity analysis."
+  },
+  {
+    "id": "2025-12-30-024",
+    "question": "Big-O notation",
+    "answer": "Big-O provides an upper bound on time complexity.\n\nExamples:\n- O(1): constant\n- O(n): linear\n- O(log n): logarithmic\n- O(n²): quadratic",
+    "tags": ["algorithms", "analysis", "big-o"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:20:00+05:30",
+    "notes": "Worst-case complexity representation."
+  },
+  {
+    "id": "2025-12-30-025",
+    "question": "Big-Ω notation",
+    "answer": "Big-Ω provides a lower bound on complexity.\n\nKey points:\n- Represents best-case growth\n- Complements Big-O",
+    "tags": ["algorithms", "analysis", "big-omega"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:25:00+05:30",
+    "notes": "Best-case complexity representation."
+  },
+  {
+    "id": "2025-12-30-026",
+    "question": "Big-Θ notation",
+    "answer": "Big-Θ gives a tight bound on complexity.\n\nKey points:\n- Both upper and lower bounds\n- Most accurate asymptotic measure",
+    "tags": ["algorithms", "analysis", "big-theta"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:30:00+05:30",
+    "notes": "Exact growth rate notation."
+  },
+  {
+    "id": "2025-12-30-027",
+    "question": "Recurrence relation",
+    "answer": "A recurrence relation expresses time complexity recursively.\n\nUsed in:\n- Divide-and-conquer algorithms\n- Recursive functions",
+    "tags": ["algorithms", "analysis", "recurrence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:35:00+05:30",
+    "notes": "Recursive complexity modeling."
+  },
+  {
+    "id": "2025-12-30-028",
+    "question": "Master Theorem",
+    "answer": "Master Theorem solves recurrence relations of the form T(n) = aT(n/b) + f(n).\n\nCases:\n- Case 1: f(n) < n^{log_b a}\n- Case 2: f(n) = n^{log_b a}\n- Case 3: f(n) > n^{log_b a}",
+    "tags": ["algorithms", "analysis", "master-theorem"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-30T10:40:00+05:30",
+    "notes": "Standard recurrence-solving method."
+  },
+  {
+    "id": "2025-12-31-001",
+    "question": "Dynamic Programming",
+    "answer": "Dynamic Programming (DP) solves problems by breaking them into overlapping subproblems.\n\nKey properties:\n- Optimal substructure\n- Overlapping subproblems\n\nApproaches:\n- Top-down (memoization)\n- Bottom-up (tabulation)",
+    "tags": ["algorithms", "dynamic-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T09:00:00+05:30",
+    "notes": "Parent DP concept."
+  },
+  {
+    "id": "2025-12-31-002",
+    "question": "Fibonacci using Dynamic Programming",
+    "answer": "DP optimizes Fibonacci by storing computed results.\n\nTime Complexity:\n- O(n)\n\nPseudo-code:\n1. dp[0] = 0, dp[1] = 1\n2. For i = 2 to n\n3.   dp[i] = dp[i-1] + dp[i-2]\n4. Return dp[n]\n5. End",
+    "tags": ["dynamic-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T09:05:00+05:30",
+    "notes": "Introductory DP example."
+  },
+  {
+    "id": "2025-12-31-003",
+    "question": "0/1 Knapsack problem",
+    "answer": "The 0/1 Knapsack maximizes value under weight constraint.\n\nTime Complexity:\n- O(nW)\n\nPseudo-code:\n1. Create dp[n+1][W+1]\n2. For i = 0 to n\n3.   For w = 0 to W\n4.     If i == 0 or w == 0 dp[i][w] = 0\n5.     Else if wt[i-1] <= w\n6.       dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w])\n7.     Else dp[i][w] = dp[i-1][w]\n8. Return dp[n][W]\n9. End",
+    "tags": ["dynamic-programming", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T09:10:00+05:30",
+    "notes": "Classic DP optimization problem."
+  },
+  {
+    "id": "2025-12-31-004",
+    "question": "Longest Common Subsequence (LCS)",
+    "answer": "LCS finds the longest subsequence common to two strings.\n\nTime Complexity:\n- O(mn)\n\nPseudo-code:\n1. Create dp[m+1][n+1]\n2. For i = 1 to m\n3.   For j = 1 to n\n4.     If X[i-1] == Y[j-1]\n5.       dp[i][j] = dp[i-1][j-1] + 1\n6.     Else dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n7. Return dp[m][n]\n8. End",
+    "tags": ["dynamic-programming", "lcs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T09:15:00+05:30",
+    "notes": "String matching DP problem."
+  },
+  {
+    "id": "2025-12-31-005",
+    "question": "Matrix Chain Multiplication",
+    "answer": "Matrix Chain Multiplication finds optimal parenthesization.\n\nTime Complexity:\n- O(n³)\n\nPseudo-code:\n1. For i = 1 to n\n2.   dp[i][i] = 0\n3. For L = 2 to n\n4.   For i = 1 to n-L+1\n5.     j = i + L - 1\n6.     dp[i][j] = infinity\n7.     For k = i to j-1\n8.       cost = dp[i][k] + dp[k+1][j] + p[i-1]*p[k]*p[j]\n9.       dp[i][j] = min(dp[i][j], cost)\n10. Return dp[1][n]\n11. End",
+    "tags": ["dynamic-programming", "matrix-chain"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T09:20:00+05:30",
+    "notes": "Optimization via DP."
+  },
+  {
+    "id": "2025-12-31-020",
+    "question": "Graph data structure",
+    "answer": "A graph consists of vertices connected by edges.\n\nTypes:\n- Directed and undirected\n- Weighted and unweighted\n\nApplications:\n- Networks\n- Routing\n- Dependency modeling",
+    "tags": ["graphs", "data-structures"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:00:00+05:30",
+    "notes": "Parent graph concept."
+  },
+  {
+    "id": "2025-12-31-021",
+    "question": "Graph representations",
+    "answer": "Graphs can be represented using adjacency matrix or list.\n\nComparison:\n- Matrix: O(V²) space\n- List: O(V+E) space",
+    "tags": ["graphs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:05:00+05:30",
+    "notes": "Graph storage techniques."
+  },
+  {
+    "id": "2025-12-31-022",
+    "question": "Breadth First Search (BFS)",
+    "answer": "BFS traverses graph level by level using a queue.\n\nTime Complexity:\n- O(V+E)\n\nPseudo-code:\n1. Mark start vertex visited\n2. Enqueue start\n3. While queue not empty\n4.   v = dequeue\n5.   Visit all unvisited neighbors\n6. End",
+    "tags": ["graphs", "bfs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:10:00+05:30",
+    "notes": "Level-order graph traversal."
+  },
+  {
+    "id": "2025-12-31-023",
+    "question": "Depth First Search (DFS)",
+    "answer": "DFS explores graph deeply before backtracking.\n\nTime Complexity:\n- O(V+E)\n\nPseudo-code:\n1. Mark vertex visited\n2. For each adjacent vertex\n3.   If not visited, call DFS\n4. End",
+    "tags": ["graphs", "dfs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:15:00+05:30",
+    "notes": "Recursive graph traversal."
+  },
+  {
+    "id": "2025-12-31-024",
+    "question": "Minimum Spanning Tree (MST)",
+    "answer": "An MST connects all vertices with minimum total weight.\n\nProperties:\n- No cycles\n- V-1 edges",
+    "tags": ["graphs", "mst"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:20:00+05:30",
+    "notes": "Spanning tree concept."
+  },
+  {
+    "id": "2025-12-31-025",
+    "question": "Prim’s algorithm",
+    "answer": "Prim’s algorithm builds MST by expanding one vertex at a time.\n\nTime Complexity:\n- O(V²)\n\nPseudo-code:\n1. Initialize key[] = ∞, key[start]=0\n2. Repeat V times\n3.   Select minimum key vertex\n4.   Update adjacent vertices\n5. End",
+    "tags": ["graphs", "mst", "prims"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:25:00+05:30",
+    "notes": "Greedy MST algorithm."
+  },
+  {
+    "id": "2025-12-31-026",
+    "question": "Kruskal’s algorithm",
+    "answer": "Kruskal’s algorithm builds MST by sorting edges.\n\nTime Complexity:\n- O(E log E)\n\nPseudo-code:\n1. Sort edges by weight\n2. For each edge\n3.   If no cycle, include edge\n4. End",
+    "tags": ["graphs", "mst", "kruskal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:30:00+05:30",
+    "notes": "Edge-based MST algorithm."
+  },
+  {
+    "id": "2025-12-31-027",
+    "question": "Dijkstra’s algorithm",
+    "answer": "Dijkstra’s finds shortest paths from a single source.\n\nTime Complexity:\n- O(V²)\n\nPseudo-code:\n1. Initialize dist[source]=0\n2. Repeat V times\n3.   Pick vertex with minimum distance\n4.   Relax all adjacent edges\n5. End",
+    "tags": ["graphs", "shortest-path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2025-12-31T10:35:00+05:30",
+    "notes": "Greedy shortest path algorithm."
+  },
+  {
+    "id": "2026-01-01-001",
+    "question": "Tree data structure",
+    "answer": "A tree is a hierarchical data structure with nodes connected by edges.\n\nProperties:\n- One root node\n- No cycles\n- Each child has exactly one parent\n\nApplications:\n- Hierarchical data\n- Searching and indexing",
+    "tags": ["trees", "data-structures"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:00:00+05:30",
+    "notes": "Parent tree concept."
+  },
+  {
+    "id": "2026-01-01-002",
+    "question": "Binary Tree",
+    "answer": "A binary tree is a tree where each node has at most two children.\n\nTypes:\n- Full binary tree\n- Complete binary tree\n- Skewed binary tree",
+    "tags": ["trees", "binary-tree"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:05:00+05:30",
+    "notes": "Base tree structure."
+  },
+  {
+    "id": "2026-01-01-003",
+    "question": "Binary Search Tree (BST)",
+    "answer": "A BST maintains ordered data.\n\nProperty:\n- Left subtree < root < right subtree\n\nOperations:\n- Search\n- Insert\n- Delete",
+    "tags": ["trees", "bst"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:10:00+05:30",
+    "notes": "Ordered binary tree."
+  },
+  {
+    "id": "2026-01-01-004",
+    "question": "BST insertion algorithm",
+    "answer": "Inserts a key into BST maintaining order.\n\nTime Complexity:\n- Average: O(log n)\n- Worst: O(n)\n\nPseudo-code:\n1. If root is NULL, create node\n2. If key < root, insert in left subtree\n3. Else insert in right subtree\n4. End",
+    "tags": ["trees", "bst", "algorithms"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:15:00+05:30",
+    "notes": "Core BST operation."
+  },
+  {
+    "id": "2026-01-01-005",
+    "question": "Tree traversals",
+    "answer": "Tree traversal visits nodes in a specific order.\n\nTypes:\n- Inorder\n- Preorder\n- Postorder\n- Level order",
+    "tags": ["trees", "traversal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:20:00+05:30",
+    "notes": "Traversal strategies."
+  },
+  {
+    "id": "2026-01-01-006",
+    "question": "Inorder traversal",
+    "answer": "Inorder traversal visits Left → Root → Right.\n\nPseudo-code:\n1. Traverse left subtree\n2. Visit root\n3. Traverse right subtree\n4. End",
+    "tags": ["trees", "traversal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:25:00+05:30",
+    "notes": "Produces sorted output in BST."
+  },
+  {
+    "id": "2026-01-01-007",
+    "question": "Preorder traversal",
+    "answer": "Preorder traversal visits Root → Left → Right.\n\nPseudo-code:\n1. Visit root\n2. Traverse left subtree\n3. Traverse right subtree\n4. End",
+    "tags": ["trees", "traversal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:30:00+05:30",
+    "notes": "Used in tree copying."
+  },
+  {
+    "id": "2026-01-01-008",
+    "question": "Postorder traversal",
+    "answer": "Postorder traversal visits Left → Right → Root.\n\nPseudo-code:\n1. Traverse left subtree\n2. Traverse right subtree\n3. Visit root\n4. End",
+    "tags": ["trees", "traversal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:35:00+05:30",
+    "notes": "Used in tree deletion."
+  },
+  {
+    "id": "2026-01-01-009",
+    "question": "AVL Tree",
+    "answer": "AVL tree is a self-balancing BST.\n\nProperties:\n- Balance factor ∈ {-1, 0, 1}\n- Guarantees O(log n) operations",
+    "tags": ["trees", "avl"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:40:00+05:30",
+    "notes": "Height-balanced BST."
+  },
+  {
+    "id": "2026-01-01-010",
+    "question": "AVL rotations",
+    "answer": "AVL rotations restore balance after insertion.\n\nTypes:\n- LL rotation\n- RR rotation\n- LR rotation\n- RL rotation",
+    "tags": ["trees", "avl"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:45:00+05:30",
+    "notes": "Balancing operations."
+  },
+  {
+    "id": "2026-01-01-011",
+    "question": "Heap data structure",
+    "answer": "A heap is a complete binary tree with heap property.\n\nTypes:\n- Max heap\n- Min heap",
+    "tags": ["trees", "heap"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T09:50:00+05:30",
+    "notes": "Priority-based tree."
+  },
+  {
+    "id": "2026-01-01-020",
+    "question": "Transaction in DBMS",
+    "answer": "A transaction is a sequence of database operations treated as a single unit.\n\nStates:\n- Active\n- Partially committed\n- Committed\n- Failed\n- Aborted",
+    "tags": ["dbms", "transactions"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:10:00+05:30",
+    "notes": "Parent transaction concept."
+  },
+  {
+    "id": "2026-01-01-021",
+    "question": "ACID properties",
+    "answer": "ACID ensures reliable transaction processing.\n\nProperties:\n- Atomicity\n- Consistency\n- Isolation\n- Durability",
+    "tags": ["dbms", "transactions", "acid"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:15:00+05:30",
+    "notes": "Transaction correctness rules."
+  },
+  {
+    "id": "2026-01-01-022",
+    "question": "Schedule in DBMS",
+    "answer": "A schedule is an order of transaction operations.\n\nTypes:\n- Serial schedule\n- Non-serial schedule",
+    "tags": ["dbms", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:20:00+05:30",
+    "notes": "Execution ordering concept."
+  },
+  {
+    "id": "2026-01-01-023",
+    "question": "Serializability",
+    "answer": "Serializability ensures concurrent schedules produce correct results.\n\nTypes:\n- Conflict serializability\n- View serializability",
+    "tags": ["dbms", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:25:00+05:30",
+    "notes": "Concurrency correctness."
+  },
+  {
+    "id": "2026-01-01-024",
+    "question": "Conflict serializability",
+    "answer": "Schedules are conflict serializable if they can be transformed using non-conflicting swaps.\n\nConflicts:\n- Read-write\n- Write-read\n- Write-write",
+    "tags": ["dbms", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:30:00+05:30",
+    "notes": "Most commonly tested serializability."
+  },
+  {
+    "id": "2026-01-01-025",
+    "question": "Lock-based concurrency control",
+    "answer": "Locks prevent conflicting operations.\n\nTypes:\n- Shared lock (S)\n- Exclusive lock (X)",
+    "tags": ["dbms", "locking"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:35:00+05:30",
+    "notes": "Primary concurrency mechanism."
+  },
+  {
+    "id": "2026-01-01-026",
+    "question": "Two-Phase Locking (2PL)",
+    "answer": "2PL ensures serializability using two phases.\n\nPhases:\n- Growing phase (acquire locks)\n- Shrinking phase (release locks)",
+    "tags": ["dbms", "locking"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:40:00+05:30",
+    "notes": "Guarantees conflict serializability."
+  },
+  {
+    "id": "2026-01-01-027",
+    "question": "Deadlock in DBMS",
+    "answer": "Deadlock occurs when transactions wait indefinitely for locks.\n\nHandling:\n- Prevention\n- Detection\n- Recovery",
+    "tags": ["dbms", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:45:00+05:30",
+    "notes": "Concurrency hazard."
+  },
+  {
+    "id": "2026-01-01-028",
+    "question": "Timestamp-based concurrency control",
+    "answer": "Transactions are ordered using timestamps.\n\nKey points:\n- Avoids deadlocks\n- Ensures serializability\n- May cause rollbacks",
+    "tags": ["dbms", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-01T10:50:00+05:30",
+    "notes": "Non-locking concurrency control."
+  },
+  {
+    "id": "2026-01-02-001",
+    "question": "Computer Network models",
+    "answer": "Network models provide a layered framework to understand, design, and implement communication systems.\n\nBenefits:\n- Standardization\n- Interoperability\n- Simplified troubleshooting\n\nTwo major models:\n- OSI model\n- TCP/IP model",
+    "tags": ["computer-networks", "models"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:00:00+05:30",
+    "notes": "Parent concept for networking models."
+  },
+  {
+    "id": "2026-01-02-002",
+    "question": "History and development of OSI model",
+    "answer": "The OSI (Open Systems Interconnection) model was developed by ISO in the late 1970s.\n\nGoals:\n- Vendor-neutral networking standard\n- Open communication between heterogeneous systems\n\nAlthough not widely implemented directly, OSI became the theoretical foundation for networking education.",
+    "tags": ["osi", "computer-networks", "history"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:05:00+05:30",
+    "notes": "Theoretical reference model."
+  },
+  {
+    "id": "2026-01-02-003",
+    "question": "OSI model layers",
+    "answer": "The OSI model consists of seven layers:\n\n1. Physical\n2. Data Link\n3. Network\n4. Transport\n5. Session\n6. Presentation\n7. Application\n\nEach layer has a well-defined responsibility.",
+    "tags": ["osi", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:10:00+05:30",
+    "notes": "Layer overview."
+  },
+  {
+    "id": "2026-01-02-004",
+    "question": "Physical layer (OSI)",
+    "answer": "The Physical layer handles transmission of raw bits over a physical medium.\n\nFunctions:\n- Voltage levels\n- Data rates\n- Cables and connectors\n\nDevices:\n- Hubs\n- Repeaters",
+    "tags": ["osi", "physical-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:15:00+05:30",
+    "notes": "Lowest OSI layer."
+  },
+  {
+    "id": "2026-01-02-005",
+    "question": "Data Link layer (OSI)",
+    "answer": "The Data Link layer provides node-to-node delivery.\n\nFunctions:\n- Framing\n- Error detection\n- MAC addressing\n\nDevices:\n- Switches\n- Bridges",
+    "tags": ["osi", "data-link-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:20:00+05:30",
+    "notes": "Reliable link-level communication."
+  },
+  {
+    "id": "2026-01-02-006",
+    "question": "Network layer (OSI)",
+    "answer": "The Network layer handles logical addressing and routing.\n\nFunctions:\n- IP addressing\n- Path determination\n- Packet forwarding\n\nDevices:\n- Routers",
+    "tags": ["osi", "network-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:25:00+05:30",
+    "notes": "Routing and internetworking."
+  },
+  {
+    "id": "2026-01-02-007",
+    "question": "Transport layer (OSI)",
+    "answer": "The Transport layer ensures end-to-end communication.\n\nFunctions:\n- Segmentation\n- Flow control\n- Error control\n\nProtocols:\n- TCP\n- UDP",
+    "tags": ["osi", "transport-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:30:00+05:30",
+    "notes": "End-to-end reliability."
+  },
+  {
+    "id": "2026-01-02-008",
+    "question": "Session layer (OSI)",
+    "answer": "The Session layer manages communication sessions.\n\nFunctions:\n- Session establishment\n- Session maintenance\n- Synchronization",
+    "tags": ["osi", "session-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:35:00+05:30",
+    "notes": "Dialog control."
+  },
+  {
+    "id": "2026-01-02-009",
+    "question": "Presentation layer (OSI)",
+    "answer": "The Presentation layer handles data representation.\n\nFunctions:\n- Encryption\n- Compression\n- Data format translation",
+    "tags": ["osi", "presentation-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:40:00+05:30",
+    "notes": "Syntax and semantics."
+  },
+  {
+    "id": "2026-01-02-010",
+    "question": "Application layer (OSI)",
+    "answer": "The Application layer provides network services to users.\n\nExamples:\n- HTTP\n- FTP\n- SMTP\n- DNS",
+    "tags": ["osi", "application-layer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:45:00+05:30",
+    "notes": "User-facing services."
+  },
+  {
+    "id": "2026-01-02-011",
+    "question": "History and development of TCP/IP model",
+    "answer": "The TCP/IP model was developed by DARPA for ARPANET.\n\nGoals:\n- Robustness\n- Fault tolerance\n- Practical implementation\n\nIt became the foundation of the Internet.",
+    "tags": ["tcp-ip", "computer-networks", "history"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:50:00+05:30",
+    "notes": "Internet backbone model."
+  },
+  {
+    "id": "2026-01-02-012",
+    "question": "TCP/IP model layers",
+    "answer": "The TCP/IP model has four layers:\n\n1. Network Interface\n2. Internet\n3. Transport\n4. Application",
+    "tags": ["tcp-ip", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T09:55:00+05:30",
+    "notes": "Practical layered model."
+  },
+  {
+    "id": "2026-01-02-013",
+    "question": "OSI vs TCP/IP layer mapping",
+    "answer": "TCP/IP merges OSI layers for simplicity.\n\nMapping:\n- OSI Physical + Data Link → Network Interface\n- OSI Network → Internet\n- OSI Transport → Transport\n- OSI Session + Presentation + Application → Application",
+    "tags": ["osi", "tcp-ip", "comparison"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T10:00:00+05:30",
+    "notes": "Key exam comparison."
+  },
+  {
+    "id": "2026-01-02-014",
+    "question": "End-to-end principle",
+    "answer": "End-to-end means reliability is handled at the source and destination, not intermediate nodes.\n\nExample:\n- TCP ensures delivery\n- Routers only forward packets\n\nThis improves scalability and robustness.",
+    "tags": ["tcp-ip", "end-to-end"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T10:05:00+05:30",
+    "notes": "Core Internet design idea."
+  },
+  {
+    "id": "2026-01-02-015",
+    "question": "Which layers operate where",
+    "answer": "Layer operation locations:\n\nSource & Destination only:\n- Application\n- Transport\n\nIntermediate devices:\n- Network layer (routers)\n- Data Link & Physical (switches)\n\nEnd-to-end logic resides in upper layers.",
+    "tags": ["computer-networks", "layers"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T10:10:00+05:30",
+    "notes": "Important conceptual clarity."
+  },
+  {
+    "id": "2026-01-02-016",
+    "question": "Complete data packet journey from source to destination",
+    "answer": "1. Application layer creates data\n2. Transport layer segments and adds TCP/UDP headers\n3. Network layer adds IP header\n4. Data Link layer frames data\n5. Physical layer transmits bits\n6. Routers forward based on IP\n7. Destination reverses the process layer by layer\n\nThis process is called encapsulation and decapsulation.",
+    "tags": ["computer-networks", "data-transmission"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T10:15:00+05:30",
+    "notes": "End-to-end packet lifecycle."
+  },
+  {
+    "id": "2026-01-03-001",
+    "question": "Why DNS is needed",
+    "answer": "Computers communicate using IP addresses, but humans prefer readable names.\n\nDNS maps domain names to IP addresses.\n\nExample:\n- google.com → 142.250.195.46\n\nWithout DNS, users would need to remember numeric IPs.",
+    "tags": ["dns", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:00:00+05:30",
+    "notes": "Motivation behind DNS."
+  },
+  {
+    "id": "2026-01-03-002",
+    "question": "DNS as a distributed database",
+    "answer": "DNS is a globally distributed, hierarchical database.\n\nReasons for distribution:\n- Scalability\n- Fault tolerance\n- Performance\n\nNo single server stores all domain mappings.",
+    "tags": ["dns", "architecture"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:05:00+05:30",
+    "notes": "Why DNS is not centralized."
+  },
+  {
+    "id": "2026-01-03-003",
+    "question": "DNS hierarchy",
+    "answer": "DNS follows a tree-like hierarchy.\n\nLevels:\n- Root servers\n- Top-Level Domains (TLDs)\n- Authoritative name servers\n\nExample path:\n. → .com → google.com",
+    "tags": ["dns", "hierarchy"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:10:00+05:30",
+    "notes": "Core DNS structure."
+  },
+  {
+    "id": "2026-01-03-004",
+    "question": "DNS resolution process (step-by-step)",
+    "answer": "1. Browser checks cache\n2. OS checks local cache\n3. Query sent to recursive resolver\n4. Resolver queries root server\n5. Root points to TLD server\n6. TLD points to authoritative server\n7. Authoritative server returns IP\n8. IP cached and returned to browser",
+    "tags": ["dns", "resolution"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:15:00+05:30",
+    "notes": "Full DNS lookup journey."
+  },
+  {
+    "id": "2026-01-03-005",
+    "question": "Recursive vs iterative DNS queries",
+    "answer": "Recursive query:\n- Client expects final answer\n\nIterative query:\n- Server responds with best-known reference\n\nResolvers perform recursion; root/TLD servers perform iteration.",
+    "tags": ["dns", "queries"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:20:00+05:30",
+    "notes": "Important DNS distinction."
+  },
+  {
+    "id": "2026-01-03-006",
+    "question": "DNS record types",
+    "answer": "Common DNS records:\n- A: IPv4 address\n- AAAA: IPv6 address\n- CNAME: Alias\n- MX: Mail exchange\n- NS: Name server",
+    "tags": ["dns", "records"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T09:25:00+05:30",
+    "notes": "Exam-relevant DNS records."
+  },
+  {
+    "id": "2026-01-03-020",
+    "question": "What HTTP really is",
+    "answer": "HTTP is an application-layer protocol used for transferring resources on the web.\n\nKey idea:\n- Client-server model\n- Stateless protocol",
+    "tags": ["http", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T10:00:00+05:30",
+    "notes": "HTTP core definition."
+  },
+  {
+    "id": "2026-01-03-021",
+    "question": "Why HTTP is stateless",
+    "answer": "Each HTTP request is independent.\n\nAdvantages:\n- Scalability\n- Simplicity\n\nState is handled using:\n- Cookies\n- Sessions\n- Tokens",
+    "tags": ["http", "stateless"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T10:05:00+05:30",
+    "notes": "Design decision explanation."
+  },
+  {
+    "id": "2026-01-03-022",
+    "question": "HTTP request structure",
+    "answer": "An HTTP request contains:\n- Request line (method, URL, version)\n- Headers\n- Optional body\n\nExample methods:\nGET, POST, PUT, DELETE",
+    "tags": ["http", "requests"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T10:10:00+05:30",
+    "notes": "Request anatomy."
+  },
+  {
+    "id": "2026-01-03-023",
+    "question": "HTTP response structure",
+    "answer": "An HTTP response contains:\n- Status line\n- Headers\n- Body\n\nStatus codes:\n- 200 OK\n- 404 Not Found\n- 500 Server Error",
+    "tags": ["http", "responses"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T10:15:00+05:30",
+    "notes": "Response anatomy."
+  },
+  {
+    "id": "2026-01-03-024",
+    "question": "Complete HTTP request-response journey",
+    "answer": "1. DNS resolves domain\n2. TCP connection established\n3. HTTP request sent\n4. Server processes request\n5. HTTP response returned\n6. Connection closed or reused",
+    "tags": ["http", "workflow"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T10:20:00+05:30",
+    "notes": "End-to-end HTTP flow."
+  },
+  {
+    "id": "2026-01-03-040",
+    "question": "Why HTTPS is required",
+    "answer": "HTTP sends data in plaintext.\n\nProblems:\n- Eavesdropping\n- Data tampering\n- Identity spoofing\n\nHTTPS solves these using encryption.",
+    "tags": ["https", "security"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T11:00:00+05:30",
+    "notes": "Motivation for HTTPS."
+  },
+  {
+    "id": "2026-01-03-041",
+    "question": "What HTTPS actually is",
+    "answer": "HTTPS = HTTP over TLS.\n\nTLS provides:\n- Encryption\n- Authentication\n- Integrity",
+    "tags": ["https", "tls"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T11:05:00+05:30",
+    "notes": "HTTPS composition."
+  },
+  {
+    "id": "2026-01-03-042",
+    "question": "TLS handshake (simplified)",
+    "answer": "1. ClientHello\n2. ServerHello + certificate\n3. Key exchange\n4. Secure session established\n\nAfter handshake, HTTP data is encrypted.",
+    "tags": ["https", "tls"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T11:10:00+05:30",
+    "notes": "Critical HTTPS mechanism."
+  },
+  {
+    "id": "2026-01-03-043",
+    "question": "Role of digital certificates",
+    "answer": "Certificates verify server identity.\n\nIssued by:\n- Certificate Authorities (CAs)\n\nPrevents:\n- Man-in-the-middle attacks",
+    "tags": ["https", "certificates"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T11:15:00+05:30",
+    "notes": "Authentication mechanism."
+  },
+  {
+    "id": "2026-01-03-044",
+    "question": "Full HTTPS data transmission journey",
+    "answer": "1. DNS resolution\n2. TCP connection\n3. TLS handshake\n4. Encrypted HTTP request\n5. Encrypted HTTP response\n6. Secure session termination",
+    "tags": ["https", "workflow"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T11:20:00+05:30",
+    "notes": "Secure end-to-end communication."
+  },
+  {
+    "id": "2026-01-04-001",
+    "question": "What is an IP address",
+    "answer": "An IP address is a logical identifier assigned to a device on a network.\n\nPurpose:\n- Identify source\n- Identify destination\n- Enable routing across networks\n\nIP works at the Network layer.",
+    "tags": ["ip-addressing", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:00:00+05:30",
+    "notes": "Core definition."
+  },
+  {
+    "id": "2026-01-04-002",
+    "question": "IPv4 address format",
+    "answer": "IPv4 uses 32-bit addresses.\n\nRepresentation:\n- Four 8-bit octets\n- Dotted decimal notation\n\nExample:\n192.168.1.1",
+    "tags": ["ipv4", "ip-addressing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:05:00+05:30",
+    "notes": "Address structure."
+  },
+  {
+    "id": "2026-01-04-003",
+    "question": "Classes of IPv4 addresses",
+    "answer": "IPv4 addresses were originally divided into classes.\n\nClasses:\n- Class A: 1.0.0.0 – 126.0.0.0\n- Class B: 128.0.0.0 – 191.255.0.0\n- Class C: 192.0.0.0 – 223.255.255.0\n\nClassful addressing is now obsolete.",
+    "tags": ["ipv4", "address-classes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:10:00+05:30",
+    "notes": "Historical concept."
+  },
+  {
+    "id": "2026-01-04-010",
+    "question": "Why subnetting is needed",
+    "answer": "Subnetting divides a large network into smaller logical networks.\n\nBenefits:\n- Efficient IP usage\n- Reduced broadcast traffic\n- Better security and management",
+    "tags": ["subnetting", "ip-addressing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:20:00+05:30",
+    "notes": "Motivation for subnetting."
+  },
+  {
+    "id": "2026-01-04-011",
+    "question": "Subnet mask",
+    "answer": "A subnet mask separates network and host portions of an IP address.\n\nExample:\n- IP: 192.168.1.10\n- Mask: 255.255.255.0\n\nNetwork part = 192.168.1\nHost part = 10",
+    "tags": ["subnetting", "subnet-mask"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:25:00+05:30",
+    "notes": "Key subnetting concept."
+  },
+  {
+    "id": "2026-01-04-012",
+    "question": "CIDR notation",
+    "answer": "CIDR uses slash notation to represent subnet size.\n\nExample:\n192.168.1.0/24\n\nMeaning:\n- 24 bits for network\n- 8 bits for hosts",
+    "tags": ["subnetting", "cidr"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:30:00+05:30",
+    "notes": "Modern addressing method."
+  },
+  {
+    "id": "2026-01-04-020",
+    "question": "IPv4 packet header overview",
+    "answer": "The IPv4 header carries control information needed for packet delivery.\n\nMajor fields:\n- Version\n- Header Length\n- TTL\n- Protocol\n- Source IP\n- Destination IP",
+    "tags": ["ipv4", "packet-header"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:40:00+05:30",
+    "notes": "Header purpose."
+  },
+  {
+    "id": "2026-01-04-021",
+    "question": "Why IPv4 header fields exist",
+    "answer": "Each field solves a routing problem:\n\n- TTL: Prevents infinite loops\n- Protocol: Identifies upper-layer protocol\n- Fragmentation fields: Handle MTU differences\n\nRemember headers by purpose, not memorization.",
+    "tags": ["ipv4", "packet-header"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T09:45:00+05:30",
+    "notes": "Exam memory hack."
+  },
+  {
+    "id": "2026-01-04-030",
+    "question": "Why NAT is required",
+    "answer": "IPv4 addresses are limited.\n\nNAT allows:\n- Multiple private devices\n- To share a single public IP\n\nUsed widely in home and enterprise networks.",
+    "tags": ["nat", "ipv4"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:00:00+05:30",
+    "notes": "IPv4 survival mechanism."
+  },
+  {
+    "id": "2026-01-04-031",
+    "question": "How NAT works",
+    "answer": "NAT rewrites IP addresses in packet headers.\n\nProcess:\n1. Private IP sends packet\n2. NAT device replaces source IP\n3. Stores mapping in NAT table\n4. Reverse mapping on response",
+    "tags": ["nat", "packet-processing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:05:00+05:30",
+    "notes": "NAT workflow."
+  },
+  {
+    "id": "2026-01-04-040",
+    "question": "Why IPv6 was introduced",
+    "answer": "IPv6 solves IPv4 exhaustion.\n\nKey improvements:\n- 128-bit address space\n- No NAT required\n- Simplified header\n- Built-in security support",
+    "tags": ["ipv6", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:20:00+05:30",
+    "notes": "IPv6 motivation."
+  },
+  {
+    "id": "2026-01-04-041",
+    "question": "IPv6 header vs IPv4 header",
+    "answer": "IPv6 simplifies routing.\n\nChanges:\n- Fixed header length\n- No checksum\n- No fragmentation by routers\n\nFaster and more scalable.",
+    "tags": ["ipv6", "packet-header"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:25:00+05:30",
+    "notes": "Design improvement explanation."
+  },
+  {
+    "id": "2026-01-04-050",
+    "question": "Why ARP is required",
+    "answer": "IP works at Network layer, but actual delivery uses MAC addresses.\n\nARP maps:\n- IP address → MAC address\n\nUsed inside local networks.",
+    "tags": ["arp", "computer-networks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:40:00+05:30",
+    "notes": "ARP motivation."
+  },
+  {
+    "id": "2026-01-04-051",
+    "question": "How ARP works",
+    "answer": "ARP process:\n1. Broadcast ARP request\n2. Target replies with MAC\n3. Mapping stored in ARP cache",
+    "tags": ["arp", "protocols"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:45:00+05:30",
+    "notes": "ARP workflow."
+  },
+  {
+    "id": "2026-01-04-052",
+    "question": "RARP explained clearly",
+    "answer": "RARP performs the reverse mapping.\n\nMaps:\n- MAC address → IP address\n\nUsed by diskless machines.\n\nNow obsolete and replaced by DHCP.",
+    "tags": ["rarp", "protocols"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T10:50:00+05:30",
+    "notes": "ARP vs RARP confusion resolver."
   }
 ]
