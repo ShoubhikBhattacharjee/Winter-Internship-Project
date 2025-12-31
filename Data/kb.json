@@ -259,7 +259,7 @@
     "id": "2025-12-22-014",
     "question": "Compiler (program translation model)",
     "answer": "A compiler translates source code into machine code before execution.\n\nKey points:\n- One-time translation\n- Produces executable files\n- Faster runtime performance",
-    "tags": ["programming", "execution"],
+    "tags": ["programming", "execution", "compiler", "compilers"],
     "source": {
       "type": "file",
       "path": {
@@ -275,7 +275,7 @@
     "id": "2025-12-22-022",
     "question": "Interpreter (program execution model)",
     "answer": "An interpreter executes code line-by-line at runtime.\n\nKey points:\n- No separate compilation step\n- Slower execution\n- Easier debugging",
-    "tags": ["programming", "execution"],
+    "tags": ["programming", "execution", "interpreter", "interpreters"],
     "source": {
       "type": "file",
       "path": {

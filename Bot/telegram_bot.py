@@ -39,6 +39,7 @@ from telegram.ext import (
 BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
 
 DATA_DIR = Path("./Data")
+NOTES_DIR = Path("./Notes")
 
 TOP_K_RESULTS = 5
 MIN_MERGE_SCORE = 0.55
@@ -58,6 +59,11 @@ CONFIDENCE_MESSAGES = {
         "I’m still learning — you could try rephrasing your question or using more specific terms."
     ),
 }
+
+# Dominance threshold:
+# If the top result is this much better than the second-best,
+# we assume a single clear answer and avoid merging.
+DOMINANCE_MARGIN = 0.12
 
 # ============================================================
 # Load models and data (once at startup)
@@ -140,6 +146,15 @@ def merge_answers(results):
     """
     return "\n\n---\n\n".join(item["answer"].strip() for _, item in results)
 
+
+def is_dominant(best_score: float, second_score: float) -> bool:
+    """
+    Determine whether the top result clearly dominates the second-best result.
+
+    Returns True if the difference exceeds the configured dominance margin.
+    """
+    return (best_score - second_score) >= DOMINANCE_MARGIN
+
 # ============================================================
 # Telegram handlers
 # ============================================================
@@ -158,16 +173,20 @@ async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
     candidates = [(s, KB[i]) for s, i in zip(scores, indices)]
     relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
+    relevant.sort(key=lambda x: x[0], reverse=True)
 
     if not relevant:
         await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
         return
 
     best_score = relevant[0][0]
+    second_score = relevant[1][0] if len(relevant) > 1 else 0.0
     confidence = confidence_from_score(best_score)
 
-    # Single-answer path
-    if len(relevant) == 1:
+    # ------------------------------------------------------------
+    # Dominance-aware single-answer path
+    # ------------------------------------------------------------
+    if len(relevant) == 1 or is_dominant(best_score, second_score):
         item = relevant[0][1]
         intent = infer_intent(query)
 
@@ -187,9 +206,13 @@ async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup([[button]]),
         )
         return
-
+    
     # Multi-answer merge path
-    merged = merge_prefix(confidence) + merge_answers(relevant)
+    merged = (
+        merge_prefix(confidence)
+        + merge_answers(relevant)
+        + f"\n\n_(This answer combines {len(relevant)} related notes.)_"
+    )
     await update.message.reply_text(merged)
 
 
@@ -221,7 +244,8 @@ async def handle_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         _, item_id, ext = data.split(":", 2)
         item = next(it for it in KB if it["id"] == item_id)
 
-        file_path = Path(item["source"]["path"][ext])
+        # file_path = Path("Notes"+item["source"]["path"][ext])
+        file_path = NOTES_DIR / Path(item["source"]["path"][ext].lstrip("/"))
 
         if not file_path.exists():
             await query.answer("File not found on disk.")
