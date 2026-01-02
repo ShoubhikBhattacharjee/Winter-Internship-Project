@@ -1,0 +1,164 @@
+[
+  {
+    "id": "S4_OS_M3_001",
+    "question": "What is concurrency in Operating Systems?",
+    "answer": "Concurrency refers to the execution of multiple processes or threads simultaneously or in overlapping time periods, sharing system resources.",
+    "tags": ["operating-systems", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:00:00+05:30",
+    "notes": "Foundation concept."
+  },
+  {
+    "id": "S4_OS_M3_002",
+    "question": "Problems caused by concurrency",
+    "answer": "Concurrency can lead to race conditions, inconsistent data, deadlocks, and starvation if not properly controlled.",
+    "tags": ["operating-systems", "concurrency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:02:00+05:30",
+    "notes": "Why synchronization is needed."
+  },
+  {
+    "id": "S4_OS_M3_003",
+    "question": "What is a critical section?",
+    "answer": "A critical section is a part of a program where shared resources are accessed and must not be executed by more than one process at the same time.",
+    "tags": ["operating-systems", "critical-section"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:04:00+05:30",
+    "notes": "Key synchronization term."
+  },
+  {
+    "id": "S4_OS_M3_004",
+    "question": "Requirements of a critical section solution",
+    "answer": "A correct critical section solution must satisfy:\n1. Mutual Exclusion\n2. Progress\n3. Bounded Waiting",
+    "tags": ["operating-systems", "critical-section"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:06:00+05:30",
+    "notes": "Frequently asked exam question."
+  },
+  {
+    "id": "S4_OS_M3_005",
+    "question": "Inter-Process Communication (IPC)",
+    "answer": "Inter-Process Communication allows processes to communicate and synchronize their actions. It includes shared memory and message passing mechanisms.",
+    "tags": ["operating-systems", "ipc"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:08:00+05:30",
+    "notes": "Process cooperation."
+  },
+  {
+    "id": "S4_OS_M3_006",
+    "question": "What is mutual exclusion?",
+    "answer": "Mutual exclusion ensures that only one process can execute its critical section at a time, preventing race conditions.",
+    "tags": ["operating-systems", "mutual-exclusion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:10:00+05:30",
+    "notes": "Core synchronization goal."
+  },
+  {
+    "id": "S4_OS_M3_007",
+    "question": "Test-and-Set Lock (TSL)",
+    "answer": "Test-and-Set Lock is a hardware instruction that atomically tests and modifies a lock variable, enabling mutual exclusion.",
+    "tags": ["operating-systems", "hardware-synchronization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:12:00+05:30",
+    "notes": "Hardware-level support."
+  },
+  {
+    "id": "S4_OS_M3_008",
+    "question": "What is a semaphore?",
+    "answer": "A semaphore is a synchronization primitive used to control access to shared resources using two atomic operations: wait (P) and signal (V).",
+    "tags": ["operating-systems", "semaphores"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:14:00+05:30",
+    "notes": "OS-level synchronization."
+  },
+  {
+    "id": "S4_OS_M3_009",
+    "question": "Types of semaphores",
+    "answer": "Semaphores are of two types:\n- Binary semaphore (mutex)\n- Counting semaphore",
+    "tags": ["operating-systems", "semaphores"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:16:00+05:30",
+    "notes": "Classification."
+  },
+  {
+    "id": "S4_OS_M3_010",
+    "question": "Producer–Consumer problem",
+    "answer": "The Producer–Consumer problem involves synchronizing producer processes that generate data and consumer processes that use data, ensuring no buffer overflow or underflow.",
+    "tags": ["operating-systems", "producer-consumer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:18:00+05:30",
+    "notes": "Classical synchronization problem."
+  },
+  {
+    "id": "S4_OS_M3_011",
+    "question": "What is a deadlock?",
+    "answer": "A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process.",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:20:00+05:30",
+    "notes": "Deadlock definition."
+  },
+  {
+    "id": "S4_OS_M3_012",
+    "question": "Necessary conditions for deadlock",
+    "answer": "Deadlock can occur if all four conditions hold simultaneously:\n1. Mutual Exclusion\n2. Hold and Wait\n3. No Preemption\n4. Circular Wait",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:22:00+05:30",
+    "notes": "Very high-weightage question."
+  },
+  {
+    "id": "S4_OS_M3_013",
+    "question": "Resource Allocation Graph (RAG)",
+    "answer": "A Resource Allocation Graph is a directed graph used to represent resource allocation and requests, helping detect deadlocks.",
+    "tags": ["operating-systems", "deadlock"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:24:00+05:30",
+    "notes": "Graph-based deadlock analysis."
+  },
+  {
+    "id": "S4_OS_M3_014",
+    "question": "Deadlock prevention",
+    "answer": "Deadlock prevention ensures that at least one of the four necessary conditions for deadlock never holds, thereby preventing deadlocks.",
+    "tags": ["operating-systems", "deadlock-prevention"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:26:00+05:30",
+    "notes": "Preventive approach."
+  },
+  {
+    "id": "S4_OS_M3_015",
+    "question": "Deadlock avoidance",
+    "answer": "Deadlock avoidance dynamically checks resource allocation requests and ensures the system remains in a safe state.",
+    "tags": ["operating-systems", "deadlock-avoidance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:28:00+05:30",
+    "notes": "Avoidance strategy."
+  },
+  {
+    "id": "S4_OS_M3_016",
+    "question": "Banker’s Algorithm",
+    "answer": "Banker’s Algorithm is a deadlock avoidance algorithm that simulates resource allocation and ensures the system stays in a safe state.",
+    "tags": ["operating-systems", "bankers-algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:30:00+05:30",
+    "notes": "Classic algorithm."
+  },
+  {
+    "id": "S4_OS_M3_017",
+    "question": "Deadlock detection and recovery",
+    "answer": "Deadlock detection allows deadlocks to occur and then detects them using algorithms, followed by recovery through process termination or resource preemption.",
+    "tags": ["operating-systems", "deadlock-recovery"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:32:00+05:30",
+    "notes": "Reactive strategy."
+  },
+  {
+    "id": "S4_OS_M3_018",
+    "question": "Dining Philosophers problem",
+    "answer": "The Dining Philosophers problem illustrates synchronization and deadlock issues where philosophers compete for limited shared resources (forks).",
+    "tags": ["operating-systems", "dining-philosophers"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T12:34:00+05:30",
+    "notes": "Classic deadlock example."
+  }
+]

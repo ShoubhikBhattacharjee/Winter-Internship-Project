@@ -1,0 +1,173 @@
+[
+  {
+    "id": "S4_OS_M4_001",
+    "question": "What is memory management?",
+    "answer": "Memory management is the function of an operating system that controls and coordinates computer memory, assigning portions of memory to processes and managing their use efficiently.",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:00:00+05:30",
+    "notes": "Module foundation."
+  },
+  {
+    "id": "S4_OS_M4_002",
+    "question": "Requirements of memory management",
+    "answer": "Memory management must satisfy:\n- Relocation\n- Protection\n- Sharing\n- Logical organization\n- Physical organization",
+    "tags": ["operating-systems", "memory-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:02:00+05:30",
+    "notes": "Theory-heavy exam topic."
+  },
+  {
+    "id": "S4_OS_M4_003",
+    "question": "Fixed partitioning",
+    "answer": "Fixed partitioning divides memory into fixed-size partitions. Each partition can hold only one process, leading to internal fragmentation.",
+    "tags": ["operating-systems", "memory-partitioning"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:04:00+05:30",
+    "notes": "Early memory management technique."
+  },
+  {
+    "id": "S4_OS_M4_004",
+    "question": "Dynamic partitioning",
+    "answer": "Dynamic partitioning allocates memory according to process requirements at runtime, reducing internal fragmentation but causing external fragmentation.",
+    "tags": ["operating-systems", "memory-partitioning"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:06:00+05:30",
+    "notes": "Flexible allocation."
+  },
+  {
+    "id": "S4_OS_M4_005",
+    "question": "Memory allocation strategies",
+    "answer": "Memory allocation strategies decide how free memory is assigned to processes. Common strategies include First Fit, Best Fit, and Worst Fit.",
+    "tags": ["operating-systems", "memory-allocation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:08:00+05:30",
+    "notes": "Strategy overview."
+  },
+  {
+    "id": "S4_OS_M4_006",
+    "question": "First Fit memory allocation",
+    "answer": "First Fit allocates the first free memory block that is large enough to satisfy the request. It is fast but may lead to external fragmentation.",
+    "tags": ["operating-systems", "first-fit"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:10:00+05:30",
+    "notes": "Fast allocation strategy."
+  },
+  {
+    "id": "S4_OS_M4_007",
+    "question": "Best Fit memory allocation",
+    "answer": "Best Fit allocates the smallest free block that satisfies the request. It minimizes wasted space but increases fragmentation.",
+    "tags": ["operating-systems", "best-fit"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:12:00+05:30",
+    "notes": "Space-efficient but slow."
+  },
+  {
+    "id": "S4_OS_M4_008",
+    "question": "Worst Fit memory allocation",
+    "answer": "Worst Fit allocates the largest available block, leaving larger remaining free blocks and reducing fragmentation in some cases.",
+    "tags": ["operating-systems", "worst-fit"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:14:00+05:30",
+    "notes": "Opposite of Best Fit."
+  },
+  {
+    "id": "S4_OS_M4_009",
+    "question": "Paging",
+    "answer": "Paging divides physical memory into fixed-size frames and logical memory into pages, eliminating external fragmentation.",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:16:00+05:30",
+    "notes": "Key memory technique."
+  },
+  {
+    "id": "S4_OS_M4_010",
+    "question": "Page table",
+    "answer": "A page table maps logical page numbers to physical frame numbers, enabling address translation in paging systems.",
+    "tags": ["operating-systems", "paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:18:00+05:30",
+    "notes": "Address mapping structure."
+  },
+  {
+    "id": "S4_OS_M4_011",
+    "question": "Translation Lookaside Buffer (TLB)",
+    "answer": "TLB is a small, fast cache that stores recent page table entries, reducing memory access time during address translation.",
+    "tags": ["operating-systems", "tlb"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:20:00+05:30",
+    "notes": "Performance optimization."
+  },
+  {
+    "id": "S4_OS_M4_012",
+    "question": "Segmentation",
+    "answer": "Segmentation divides memory into variable-sized logical segments such as code, data, and stack, supporting logical program structure.",
+    "tags": ["operating-systems", "segmentation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:22:00+05:30",
+    "notes": "Logical memory organization."
+  },
+  {
+    "id": "S4_OS_M4_013",
+    "question": "Virtual memory",
+    "answer": "Virtual memory allows execution of processes that may not be completely in physical memory by using disk storage as an extension of RAM.",
+    "tags": ["operating-systems", "virtual-memory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:24:00+05:30",
+    "notes": "Major OS concept."
+  },
+  {
+    "id": "S4_OS_M4_014",
+    "question": "Demand paging",
+    "answer": "Demand paging loads pages into memory only when they are required, reducing memory usage and startup time.",
+    "tags": ["operating-systems", "demand-paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:26:00+05:30",
+    "notes": "Lazy loading strategy."
+  },
+  {
+    "id": "S4_OS_M4_015",
+    "question": "Page replacement algorithms",
+    "answer": "Page replacement algorithms decide which page to remove from memory when a page fault occurs. Common algorithms include FIFO, Optimal, and LRU.",
+    "tags": ["operating-systems", "page-replacement"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:28:00+05:30",
+    "notes": "Replacement strategies."
+  },
+  {
+    "id": "S4_OS_M4_016",
+    "question": "FIFO page replacement",
+    "answer": "FIFO replaces the oldest page in memory. It is simple but may suffer from Belady’s anomaly.",
+    "tags": ["operating-systems", "fifo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:30:00+05:30",
+    "notes": "Basic algorithm."
+  },
+  {
+    "id": "S4_OS_M4_017",
+    "question": "Optimal page replacement",
+    "answer": "Optimal page replacement replaces the page that will not be used for the longest future time. It provides the best performance but is not implementable.",
+    "tags": ["operating-systems", "optimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:32:00+05:30",
+    "notes": "Benchmark algorithm."
+  },
+  {
+    "id": "S4_OS_M4_018",
+    "question": "Least Recently Used (LRU) page replacement",
+    "answer": "LRU replaces the page that has not been used for the longest past time, approximating optimal behavior.",
+    "tags": ["operating-systems", "lru"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:34:00+05:30",
+    "notes": "Practical algorithm."
+  },
+  {
+    "id": "S4_OS_M4_019",
+    "question": "What is thrashing?",
+    "answer": "Thrashing occurs when the system spends more time swapping pages in and out of memory than executing processes, severely degrading performance.",
+    "tags": ["operating-systems", "thrashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T13:36:00+05:30",
+    "notes": "Performance collapse scenario."
+  }
+]

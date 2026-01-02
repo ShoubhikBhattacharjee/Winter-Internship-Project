@@ -1,0 +1,119 @@
+[
+  {
+    "id": "S4_AOA_M6_001",
+    "question": "What is the String Matching problem?",
+    "answer": "The String Matching problem involves finding all occurrences of a pattern string P within a larger text string T.\n\nThe objective is to efficiently determine where the pattern appears in the text.",
+    "tags": ["analysis-of-algorithms", "string-matching"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:00:00+05:30",
+    "notes": "Module introduction."
+  },
+  {
+    "id": "S4_AOA_M6_002",
+    "question": "Naive String Matching algorithm",
+    "answer": "The Naive String Matching algorithm checks for the pattern at every possible position in the text.\n\nAt each position, characters are compared one by one until a mismatch occurs or the pattern matches completely.",
+    "tags": ["analysis-of-algorithms", "string-matching", "naive-algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:02:00+05:30",
+    "notes": "Brute-force approach."
+  },
+  {
+    "id": "S4_AOA_M6_003",
+    "question": "Time complexity of Naive String Matching",
+    "answer": "Worst-case time complexity of the Naive String Matching algorithm is O((n−m+1)·m), where n is the length of text and m is the length of the pattern.\n\nThis occurs when many partial matches exist.",
+    "tags": ["analysis-of-algorithms", "string-matching", "naive-algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:04:00+05:30",
+    "notes": "Performance limitation."
+  },
+  {
+    "id": "S4_AOA_M6_004",
+    "question": "Rabin–Karp algorithm",
+    "answer": "The Rabin–Karp algorithm improves string matching by using hashing.\n\nIt compares hash values of the pattern and text substrings instead of direct character comparison.",
+    "tags": ["analysis-of-algorithms", "string-matching", "rabin-karp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:06:00+05:30",
+    "notes": "Hash-based matching."
+  },
+  {
+    "id": "S4_AOA_M6_005",
+    "question": "Working principle of Rabin–Karp algorithm",
+    "answer": "Rabin–Karp computes the hash of the pattern and rolling hashes of text substrings.\n\nIf hash values match, a character-by-character comparison is done to confirm the match.\n\nRolling hash allows efficient recomputation of substring hashes.",
+    "tags": ["analysis-of-algorithms", "string-matching", "rabin-karp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:08:00+05:30",
+    "notes": "Core idea explanation."
+  },
+  {
+    "id": "S4_AOA_M6_006",
+    "question": "Hash collision in Rabin–Karp algorithm",
+    "answer": "A hash collision occurs when two different strings produce the same hash value.\n\nRabin–Karp handles collisions by performing explicit character comparisons after hash matches.",
+    "tags": ["analysis-of-algorithms", "string-matching", "rabin-karp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:10:00+05:30",
+    "notes": "Important limitation."
+  },
+  {
+    "id": "S4_AOA_M6_007",
+    "question": "Time complexity of Rabin–Karp algorithm",
+    "answer": "Average-case time complexity of Rabin–Karp is O(n + m).\n\nWorst-case time complexity is O(nm) due to excessive hash collisions.",
+    "tags": ["analysis-of-algorithms", "string-matching", "rabin-karp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:12:00+05:30",
+    "notes": "Depends on hash quality."
+  },
+  {
+    "id": "S4_AOA_M6_008",
+    "question": "Knuth–Morris–Pratt (KMP) algorithm",
+    "answer": "The Knuth–Morris–Pratt algorithm improves string matching by avoiding redundant comparisons.\n\nIt preprocesses the pattern to determine how much to shift after a mismatch.",
+    "tags": ["analysis-of-algorithms", "string-matching", "kmp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:14:00+05:30",
+    "notes": "Linear-time algorithm."
+  },
+  {
+    "id": "S4_AOA_M6_009",
+    "question": "Longest Prefix Suffix (LPS) array in KMP algorithm",
+    "answer": "The LPS array stores the length of the longest proper prefix which is also a suffix for each prefix of the pattern.\n\nIt helps decide how far the pattern should shift after a mismatch.",
+    "tags": ["analysis-of-algorithms", "string-matching", "kmp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:16:00+05:30",
+    "notes": "Most critical KMP concept."
+  },
+  {
+    "id": "S4_AOA_M6_010",
+    "question": "Construction of LPS array in KMP algorithm",
+    "answer": "The LPS array is constructed by comparing the pattern with itself.\n\nIt ensures that no character in the text is compared more than once during matching.",
+    "tags": ["analysis-of-algorithms", "string-matching", "kmp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:18:00+05:30",
+    "notes": "Preprocessing step."
+  },
+  {
+    "id": "S4_AOA_M6_011",
+    "question": "Why KMP algorithm is efficient",
+    "answer": "KMP avoids rechecking characters in the text by using information from previous matches.\n\nThis guarantees linear time complexity regardless of the input.",
+    "tags": ["analysis-of-algorithms", "string-matching", "kmp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:20:00+05:30",
+    "notes": "Key improvement over naive."
+  },
+  {
+    "id": "S4_AOA_M6_012",
+    "question": "Time complexity of KMP algorithm",
+    "answer": "The time complexity of the KMP algorithm is O(n + m), where n is the length of the text and m is the length of the pattern.\n\nThis holds for all cases.",
+    "tags": ["analysis-of-algorithms", "string-matching", "kmp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:22:00+05:30",
+    "notes": "Worst-case optimal."
+  },
+  {
+    "id": "S4_AOA_M6_013",
+    "question": "Comparison of Naive, Rabin–Karp, and KMP algorithms",
+    "answer": "Naive algorithm is simple but inefficient.\n\nRabin–Karp improves performance using hashing but suffers from collisions.\n\nKMP guarantees linear time by preprocessing the pattern.\n\nKMP is the most reliable for worst-case performance.",
+    "tags": ["analysis-of-algorithms", "string-matching", "comparison"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T14:24:00+05:30",
+    "notes": "Summary comparison."
+  }
+]

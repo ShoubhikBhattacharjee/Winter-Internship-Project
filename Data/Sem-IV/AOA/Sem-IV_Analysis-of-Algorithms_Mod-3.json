@@ -1,0 +1,155 @@
+[
+  {
+    "id": "S4_AOA_M3_001",
+    "question": "What is the Greedy method in algorithm design?",
+    "answer": "The Greedy method is an algorithmic paradigm that builds a solution step by step by always choosing the locally optimal choice at each stage.\n\nOnce a choice is made, it is never reconsidered.\n\nGreedy algorithms are efficient but do not always guarantee optimal solutions for all problems.",
+    "tags": ["analysis-of-algorithms", "greedy-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:00:00+05:30",
+    "notes": "Definition and core idea."
+  },
+  {
+    "id": "S4_AOA_M3_002",
+    "question": "General steps of a Greedy algorithm",
+    "answer": "A Greedy algorithm generally follows these steps:\n1. Define the objective function\n2. Identify the greedy choice\n3. Make the locally optimal choice\n4. Reduce the problem size\n5. Repeat until a solution is formed",
+    "tags": ["analysis-of-algorithms", "greedy-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:02:00+05:30",
+    "notes": "Algorithmic structure."
+  },
+  {
+    "id": "S4_AOA_M3_003",
+    "question": "Greedy choice property",
+    "answer": "A problem has the greedy choice property if a globally optimal solution can be obtained by making a locally optimal choice.\n\nThis property ensures that early greedy decisions do not prevent reaching an optimal solution.",
+    "tags": ["analysis-of-algorithms", "greedy-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:04:00+05:30",
+    "notes": "Key correctness condition."
+  },
+  {
+    "id": "S4_AOA_M3_004",
+    "question": "Optimal substructure in Greedy algorithms",
+    "answer": "Optimal substructure means that an optimal solution to a problem contains optimal solutions to its subproblems.\n\nThis property is shared by both Greedy and Dynamic Programming approaches.",
+    "tags": ["analysis-of-algorithms", "greedy-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:06:00+05:30",
+    "notes": "Used to justify correctness."
+  },
+  {
+    "id": "S4_AOA_M3_005",
+    "question": "Why Greedy algorithms may fail for some problems",
+    "answer": "Greedy algorithms may fail when local optimal choices do not lead to a global optimum.\n\nIn such cases, early decisions restrict future options.\n\nExample: 0/1 Knapsack problem.",
+    "tags": ["analysis-of-algorithms", "greedy-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:08:00+05:30",
+    "notes": "Important limitation."
+  },
+  {
+    "id": "S4_AOA_M3_006",
+    "question": "Dijkstra’s algorithm",
+    "answer": "Dijkstra’s algorithm finds the shortest path from a single source to all other vertices in a weighted graph with non-negative edge weights.\n\nIt repeatedly selects the vertex with the minimum tentative distance.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "shortest-path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:10:00+05:30",
+    "notes": "Single source shortest path."
+  },
+  {
+    "id": "S4_AOA_M3_007",
+    "question": "Working principle of Dijkstra’s algorithm",
+    "answer": "Dijkstra’s algorithm maintains a set of visited vertices.\n\nAt each step:\n- Choose the unvisited vertex with the smallest distance\n- Relax all adjacent edges\n\nThe algorithm terminates when all vertices are visited.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "dijkstra"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:12:00+05:30",
+    "notes": "Step-by-step logic."
+  },
+  {
+    "id": "S4_AOA_M3_008",
+    "question": "Limitations of Dijkstra’s algorithm",
+    "answer": "Dijkstra’s algorithm does not work correctly if the graph contains negative edge weights.\n\nFor such graphs, Bellman-Ford algorithm is used.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "dijkstra"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:14:00+05:30",
+    "notes": "Common exam question."
+  },
+  {
+    "id": "S4_AOA_M3_009",
+    "question": "Fractional Knapsack problem",
+    "answer": "In the Fractional Knapsack problem, items can be broken into smaller parts.\n\nThe objective is to maximize total value while staying within weight capacity.\n\nItems are selected based on highest value-to-weight ratio.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:16:00+05:30",
+    "notes": "Classic greedy problem."
+  },
+  {
+    "id": "S4_AOA_M3_010",
+    "question": "Why Fractional Knapsack can be solved using Greedy method",
+    "answer": "Fractional Knapsack satisfies both:\n- Greedy choice property\n- Optimal substructure\n\nChoosing the item with the highest value-to-weight ratio always leads to an optimal solution.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:18:00+05:30",
+    "notes": "Correctness reasoning."
+  },
+  {
+    "id": "S4_AOA_M3_011",
+    "question": "Difference between Fractional Knapsack and 0/1 Knapsack",
+    "answer": "Fractional Knapsack allows breaking items into fractions and is solvable using Greedy method.\n\n0/1 Knapsack does not allow item splitting and requires Dynamic Programming for optimal solution.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:20:00+05:30",
+    "notes": "Very frequently asked."
+  },
+  {
+    "id": "S4_AOA_M3_012",
+    "question": "Job Sequencing with Deadlines problem",
+    "answer": "Job Sequencing with Deadlines aims to schedule jobs to maximize profit.\n\nEach job has a deadline and profit.\n\nThe greedy strategy selects jobs in decreasing order of profit.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "job-sequencing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:22:00+05:30",
+    "notes": "Scheduling problem."
+  },
+  {
+    "id": "S4_AOA_M3_013",
+    "question": "Greedy solution for Job Sequencing with Deadlines",
+    "answer": "Jobs are sorted in descending order of profit.\n\nEach job is scheduled at the latest available time slot before its deadline.\n\nThis maximizes total profit.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "job-sequencing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:24:00+05:30",
+    "notes": "Algorithm logic."
+  },
+  {
+    "id": "S4_AOA_M3_014",
+    "question": "Minimum Cost Spanning Tree (MCST)",
+    "answer": "A Minimum Cost Spanning Tree is a subset of edges that connects all vertices with minimum total weight and no cycles.\n\nGreedy algorithms are commonly used to find MCST.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "spanning-tree"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:26:00+05:30",
+    "notes": "Graph optimization problem."
+  },
+  {
+    "id": "S4_AOA_M3_015",
+    "question": "Kruskal’s algorithm",
+    "answer": "Kruskal’s algorithm builds the Minimum Cost Spanning Tree by selecting edges in increasing order of weight.\n\nIt avoids cycles using union-find operations.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "kruskal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:28:00+05:30",
+    "notes": "Edge-based greedy algorithm."
+  },
+  {
+    "id": "S4_AOA_M3_016",
+    "question": "Prim’s algorithm",
+    "answer": "Prim’s algorithm builds the Minimum Cost Spanning Tree by starting from a vertex and expanding the tree by adding the smallest edge connecting the tree to a new vertex.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "prim"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:30:00+05:30",
+    "notes": "Vertex-based greedy algorithm."
+  },
+  {
+    "id": "S4_AOA_M3_017",
+    "question": "Difference between Kruskal’s and Prim’s algorithms",
+    "answer": "Kruskal’s algorithm selects edges globally and works well for sparse graphs.\n\nPrim’s algorithm grows a single tree and is efficient for dense graphs.\n\nBoth produce Minimum Cost Spanning Trees.",
+    "tags": ["analysis-of-algorithms", "greedy-method", "spanning-tree"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T11:32:00+05:30",
+    "notes": "Comparison question."
+  }
+]

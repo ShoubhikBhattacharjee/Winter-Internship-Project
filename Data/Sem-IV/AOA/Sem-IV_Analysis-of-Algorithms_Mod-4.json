@@ -1,0 +1,146 @@
+[
+  {
+    "id": "S4_AOA_M4_001",
+    "question": "What is Dynamic Programming?",
+    "answer": "Dynamic Programming (DP) is an algorithm design technique used to solve problems by breaking them into overlapping subproblems and solving each subproblem only once.\n\nThe solutions of subproblems are stored and reused to avoid redundant computation.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:00:00+05:30",
+    "notes": "Core definition."
+  },
+  {
+    "id": "S4_AOA_M4_002",
+    "question": "Characteristics of Dynamic Programming problems",
+    "answer": "Dynamic Programming problems exhibit two key properties:\n1. Optimal substructure – optimal solution contains optimal solutions to subproblems\n2. Overlapping subproblems – same subproblems are solved repeatedly\n\nBoth properties must be present for DP to be applicable.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:02:00+05:30",
+    "notes": "DP applicability conditions."
+  },
+  {
+    "id": "S4_AOA_M4_003",
+    "question": "Difference between Divide and Conquer and Dynamic Programming",
+    "answer": "Divide and Conquer solves independent subproblems without storing results.\n\nDynamic Programming solves overlapping subproblems and stores intermediate results to improve efficiency.\n\nDP is more efficient when subproblems repeat.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "comparison"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:04:00+05:30",
+    "notes": "Very common theory question."
+  },
+  {
+    "id": "S4_AOA_M4_004",
+    "question": "Approaches to implement Dynamic Programming",
+    "answer": "Dynamic Programming can be implemented using:\n1. Top-down approach (Memoization)\n2. Bottom-up approach (Tabulation)\n\nBoth approaches ensure each subproblem is solved once.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:06:00+05:30",
+    "notes": "Implementation styles."
+  },
+  {
+    "id": "S4_AOA_M4_005",
+    "question": "Multistage Graph problem",
+    "answer": "A multistage graph is a directed graph divided into stages where edges go only from one stage to the next.\n\nThe objective is to find the minimum cost path from the source to the destination using Dynamic Programming.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "graphs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:08:00+05:30",
+    "notes": "Classic DP graph problem."
+  },
+  {
+    "id": "S4_AOA_M4_006",
+    "question": "Dynamic Programming solution for Multistage Graph",
+    "answer": "The solution is obtained by working backward from the destination stage.\n\nFor each node, the minimum cost to reach the destination is calculated using:\nCost(u) = min(weight(u,v) + Cost(v))",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "graphs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:10:00+05:30",
+    "notes": "Backward DP formulation."
+  },
+  {
+    "id": "S4_AOA_M4_007",
+    "question": "Bellman–Ford algorithm",
+    "answer": "Bellman–Ford algorithm finds the shortest paths from a single source to all vertices, even when the graph contains negative edge weights.\n\nIt uses Dynamic Programming to relax all edges repeatedly.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "shortest-path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:12:00+05:30",
+    "notes": "Handles negative weights."
+  },
+  {
+    "id": "S4_AOA_M4_008",
+    "question": "Working principle of Bellman–Ford algorithm",
+    "answer": "Bellman–Ford relaxes all edges |V|−1 times.\n\nEach relaxation updates the shortest distance estimate.\n\nAn additional iteration checks for negative weight cycles.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "bellman-ford"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:14:00+05:30",
+    "notes": "Algorithm steps."
+  },
+  {
+    "id": "S4_AOA_M4_009",
+    "question": "Floyd–Warshall algorithm",
+    "answer": "Floyd–Warshall algorithm finds shortest paths between all pairs of vertices.\n\nIt uses Dynamic Programming by progressively allowing intermediate vertices in paths.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "all-pairs-shortest-path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:16:00+05:30",
+    "notes": "All-pairs shortest path."
+  },
+  {
+    "id": "S4_AOA_M4_010",
+    "question": "DP formulation of Floyd–Warshall algorithm",
+    "answer": "Let dist[i][j][k] represent the shortest path from i to j using vertices {1…k} as intermediates.\n\nThe recurrence is:\ndist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "floyd-warshall"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:18:00+05:30",
+    "notes": "Core DP recurrence."
+  },
+  {
+    "id": "S4_AOA_M4_011",
+    "question": "Assembly Line Scheduling problem",
+    "answer": "Assembly Line Scheduling aims to minimize total production time when a product passes through two assembly lines.\n\nDynamic Programming is used to decide optimal line switches at each station.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:20:00+05:30",
+    "notes": "Industrial DP problem."
+  },
+  {
+    "id": "S4_AOA_M4_012",
+    "question": "0/1 Knapsack problem",
+    "answer": "In the 0/1 Knapsack problem, items cannot be divided.\n\nThe goal is to maximize total value without exceeding capacity.\n\nDynamic Programming is used to explore all feasible combinations efficiently.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:22:00+05:30",
+    "notes": "DP vs Greedy contrast."
+  },
+  {
+    "id": "S4_AOA_M4_013",
+    "question": "DP formulation of 0/1 Knapsack",
+    "answer": "Let dp[i][w] be the maximum value using first i items and capacity w.\n\nRecurrence:\ndp[i][w] = max(dp[i−1][w], value[i] + dp[i−1][w−weight[i]])",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "knapsack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:24:00+05:30",
+    "notes": "Standard DP table."
+  },
+  {
+    "id": "S4_AOA_M4_014",
+    "question": "Travelling Salesperson Problem using Dynamic Programming",
+    "answer": "The Dynamic Programming solution to TSP uses subsets of cities.\n\nIt computes minimum cost tours by progressively increasing the number of visited cities.\n\nThis approach reduces time complexity compared to brute force.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "tsp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:26:00+05:30",
+    "notes": "Exponential but optimized."
+  },
+  {
+    "id": "S4_AOA_M4_015",
+    "question": "Longest Common Subsequence (LCS) problem",
+    "answer": "The Longest Common Subsequence problem finds the longest subsequence common to two sequences.\n\nDynamic Programming is used to build solutions for increasing prefix lengths.",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "lcs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:28:00+05:30",
+    "notes": "String-based DP problem."
+  },
+  {
+    "id": "S4_AOA_M4_016",
+    "question": "DP formulation of Longest Common Subsequence",
+    "answer": "Let dp[i][j] be the LCS length of prefixes X[1..i] and Y[1..j].\n\nIf X[i] == Y[j]: dp[i][j] = 1 + dp[i−1][j−1]\nElse: dp[i][j] = max(dp[i−1][j], dp[i][j−1])",
+    "tags": ["analysis-of-algorithms", "dynamic-programming", "lcs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T12:30:00+05:30",
+    "notes": "Classic DP recurrence."
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "S4_AOA_M5_001",
+    "question": "What is Backtracking?",
+    "answer": "Backtracking is an algorithmic technique that incrementally builds a solution and abandons a partial solution as soon as it determines that the solution cannot be completed.\n\nIt systematically explores all possible solutions using a state space tree.",
+    "tags": ["analysis-of-algorithms", "backtracking"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Core definition."
+  },
+  {
+    "id": "S4_AOA_M5_002",
+    "question": "State space tree in Backtracking",
+    "answer": "A state space tree represents all possible states of a problem.\n\nEach node represents a partial solution.\n\nBacktracking explores this tree in a depth-first manner, pruning invalid branches early.",
+    "tags": ["analysis-of-algorithms", "backtracking"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:02:00+05:30",
+    "notes": "Visualization concept."
+  },
+  {
+    "id": "S4_AOA_M5_003",
+    "question": "General steps of a Backtracking algorithm",
+    "answer": "A Backtracking algorithm follows these steps:\n1. Choose a candidate\n2. Check if it satisfies constraints\n3. Extend the solution recursively\n4. Backtrack if constraints are violated",
+    "tags": ["analysis-of-algorithms", "backtracking"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:04:00+05:30",
+    "notes": "Algorithm structure."
+  },
+  {
+    "id": "S4_AOA_M5_004",
+    "question": "N-Queen problem",
+    "answer": "The N-Queen problem involves placing N queens on an N×N chessboard such that no two queens attack each other.\n\nBacktracking is used to place queens row by row while checking constraints.",
+    "tags": ["analysis-of-algorithms", "backtracking", "n-queen"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:06:00+05:30",
+    "notes": "Classic backtracking problem."
+  },
+  {
+    "id": "S4_AOA_M5_005",
+    "question": "Backtracking approach for N-Queen problem",
+    "answer": "Queens are placed one row at a time.\n\nAt each step, the algorithm checks for column and diagonal conflicts.\n\nIf no safe position exists, it backtracks to the previous row.",
+    "tags": ["analysis-of-algorithms", "backtracking", "n-queen"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:08:00+05:30",
+    "notes": "Step-by-step logic."
+  },
+  {
+    "id": "S4_AOA_M5_006",
+    "question": "Sum of Subsets problem",
+    "answer": "The Sum of Subsets problem finds all subsets of a given set whose elements sum to a specified value.\n\nBacktracking is used to include or exclude elements while pruning invalid partial sums.",
+    "tags": ["analysis-of-algorithms", "backtracking", "subset-sum"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:10:00+05:30",
+    "notes": "Subset exploration problem."
+  },
+  {
+    "id": "S4_AOA_M5_007",
+    "question": "Graph Coloring problem",
+    "answer": "Graph Coloring assigns colors to vertices such that no two adjacent vertices share the same color.\n\nBacktracking tries different color assignments while respecting adjacency constraints.",
+    "tags": ["analysis-of-algorithms", "backtracking", "graph-coloring"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:12:00+05:30",
+    "notes": "Constraint satisfaction problem."
+  },
+  {
+    "id": "S4_AOA_M5_008",
+    "question": "What is Branch and Bound?",
+    "answer": "Branch and Bound is an algorithm design technique used to solve optimization problems.\n\nIt explores the state space tree while using bounds to eliminate branches that cannot produce better solutions.",
+    "tags": ["analysis-of-algorithms", "branch-and-bound"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:14:00+05:30",
+    "notes": "Optimization-focused technique."
+  },
+  {
+    "id": "S4_AOA_M5_009",
+    "question": "Difference between Backtracking and Branch and Bound",
+    "answer": "Backtracking is used to find feasible solutions and prunes branches based on constraints.\n\nBranch and Bound is used to find optimal solutions and prunes branches using cost bounds.\n\nBranch and Bound is more suitable for optimization problems.",
+    "tags": ["analysis-of-algorithms", "backtracking", "branch-and-bound"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:16:00+05:30",
+    "notes": "Very common comparison question."
+  },
+  {
+    "id": "S4_AOA_M5_010",
+    "question": "Bounding function in Branch and Bound",
+    "answer": "A bounding function estimates the best possible solution from a given node.\n\nIf the bound is worse than the current best solution, the node is pruned.",
+    "tags": ["analysis-of-algorithms", "branch-and-bound"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:18:00+05:30",
+    "notes": "Key pruning mechanism."
+  },
+  {
+    "id": "S4_AOA_M5_011",
+    "question": "Travelling Salesperson Problem using Branch and Bound",
+    "answer": "Branch and Bound solves TSP by generating partial tours and computing lower bounds for each.\n\nTours with higher bounds than the current best are discarded early.",
+    "tags": ["analysis-of-algorithms", "branch-and-bound", "tsp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:20:00+05:30",
+    "notes": "Optimization example."
+  },
+  {
+    "id": "S4_AOA_M5_012",
+    "question": "15-Puzzle problem",
+    "answer": "The 15-Puzzle problem involves rearranging tiles to reach a goal configuration.\n\nBranch and Bound is used to minimize the number of moves by pruning inefficient paths.",
+    "tags": ["analysis-of-algorithms", "branch-and-bound", "15-puzzle"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:22:00+05:30",
+    "notes": "State-space optimization problem."
+  }
+]

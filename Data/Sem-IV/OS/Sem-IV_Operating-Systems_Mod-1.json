@@ -1,0 +1,119 @@
+[
+  {
+    "id": "S4_OS_M1_001",
+    "question": "What is an Operating System?",
+    "answer": "An Operating System (OS) is system software that acts as an intermediary between users and computer hardware. It manages hardware resources and provides services for computer programs.",
+    "tags": ["operating-systems", "os-introduction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:00:00+05:30",
+    "notes": "Fundamental definition."
+  },
+  {
+    "id": "S4_OS_M1_002",
+    "question": "Objectives of an Operating System",
+    "answer": "The main objectives of an Operating System are:\n1. Convenience – make the system easy to use\n2. Efficiency – use hardware resources effectively\n3. Ability to evolve – support system upgrades and new features",
+    "tags": ["operating-systems", "os-objectives"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:02:00+05:30",
+    "notes": "Exam-friendly points."
+  },
+  {
+    "id": "S4_OS_M1_003",
+    "question": "Functions of an Operating System",
+    "answer": "An Operating System performs the following functions:\n- Process management\n- Memory management\n- File system management\n- I/O device management\n- Security and protection\n- User interface management",
+    "tags": ["operating-systems", "os-functions"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:04:00+05:30",
+    "notes": "Core OS responsibilities."
+  },
+  {
+    "id": "S4_OS_M1_004",
+    "question": "Evolution of Operating Systems",
+    "answer": "Operating Systems evolved through the following stages:\n1. Batch Operating Systems\n2. Multiprogramming Operating Systems\n3. Time-sharing Operating Systems\n4. Real-time Operating Systems\n5. Distributed and Network Operating Systems",
+    "tags": ["operating-systems", "os-evolution"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:06:00+05:30",
+    "notes": "Historical development."
+  },
+  {
+    "id": "S4_OS_M1_005",
+    "question": "Operating System structure",
+    "answer": "Operating System structure defines how OS components are organized and interact. Common structures include Monolithic, Layered, and Microkernel architectures.",
+    "tags": ["operating-systems", "os-structure"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:08:00+05:30",
+    "notes": "Intro to architectures."
+  },
+  {
+    "id": "S4_OS_M1_006",
+    "question": "Monolithic Operating System structure",
+    "answer": "In a Monolithic OS, all OS services run in kernel space as a single large program. This provides high performance but low modularity and poor fault isolation.",
+    "tags": ["operating-systems", "monolithic-kernel"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:10:00+05:30",
+    "notes": "Classic kernel design."
+  },
+  {
+    "id": "S4_OS_M1_007",
+    "question": "Layered Operating System structure",
+    "answer": "In a Layered OS, the system is divided into layers, each built upon the lower layer. Each layer provides services to the layer above, improving modularity and maintainability.",
+    "tags": ["operating-systems", "layered-os"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:12:00+05:30",
+    "notes": "Structured OS design."
+  },
+  {
+    "id": "S4_OS_M1_008",
+    "question": "Microkernel Operating System structure",
+    "answer": "A Microkernel OS keeps only essential services like process management and communication in kernel space, while other services run in user space, improving reliability and security.",
+    "tags": ["operating-systems", "microkernel"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:14:00+05:30",
+    "notes": "Modern OS architecture."
+  },
+  {
+    "id": "S4_OS_M1_009",
+    "question": "Linux Kernel",
+    "answer": "The Linux Kernel is the core of the Linux operating system. It manages CPU, memory, devices, and system calls while providing a monolithic yet modular architecture.",
+    "tags": ["operating-systems", "linux-kernel"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:16:00+05:30",
+    "notes": "Linux-specific syllabus item."
+  },
+  {
+    "id": "S4_OS_M1_010",
+    "question": "What is a Shell?",
+    "answer": "A Shell is a command-line interpreter that provides an interface between the user and the operating system. It interprets user commands and executes them.",
+    "tags": ["operating-systems", "shell"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:18:00+05:30",
+    "notes": "User interface component."
+  },
+  {
+    "id": "S4_OS_M1_011",
+    "question": "Shell programming",
+    "answer": "Shell programming involves writing scripts using shell commands to automate tasks, control program execution, and manage system operations.",
+    "tags": ["operating-systems", "shell-programming"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:20:00+05:30",
+    "notes": "Automation concept."
+  },
+  {
+    "id": "S4_OS_M1_012",
+    "question": "What are system calls?",
+    "answer": "System calls provide an interface between user programs and the operating system kernel. They allow programs to request services like file access, process creation, and communication.",
+    "tags": ["operating-systems", "system-calls"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:22:00+05:30",
+    "notes": "Critical OS mechanism."
+  },
+  {
+    "id": "S4_OS_M1_013",
+    "question": "Categories of system calls",
+    "answer": "System calls are commonly categorized into:\n1. Process control\n2. File management\n3. Device management\n4. Information maintenance\n5. Communication",
+    "tags": ["operating-systems", "system-calls"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T10:24:00+05:30",
+    "notes": "Frequently asked exam topic."
+  }
+]

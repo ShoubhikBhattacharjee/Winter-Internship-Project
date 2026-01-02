@@ -1,0 +1,146 @@
+[
+  {
+    "id": "S4_OS_M2_001",
+    "question": "What is a process?",
+    "answer": "A process is a program in execution. It includes the program code, current activity, program counter, registers, and allocated system resources.",
+    "tags": ["operating-systems", "process"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:00:00+05:30",
+    "notes": "Core definition."
+  },
+  {
+    "id": "S4_OS_M2_002",
+    "question": "Difference between a program and a process",
+    "answer": "A program is a passive set of instructions stored on disk, while a process is an active instance of a program currently being executed.",
+    "tags": ["operating-systems", "process"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:02:00+05:30",
+    "notes": "Very common exam question."
+  },
+  {
+    "id": "S4_OS_M2_003",
+    "question": "Process states",
+    "answer": "A process typically goes through the following states:\n- New\n- Ready\n- Running\n- Waiting (Blocked)\n- Terminated",
+    "tags": ["operating-systems", "process-states"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:04:00+05:30",
+    "notes": "State diagram based topic."
+  },
+  {
+    "id": "S4_OS_M2_004",
+    "question": "Process state transitions",
+    "answer": "Process state transitions occur due to events such as scheduling, I/O requests, I/O completion, and process termination.",
+    "tags": ["operating-systems", "process-states"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:06:00+05:30",
+    "notes": "Explains flow between states."
+  },
+  {
+    "id": "S4_OS_M2_005",
+    "question": "Process Control Block (PCB)",
+    "answer": "A Process Control Block is a data structure used by the operating system to store all information about a process.",
+    "tags": ["operating-systems", "pcb"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:08:00+05:30",
+    "notes": "Key OS data structure."
+  },
+  {
+    "id": "S4_OS_M2_006",
+    "question": "Contents of a Process Control Block",
+    "answer": "A PCB typically contains:\n- Process ID\n- Process state\n- Program counter\n- CPU registers\n- Memory management information\n- Accounting information\n- I/O status information",
+    "tags": ["operating-systems", "pcb"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:10:00+05:30",
+    "notes": "Memory recall question."
+  },
+  {
+    "id": "S4_OS_M2_007",
+    "question": "What is CPU scheduling?",
+    "answer": "CPU scheduling is the process of selecting one process from the ready queue to allocate the CPU for execution.",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:12:00+05:30",
+    "notes": "Scheduling foundation."
+  },
+  {
+    "id": "S4_OS_M2_008",
+    "question": "Preemptive vs Non-preemptive scheduling",
+    "answer": "In preemptive scheduling, the CPU can be taken away from a running process. In non-preemptive scheduling, a process releases the CPU voluntarily.",
+    "tags": ["operating-systems", "cpu-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:14:00+05:30",
+    "notes": "Comparison question."
+  },
+  {
+    "id": "S4_OS_M2_009",
+    "question": "First Come First Serve (FCFS) scheduling",
+    "answer": "FCFS scheduling allocates the CPU to processes in the order of their arrival. It is simple but suffers from the convoy effect.",
+    "tags": ["operating-systems", "fcfs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:16:00+05:30",
+    "notes": "Non-preemptive algorithm."
+  },
+  {
+    "id": "S4_OS_M2_010",
+    "question": "Shortest Job First (SJF) scheduling",
+    "answer": "SJF scheduling selects the process with the smallest CPU burst time. It minimizes average waiting time but requires accurate burst estimation.",
+    "tags": ["operating-systems", "sjf"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:18:00+05:30",
+    "notes": "Optimal but impractical."
+  },
+  {
+    "id": "S4_OS_M2_011",
+    "question": "Shortest Remaining Time Next (SRTN) scheduling",
+    "answer": "SRTN is the preemptive version of SJF. The CPU is allocated to the process with the shortest remaining execution time.",
+    "tags": ["operating-systems", "srtn"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:20:00+05:30",
+    "notes": "Preemptive SJF."
+  },
+  {
+    "id": "S4_OS_M2_012",
+    "question": "Priority scheduling",
+    "answer": "Priority scheduling assigns CPU to the process with the highest priority. It can be preemptive or non-preemptive and may cause starvation.",
+    "tags": ["operating-systems", "priority-scheduling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:22:00+05:30",
+    "notes": "Starvation-related question."
+  },
+  {
+    "id": "S4_OS_M2_013",
+    "question": "Round Robin scheduling",
+    "answer": "Round Robin scheduling assigns CPU to each process for a fixed time quantum in cyclic order. It ensures fairness in time-sharing systems.",
+    "tags": ["operating-systems", "round-robin"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:24:00+05:30",
+    "notes": "Time-sharing algorithm."
+  },
+  {
+    "id": "S4_OS_M2_014",
+    "question": "What is a thread?",
+    "answer": "A thread is the smallest unit of CPU execution within a process. Multiple threads within a process share resources.",
+    "tags": ["operating-systems", "threads"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:26:00+05:30",
+    "notes": "Lightweight process."
+  },
+  {
+    "id": "S4_OS_M2_015",
+    "question": "Types of threads",
+    "answer": "Threads are classified into:\n- User-level threads\n- Kernel-level threads",
+    "tags": ["operating-systems", "threads"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:28:00+05:30",
+    "notes": "Thread classification."
+  },
+  {
+    "id": "S4_OS_M2_016",
+    "question": "Concept of multithreading",
+    "answer": "Multithreading allows multiple threads within a single process to execute concurrently, improving responsiveness and resource utilization.",
+    "tags": ["operating-systems", "multithreading"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T11:30:00+05:30",
+    "notes": "Concurrency concept."
+  }
+]

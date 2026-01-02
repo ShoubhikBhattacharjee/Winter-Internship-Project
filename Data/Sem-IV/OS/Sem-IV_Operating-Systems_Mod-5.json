@@ -1,0 +1,137 @@
+[
+  {
+    "id": "S4_OS_M5_001",
+    "question": "What is file management in an Operating System?",
+    "answer": "File management is the function of an operating system that handles the creation, deletion, storage, retrieval, and protection of files on secondary storage.",
+    "tags": ["operating-systems", "file-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:00:00+05:30",
+    "notes": "Module introduction."
+  },
+  {
+    "id": "S4_OS_M5_002",
+    "question": "Objectives of file management",
+    "answer": "The objectives of file management include:\n- Efficient storage and retrieval\n- Data integrity and security\n- Sharing of files\n- Support for different file types",
+    "tags": ["operating-systems", "file-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:02:00+05:30",
+    "notes": "Exam-oriented points."
+  },
+  {
+    "id": "S4_OS_M5_003",
+    "question": "What is a file?",
+    "answer": "A file is a named collection of related data stored on secondary storage and treated as a single logical unit by the operating system.",
+    "tags": ["operating-systems", "file"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:04:00+05:30",
+    "notes": "Basic definition."
+  },
+  {
+    "id": "S4_OS_M5_004",
+    "question": "File organization",
+    "answer": "File organization defines how file data is stored and accessed on storage devices. It affects performance, flexibility, and storage efficiency.",
+    "tags": ["operating-systems", "file-organization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:06:00+05:30",
+    "notes": "Conceptual overview."
+  },
+  {
+    "id": "S4_OS_M5_005",
+    "question": "Types of file organization",
+    "answer": "Common file organization methods include:\n- Sequential file organization\n- Direct (Random) file organization\n- Indexed file organization",
+    "tags": ["operating-systems", "file-organization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:08:00+05:30",
+    "notes": "Classification question."
+  },
+  {
+    "id": "S4_OS_M5_006",
+    "question": "Sequential file organization",
+    "answer": "In sequential file organization, records are stored one after another and accessed in sequence. It is simple but inefficient for random access.",
+    "tags": ["operating-systems", "sequential-files"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:10:00+05:30",
+    "notes": "Simple access method."
+  },
+  {
+    "id": "S4_OS_M5_007",
+    "question": "Direct (Random) file organization",
+    "answer": "Direct file organization allows records to be accessed directly using a key, enabling faster access compared to sequential organization.",
+    "tags": ["operating-systems", "direct-files"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:12:00+05:30",
+    "notes": "Fast access."
+  },
+  {
+    "id": "S4_OS_M5_008",
+    "question": "Indexed file organization",
+    "answer": "Indexed file organization uses an index to map keys to file locations, providing efficient sequential and direct access.",
+    "tags": ["operating-systems", "indexed-files"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:14:00+05:30",
+    "notes": "Hybrid organization."
+  },
+  {
+    "id": "S4_OS_M5_009",
+    "question": "File access methods",
+    "answer": "File access methods define how data within a file is accessed. The main methods are sequential access, direct access, and indexed access.",
+    "tags": ["operating-systems", "file-access"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:16:00+05:30",
+    "notes": "Access techniques."
+  },
+  {
+    "id": "S4_OS_M5_010",
+    "question": "Sequential access method",
+    "answer": "Sequential access reads and writes data in order, from beginning to end. It is suitable for tape storage and batch processing.",
+    "tags": ["operating-systems", "file-access"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:18:00+05:30",
+    "notes": "Linear access."
+  },
+  {
+    "id": "S4_OS_M5_011",
+    "question": "Direct access method",
+    "answer": "Direct access allows data blocks to be read or written in any order by specifying the block address.",
+    "tags": ["operating-systems", "file-access"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:20:00+05:30",
+    "notes": "Random access."
+  },
+  {
+    "id": "S4_OS_M5_012",
+    "question": "What is a directory?",
+    "answer": "A directory is a special file that contains information about files, such as file names, locations, and attributes.",
+    "tags": ["operating-systems", "directory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:22:00+05:30",
+    "notes": "Directory concept."
+  },
+  {
+    "id": "S4_OS_M5_013",
+    "question": "Directory structures",
+    "answer": "Common directory structures include:\n- Single-level directory\n- Two-level directory\n- Tree-structured directory\n- Acyclic graph directory",
+    "tags": ["operating-systems", "directory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:24:00+05:30",
+    "notes": "Hierarchy-based question."
+  },
+  {
+    "id": "S4_OS_M5_014",
+    "question": "File sharing",
+    "answer": "File sharing allows multiple users or processes to access the same file concurrently while maintaining consistency and protection.",
+    "tags": ["operating-systems", "file-sharing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:26:00+05:30",
+    "notes": "Multi-user systems."
+  },
+  {
+    "id": "S4_OS_M5_015",
+    "question": "File protection mechanisms",
+    "answer": "File protection mechanisms control access to files using permissions, access control lists, and user authentication.",
+    "tags": ["operating-systems", "file-protection"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T14:28:00+05:30",
+    "notes": "Security-related topic."
+  }
+]
