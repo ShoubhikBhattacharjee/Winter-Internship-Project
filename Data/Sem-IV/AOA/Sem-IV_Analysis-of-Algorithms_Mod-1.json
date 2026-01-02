@@ -1,1 +1,173 @@
+[
+  {
+    "id": "S4_AOA_M1_001",
+    "question": "What is algorithm performance analysis?",
+    "answer": "Algorithm performance analysis is the study of how efficiently an algorithm uses computational resources such as time and memory.\n\nIt helps compare algorithms independent of hardware and programming language.\n\nTwo main measures are:\n- Time complexity\n- Space complexity",
+    "tags": ["analysis-of-algorithms", "performance-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:00:00+05:30",
+    "notes": "Foundation concept for the course."
   },
+  {
+    "id": "S4_AOA_M1_002",
+    "question": "Time complexity of an algorithm",
+    "answer": "Time complexity measures how the execution time of an algorithm grows with input size.\n\nIt is expressed as a function of input size n.\n\nIt focuses on growth rate rather than exact running time.",
+    "tags": ["analysis-of-algorithms", "time-complexity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:02:00+05:30",
+    "notes": "Core complexity metric."
+  },
+  {
+    "id": "S4_AOA_M1_003",
+    "question": "Space complexity of an algorithm",
+    "answer": "Space complexity measures the amount of memory required by an algorithm as a function of input size.\n\nIt includes:\n- Fixed part (code, constants)\n- Variable part (recursion stack, dynamic memory)",
+    "tags": ["analysis-of-algorithms", "space-complexity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:04:00+05:30",
+    "notes": "Memory usage analysis."
+  },
+  {
+    "id": "S4_AOA_M1_004",
+    "question": "Best case, average case, and worst case analysis",
+    "answer": "Best case is the minimum time an algorithm takes for any input of size n.\n\nAverage case is the expected time over all possible inputs.\n\nWorst case is the maximum time an algorithm can take.\n\nWorst-case analysis is most commonly used as it guarantees performance bounds.",
+    "tags": ["analysis-of-algorithms", "complexity-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:06:00+05:30",
+    "notes": "Exam-favorite conceptual question."
+  },
+  {
+    "id": "S4_AOA_M1_005",
+    "question": "Growth of functions in algorithm analysis",
+    "answer": "Growth of functions describes how algorithm complexity increases with input size.\n\nCommon growth rates:\n- Constant O(1)\n- Logarithmic O(log n)\n- Linear O(n)\n- Linearithmic O(n log n)\n- Quadratic O(n²)\n- Exponential O(2ⁿ)\n\nLower growth rates indicate more efficient algorithms.",
+    "tags": ["analysis-of-algorithms", "growth-of-functions"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:08:00+05:30",
+    "notes": "Used to compare algorithms."
+  },
+  {
+    "id": "S4_AOA_M1_006",
+    "question": "Asymptotic analysis",
+    "answer": "Asymptotic analysis studies algorithm behavior as input size n approaches infinity.\n\nIt ignores:\n- Constant factors\n- Lower-order terms\n\nThis provides a machine-independent measure of efficiency.",
+    "tags": ["analysis-of-algorithms", "asymptotic-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:10:00+05:30",
+    "notes": "Basis of Big-O, Omega, Theta."
+  },
+  {
+    "id": "S4_AOA_M1_007",
+    "question": "Big-O notation",
+    "answer": "Big-O notation provides an upper bound on the growth rate of an algorithm.\n\nFormal definition:\nAn algorithm is O(f(n)) if there exist constants c and n₀ such that:\nT(n) ≤ c·f(n) for all n ≥ n₀.\n\nIt represents worst-case complexity.",
+    "tags": ["analysis-of-algorithms", "big-o"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:12:00+05:30",
+    "notes": "Most frequently tested notation."
+  },
+  {
+    "id": "S4_AOA_M1_008",
+    "question": "Omega (Ω) notation",
+    "answer": "Omega notation provides a lower bound on the growth rate of an algorithm.\n\nFormal definition:\nAn algorithm is Ω(f(n)) if there exist constants c and n₀ such that:\nT(n) ≥ c·f(n) for all n ≥ n₀.\n\nIt represents best-case complexity.",
+    "tags": ["analysis-of-algorithms", "omega-notation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:14:00+05:30",
+    "notes": "Lower bound measure."
+  },
+  {
+    "id": "S4_AOA_M1_009",
+    "question": "Theta (Θ) notation",
+    "answer": "Theta notation provides a tight bound on algorithm growth.\n\nAn algorithm is Θ(f(n)) if it is both O(f(n)) and Ω(f(n)).\n\nIt describes exact asymptotic behavior.",
+    "tags": ["analysis-of-algorithms", "theta-notation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:16:00+05:30",
+    "notes": "Exact bound representation."
+  },
+  {
+    "id": "S4_AOA_M1_010",
+    "question": "Why constants are ignored in asymptotic analysis",
+    "answer": "Constants depend on hardware and implementation details.\n\nAsymptotic analysis focuses on scalability and growth trend, not exact running time.\n\nIgnoring constants simplifies comparison between algorithms.",
+    "tags": ["analysis-of-algorithms", "asymptotic-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:18:00+05:30",
+    "notes": "Conceptual clarity question."
+  },
+  {
+    "id": "S4_AOA_M1_011",
+    "question": "Complexity class P",
+    "answer": "Class P contains problems solvable in polynomial time.\n\nExamples:\n- Sorting\n- Searching\n\nThese problems are considered efficiently solvable.",
+    "tags": ["analysis-of-algorithms", "complexity-classes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:20:00+05:30",
+    "notes": "Complexity theory introduction."
+  },
+  {
+    "id": "S4_AOA_M1_012",
+    "question": "Complexity class NP",
+    "answer": "Class NP contains problems whose solutions can be verified in polynomial time.\n\nNP does not necessarily mean the problem is unsolvable in polynomial time.\n\nThe relationship between P and NP is unknown.",
+    "tags": ["analysis-of-algorithms", "complexity-classes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:22:00+05:30",
+    "notes": "Common misconception addressed."
+  },
+  {
+    "id": "S4_AOA_M1_013",
+    "question": "NP-Hard and NP-Complete problems",
+    "answer": "NP-Hard problems are at least as hard as the hardest problems in NP.\n\nNP-Complete problems are:\n- In NP\n- NP-Hard\n\nThey represent the most challenging problems in NP.",
+    "tags": ["analysis-of-algorithms", "complexity-classes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:24:00+05:30",
+    "notes": "High-level classification only (no reductions)."
+  },
+  {
+    "id": "S4_AOA_M1_014",
+    "question": "Time complexity analysis of selection sort",
+    "answer": "Selection sort repeatedly selects the minimum element.\n\nNumber of comparisons:\n(n−1) + (n−2) + ... + 1 = O(n²)\n\nBest, average, and worst cases are all O(n²).",
+    "tags": ["analysis-of-algorithms", "sorting-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:26:00+05:30",
+    "notes": "Simple but inefficient algorithm."
+  },
+  {
+    "id": "S4_AOA_M1_015",
+    "question": "Time complexity analysis of insertion sort",
+    "answer": "Insertion sort inserts elements into a sorted subarray.\n\nBest case: O(n) (already sorted)\nAverage case: O(n²)\nWorst case: O(n²) (reverse sorted)",
+    "tags": ["analysis-of-algorithms", "sorting-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:28:00+05:30",
+    "notes": "Shows importance of input order."
+  },
+  {
+    "id": "S4_AOA_M1_016",
+    "question": "What is a recurrence relation",
+    "answer": "A recurrence relation defines the running time of a recursive algorithm in terms of smaller input sizes.\n\nExample:\nT(n) = T(n/2) + c",
+    "tags": ["analysis-of-algorithms", "recurrence-relations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:30:00+05:30",
+    "notes": "Bridge to advanced analysis."
+  },
+  {
+    "id": "S4_AOA_M1_017",
+    "question": "Substitution method for solving recurrences",
+    "answer": "The substitution method involves guessing the solution and proving it by induction.\n\nSteps:\n1. Guess the form of solution\n2. Substitute into recurrence\n3. Prove correctness",
+    "tags": ["analysis-of-algorithms", "recurrence-methods"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:32:00+05:30",
+    "notes": "Proof-based technique."
+  },
+  {
+    "id": "S4_AOA_M1_018",
+    "question": "Recursion tree method",
+    "answer": "The recursion tree method visualizes recursive calls as a tree.\n\nEach node represents work done at a level.\n\nTotal cost is sum of costs across all levels.",
+    "tags": ["analysis-of-algorithms", "recurrence-methods"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:34:00+05:30",
+    "notes": "Intuitive recurrence solving."
+  },
+  {
+    "id": "S4_AOA_M1_019",
+    "question": "Master Theorem",
+    "answer": "Master Theorem provides a direct way to solve recurrences of the form:\nT(n) = aT(n/b) + f(n)\n\nIt compares f(n) with n^(log_b a) to determine complexity.",
+    "tags": ["analysis-of-algorithms", "recurrence-methods"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T09:36:00+05:30",
+    "notes": "Most commonly applied recurrence method."
+  }
+]
