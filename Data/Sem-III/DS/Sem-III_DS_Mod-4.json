@@ -1,0 +1,304 @@
+[
+  {
+    "id": "S3_DS_M4_001",
+    "question": "What is a Tree? Explain its basic properties.",
+    "answer": "A Tree is a hierarchical, non-linear data structure consisting of a collection of nodes. Unlike linear data structures like arrays or linked lists where data is stored in a sequence, a tree represents data in a branched manner to show hierarchical relationships (e.g., file systems or organization charts).\nTheory: A tree is recursively defined as a set of one or more nodes where one specific node is designated as the 'Root'. The remaining nodes are partitioned into non-empty sets, each of which is a sub-tree of the root. It represents a 'one-to-many' relationship between data elements.",
+    "tags": ["tree", "definition", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Core definition of Tree structure."
+  },
+  
+  {
+    "id": "S3_DS_M4_002",
+    "question": "Define the key terminologies used in Trees: Root, Edge, and Parent.",
+    "answer": "To understand tree structures, the following terms are essential:\n1. Root: The topmost node of the tree. It is the only node that does not have a parent.\n2. Edge: The connecting link or line between two nodes that represents the relationship between them.\n3. Parent: A node that has one or more children nodes connected beneath it. Any node except the root has exactly one incoming edge from its parent.",
+    "tags": ["terminology", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Fundamental tree terms."
+  },
+  {
+    "id": "S3_DS_M4_003",
+    "question": "Define the tree terminologies: Child, Leaf, and Sibling.",
+    "answer": "Relationships in trees are often described using familial terms:\n1. Child: A node derived from another node (its parent) via an edge.\n2. Leaf (Terminal Node): A node that does not have any children. It marks the end of a branch.\n3. Sibling: Nodes that belong to the same parent are called siblings.",
+    "tags": ["terminology", "nodes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Node relationship terminology."
+  },
+  {
+    "id": "S3_DS_M4_004",
+    "question": "Explain the concepts of Depth, Height, and Level in a Tree.",
+    "answer": "These terms measure distance and scale within the tree hierarchy:\n1. Depth: The number of edges from the root node to a specific node. The depth of the root is 0.\n2. Height: The number of edges on the longest path from a node to a leaf node. The height of a tree is the height of its root.\n3. Level: The distance from the root. By convention, the root is at Level 0, its children are at Level 1, and so on. Level is often defined as (Depth + 1) in some conventions, or simply equal to Depth.",
+    "tags": ["depth", "height", "level"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Structural metrics for trees."
+  },
+  {
+    "id": "S3_DS_M4_005",
+    "question": "What is a Binary Tree?",
+    "answer": "A Binary Tree is a specific type of tree data structure in which each node can have at most two children.\nTheory: These children are typically referred to as the 'Left Child' and the 'Right Child'. A node in a binary tree may have 0, 1, or 2 children. This restriction makes the structure easier to implement and navigate compared to general trees.",
+    "tags": ["binary-tree", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Basic binary tree concept."
+  },
+  
+  {
+    "id": "S3_DS_M4_006",
+    "question": "Explain the Linked Representation of a Binary Tree.",
+    "answer": "Linked representation uses dynamic memory allocation to store tree nodes.\nTheory: Each node is represented as a structure containing three parts: \n1. Data: The actual value stored in the node.\n2. Left Pointer: A reference/address to the left child node.\n3. Right Pointer: A reference/address to the right child node.\nIf a child does not exist, the corresponding pointer is set to NULL. This method is flexible and memory-efficient for trees with varying shapes.",
+    "tags": ["binary-tree", "representation", "linked-list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Memory storage via pointers."
+  },
+  {
+    "id": "S3_DS_M4_007",
+    "question": "Explain the Sequential Representation of a Binary Tree.",
+    "answer": "Sequential representation uses an array to store the nodes of a tree.\nTheory: For a node stored at index 'i' (assuming 1-based indexing):\n1. The Left Child is stored at index (2 * i).\n2. The Right Child is stored at index (2 * i + 1).\n3. The Parent is located at index (i / 2).\nThis method is highly efficient for 'Complete' binary trees but can lead to significant memory wastage if the tree is sparse or skewed.",
+    "tags": ["binary-tree", "representation", "array"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Array-based storage."
+  },
+  {
+    "id": "S3_DS_M4_008",
+    "question": "What is a Full Binary Tree?",
+    "answer": "A Full Binary Tree (sometimes called a proper or plane binary tree) is a tree in which every node has either 0 or 2 children.\nTheory: In this structure, no node has exactly one child. All internal nodes have two children, and the terminal nodes are the only ones with zero children.",
+    "tags": ["binary-tree", "types", "full-binary-tree"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Definition of Full Binary Tree."
+  },
+  {
+    "id": "S3_DS_M4_009",
+    "question": "What is a Complete Binary Tree?",
+    "answer": "A Complete Binary Tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.\nTheory: This property ensures that the tree is balanced and can be efficiently represented using an array without gaps. If the last level is not full, the nodes must be filled from left to right without skipping any positions.",
+    "tags": ["binary-tree", "types", "complete-binary-tree"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Definition of Complete Binary Tree."
+  },
+  {
+    "id": "S3_DS_M4_010",
+    "question": "Explain the Algorithm for Pre-order Traversal.",
+    "answer": "Pre-order traversal is a depth-first search (DFS) method where the root is visited first.\nAlgorithm:\n1. Visit the Root node.\n2. Recursively traverse the Left sub-tree.\n3. Recursively traverse the Right sub-tree.\nTheory: This is known as Root-Left-Right (RLR) traversal. It is commonly used to create a copy of a tree or to evaluate prefix expressions.",
+    "tags": ["binary-tree", "traversal", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Pre-order (RLR)."
+  },
+  {
+    "id": "S3_DS_M4_011",
+    "question": "Explain the Algorithm for In-order Traversal.",
+    "answer": "In-order traversal is a DFS method that visits the root between the sub-trees.\nAlgorithm:\n1. Recursively traverse the Left sub-tree.\n2. Visit the Root node.\n3. Recursively traverse the Right sub-tree.\nTheory: This is known as Left-Root-Right (LRR) traversal. In a Binary Search Tree (BST), In-order traversal yields the data in sorted (ascending) order.",
+    "tags": ["binary-tree", "traversal", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "In-order (LRR)."
+  },
+  {
+    "id": "S3_DS_M4_012",
+    "question": "Explain the Algorithm for Post-order Traversal.",
+    "answer": "Post-order traversal is a DFS method where the root is visited after both sub-trees.\nAlgorithm:\n1. Recursively traverse the Left sub-tree.\n2. Recursively traverse the Right sub-tree.\n3. Visit the Root node.\nTheory: This is known as Left-Right-Root (LRR) traversal. It is useful for deleting a tree (since nodes are deleted before their parents) or evaluating postfix expressions.",
+    "tags": ["binary-tree", "traversal", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Post-order (LRR)."
+  },
+  {
+    "id": "S3_DS_M4_013",
+    "question": "What is a Binary Search Tree (BST)?",
+    "answer": "A Binary Search Tree is a binary tree that follows a specific ordering property.\nTheory: For every node in the tree:\n1. The value of all nodes in the Left sub-tree is less than the value of the root node.\n2. The value of all nodes in the Right sub-tree is greater than (or sometimes equal to) the root node.\nThis recursive property allows for efficient searching, insertion, and deletion, ideally in O(log n) time.",
+    "tags": ["BST", "definition", "ordering"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Core BST concept."
+  },
+  
+  {
+    "id": "S3_DS_M4_014",
+    "question": "Explain the Algorithm for Searching in a Binary Search Tree.",
+    "answer": "Searching in a BST takes advantage of its sorted property.\nAlgorithm:\n1. Start at the Root. \n2. Compare the search key with the Root's data.\n3. If Key == Root->Data, return 'Found'.\n4. If Key < Root->Data, repeat the process in the Left sub-tree.\n5. If Key > Root->Data, repeat the process in the Right sub-tree.\n6. If the current node is NULL, return 'Not Found'.",
+    "tags": ["BST", "searching", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Efficient search logic."
+  },
+  {
+    "id": "S3_DS_M4_015",
+    "question": "Explain the Algorithm for Insertion in a Binary Search Tree.",
+    "answer": "Insertion ensures that the new node is placed such that the BST property is maintained.\nAlgorithm:\n1. If the tree is Empty, make the new node the Root.\n2. Compare the new data with the Root.\n3. If NewData < Root->Data:\n   a. If Root->Left is NULL, insert here.\n   b. Else, recurse to Root->Left.\n4. If NewData > Root->Data:\n   a. If Root->Right is NULL, insert here.\n   b. Else, recurse to Root->Right.\nTheory: New nodes are always inserted as leaf nodes.",
+    "tags": ["BST", "insertion", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Adding a node to BST."
+  },
+  {
+    "id": "S3_DS_M4_016",
+    "question": "Explain the Algorithm for Deletion in a BST (Case: Leaf Node).",
+    "answer": "Deleting a leaf node is the simplest case as it has no children.\nAlgorithm:\n1. Locate the target node to be deleted using search.\n2. Check if the node is a leaf (Left and Right are both NULL).\n3. Set the parent's pointer that was pointing to this node to NULL.\n4. Free the memory occupied by the node.",
+    "tags": ["BST", "deletion", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Case 1: No children."
+  },
+  {
+    "id": "S3_DS_M4_017",
+    "question": "Explain the Algorithm for Deletion in a BST (Case: Node with One Child).",
+    "answer": "When a node has one child, the child takes the place of the deleted node.\nAlgorithm:\n1. Locate the target node.\n2. Identify if the node has only a Left child or only a Right child.\n3. Update the parent of the target node to point directly to the target node's child.\n4. Free the memory of the target node.\nTheory: This effectively 'bypasses' the deleted node.",
+    "tags": ["BST", "deletion", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Case 2: Single child."
+  },
+  {
+    "id": "S3_DS_M4_018",
+    "question": "Explain the Algorithm for Deletion in a BST (Case: Node with Two Children).",
+    "answer": "Deleting a node with two children requires replacing it with a suitable successor to maintain order.\nAlgorithm:\n1. Locate the target node.\n2. Find the 'In-order Successor' (smallest node in the right sub-tree) or 'In-order Predecessor' (largest node in the left sub-tree).\n3. Replace the target node's data with the successor's data.\n4. Delete the original successor node (which will now be Case 1 or Case 2 deletion).\nTheory: This preserves the BST order for all other nodes.",
+    "tags": ["BST", "deletion", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Case 3: Two children."
+  },
+  {
+    "id": "S3_DS_M4_019",
+    "question": "What is an Expression Tree?",
+    "answer": "An Expression Tree is a specific type of binary tree used to represent mathematical expressions.\nTheory: In an expression tree:\n1. Leaf nodes represent operands (e.g., constants, variables).\n2. Internal (non-leaf) nodes represent operators (e.g., +, -, *, /).\nThe tree structure dictates the order of operations, naturally handling parentheses and operator precedence.",
+    "tags": ["expression-tree", "definitions"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Tree for math evaluation."
+  },
+  {
+    "id": "S3_DS_M4_020",
+    "question": "Explain the Algorithm for evaluating an Expression Tree.",
+    "answer": "Evaluating an expression tree involves a recursive post-order traversal.\nAlgorithm:\n1. If the current node is a Leaf, return its operand value.\n2. Recursively evaluate the Left sub-tree to get Value1.\n3. Recursively evaluate the Right sub-tree to get Value2.\n4. Apply the operator stored in the current node to Value1 and Value2.\n5. Return the result.",
+    "tags": ["expression-tree", "evaluation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Math calculation via tree."
+  },
+  {
+    "id": "S3_DS_M4_021",
+    "question": "What is Huffman Encoding?",
+    "answer": "Huffman Encoding is a popular algorithm used for lossless data compression.\nTheory: It uses a variable-length encoding scheme where more frequent characters are assigned shorter bit sequences and less frequent characters get longer sequences. It is based on a binary tree called a Huffman Tree, ensuring that no code is a prefix of another (Prefix Property).",
+    "tags": ["huffman", "compression", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Concept of Huffman coding."
+  },
+  {
+    "id": "S3_DS_M4_022",
+    "question": "Explain the Algorithm for constructing a Huffman Tree.",
+    "answer": "The Huffman Tree is built using a greedy approach based on character frequencies.\nAlgorithm:\n1. Create a leaf node for each character and assign its frequency.\n2. Sort nodes in increasing order of frequency.\n3. While more than one node remains:\n   a. Take the two nodes with the lowest frequencies.\n   b. Create a new internal node with frequency = Sum of the two nodes.\n   c. Make the two nodes children of the new node.\n   d. Add the new node back into the sorted list.\n4. The final remaining node is the root of the Huffman Tree.",
+    "tags": ["huffman", "construction", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Building the Huffman tree."
+  },
+  
+  {
+    "id": "S3_DS_M4_023",
+    "question": "What is an AVL Tree?",
+    "answer": "An AVL Tree is a self-balancing Binary Search Tree named after its inventors Adelson-Velsky and Landis.\nTheory: It maintains balance by ensuring that for every node, the heights of the left and right sub-trees differ by at most one. This property guarantees that tree operations remain O(log n) even in the worst case by preventing the tree from becoming skewed.",
+    "tags": ["AVL", "definition", "self-balancing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Concept of AVL tree."
+  },
+  
+  {
+    "id": "S3_DS_M4_024",
+    "question": "Explain the concept of Balance Factor in AVL Trees.",
+    "answer": "The Balance Factor (BF) is the metric used by AVL trees to monitor balance.\nTheory: It is calculated for each node as:\nBF = Height(Left Sub-tree) – Height(Right Sub-tree)\nIn a valid AVL tree, the Balance Factor of every node must be either -1, 0, or 1. If the BF of any node becomes 2 or -2 due to insertion or deletion, the tree is considered unbalanced and requires rotation.",
+    "tags": ["AVL", "balance-factor", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Balancing criteria."
+  },
+  {
+    "id": "S3_DS_M4_025",
+    "question": "Explain the LL (Left-Left) Rotation in AVL Trees.",
+    "answer": "LL rotation is a single right rotation used when an imbalance occurs in the left child's left sub-tree.\nAlgorithm:\n1. Identify the 'Critical Node' (the one with BF = 2).\n2. Perform a Right Rotation at the critical node.\n3. The left child of the critical node becomes the new root of this sub-tree.\n4. The original critical node becomes the right child of the new root.",
+    "tags": ["AVL", "rotation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Single Right Rotation."
+  },
+  {
+    "id": "S3_DS_M4_026",
+    "question": "Explain the RR (Right-Right) Rotation in AVL Trees.",
+    "answer": "RR rotation is a single left rotation used when an imbalance occurs in the right child's right sub-tree.\nAlgorithm:\n1. Identify the 'Critical Node' (the one with BF = -2).\n2. Perform a Left Rotation at the critical node.\n3. The right child of the critical node becomes the new root of this sub-tree.\n4. The original critical node becomes the left child of the new root.",
+    "tags": ["AVL", "rotation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Single Left Rotation."
+  },
+  {
+    "id": "S3_DS_M4_027",
+    "question": "Explain the LR (Left-Right) Rotation in AVL Trees.",
+    "answer": "LR rotation is a double rotation used when a node is inserted into the right sub-tree of the left child.\nAlgorithm:\n1. Perform a Left Rotation on the left child of the critical node.\n2. This converts the LR imbalance into an LL imbalance.\n3. Perform a Right Rotation on the critical node itself to restore balance.\nTheory: This 'Left-then-Right' sequence re-centers the tree.",
+    "tags": ["AVL", "rotation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Double Rotation (Left-Right)."
+  },
+  {
+    "id": "S3_DS_M4_028",
+    "question": "Explain the RL (Right-Left) Rotation in AVL Trees.",
+    "answer": "RL rotation is a double rotation used when a node is inserted into the left sub-tree of the right child.\nAlgorithm:\n1. Perform a Right Rotation on the right child of the critical node.\n2. This converts the RL imbalance into an RR imbalance.\n3. Perform a Left Rotation on the critical node itself to restore balance.\nTheory: This 'Right-then-Left' sequence re-balances the nodes.",
+    "tags": ["AVL", "rotation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Double Rotation (Right-Left)."
+  },
+  {
+    "id": "S3_DS_M4_029",
+    "question": "What is a B-Tree?",
+    "answer": "A B-Tree is a self-balancing search tree designed for systems that read and write large blocks of data, such as databases and file systems.\nTheory: Unlike standard search trees, a B-Tree can have more than two children. It is categorized by its 'Order' (m), which defines the maximum number of children a node can have. It ensures all leaf nodes are at the same depth, maintaining balance.",
+    "tags": ["B-Tree", "definition", "storage"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Multi-way search tree."
+  },
+  {
+    "id": "S3_DS_M4_030",
+    "question": "What are the structural properties of a B-Tree of Order m?",
+    "answer": "A B-Tree of order m must satisfy several strict criteria:\n1. Every node has at most 'm' children.\n2. Every node (except root) has at least ceil(m/2) children.\n3. The root has at least 2 children if it is not a leaf.\n4. A non-leaf node with 'k' children contains (k-1) keys.\n5. All leaf nodes appear on the same level.",
+    "tags": ["B-Tree", "properties"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Rules for B-Tree structure."
+  },
+  {
+    "id": "S3_DS_M4_031",
+    "question": "Explain the Algorithm for Insertion in a B-Tree.",
+    "answer": "Insertion in a B-Tree starts at the leaf and may cause splitting upwards.\nAlgorithm:\n1. Find the appropriate leaf node using search.\n2. If the node has space (keys < m-1), insert the key in sorted order.\n3. If the node is Full:\n   a. Split the node into two nodes at the median key.\n   b. Push the median key up to the parent node.\n   c. If the parent is also full, repeat the split process recursively.\n   d. If the root splits, create a new root, increasing the tree height.",
+    "tags": ["B-Tree", "insertion", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "B-Tree growth logic."
+  },
+  {
+    "id": "S3_DS_M4_032",
+    "question": "What is a B+ Tree?",
+    "answer": "A B+ Tree is an extension of the B-Tree where all actual data/records are stored only at the leaf level.\nTheory: Internal nodes only store keys to serve as pointers for navigation. Additionally, all leaf nodes are linked together in a linked list, allowing for very efficient sequential access and range queries, which is why B+ trees are the standard for database indexing.",
+    "tags": ["B+ Tree", "definition", "database"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Optimized multi-way tree."
+  },
+  {
+    "id": "S3_DS_M4_033",
+    "question": "What are the advantages of B+ Trees?",
+    "answer": "B+ Trees offer several advantages for data storage:\n1. Sequential Access: The linked list of leaf nodes allows fast traversal of all records.\n2. Faster Search: Since internal nodes don't store data, more keys fit in a single block, reducing tree height and disk I/O.\n3. Predictable Performance: All data is at the same leaf level, so every search takes exactly the same number of steps.",
+    "tags": ["B+ Tree", "advantages"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:15:00+05:30",
+    "notes": "Benefits of B+ Tree."
+  }
+]

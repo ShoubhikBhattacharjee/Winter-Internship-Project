@@ -1,0 +1,227 @@
+[
+  {
+    "id": "S3_DS_M6_001",
+    "question": "What is Searching? Explain its significance in Data Structures.",
+    "answer": "Searching is the process of finding the location of a specific element, known as the 'target' or 'key', within a collection of data such as an array, list, or tree. It is a fundamental operation in computer science because it is the necessary precursor to almost all other data operations.\nTheory: The search operation is considered successful if the target value is found within the data structure, in which case the algorithm typically returns the index, position, or a pointer to that element. If the value does not exist in the collection after exhausting the search space, the search is considered unsuccessful. Searching is significant because efficient data retrieval is critical for system performance; for example, before you can update or delete a record in a database, you must first search for and locate it.",
+    "tags": ["searching", "definition", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Core definition of searching."
+  },
+  {
+    "id": "S3_DS_M6_002",
+    "question": "What are the common methods used for searching array elements?",
+    "answer": "In data structures, there are two primary and widely utilized methods used to search for elements within an array, each suited for different data organizations:\n1. Linear Search: A sequential search method where every element is checked one by one from the start to the end.\n2. Binary Search: An efficient, interval-based search technique used specifically for data that has already been sorted.",
+    "tags": ["searching", "methods"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Classification of searching techniques."
+  },
+  {
+    "id": "S3_DS_M6_003",
+    "question": "Explain the Linear Search technique.",
+    "answer": "Linear Search, also referred to as Sequential Search, is the simplest searching method. It involves scanning the entire list or array starting from the very first element and moving towards the last until the target value is found or the end of the collection is reached.\nTheory: This technique does not require the data to be in any specific order (it works on both sorted and unsorted arrays). The algorithm performs a simple comparison between the 'key' value and each element of the array in a linear sequence. It is highly suitable for small datasets or unordered lists where the overhead of sorting the data to perform a binary search would not be justified.\n",
+    "tags": ["linear-search", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Concept of sequential search."
+  },
+  {
+    "id": "S3_DS_M6_004",
+    "question": "Explain the Algorithm for Linear Search.",
+    "answer": "The Linear Search algorithm uses a basic loop structure to traverse the array and identify the position of the target value.\nAlgorithm:\n1. [Initialize] Set POS = -1 (to indicate value not found initially) and I = 1.\n2. Repeat Step 3 while I <= N (where N is the total number of elements).\n3. If A[I] == VAL:\n   a. Set POS = I (Store the index of the found element).\n   b. Print POS and Go to Step 5 (Terminating the loop early).\n4. [Increment] Set I = I + 1 (Move to the next sequential element).\n5. [Check Failure] If POS == -1, Print 'Value is not present in the array'.\n6. Exit.",
+    "tags": ["linear-search", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Linear search step-by-step logic."
+  },
+  {
+    "id": "S3_DS_M6_005",
+    "question": "Explain the Binary Search technique.",
+    "answer": "Binary Search is an optimized and highly efficient searching algorithm designed for use on sorted arrays. It operates by repeatedly dividing the search interval in half.\nTheory: It works on the 'Divide and Conquer' principle. Instead of checking every element, the algorithm compares the target value to the middle element of the array. If the target is not equal to the middle element, the half in which the target cannot possibly lie is eliminated, and the search continues on the remaining half. This logarithmic approach drastically reduces the number of comparisons required, especially as the size of the dataset grows to millions of records.\n",
+    "tags": ["binary-search", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Concept of binary search."
+  },
+  {
+    "id": "S3_DS_M6_006",
+    "question": "Explain the Algorithm for Binary Search.",
+    "answer": "The Binary Search algorithm manages three distinct pointers—BEG, END, and MID—to narrow down the location of the value within a sorted range.\nAlgorithm:\n1. [Initialize] Set BEG = Lower_Bound, END = Upper_Bound, POS = -1.\n2. Repeat Steps 3 and 4 while BEG <= END.\n3. Set MID = (BEG + END) / 2 (Calculate the middle index).\n4. If A[MID] == VAL:\n   a. Set POS = MID, Print POS and Go to Step 6.\n   Else if A[MID] > VAL:\n   a. Set END = MID - 1 (Search in the lower/left half).\n   Else:\n   a. Set BEG = MID + 1 (Search in the upper/right half).\n5. [Check Failure] If POS == -1, Print 'Value not found'.\n6. Exit.",
+    "tags": ["binary-search", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Binary search logic."
+  },
+  {
+    "id": "S3_DS_M6_007",
+    "question": "What is Hashing? Explain its basic concept.",
+    "answer": "Hashing is a highly efficient technique used to uniquely identify an object from a group of similar objects or to map data of arbitrary size to data of fixed size using a mathematical formula called a Hash Function.\nTheory: The fundamental concept of hashing is to transform a large piece of data (the 'key') into a significantly smaller integer value. This integer value then serves as an index in a specialized array called a Hash Table. By mapping keys directly to indices, hashing allows for nearly instantaneous data retrieval, insertion, and deletion, ideally achieving a time complexity of O(1). It is the backbone of modern data structures like Sets and Dictionaries.",
+    "tags": ["hashing", "definition", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Concept of hashing."
+  },
+  {
+    "id": "S3_DS_M6_008",
+    "question": "What are the types of Hashing (Hash Functions)?",
+    "answer": "There are several mathematical methods used to transform a key into a hash table index. The common types of hashing functions include:\n1. Division Method: Using the remainder of division.\n2. Mid-Square Method: Squaring the key and taking middle digits.\n3. Folding Method: Breaking the key into parts and summing them.",
+    "tags": ["hashing", "types", "methods"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Types of hash functions."
+  },
+  {
+    "id": "S3_DS_M6_009",
+    "question": "Explain the Division Method of Hashing.",
+    "answer": "The Division Method is one of the simplest and most common hash functions used to calculate the index for a given key.\nTheory: In this method, the hash function is defined by the formula h(k) = k mod m, where 'k' represents the key value and 'm' is the total size of the hash table.\nStep-wise logic:\n1. Take the key value 'k'.\n2. Divide 'k' by the table size 'm'.\n3. Use the resulting remainder as the index in the hash table.\nExample: If the table size is 10 and the key is 25, the hash value is 25 % 10 = 5. To ensure a more uniform distribution of keys and reduce collisions, it is generally recommended to choose 'm' as a prime number not close to a power of 2.",
+    "tags": ["hashing", "division-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Division hash function."
+  },
+  {
+    "id": "S3_DS_M6_010",
+    "question": "Explain the Mid-Square Method of Hashing.",
+    "answer": "The Mid-Square Method is a hash function that calculates the index by focusing on the middle portion of the squared key.\nTheory: This method involves two primary steps:\n1. Square the key value (k²).\n2. Extract a fixed number of digits from the middle of the resulting squared value to use as the hash index.\nExample: If the key is 3121, its square is 9740641. If the table size is 1000, we might extract the middle three digits '406' as the index. This method is effective because most or all of the digits in the original key contribute to the middle digits of the square, leading to a better distribution of indices across the table.",
+    "tags": ["hashing", "mid-square-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Mid-square hash function."
+  },
+  {
+    "id": "S3_DS_M6_011",
+    "question": "Explain the Folding Method of Hashing.",
+    "answer": "The Folding Method involves partitioning the key into several parts and combining them to form the hash index.\nTheory: This method is particularly useful when the key is very large. It consists of two main variations:\n1. Fold Shift: The key is divided into parts of equal length (matching the number of digits required for the table size). These parts are then added together, and the final sum (ignoring any carry) is used as the index.\n2. Fold Boundary: This is similar to fold shift, but the digits of the boundary parts (the first and last segments) are reversed before they are added to the middle segments.\nThis technique ensures that every digit of a long key contributes to the final hash address.",
+    "tags": ["hashing", "folding-method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Folding hash function."
+  },
+  {
+    "id": "S3_DS_M6_012",
+    "question": "What is a Hash Table?",
+    "answer": "A Hash Table is a sophisticated data structure that stores key-value pairs in an associative manner using a hash function to compute an index into an array of buckets or slots.\nTheory: The primary objective of a hash table is to distribute entries across the available array slots so that any specific entry can be located very quickly. Each location in the array is referred to as a 'bucket'. In an ideal scenario, every unique key would map to a unique index; however, because the number of possible keys is usually much larger than the number of slots, multiple keys may map to the same index. This necessitates the use of collision resolution strategies to maintain the integrity of the data structure.\n",
+    "tags": ["hashing", "hash-table"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Hash table structure."
+  },
+  {
+    "id": "S3_DS_M6_013",
+    "question": "What is a Hash Function? List the properties of a good hash function.",
+    "answer": "A Hash Function is a mathematical algorithm or rule that maps a large data set of variable size to a fixed-size integer value (the hash code).\nTheory: The resulting value serves as the specific address or index for storing the key in the hash table.\nProperties of a good hash function:\n1. Efficient to Compute: The mathematical operation should be fast to ensure rapid data access.\n2. Uniform Distribution: It should distribute keys as evenly as possible across the entire hash table to minimize the occurrence of collisions.\n3. Deterministic: A given input key must always produce the exactly same hash value every time.\n4. Minimize Collisions: It should be designed so that similar keys do not necessarily map to the same index.",
+    "tags": ["hashing", "hash-function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Hash function requirements."
+  },
+  {
+    "id": "S3_DS_M6_014",
+    "question": "What is a Collision in Hashing?",
+    "answer": "A collision occurs in a hash table when the hash function maps two or more distinct keys to the same array index or bucket.\nTheory: Because hash functions map a large set of possible keys to a finite (smaller) set of indices, collisions are mathematically inevitable, a concept known as the Pigeonhole Principle. When a collision occurs, the second key cannot be stored in its naturally assigned slot because it is already occupied. Effective hashing systems must therefore implement 'Collision Resolution Techniques' to handle these overlaps and ensure that every piece of data remains accessible and correctly stored.\n",
+    "tags": ["hashing", "collision"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Collision concept."
+  },
+  {
+    "id": "S3_DS_M6_015",
+    "question": "What are the types of Collision Resolution Techniques?",
+    "answer": "When two keys hash to the same index, the system must resolve the conflict. These techniques are broadly classified into two categories:\n1. Open Addressing (Closed Hashing): In this approach, all elements are stored directly within the hash table array. If a collision occurs, the algorithm probes (searches) for the next available empty slot according to a specific sequence.\n2. Chaining (Open Hashing): In this approach, each slot in the hash table does not hold the data directly but instead contains a pointer to a linked list (or chain) of all keys that hash to that same index.",
+    "tags": ["hashing", "collision-resolution"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Classification of resolution methods."
+  },
+  {
+    "id": "S3_DS_M6_016",
+    "question": "What are the types of Probing Techniques in Open Addressing?",
+    "answer": "Probing is the process of finding an alternate empty slot in the hash table when the primary slot is already occupied. The standard probing techniques include:\n1. Linear Probing: Searching for the next available slot sequentially.\n2. Quadratic Probing: Searching for slots using an increasing quadratic interval.\n3. Double Hashing: Using a second hash function to determine the search step size.",
+    "tags": ["hashing", "probing", "types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Probing methods overview."
+  },
+  {
+    "id": "S3_DS_M6_017",
+    "question": "Explain the Linear Probing technique.",
+    "answer": "Linear Probing is the simplest form of open addressing. When a collision occurs at a specific index, the algorithm performs a sequential search for the next available empty slot in the table.\nTheory: If a key 'k' hashes to index 'j' and that slot is occupied, the algorithm checks index 'j+1'. If that is also occupied, it checks 'j+2', and so on. If it reaches the end of the table, it wraps around to the beginning.\nStep-wise description:\n1. Calculate the initial index using h(k).\n2. If Table[index] is occupied, move to (index + 1) % Table_Size.\n3. Repeat step 2 until an empty slot is found.\nWhile easy to implement, it often leads to 'Primary Clustering', where long runs of occupied slots build up, significantly slowing down search and insertion times.",
+    "tags": ["hashing", "linear-probing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Linear probing logic."
+  },
+  {
+    "id": "S3_DS_M6_018",
+    "question": "Explain the Algorithm for Linear Probing.",
+    "answer": "This algorithm describes the step-by-step logic for inserting a key into a hash table using linear probing to resolve collisions.\nAlgorithm:\n1. [Initialize] Set INDEX = h(K) (Apply the primary hash function).\n2. [Check Occupancy] If TABLE[INDEX] is empty, go to Step 4.\n3. [Probe] While TABLE[INDEX] is occupied:\n   a. Set INDEX = (INDEX + 1) mod TABLE_SIZE (Move to the next sequential slot).\n   b. If INDEX returns to the initial h(K), print 'Table is Full' and Exit.\n4. [Insert] Set TABLE[INDEX] = K.\n5. Exit.",
+    "tags": ["hashing", "linear-probing", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Linear probing algorithm."
+  },
+  {
+    "id": "S3_DS_M6_019",
+    "question": "Explain the Quadratic Probing technique.",
+    "answer": "Quadratic Probing is an open addressing strategy that attempts to reduce the clustering issues found in linear probing by using a non-linear search sequence.\nTheory: Instead of checking the immediate next slot, the algorithm uses a quadratic function to determine the interval between probes. If a collision occurs at index 'H', the subsequent probes are performed at (H + 1²), (H + 2²), (H + 3²), and so on, modulo the table size.\nStep-wise description:\n1. Calculate the initial index 'H' using h(k).\n2. If a collision occurs, calculate the next index as (H + i²) % Table_Size, where i = 1, 2, 3...\n3. Continue incrementing 'i' until an empty slot is found.\nThis method effectively eliminates 'Primary Clustering', although it can still result in 'Secondary Clustering' (where keys that hash to the same initial index follow the same probe path).",
+    "tags": ["hashing", "quadratic-probing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Quadratic probing logic."
+  },
+  {
+    "id": "S3_DS_M6_020",
+    "question": "Explain the Algorithm for Quadratic Probing.",
+    "answer": "The following algorithm outlines how to resolve a collision by searching for empty slots at quadratic intervals.\nAlgorithm:\n1. [Initialize] Set INDEX = h(K) and i = 1.\n2. [Check Occupancy] If TABLE[INDEX] is empty, go to Step 4.\n3. [Probe] While TABLE[INDEX] is occupied:\n   a. Set NEW_INDEX = (INDEX + i^2) mod TABLE_SIZE.\n   b. If TABLE[NEW_INDEX] is empty, Set INDEX = NEW_INDEX and go to Step 4.\n   c. Else, Set i = i + 1.\n   d. If i > TABLE_SIZE, print 'Search failed/Table full' and Exit.\n4. [Insert] Set TABLE[INDEX] = K.\n5. Exit.",
+    "tags": ["hashing", "quadratic-probing", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Quadratic probing algorithm."
+  },
+  {
+    "id": "S3_DS_M6_021",
+    "question": "Explain the Double Hashing technique.",
+    "answer": "Double Hashing is one of the most efficient open addressing techniques because it uses a second independent hash function to determine the step size for probing.\nTheory: In double hashing, the interval between probes is fixed for a specific key but is different for different keys. The probe sequence is calculated as: [h1(k) + i * h2(k)] mod m.\nStep-wise description:\n1. Calculate the primary hash index using h1(k).\n2. If a collision occurs, calculate a secondary hash value using h2(k).\n3. Calculate the next probe position by adding the secondary hash value (multiplied by the probe number) to the primary index.\nThis ensures that even if two keys hash to the same primary index, they will likely have different secondary hash values and thus follow completely different probe sequences, eliminating both primary and secondary clustering.",
+    "tags": ["hashing", "double-hashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Double hashing logic."
+  },
+  {
+    "id": "S3_DS_M6_022",
+    "question": "Explain the Algorithm for Double Hashing.",
+    "answer": "This algorithm utilizes two hash functions to find an available slot in the hash table.\nAlgorithm:\n1. [Initialize] Set INDEX = h1(K) (Primary hash).\n2. [Check Occupancy] If TABLE[INDEX] is empty, go to Step 5.\n3. [Secondary Hash] Compute STEP_SIZE = h2(K) (Secondary hash).\n4. [Probe] While TABLE[INDEX] is occupied:\n   a. Set INDEX = (INDEX + STEP_SIZE) mod TABLE_SIZE.\n   b. If INDEX returns to h1(K), print 'Table Full' and Exit.\n5. [Insert] Set TABLE[INDEX] = K.\n6. Exit.",
+    "tags": ["hashing", "double-hashing", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Double hashing algorithm."
+  },
+  {
+    "id": "S3_DS_M6_023",
+    "question": "Explain Collision Resolution by Chaining.",
+    "answer": "Chaining, also known as Open Hashing, resolve collisions by allowing multiple elements to exist at the same index by using a linked list.\nTheory: In this technique, the hash table is an array of pointers. Each slot in the array points to the head of a linked list.\nStep-wise description:\n1. When a key 'k' hashes to an index, the algorithm checks that specific bucket.\n2. If the bucket is empty, the key is added as the first node of a new linked list.\n3. If a collision occurs (the bucket already contains data), the new key is simply appended to the existing linked list at that index.\nThis method ensures the table never technically 'fills up', but search performance degrades if the chains become too long (approaching O(N) in the worst case).\n",
+    "tags": ["hashing", "chaining"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Chaining resolution logic."
+  },
+  {
+    "id": "S3_DS_M6_024",
+    "question": "What is Rehashing?",
+    "answer": "Rehashing is a dynamic optimization process where the size of the hash table is increased and all existing entries are moved to new positions.\nTheory: As a hash table becomes crowded, the probability of collisions increases, which slows down performance. Rehashing is typically triggered when the 'Load Factor' exceeds a predefined threshold (like 0.7).\nStep-wise logic:\n1. Create a new hash table that is significantly larger (usually double the size) than the original.\n2. Define a new hash function compatible with the new table size.\n3. Traverse the old table, take each existing element, and re-insert it into the new table using the new hash function.\nThis restores the O(1) average-case performance of the hash table.",
+    "tags": ["hashing", "rehashing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Rehashing process."
+  },
+  {
+    "id": "S3_DS_M6_025",
+    "question": "What is the Load Factor in Hashing?",
+    "answer": "The Load Factor is a critical metric used to determine the efficiency and 'fullness' of a hash table.\nTheory: It is defined as the ratio of the number of elements currently stored in the table (n) to the total number of available slots or buckets (m).\nFormula: Load Factor (λ) = n / m.\nSignificance: A low load factor means the table is mostly empty, resulting in very few collisions and fast access. A high load factor indicates that the table is reaching capacity, leading to more frequent collisions and increased search times in both open addressing and chaining. It serves as the primary trigger for the rehashing process.",
+    "tags": ["hashing", "load-factor"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:45:00+05:30",
+    "notes": "Measurement of table efficiency."
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "S3_DS_M2_001",
+    "question": "What is a Stack data structure?",
+    "answer": "A Stack is a linear data structure that follows the LIFO (Last-In, First-Out) principle, meaning the last element added is the first one to be removed. \nTheory: It is an ordered collection of elements where all insertions and deletions are restricted to a single end called the 'Top'. Because access is limited to the top, it is used for tasks involving reversal or nested processing. \nReal-life Analogy: A stack of plates or a stack of books, where you add a new item on top and take the top-most item off first.",
+    "tags": ["stack", "definition", "lifo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Fundamental LIFO structure."
+  },
+  {
+    "id": "S3_DS_M2_002",
+    "question": "Explain the Stack Abstract Data Type (ADT).",
+    "answer": "The Stack ADT defines the logical behavior and operations of a stack without specifying its internal implementation. \nTheory: It characterizes a stack as a collection of elements with a 'Last-In, First-Out' behavior. The ADT specifies the 'what' (operations like Push and Pop) and the 'interface', while the 'how' (implementation via arrays or linked lists) is hidden from the user.",
+    "tags": ["stack", "adt"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Conceptual model of stack."
+  },
+  {
+    "id": "S3_DS_M2_003",
+    "question": "What are the primary operations performed on a Stack?",
+    "answer": "A Stack supports several fundamental operations for data management: \n1. Push: Inserts an element at the top. \n2. Pop: Removes the top element. \n3. Peek (Top): Returns the top element without removing it. \n4. isEmpty: Checks if the stack has no elements. \n5. isFull: Checks if the stack has reached its maximum capacity.",
+    "tags": ["stack", "operations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Core stack functionalities."
+  },
+  {
+    "id": "S3_DS_M2_004",
+    "question": "Explain the Algorithm for the PUSH operation in a Stack.",
+    "answer": "The PUSH operation adds a new element to the top of the stack. \nTheory: Before inserting, the algorithm must check for a 'Stack Overflow' condition to ensure the array has space. \nAlgorithm: \n1. [Check Overflow] If Top == MaxSize - 1, Print 'Stack Overflow' and Exit. \n2. [Increment] Set Top = Top + 1. \n3. [Insert] Set Stack[Top] = Value. \n4. Exit.",
+    "tags": ["stack", "push", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Insertion logic."
+  },
+  {
+    "id": "S3_DS_M2_005",
+    "question": "Explain the Algorithm for the POP operation in a Stack.",
+    "answer": "The POP operation removes and returns the top-most element from the stack. \nTheory: Before removing, the algorithm must check for a 'Stack Underflow' condition to see if the stack is empty. \nAlgorithm: \n1. [Check Underflow] If Top == -1, Print 'Stack Underflow' and Exit. \n2. [Retrieve] Set Value = Stack[Top]. \n3. [Decrement] Set Top = Top - 1. \n4. [Return] Return Value.",
+    "tags": ["stack", "pop", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Deletion logic."
+  },
+  {
+    "id": "S3_DS_M2_006",
+    "question": "Explain the Algorithm for the PEEK operation in a Stack.",
+    "answer": "The PEEK (or Top) operation allows the user to view the element at the top of the stack without removing it. \nTheory: It is a non-destructive operation used to inspect the current state of the stack. \nAlgorithm: \n1. [Check Empty] If Top == -1, Print 'Stack is Empty' and Exit. \n2. [Return] Return Stack[Top]. \n3. Exit.",
+    "tags": ["stack", "peek", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Inspection operation."
+  },
+  {
+    "id": "S3_DS_M2_007",
+    "question": "What are the common applications of Stack?",
+    "answer": "Stacks are extensively used in computer science for scenarios involving reverse order or nesting: \n1. Expression Conversion: Infix to Postfix/Prefix. \n2. Expression Evaluation: Calculating Postfix/Prefix results. \n3. Well-formedness of Parenthesis: Checking balanced brackets. \n4. Recursion: System-level function call management. \n5. Backtracking: Used in puzzles or pathfinding algorithms.",
+    "tags": ["stack", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Use cases overview."
+  },
+  {
+    "id": "S3_DS_M2_008",
+    "question": "Explain the Well-formedness of Parenthesis application.",
+    "answer": "Well-formedness (or Balancing Symbols) is the process of ensuring that every opening bracket in an expression has a corresponding and correctly nested closing bracket. \nTheory: This is essential for syntax checking in compilers. An expression like $ ( [ ] ) $ is well-formed, while $ ( [ ) ] $ is not. A stack is used to track open brackets; for every closing bracket, the top of the stack is popped and checked for a match.",
+    "tags": ["stack", "parenthesis", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Bracket balancing."
+  },
+  {
+    "id": "S3_DS_M2_009",
+    "question": "Explain the Algorithm to check for Well-formedness of Parenthesis.",
+    "answer": "This algorithm uses a stack to validate the nesting of brackets in a string. \nAlgorithm: \n1. Scan the expression from left to right. \n2. If character is an opening bracket ('(', '[', '{'), Push it onto the Stack. \n3. If character is a closing bracket (')', ']', '}'): \n   a. If stack is empty, return 'Unbalanced'. \n   b. Pop top and check if it matches the closing bracket. If not, return 'Unbalanced'. \n4. After scan, if stack is empty, return 'Balanced', else 'Unbalanced'.",
+    "tags": ["stack", "parenthesis", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Validation logic."
+  },
+  {
+    "id": "S3_DS_M2_010",
+    "question": "What are Infix, Postfix, and Prefix notations?",
+    "answer": "These represent the placement of operators relative to operands: \n1. Infix: Operator is between operands (e.g., $A + B$). Common in human math. \n2. Postfix: Operator follows operands (e.g., $AB +$). Preferred by compilers. \n3. Prefix: Operator precedes operands (e.g., $+ AB$). Also known as Polish Notation.",
+    "tags": ["expression", "notations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Types of expressions."
+  },
+  {
+    "id": "S3_DS_M2_011",
+    "question": "Explain the Algorithm for converting Infix to Postfix expression.",
+    "answer": "This algorithm uses a stack to store operators while operands go directly to the output. \nAlgorithm: \n1. Scan infix from left to right. \n2. If operand, add to Postfix string. \n3. If '(', push to stack. \n4. If ')', pop from stack to Postfix until '(' is found. Pop and discard '('. \n5. If operator, pop operators with higher/equal precedence to Postfix, then push scanned operator. \n6. After scan, pop remaining operators to Postfix.",
+    "tags": ["stack", "infix-to-postfix", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Expression conversion."
+  },
+  {
+    "id": "S3_DS_M2_012",
+    "question": "Explain the Algorithm for Evaluating a Postfix expression.",
+    "answer": "Evaluating a postfix expression involves using a stack to store operands until an operator is encountered. \nAlgorithm: \n1. Scan postfix from left to right. \n2. If operand, push it to the stack. \n3. If operator, pop two operands (Op2, then Op1), perform (Op1 Operator Op2), and push the result back. \n4. After the scan, the final result is at the top of the stack.",
+    "tags": ["stack", "postfix-evaluation", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Expression computation."
+  },
+  {
+    "id": "S3_DS_M2_013",
+    "question": "What is Recursion and its relation to Stack?",
+    "answer": "Recursion is a technique where a function calls itself directly or indirectly. \nTheory: Every recursive call requires the system to maintain the current function's state (local variables, return addresses). The system uses an internal 'Recursion Stack' to store these frames. As calls finish, they are popped from the stack to resume previous executions.",
+    "tags": ["recursion", "stack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Stack in recursion."
+  },
+  {
+    "id": "S3_DS_M2_014",
+    "question": "What is a Queue data structure?",
+    "answer": "A Queue is a linear data structure that follows the FIFO (First-In, First-Out) principle. \nTheory: Elements are added at one end called the 'Rear' and removed from the other end called the 'Front'. This ensures that the first element inserted is the first one processed. \nReal-life Analogy: A queue of people at a ticket counter or a supermarket checkout.",
+    "tags": ["queue", "definition", "fifo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Fundamental FIFO structure."
+  },
+  {
+    "id": "S3_DS_M2_015",
+    "question": "Explain the Queue Abstract Data Type (ADT).",
+    "answer": "The Queue ADT defines the logical properties of a queue where insertions are restricted to the Rear and deletions to the Front. \nTheory: It focuses on the FIFO behavior and operations like Enqueue and Dequeue. It hides the underlying implementation (array or linked list) from the user, providing a clear interface for managing sequential data flow.",
+    "tags": ["queue", "adt"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Conceptual model of queue."
+  },
+  {
+    "id": "S3_DS_M2_016",
+    "question": "What are the primary operations performed on a Queue?",
+    "answer": "A Queue supports several essential operations: \n1. Enqueue: Inserts an element at the rear. \n2. Dequeue: Removes the element from the front. \n3. Peek (Front): Views the element at the front without removal. \n4. isEmpty: Checks if the queue contains any data. \n5. isFull: Checks if the queue has reached capacity (for array-based queues).",
+    "tags": ["queue", "operations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Core queue functionalities."
+  },
+  {
+    "id": "S3_DS_M2_017",
+    "question": "Explain the Algorithm for the ENQUEUE operation in a Linear Queue.",
+    "answer": "ENQUEUE is the operation of adding a new element to the back of the queue. \nTheory: It requires checking for a 'Queue Overflow' condition if using an array. \nAlgorithm: \n1. [Check Overflow] If Rear == MaxSize - 1, Print 'Queue Overflow' and Exit. \n2. [First Element] If Front == -1, Set Front = 0. \n3. [Increment] Set Rear = Rear + 1. \n4. [Insert] Set Queue[Rear] = Value. \n5. Exit.",
+    "tags": ["queue", "enqueue", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Insertion in linear queue."
+  },
+  {
+    "id": "S3_DS_M2_018",
+    "question": "Explain the Algorithm for the DEQUEUE operation in a Linear Queue.",
+    "answer": "DEQUEUE is the operation of removing an element from the front of the queue. \nTheory: It requires checking for a 'Queue Underflow' condition if the queue is empty. \nAlgorithm: \n1. [Check Underflow] If Front == -1 or Front > Rear, Print 'Queue Underflow' and Exit. \n2. [Retrieve] Set Value = Queue[Front]. \n3. [Increment] Set Front = Front + 1. \n4. [Reset if Empty] If Front > Rear, Set Front = Rear = -1. \n5. Return Value.",
+    "tags": ["queue", "dequeue", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Deletion in linear queue."
+  },
+  {
+    "id": "S3_DS_M2_019",
+    "question": "What are the different types of Queues?",
+    "answer": "There are several variations of the queue structure to meet different needs: \n1. Linear Queue: Basic sequential queue. \n2. Circular Queue: A queue where the end connects back to the beginning. \n3. Double Ended Queue (DEQUE): Allows access from both ends. \n4. Priority Queue: Elements are processed based on priority.",
+    "tags": ["queue", "types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Queue classification."
+  },
+  {
+    "id": "S3_DS_M2_020",
+    "question": "What is a Circular Queue and why is it better than a Linear Queue?",
+    "answer": "A Circular Queue is a queue where the last position is connected back to the first position. \nTheory: In a Linear Queue, once the 'Rear' reaches the end of the array, we cannot insert more elements even if there is empty space at the front (due to previous dequeues). This is known as memory wastage. A Circular Queue uses the formula $(Rear + 1) \\% MaxSize$ to wrap around and reuse space.",
+    "tags": ["queue", "circular-queue", "advantages"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Memory optimized queue."
+  },
+  {
+    "id": "S3_DS_M2_021",
+    "question": "Explain the Algorithm for insertion in a Circular Queue.",
+    "answer": "This algorithm adds an element to a circular queue by wrapping the pointer if necessary. \nAlgorithm: \n1. [Check Overflow] If (Rear + 1) % MaxSize == Front, Print 'Queue Overflow' and Exit. \n2. [Check Empty] If Front == -1, Set Front = Rear = 0. \n3. [Increment Circularly] Else, Set Rear = (Rear + 1) % MaxSize. \n4. [Insert] Set Queue[Rear] = Value. \n5. Exit.",
+    "tags": ["queue", "circular-queue", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Circular insertion logic."
+  },
+  {
+    "id": "S3_DS_M2_022",
+    "question": "Explain the Algorithm for deletion in a Circular Queue.",
+    "answer": "This algorithm removes an element from a circular queue and updates the front pointer circularly. \nAlgorithm: \n1. [Check Underflow] If Front == -1, Print 'Queue Underflow' and Exit. \n2. [Retrieve] Set Value = Queue[Front]. \n3. [Check Last Element] If Front == Rear, Set Front = Rear = -1. \n4. [Increment Circularly] Else, Set Front = (Front + 1) % MaxSize. \n5. Return Value.",
+    "tags": ["queue", "circular-queue", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Circular deletion logic."
+  },
+  {
+    "id": "S3_DS_M2_023",
+    "question": "Explain Double Ended Queue (DEQUE).",
+    "answer": "A DEQUE is a linear data structure where insertion and deletion can be performed at both the Front and the Rear ends. \nTheory: It is more flexible than a standard queue because it does not strictly enforce FIFO. It can act as either a Stack or a Queue depending on how the operations are restricted. Elements can be added or removed from either head or tail.",
+    "tags": ["queue", "deque"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Generalized queue."
+  },
+  {
+    "id": "S3_DS_M2_024",
+    "question": "What are the types of DEQUE?",
+    "answer": "DEQUE is classified into two types based on restriction of operations: \n1. Input Restricted DEQUE: Insertion is allowed at only one end (Rear), but deletion is allowed at both ends (Front and Rear). \n2. Output Restricted DEQUE: Deletion is allowed at only one end (Front), but insertion is allowed at both ends (Front and Rear).",
+    "tags": ["queue", "deque", "types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Restriction-based DEQUE types."
+  },
+  {
+    "id": "S3_DS_M2_025",
+    "question": "Explain the Algorithm for DEQUE insertion at the Front.",
+    "answer": "This operation adds an element to the head of the DEQUE. \nAlgorithm: \n1. [Check Overflow] If (Front == 0 and Rear == MaxSize - 1) or (Front == Rear + 1), Print 'Overflow' and Exit. \n2. [Initial Case] If Front == -1, Set Front = Rear = 0. \n3. [Wrap Around] Else if Front == 0, Set Front = MaxSize - 1. \n4. [Decrement] Else, Set Front = Front - 1. \n5. [Insert] Set Queue[Front] = Value.",
+    "tags": ["queue", "deque", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "DEQUE front insertion."
+  },
+  {
+    "id": "S3_DS_M2_026",
+    "question": "Explain the Algorithm for DEQUE deletion at the Rear.",
+    "answer": "This operation removes an element from the tail of the DEQUE. \nAlgorithm: \n1. [Check Underflow] If Front == -1, Print 'Underflow' and Exit. \n2. [Retrieve] Set Value = Queue[Rear]. \n3. [Last Element] If Front == Rear, Set Front = Rear = -1. \n4. [Wrap Around] Else if Rear == 0, Set Rear = MaxSize - 1. \n5. [Decrement] Else, Set Rear = Rear - 1. \n6. Return Value.",
+    "tags": ["queue", "deque", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "DEQUE rear deletion."
+  },
+  {
+    "id": "S3_DS_M2_027",
+    "question": "What is a Priority Queue?",
+    "answer": "A Priority Queue is a collection of elements where each element is assigned a priority. \nTheory: Unlike a standard queue, elements are removed based on their priority rather than arrival time. The element with the highest priority is dequeued first. If two elements have the same priority, they follow the FIFO rule. \nExample: Job scheduling in an operating system where high-priority system tasks run before user tasks.",
+    "tags": ["queue", "priority-queue"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Priority-based processing."
+  },
+  {
+    "id": "S3_DS_M2_028",
+    "question": "What are the common applications of Queues?",
+    "answer": "Queues are used in scenarios requiring order and resource sharing: \n1. CPU Scheduling: Managing the order of processes to be executed. \n2. Disk Scheduling: Organizing I/O requests for the disk. \n3. Buffers: Handling asynchronous data transfers (e.g., keyboard buffers, printer spooling). \n4. Networking: Routing data packets in a specific order. \n5. Call Center Systems: Managing a queue of incoming customer calls.",
+    "tags": ["queue", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T21:40:00+05:30",
+    "notes": "Use cases overview."
+  }
+]

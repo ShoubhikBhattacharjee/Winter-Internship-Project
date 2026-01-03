@@ -1,0 +1,177 @@
+[
+  {
+    "id": "S3_DS_M1_001",
+    "question": "What is a Data Structure?",
+    "answer": "A Data Structure is a specialized format for organizing, processing, retrieving, and storing data so that it can be accessed and modified efficiently. \nTheory: It defines the relationship between data elements and the operations that can be performed on them. Choosing the right data structure is crucial for improving performance and optimizing memory usage, especially when managing large amounts of data. It ensures that operations like searching, sorting, and insertion are performed with minimal time complexity.",
+    "tags": ["data-structure", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Core introduction to DS."
+  },
+  {
+    "id": "S3_DS_M1_002",
+    "question": "What are the different types of Data Structures?",
+    "answer": "Data structures are primarily classified into two main categories based on how they are predefined and their complexity: \n1. Primitive Data Structures: Basic data types provided by the language, such as int and float. \n2. Non-Primitive Data Structures: Complex structures derived from primitive types, which are further divided into Linear Data Structures and Non-Linear Data Structures.\n\nDefinitions of categories:\n- Linear Data Structures: A data structure where data elements are arranged in a sequential or linear order. Every element (except the first and last) has a unique predecessor and successor.\n- Non-Linear Data Structures: A data structure where data elements are not arranged in a sequential order but follow a hierarchical or interconnected pattern across multiple levels.",
+    "tags": ["data-structure", "classification"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Structural classification."
+  },
+  
+  {
+    "id": "S3_DS_M1_003",
+    "question": "Explain Primitive Data Structures.",
+    "answer": "Primitive data structures are the most basic data types provided by a programming language. \nTheory: These are predefined by the language and operate directly on machine instructions. They are used to represent single values and serve as the foundation for building more complex structures. \nExamples: Integer (int), Floating point (float), Character (char), and Boolean (bool).",
+    "tags": ["data-structure", "primitive"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Basic building blocks."
+  },
+  {
+    "id": "S3_DS_M1_004",
+    "question": "Explain Non-Primitive Data Structures.",
+    "answer": "Non-primitive data structures are sophisticated structures derived from primitive data types to handle groups of related data. \nTheory: Unlike primitive types, these can store multiple values and define relationships between them. They are essential for managing large datasets and are categorized into Linear (Sequential) and Non-Linear (Hierarchical) structures. \nExamples: Arrays, Lists, Trees, and Graphs.\n\nDefinitions of types:\n- Arrays: A collection of elements of the same data type stored in contiguous memory locations.\n- Lists: A collection of data elements used to store and manage data in a specific order.\n- Trees: A hierarchical data structure consisting of nodes connected by edges, starting from a root node.\n- Graphs: A network structure consisting of vertices connected by edges.",
+    "tags": ["data-structure", "non-primitive"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Complex data handling."
+  },
+  {
+    "id": "S3_DS_M1_005",
+    "question": "What are Linear Data Structures?",
+    "answer": "Linear data structures are those where data elements are arranged in a sequential or linear order. \nTheory: In these structures, every element (except the first and last) has a unique predecessor and a unique successor. The elements form a single-level sequence, making traversal straightforward as each element is accessed one after the other. \nExamples: Arrays, Stacks, Queues, and Linked Lists.\n\nDefinitions of types:\n- Arrays: A linear structure that stores fixed-size, similar elements in consecutive memory addresses.\n- Stacks: A linear structure that follows the LIFO (Last In, First Out) principle for insertion and deletion.\n- Queues: A linear structure that follows the FIFO (First In, First Out) principle for insertion and deletion.\n- Linked Lists: A linear structure where elements are not stored in contiguous locations and are linked using pointers.",
+    "tags": ["data-structure", "linear"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Sequential data organization."
+  },
+  {
+    "id": "S3_DS_M1_006",
+    "question": "What are Non-Linear Data Structures?",
+    "answer": "Non-linear data structures are those where data elements are not arranged in a sequential order and instead follow a hierarchical or interconnected pattern. \nTheory: In these structures, an element can be connected to multiple other elements across different levels. This allows for representing complex relationships that cannot be captured by simple linear sequences. \nExamples: Trees (Hierarchical) and Graphs (Networked).\n\nDefinitions of types:\n- Trees: A hierarchical data structure used to represent data with a parent-child relationship.\n- Graphs: A non-linear structure used to represent complex network relationships between various nodes.",
+    "tags": ["data-structure", "non-linear"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Hierarchical data organization."
+  },
+  {
+    "id": "S3_DS_M1_007",
+    "question": "What is an Abstract Data Type (ADT)?",
+    "answer": "An Abstract Data Type (ADT) is a theoretical concept in computer science that specifies what operations can be performed on the data, without specifying how they are implemented. \nTheory: It serves as a blueprint that focuses on 'what' the data structure does (its interface and behavior) rather than 'how' it is implemented internally. This abstraction allows the underlying implementation to be changed (e.g., from an array to a linked list) without affecting the code that uses the ADT.",
+    "tags": ["adt", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Conceptual model."
+  },
+  {
+    "id": "S3_DS_M1_008",
+    "question": "Explain the Stack as an ADT.",
+    "answer": "The Stack is a linear ADT that follows the Last-In-First-Out (LIFO) principle.\nTheory: LIFO (Last In, First Out) means the last element added to the stack will be the first one to be removed. It defines a collection where all insertions and deletions are restricted to a single end called the 'Top'. \nOperations: \n1. Push: Adds an element to the top. \n2. Pop: Removes the top-most element. \n3. Peek: Views the top element without removing it. \n4. isEmpty/isFull: Checks the status of the stack.",
+    "tags": ["adt", "stack", "lifo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "LIFO implementation."
+  },
+  
+  {
+    "id": "S3_DS_M1_009",
+    "question": "Explain the Queue as an ADT.",
+    "answer": "The Queue is a linear ADT that follows the First-In-First-Out (FIFO) principle.\nTheory: FIFO (First In, First Out) means the first element added to the queue will be the first one to be removed. It defines a collection where data is inserted at one end called the 'Rear' and removed from the other end called the 'Front'. \nOperations: \n1. Enqueue: Inserts an element at the rear. \n2. Dequeue: Removes the element from the front. \n3. Peek: Views the front element. \n4. isEmpty/isFull: Checks the status of the queue.",
+    "tags": ["adt", "queue", "fifo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "FIFO implementation."
+  },
+  
+  {
+    "id": "S3_DS_M1_010",
+    "question": "What are the basic operations on Data Structures?",
+    "answer": "Data structures support several fundamental operations to manage the stored information efficiently: \n1. Traversing: Accessing every element exactly once. \n2. Searching: Finding the location of an element with a specific value. \n3. Insertion: Adding a new element to the structure. \n4. Deletion: Removing an existing element. \n5. Sorting: Arranging elements in a specific order. \n6. Merging: Combining two structures into a single one.",
+    "tags": ["operations", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Common manipulation tasks."
+  },
+  {
+    "id": "S3_DS_M1_011",
+    "question": "What is an Array?",
+    "answer": "An Array is a linear data structure that stores a fixed-size, sequential collection of elements of the same type. \nTheory: Elements are stored in contiguous memory locations, allowing for fast access using an index (subscript). The index typically starts at 0. Because the size is fixed at declaration, it is a static data structure. \nExample: An integer array `arr[5]` stores five integers in a row.",
+    "tags": ["array", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Static sequential storage."
+  },
+  {
+    "id": "S3_DS_M1_012",
+    "question": "What is a Linked List?",
+    "answer": "A Linked List is a dynamic linear data structure consisting of a sequence of nodes. \nTheory: Unlike arrays, elements are not stored in contiguous memory. Each node contains two fields: 'Data' (the value) and 'Next' (a pointer/link to the next node in the sequence). This allows the list to grow or shrink in size during runtime by allocating memory as needed.",
+    "tags": ["linked-list", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Dynamic sequential storage."
+  },
+  
+  {
+    "id": "S3_DS_M1_013",
+    "question": "What is a Tree?",
+    "answer": "A Tree is a non-linear data structure that represents a hierarchical relationship between elements. \nTheory: It consists of nodes connected by edges, starting from a single 'Root' node. Each node (except the root) has one parent and can have zero or more children. Nodes without children are called 'Leaf Nodes'. It is commonly used to represent file systems and organization charts.",
+    "tags": ["tree", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Hierarchical modeling."
+  },
+  {
+    "id": "S3_DS_M1_014",
+    "question": "What is a Graph?",
+    "answer": "A Graph is a non-linear data structure consisting of a finite set of vertices (nodes) and edges that connect them. \nTheory: Unlike trees, graphs do not have a root-child hierarchy and can contain cycles or multiple paths between nodes. They are used to model complex networks where any element can be connected to any other element. \nExamples: Social networks, flight routes, and maps.",
+    "tags": ["graph", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Network modeling."
+  },
+  {
+    "id": "S3_DS_M1_015",
+    "question": "Explain Stack Overflow and Underflow.",
+    "answer": "These are the two primary error conditions encountered when performing operations on a stack: \n1. Stack Overflow: Occurs when an attempt is made to 'Push' an element into a stack that has reached its maximum capacity. \n2. Stack Underflow: Occurs when an attempt is made to 'Pop' or 'Peek' an element from an empty stack. \nTheory: These conditions are critical for error handling to prevent system crashes or data corruption.",
+    "tags": ["stack", "conditions"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Stack boundary constraints."
+  },
+  {
+    "id": "S3_DS_M1_016",
+    "question": "Explain Arrays as a linear data structure.",
+    "answer": "An array is a basic linear data structure that stores elements of the same data type in a sequential manner. \nTheory: It uses a contiguous block of memory where each element is identified by an index or key. This allows for constant-time access to any element if the index is known. However, insertion and deletion operations can be costly as they may require shifting elements to maintain the linear order.",
+    "tags": ["array", "linear-ds"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Linear DS type explanation."
+  },
+  {
+    "id": "S3_DS_M1_017",
+    "question": "Explain Stacks as a linear data structure.",
+    "answer": "A stack is a linear data structure that functions based on the Last-In-First-Out (LIFO) mechanism. \nTheory: In this structure, elements are added and removed from the same end, known as the 'top'. This makes it ideal for scenarios where the most recently added item needs to be processed first, such as reversing a string, undo mechanisms in editors, or expression evaluation.",
+    "tags": ["stack", "linear-ds"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Linear DS type explanation."
+  },
+  {
+    "id": "S3_DS_M1_018",
+    "question": "Explain Queues as a linear data structure.",
+    "answer": "A queue is a linear data structure that operates on the First-In-First-Out (FIFO) principle. \nTheory: It maintains two distinct ends: the 'front' for removing elements and the 'rear' for adding new elements. This structure ensures that the data is processed in the exact order it arrived. It is widely used in CPU scheduling, disk scheduling, and handling asynchronous data transfers.",
+    "tags": ["queue", "linear-ds"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Linear DS type explanation."
+  },
+  {
+    "id": "S3_DS_M1_019",
+    "question": "Explain Linked Lists as a linear data structure.",
+    "answer": "A linked list is a linear data structure where elements are not stored in sequential memory locations but are connected through pointers. \nTheory: Each element, called a node, contains the data and a reference (or link) to the next node in the sequence. This structure provides great flexibility for dynamic memory management, allowing for efficient insertions and deletions compared to arrays since no shifting of elements is required.",
+    "tags": ["linked-list", "linear-ds"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Linear DS type explanation."
+  }
+]

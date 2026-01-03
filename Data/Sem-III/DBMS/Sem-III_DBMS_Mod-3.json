@@ -1,0 +1,299 @@
+[
+  {
+    "id": "S3_DBMS_M3_001",
+    "question": "What is the Relational Model?",
+    "answer": "The Relational Model was proposed by E.F. Codd in 1970 and is based on the mathematical concept of a relation, which represents data as a table of values. It provides an abstract specification for database management systems through three components: data structures, data manipulation, and data integrity. It allows for powerful query languages and is used to implement the conceptual view of a database.",
+    "tags": ["relational-model", "definition"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Fundamental DBMS model."
+  },
+  {
+    "id": "S3_DBMS_M3_002",
+    "question": "What are the three components of the Relational Model as defined by Codd?",
+    "answer": "The three components are:\n1. Data Structure: Defines the types of data structures used for building the database, primarily tables composed of rows and columns.\n2. Data Manipulation: Provides the operators used to retrieve, derive, or modify data stored in the data structures.\n3. Data Integrity: Consists of rules that explicitly or implicitly define a consistent and valid database state, ensuring data accuracy.",
+    "tags": ["relational-model", "components"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Core architecture components."
+  },
+  {
+    "id": "S3_DBMS_M3_003",
+    "question": "Define 'Relation' in the context of the Relational Model.",
+    "answer": "A Relation is a mathematical concept that looks like a table of values. In a relational database, information about entities, their attributes, and relationships are presented to the user as a collection of these tables (relations). It is defined as a set of tuples (rows).",
+    "tags": ["terminology", "relation"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Basic data structure."
+  },
+  {
+    "id": "S3_DBMS_M3_004",
+    "question": "What is a 'Tuple'?",
+    "answer": "A Tuple is an individual row in a relation. It represents an ordered set of values where each value is derived from an appropriate domain. Each tuple in a relation represents a single instance or record of the entity defined by the table.",
+    "tags": ["terminology", "tuple"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "A row in a table."
+  },
+  {
+    "id": "S3_DBMS_M3_005",
+    "question": "Define 'Attribute' in a relational database.",
+    "answer": "An Attribute is a named column in a relation. It designates the role played by a specific domain in the relation. Attributes represent the properties or characteristics of the entity that the relation describes.",
+    "tags": ["terminology", "attribute"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "A column in a table."
+  },
+  {
+    "id": "S3_DBMS_M3_006",
+    "question": "What is a 'Domain'?",
+    "answer": "A Domain is a set of atomic values used to model data. It has a logical definition and format, such as a set of integers or strings. Every attribute in a relation is defined over a domain, which restricts the values the attribute can take.",
+    "tags": ["terminology", "domain"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Data type constraint."
+  },
+  {
+    "id": "S3_DBMS_M3_007",
+    "question": "Define 'Degree' and 'Cardinality'.",
+    "answer": "1. Degree: The degree of a relation is the number of attributes (columns) it contains. A relation with 'n' attributes is said to have a degree of n.\n2. Cardinality: The cardinality of a relation is the number of tuples (rows) currently in the relation.",
+    "tags": ["terminology", "degree", "cardinality"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Dimensions of a relation."
+  },
+  {
+    "id": "S3_DBMS_M3_008",
+    "question": "What is a 'Relation Schema'?",
+    "answer": "A Relation Schema, denoted as R(A1, A2, ..., An), describes the structure of a relation. It consists of the relation name (R) and a list of attributes (A1, A2, ..., An). It provides the blueprint for how data will be organized in the table.",
+    "tags": ["terminology", "schema"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Metadata definition."
+  },
+  {
+    "id": "S3_DBMS_M3_009",
+    "question": "Define Relational Algebra.",
+    "answer": "Relational Algebra is a formal query language associated with the relational model. It consists of a set of operations that take one or more relations as input and produce a new relation as output. It serves as a theoretical foundation for SQL and specifies how to retrieve data procedurally.",
+    "tags": ["relational-algebra", "definition"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Procedural query language base."
+  },
+  {
+    "id": "S3_DBMS_M3_010",
+    "question": "What are the types of Relational Algebra Operators?",
+    "answer": "Relational algebra operators are categorized into:\n1. Unary Operations: Work on a single relation (e.g., Select, Project, Rename).\n2. Set Theory Operations: Binary operations derived from mathematical set theory (e.g., Union, Intersection, Set Difference, Cartesian Product).\n3. Binary Relational Operations: Specifically designed for relational databases (e.g., Join, Division).\n4. Additional Operations: Extended operations like Aggregate Functions and Outer Joins.",
+    "tags": ["relational-algebra", "operators", "types"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Categorization of RA operations."
+  },
+  {
+    "id": "S3_DBMS_M3_011",
+    "question": "Define the SELECT (σ) operation.",
+    "answer": "The SELECT operation (σ) is a unary operator used to select a subset of tuples from a relation that satisfy a specific selection condition. It acts as a horizontal filter. The syntax is σ <selection condition>(R). The selection condition is a boolean expression involving attributes, constants, and comparison operators (=, <, >, etc.).\n",
+    "tags": ["relational-algebra", "select"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Horizontal row selection."
+  },
+  {
+    "id": "S3_DBMS_M3_012",
+    "question": "Define the PROJECT (π) operation.",
+    "answer": "The PROJECT operation (π) is a unary operator used to select certain columns (attributes) from a relation and discard the rest. It acts as a vertical filter. Because the result must be a mathematical set, duplicate tuples are automatically eliminated during this operation. The syntax is π <attribute list>(R).\n",
+    "tags": ["relational-algebra", "project"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Vertical column selection."
+  },
+  {
+    "id": "S3_DBMS_M3_013",
+    "question": "Define the UNION (∪) operation.",
+    "answer": "The UNION operation (∪) is a binary operation that combines all tuples from two relations R and S. The result includes all tuples that are in R, in S, or in both. Duplicate tuples are eliminated. To perform Union, the relations must be 'Union Compatible' (same number of attributes and matching domains).\n",
+    "tags": ["relational-algebra", "union"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Set theory addition."
+  },
+  {
+    "id": "S3_DBMS_M3_014",
+    "question": "Define the INTERSECTION (∩) operation.",
+    "answer": "The INTERSECTION operation (∩) is a binary operation that produces a relation containing only the tuples that appear in both relation R and relation S. The operand relations must be type-compatible. The attribute names in the result are typically taken from the first relation R.\n",
+    "tags": ["relational-algebra", "intersection"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Common rows."
+  },
+  {
+    "id": "S3_DBMS_M3_015",
+    "question": "Define the SET DIFFERENCE (–) operation.",
+    "answer": "The SET DIFFERENCE operation (–) returns a relation including all tuples that are in relation R but not in relation S. This operation is non-commutative (R – S is not the same as S – R). The relations must be type-compatible.\n",
+    "tags": ["relational-algebra", "difference"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Set subtraction."
+  },
+  {
+    "id": "S3_DBMS_M3_016",
+    "question": "Define the CARTESIAN PRODUCT (x) operation.",
+    "answer": "The CARTESIAN PRODUCT (x) is a binary operation that combines every tuple of relation R with every tuple of relation S. If R has n tuples and S has m tuples, the result has n * m tuples. The degree of the result is the sum of the degrees of R and S. This operation is often the first step in performing a Join.",
+    "tags": ["relational-algebra", "cartesian-product"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Cross product."
+  },
+  {
+    "id": "S3_DBMS_M3_017",
+    "question": "What is a JOIN (⨝) operation and what are its types?",
+    "answer": "A JOIN operation (⨝) is used to combine related tuples from two relations into single 'longer' tuples based on a join condition. It is equivalent to a Cartesian Product followed by a Selection. The types of Joins include:\n1. Theta Join: Uses general comparison operators (<, <=, >, >=, etc.).\n2. Equijoin: Uses only the equality (=) operator.\n3. Natural Join: An equijoin that automatically matches columns with the same name and eliminates duplicate columns.\n4. Outer Join: Preserves tuples that do not have matching values in the other relation.",
+    "tags": ["relational-algebra", "join", "types"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Relational combination types."
+  },
+  {
+    "id": "S3_DBMS_M3_018",
+    "question": "Define 'EQUIJOIN'.",
+    "answer": "An EQUIJOIN is a specific type of join where the join condition consists of equality comparisons (=) between attributes of the two relations. The resulting relation contains all attributes from both participating relations, meaning the join attributes will appear twice (once from each table) with identical values.",
+    "tags": ["relational-algebra", "equijoin"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Equality-based join."
+  },
+  {
+    "id": "S3_DBMS_M3_019",
+    "question": "Define 'NATURAL JOIN' (*).",
+    "answer": "A NATURAL JOIN (*) is a variation of the equijoin created to eliminate the redundant (superfluous) second attribute in the result. It requires that the join attributes have the same name in both relations. If names differ, a Rename operation must be applied first.\n",
+    "tags": ["relational-algebra", "natural-join"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Optimized join."
+  },
+  {
+    "id": "S3_DBMS_M3_020",
+    "question": "What are OUTER JOINS and what are the three types?",
+    "answer": "OUTER joins are operations that preserve tuples that would be lost in a normal join because they have no matching values in the other relation. They fill unmatched attribute values with NULLs. The three types are:\n1. Left Outer Join (⟕): Keeps every tuple from the left relation.\n2. Right Outer Join (⟖): Keeps every tuple from the right relation.\n3. Full Outer Join (⟗): Keeps every tuple from both the left and right relations.",
+    "tags": ["relational-algebra", "outer-join", "types"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Information preservation joins."
+  },
+  {
+    "id": "S3_DBMS_M3_021",
+    "question": "Define 'LEFT OUTER JOIN' (⟕).",
+    "answer": "A LEFT OUTER JOIN (⟕) returns all tuples from the left relation R. For tuples in R that have no match in the right relation S, the attributes of S in the resulting tuple are padded with NULL values. This ensures that no information from the left-side relation is lost.\n",
+    "tags": ["relational-algebra", "left-outer-join"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Preserves left side data."
+  },
+  {
+    "id": "S3_DBMS_M3_022",
+    "question": "Define 'RIGHT OUTER JOIN' (⟖).",
+    "answer": "A RIGHT OUTER JOIN (⟖) returns all tuples from the right relation S. For tuples in S that have no matching tuple in the left relation R, the attributes from R are filled with NULL values in the result set. It is the symmetric opposite of the Left Outer Join.\n",
+    "tags": ["relational-algebra", "right-outer-join"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Preserves right side data."
+  },
+  {
+    "id": "S3_DBMS_M3_023",
+    "question": "Define 'FULL OUTER JOIN' (⟗).",
+    "answer": "A FULL OUTER JOIN (⟗) combines the results of both Left and Right outer joins. It returns all tuples from both participating relations. When a match is found, tuples are joined; when no match exists, the missing side's attributes are filled with NULL values.\n",
+    "tags": ["relational-algebra", "full-outer-join"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Preserves all data."
+  },
+  {
+    "id": "S3_DBMS_M3_024",
+    "question": "Define the DIVISION (÷) operation.",
+    "answer": "The DIVISION (÷) operation is used for queries involving the 'for all' (universal quantifier) condition. If relation R has attributes (A, B) and S has attribute (B), R ÷ S returns all values of A that are associated with every single value of B in relation S.",
+    "tags": ["relational-algebra", "division"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Universal quantifier logic."
+  },
+  {
+    "id": "S3_DBMS_M3_025",
+    "question": "Define the RENAME (ρ) operation.",
+    "answer": "The RENAME (ρ) operation is a unary operator used to change the name of a relation or its attributes. This is necessary for queries that involve the same relation twice (self-joins) or to ensure attributes have the same name before a Natural Join or Union operation.",
+    "tags": ["relational-algebra", "rename"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Alias management."
+  },
+  {
+    "id": "S3_DBMS_M3_026",
+    "question": "What are Aggregate Functions?",
+    "answer": "Aggregate Functions perform mathematical calculations on a collection of values from a column to return a single summarized result. Common functions include:\n- SUM: Total of values.\n- AVG: Average of values.\n- MAX: Maximum value.\n- MIN: Minimum value.\n- COUNT: Total number of values or rows.",
+    "tags": ["relational-algebra", "aggregate-functions"],
+    "source": { "type": "file", "path": "DBMS Module 3.docx", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Summary statistics."
+  },
+  {
+    "id": "S3_DBMS_M3_027",
+    "question": "List the 7 steps to convert an ER Diagram to a Relational Schema.",
+    "answer": "The algorithm involves:\n1. Mapping of Regular Entity Types.\n2. Mapping of Weak Entity Types.\n3. Mapping of Binary 1:1 Relationship Types.\n4. Mapping of Binary 1:N Relationship Types.\n5. Mapping of Binary M:N Relationship Types.\n6. Mapping of Multivalued Attributes.\n7. Mapping of N-ary Relationship Types.",
+    "tags": ["mapping", "er-to-relational", "steps"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Conversion algorithm."
+  },
+  {
+    "id": "S3_DBMS_M3_028",
+    "question": "How do you map a Regular Entity to a relation?",
+    "answer": "For each regular entity type E, create a relation R that includes all simple attributes of E. For composite attributes, include only their simple component attributes. Choose one of the key attributes of E as the primary key for relation R.",
+    "tags": ["mapping", "regular-entity"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 1."
+  },
+  {
+    "id": "S3_DBMS_M3_029",
+    "question": "How do you map a Weak Entity to a relation?",
+    "answer": "For each weak entity type W with owner entity E, create a relation R and include all simple attributes of W. Include the primary key of the relation representing E as a foreign key in R. The primary key of R is the combination of the owner's primary key and the partial key of W.",
+    "tags": ["mapping", "weak-entity"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 2."
+  },
+  {
+    "id": "S3_DBMS_M3_030",
+    "question": "How do you map a Binary 1:N Relationship?",
+    "answer": "Identify the relation S that represents the entity type at the 'N' (many) side of the relationship. Include the primary key of relation T (the '1' side) as a foreign key in S. Any simple attributes of the relationship are also added as attributes in S.",
+    "tags": ["mapping", "1-n-relationship"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 4."
+  },
+  {
+    "id": "S3_DBMS_M3_031",
+    "question": "How do you map a Binary M:N Relationship?",
+    "answer": "Create a new relation S to represent the M:N relationship. Include the primary keys of the participating entity relations as foreign keys in S. Their combination forms the primary key of S. Also include any simple attributes that belong to the relationship type in relation S.",
+    "tags": ["mapping", "m-n-relationship"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 5."
+  },
+  {
+    "id": "S3_DBMS_M3_032",
+    "question": "How do you map Multivalued Attributes?",
+    "answer": "For each multivalued attribute A, create a new relation R. R includes an attribute for A plus the primary key of the owner entity as a foreign key. The primary key of R is the combination of A and the foreign key to ensure each instance is unique.",
+    "tags": ["mapping", "multivalued-attribute"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 6."
+  },
+  {
+    "id": "S3_DBMS_M3_033",
+    "question": "How do you map N-ary Relationships?",
+    "answer": "For an n-ary relationship type (n > 2), create a new relation S. Include the primary keys of all participating entity relations as foreign keys in S. The primary key of S is usually the combination of all these foreign keys. Any attributes of the n-ary relationship are also added to S.",
+    "tags": ["mapping", "n-ary-relationship"],
+    "source": { "type": "file", "path": "module-3.pptx.pdf", "url": null },
+    "created_at": "2026-01-03T02:00:00+05:30",
+    "notes": "Mapping step 7."
+  }
+]

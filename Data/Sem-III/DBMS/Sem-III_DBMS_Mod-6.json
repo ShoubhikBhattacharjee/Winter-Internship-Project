@@ -1,0 +1,200 @@
+[
+  {
+    "id": "S3_DBMS_M6_001",
+    "question": "What is a Transaction in DBMS?",
+    "answer": "A transaction is a unit of program execution that accesses and possibly updates various data items. \nTheory: Instead of sending individual SQL commands to the server one by one, multiple operations that are logically related are combined and sent as a single logical unit. It represents a single sequence of operations which must be executed either completely or not at all to maintain database consistency. \nExample: A fund transfer of $50 from account A to account B involves reading A, subtracting $50, writing A, reading B, adding $50, and writing B. These six steps together form one transaction.",
+    "tags": ["transaction", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Core concept of Module 6."
+  },
+  {
+    "id": "S3_DBMS_M6_002",
+    "question": "What are the ACID properties of a transaction?",
+    "answer": "To ensure integrity, transactions must possess four properties known as ACID properties: \n1. Atomicity: Either all operations of the transaction are reflected properly in the database, or none are. It is the 'all or nothing' property.\n2. Consistency: Execution of a transaction in isolation preserves the consistency of the database. The total sum of data values remains the same before and after the transaction.\n3. Isolation: Even though multiple transactions may execute concurrently, each must be unaware of others. Intermediate transaction results must be hidden from other concurrently executing transactions.\n4. Durability: After a transaction completes successfully, the changes it has made to the database must persist, even if there is a system failure.",
+    "tags": ["acid-properties", "transaction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Fundamental transaction properties."
+  },
+  {
+    "id": "S3_DBMS_M6_003",
+    "question": "Explain Atomicity in ACID properties.",
+    "answer": "Atomicity is the 'all or nothing' property. It ensures that a transaction is treated as a single unit, which either completes entirely or fails entirely. If any part of the transaction fails, the entire transaction is rolled back, and the database is restored to its state before the transaction started.",
+    "tags": ["acid-properties", "atomicity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Detailed ACID property."
+  },
+  {
+    "id": "S3_DBMS_M6_004",
+    "question": "Explain Consistency in ACID properties.",
+    "answer": "Consistency ensures that a transaction transforms the database from one consistent state to another consistent state. It implies that all database rules, such as constraints, cascades, and triggers, must be satisfied at the end of the transaction to maintain data integrity.",
+    "tags": ["acid-properties", "consistency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Detailed ACID property."
+  },
+  {
+    "id": "S3_DBMS_M6_005",
+    "question": "Explain Isolation in ACID properties.",
+    "answer": "Isolation ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially. This means that the intermediate states of a transaction are invisible to other concurrently executing transactions.",
+    "tags": ["acid-properties", "isolation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Detailed ACID property."
+  },
+  {
+    "id": "S3_DBMS_M6_006",
+    "question": "Explain Durability in ACID properties.",
+    "answer": "Durability guarantees that once a transaction has been committed, it will remain committed even in the event of a system failure (e.g., power outage or crash). The changes made by the transaction are permanently recorded in non-volatile storage.",
+    "tags": ["acid-properties", "durability"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Detailed ACID property."
+  },
+  {
+    "id": "S3_DBMS_M6_007",
+    "question": "Explain the different Transaction States.",
+    "answer": "A transaction must be in one of the following states during its life cycle: \n1. Active: The initial state; the transaction stays in this state while it is executing.\n2. Partially Committed: After the final statement has been executed.\n3. Failed: After the discovery that normal execution can no longer proceed.\n4. Aborted: After the transaction has been rolled back and the database restored to its state prior to the start of the transaction.\n5. Committed: After successful completion, where the changes are permanently saved.",
+    "tags": ["transaction-states", "lifecycle"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Transaction state diagram concept."
+  },
+  {
+    "id": "S3_DBMS_M6_008",
+    "question": "What are Concurrent Executions and their problems?",
+    "answer": "Concurrent execution allows multiple transactions to run at the same time to increase system throughput and reduce waiting time. However, without control, they lead to three major problems: \n1. Lost Update Problem: Occurs when two transactions update the same data item, and the second update overwrites the first one without considering it.\n2. Temporary Update (Dirty Read) Problem: Occurs when a transaction reads a data item that has been updated by another transaction that has not yet committed.\n3. Incorrect Summary Problem: Occurs when a transaction calculates an aggregate function while other transactions are updating the values being summed.",
+    "tags": ["concurrency", "execution-problems"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Issues in concurrent environments."
+  },
+  {
+    "id": "S3_DBMS_M6_009",
+    "question": "What is Serializability?",
+    "answer": "Serializability is the criterion used to determine if a concurrent (non-serial) schedule is correct. \nTheory: A schedule is serializable if it is equivalent to some serial execution of the same transactions. It ensures that despite concurrent execution, the final database state is consistent. There are two primary types: Conflict Serializability and View Serializability.",
+    "tags": ["serializability", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Correctness criteria."
+  },
+  {
+    "id": "S3_DBMS_M6_010",
+    "question": "What are the types of Serializability?",
+    "answer": "Serializability is generally classified into two types: \n1. Conflict Serializability: Based on the equivalence of schedules through the swapping of non-conflicting operations.\n2. View Serializability: A more general form of serializability based on the equivalence of data views (initial read, updated read, and final write) between schedules.",
+    "tags": ["serializability", "types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Categories of serializable schedules."
+  },
+  {
+    "id": "S3_DBMS_M6_011",
+    "question": "What is Conflict Serializability?",
+    "answer": "A schedule S is conflict serializable if it is conflict-equivalent to a serial schedule. \nTheory: Two instructions conflict if they belong to different transactions, access the same data item, and at least one of them is a write operation. If we can transform a schedule into a serial schedule by swapping non-conflicting instructions, the schedule is conflict serializable.",
+    "tags": ["serializability", "conflict-serializability"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Commonly used serializability type."
+  },
+  {
+    "id": "S3_DBMS_M6_012",
+    "question": "What is View Serializability?",
+    "answer": "View serializability is a less restrictive form of serializability than conflict serializability. \nTheory: A schedule S is view serializable if it is view-equivalent to a serial schedule. This requires: \n1. Initial Read: If Ti reads initial value of Q in S, it must do so in the serial schedule.\n2. Dependent Read: If Ti reads a value of Q produced by Tj in S, it must do so in the serial schedule.\n3. Final Write: The transaction that performs the final write on Q in S must also do so in the serial schedule.",
+    "tags": ["serializability", "view-serializability"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Advanced serializability concept."
+  },
+  {
+    "id": "S3_DBMS_M6_013",
+    "question": "What is the Two-Phase Locking (2PL) Protocol?",
+    "answer": "The 2PL protocol is a lock-based concurrency control method that ensures serializability by requiring that each transaction be performed in two phases:\n1. Growing Phase: A transaction may obtain locks but may not release any lock.\n2. Shrinking Phase: A transaction may release locks but may not obtain any new locks.\nTheory: The point where a transaction acquires its last lock is called the 'Lock Point'. This protocol prevents transactions from releasing locks too early and interfering with others.",
+    "tags": ["concurrency-control", "2pl"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Standard locking protocol."
+  },
+  {
+    "id": "S3_DBMS_M6_014",
+    "question": "What are the types of Two-Phase Locking (2PL)?",
+    "answer": "There are variations of 2PL used to address specific requirements:\n1. Basic 2PL: Standard growing and shrinking phases.\n2. Strict 2PL: Requires that all exclusive (write) locks held by a transaction be released only after the transaction commits or aborts. This prevents cascading rollbacks.\n3. Rigorous 2PL: Requires that all locks (both shared and exclusive) be held until the transaction commits or aborts.",
+    "tags": ["concurrency-control", "2pl-types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Refinements of locking."
+  },
+  {
+    "id": "S3_DBMS_M6_015",
+    "question": "What is the Timestamp-Based Protocol?",
+    "answer": "The Timestamp-Based Protocol is a concurrency control method that selects an ordering among transactions in advance. \nTheory: Each transaction Ti is assigned a unique fixed timestamp TS(Ti) when it enters the system. For every data item Q, the system maintains two timestamp values: W-timestamp(Q) (the largest timestamp of any transaction that executed write(Q)) and R-timestamp(Q) (the largest timestamp of any transaction that executed read(Q)). Operations are only allowed if they follow the chronological order of the timestamps, otherwise, the transaction is rolled back.",
+    "tags": ["concurrency-control", "timestamp"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Non-locking concurrency control."
+  },
+  {
+    "id": "S3_DBMS_M6_016",
+    "question": "What is a Deadlock in DBMS?",
+    "answer": "A deadlock is a state where a set of transactions are in a wait-state because every transaction in the set is waiting for a resource held by another transaction in that same set. \nTheory: In a deadlock, none of the involved transactions can make progress, and the system must intervene to break the cycle. \nExample: Transaction T1 holds a lock on item A and waits for B, while T2 holds a lock on item B and waits for A.",
+    "tags": ["deadlock", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Wait-for graph application."
+  },
+  {
+    "id": "S3_DBMS_M6_017",
+    "question": "Explain Deadlock Prevention in detail.",
+    "answer": "Deadlock prevention uses protocols that ensure the system will never enter a deadlock. These include:\n1. Pre-declaration: A transaction must lock all its required data items before it begins execution.\n2. Graph-based Protocols: Imposing a partial ordering on data items.\n3. Timestamp-based schemes: \n   - Wait-Die: If an older transaction requests a resource held by a younger one, it waits; if a younger transaction requests a resource held by an older one, it rolls back.\n   - Wound-Wait: If an older transaction requests a resource held by a younger one, it forces the younger one to rollback; if a younger transaction requests a resource held by an older one, it waits.",
+    "tags": ["deadlock", "prevention"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Prevention strategies."
+  },
+  {
+    "id": "S3_DBMS_M6_018",
+    "question": "How is Deadlock handled in a DBMS?",
+    "answer": "There are three primary strategies for handling deadlocks:\n1. Deadlock Prevention: Using protocols like 'Wait-Die' or 'Wound-Wait' (based on timestamps) or pre-locking all items to ensure a deadlock can never occur.\n2. Deadlock Detection: Periodically examining the 'Wait-for Graph' to find cycles. If a cycle exists, a deadlock is present.\n3. Deadlock Recovery: When a deadlock is detected, the system selects a 'victim' transaction to be rolled back to break the cycle.",
+    "tags": ["deadlock", "handling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Management strategies."
+  },
+  {
+    "id": "S3_DBMS_M6_019",
+    "question": "Explain Failure Classification in DBMS.",
+    "answer": "Failures that can disrupt transactions are classified as:\n1. Transaction Failure: Includes logical errors (internal constraints) or system errors (deadlocks).\n2. System Crash: Hardware malfunction or software bug causing loss of volatile memory (RAM) content, but non-volatile storage (Disk) remains intact.\n3. Disk Failure: Destruction of the storage device where the actual database is stored, resulting in loss of data.",
+    "tags": ["recovery", "failure-types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Context for recovery system."
+  },
+  {
+    "id": "S3_DBMS_M6_020",
+    "question": "What is Log-Based Recovery?",
+    "answer": "Log-based recovery is a mechanism to restore database consistency after a failure using a log file. \nTheory: The log is a sequence of records recording all update activities. Each record contains info like TransactionID, DataItemID, OldValue, and NewValue. There are two techniques: \n1. Deferred Update: Updates are not written to the disk until the transaction commits.\n2. Immediate Update: Updates are written to the disk as they happen, even before commit. Recovery involves using 'Redo' for committed transactions and 'Undo' for those that failed.",
+    "tags": ["recovery", "log-based"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Primary recovery technique."
+  },
+  {
+    "id": "S3_DBMS_M6_021",
+    "question": "What is Shadow Paging?",
+    "answer": "Shadow Paging is a recovery technique that avoids the use of log files in some scenarios. \nTheory: The database is considered a set of pages. Two page tables are maintained: the Current Page Table and the Shadow Page Table. During a transaction, updates are made to a copy of the page. If the transaction succeeds, the current table is updated to point to the new pages. If it fails, the system simply reverts to the shadow table, which points to the old, unmodified pages.",
+    "tags": ["recovery", "shadow-paging"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Alternative recovery method."
+  },
+  {
+    "id": "S3_DBMS_M6_022",
+    "question": "What are Checkpoints in recovery?",
+    "answer": "Checkpoints are points in the log where the system ensures that all previous log records and modified data have been physically written to the stable storage (Disk). \nTheory: During recovery, the system only needs to go back to the most recent checkpoint. This reduces the time and overhead required to 'Redo' transactions after a system crash, as operations before the checkpoint are guaranteed to be saved.",
+    "tags": ["recovery", "checkpoint"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Optimization for log recovery."
+  }
+]

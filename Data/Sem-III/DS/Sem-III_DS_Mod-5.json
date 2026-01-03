@@ -1,0 +1,125 @@
+[
+  {
+    "id": "S3_DS_M5_001",
+    "question": "What is a Graph? Explain its basic components.",
+    "answer": "A Graph is a non-linear data structure that consists of a finite set of vertices (or nodes) and a set of edges that connect these vertices. Unlike trees, graphs do not have a strict parent-child relationship and can contain cycles.\nTheory: A graph is mathematically represented as G = (V, E), where V represents the set of vertices and E represents the set of edges. Vertices are the entities or points in the graph, while edges represent the connections or relationships between those entities. Graphs are used to model real-world systems such as social networks, transportation routes, and computer networks.",
+    "tags": ["graph", "definition", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Core definition of Graph structure."
+  },
+  
+  {
+    "id": "S3_DS_M5_002",
+    "question": "Define the graph terminologies: Vertex, Edge, and Adjacency.",
+    "answer": "To understand graph structures, the following terms are fundamental:\n1. Vertex (V): Also known as a node, it is an individual data element or a point in the graph.\n2. Edge (E): A link or a line that connects two vertices in a graph, representing a relationship between them.\n3. Adjacency: Two vertices are said to be adjacent if there is a direct edge connecting them. If an edge exists between vertex U and V, then U and V are neighbors.",
+    "tags": ["terminology", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Fundamental graph terms."
+  },
+  {
+    "id": "S3_DS_M5_003",
+    "question": "Define the graph terminologies: Degree, Path, and Cycle.",
+    "answer": "Structural properties of graphs are defined by these terms:\n1. Degree: The total number of edges connected to a specific vertex. In directed graphs, this is split into 'In-degree' (incoming edges) and 'Out-degree' (outgoing edges).\n2. Path: A sequence of vertices where each adjacent pair is connected by an edge. It represents a route from a source vertex to a destination.\n3. Cycle: A path that starts and ends at the same vertex, with no other repeated vertices or edges.",
+    "tags": ["terminology", "path", "cycle"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Graph connectivity terminology."
+  },
+  {
+    "id": "S3_DS_M5_004",
+    "question": "What is an Undirected Graph?",
+    "answer": "An Undirected Graph is a type of graph where the edges do not have a specific direction.\nTheory: In this structure, the edge (A, B) is identical to the edge (B, A). The relationship between the two vertices is bidirectional or mutual. For example, a friendship on a social network where if A is a friend of B, then B is also a friend of A.",
+    "tags": ["graph-types", "undirected-graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Definition of undirected graph."
+  },
+  {
+    "id": "S3_DS_M5_005",
+    "question": "What is a Directed Graph (Digraph)?",
+    "answer": "A Directed Graph, or Digraph, is a graph where every edge has a specific direction associated with it.\nTheory: The edges are represented as ordered pairs of vertices. An edge from vertex A to B is denoted as (A -> B), implying a one-way relationship. In this case, A is the tail and B is the head. A direction from B to A is not implied unless a separate edge exists.",
+    "tags": ["graph-types", "directed-graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Definition of directed graph."
+  },
+  
+  {
+    "id": "S3_DS_M5_006",
+    "question": "What is a Weighted Graph?",
+    "answer": "A Weighted Graph is a graph in which a numerical value (weight) is assigned to each edge.\nTheory: These weights typically represent costs, distances, time, or capacities. For instance, in a map represented as a graph, vertices could be cities and the weights on edges could represent the distance in kilometers between those cities.",
+    "tags": ["graph-types", "weighted-graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Definition of weighted graph."
+  },
+  {
+    "id": "S3_DS_M5_007",
+    "question": "Explain the Adjacency Matrix representation of a graph.",
+    "answer": "The Adjacency Matrix is a 2D array representation of a graph of size V x V, where V is the number of vertices.\nTheory: If there is an edge between vertex i and vertex j, the matrix element M[i][j] is set to 1 (or the weight in weighted graphs); otherwise, it is 0. \n1. For undirected graphs, the matrix is symmetric.\n2. It allows O(1) time complexity to check if an edge exists.\n3. It consumes O(V^2) space, making it less efficient for sparse graphs.",
+    "tags": ["representation", "adjacency-matrix"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Matrix-based graph storage."
+  },
+  
+  {
+    "id": "S3_DS_M5_008",
+    "question": "Explain the Adjacency List representation of a graph.",
+    "answer": "The Adjacency List representation consists of an array of linked lists.\nTheory: The size of the array is equal to the number of vertices. Each entry in the array represents a vertex, and the linked list associated with that entry contains all the vertices adjacent to it.\n1. It is memory-efficient for sparse graphs as it only stores existing edges.\n2. The space complexity is O(V + E).\n3. Finding if an edge exists between two nodes takes O(degree of vertex) time.",
+    "tags": ["representation", "adjacency-list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "List-based graph storage."
+  },
+  {
+    "id": "S3_DS_M5_009",
+    "question": "Explain the Breadth First Search (BFS) Traversal algorithm.",
+    "answer": "Breadth First Search (BFS) is a graph traversal algorithm that explores all neighbor nodes at the current depth before moving to nodes at the next depth level.\nAlgorithm:\n1. Initialize a Queue and a 'Visited' array.\n2. Pick a starting node, mark it as visited, and enqueue it.\n3. While the queue is not empty:\n   a. Dequeue a vertex from the queue and visit it.\n   b. Get all adjacent vertices of the dequeued vertex.\n   c. If an adjacent vertex has not been visited, mark it visited and enqueue it.\nTheory: BFS uses a Queue (FIFO) and is ideal for finding the shortest path in unweighted graphs.",
+    "tags": ["traversal", "BFS", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "BFS logic using Queue."
+  },
+  
+  {
+    "id": "S3_DS_M5_010",
+    "question": "Explain the Depth First Search (DFS) Traversal algorithm.",
+    "answer": "Depth First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking.\nAlgorithm:\n1. Initialize a Stack (or use recursion) and a 'Visited' array.\n2. Pick a starting node, mark it as visited, and push it onto the stack.\n3. While the stack is not empty:\n   a. Pop a vertex from the stack.\n   b. If not already visited, mark it visited.\n   c. For every unvisited neighbor of the popped vertex, push it onto the stack.\nTheory: DFS uses a Stack (LIFO) and is widely used for cycle detection and solving puzzles like mazes.",
+    "tags": ["traversal", "DFS", "algorithm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "DFS logic using Stack."
+  },
+  
+  {
+    "id": "S3_DS_M5_011",
+    "question": "What is Topological Sorting?",
+    "answer": "Topological Sorting of a Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge (U, V), vertex U comes before V in the ordering.\nTheory: This is only possible for graphs that are both directed and have no cycles (DAGs). It is commonly used for scheduling tasks where certain tasks must be completed before others (dependencies). If a graph contains a cycle, a topological sort is not possible.",
+    "tags": ["graph-application", "topological-sort", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Ordering for DAGs."
+  },
+  {
+    "id": "S3_DS_M5_012",
+    "question": "Explain the Algorithm for Topological Sorting using Kahn's Algorithm.",
+    "answer": "Kahn's algorithm uses the concept of in-degree to find the topological order.\nAlgorithm:\n1. Calculate the in-degree (number of incoming edges) for every vertex.\n2. Pick all vertices with in-degree 0 and add them to a Queue.\n3. While the queue is not empty:\n   a. Dequeue a vertex and add it to the topological order list.\n   b. For each neighbor of the dequeued vertex, reduce its in-degree by 1.\n   c. If a neighbor's in-degree becomes 0, add it to the queue.\n4. If the number of vertices in the sorted list is less than the total vertices, the graph contains a cycle.",
+    "tags": ["algorithm", "topological-sort", "Kahn"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "In-degree based sorting."
+  },
+  
+  {
+    "id": "S3_DS_M5_013",
+    "question": "List the common applications of Graphs.",
+    "answer": "Graphs are versatile structures used in various domains:\n1. Social Networks: To represent users as vertices and their connections/friendships as edges.\n2. Google Maps: To find the shortest path between two locations (vertices) using roads (edges).\n3. Recommendation Engines: To suggest products or friends based on graph-based relationships.\n4. Web Crawling: Search engines use graph traversals to discover and index web pages.\n5. Project Scheduling: Using Topological Sort to manage task dependencies in project management.",
+    "tags": ["graph", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-03T22:30:00+05:30",
+    "notes": "Real-world graph use cases."
+  }
+]
