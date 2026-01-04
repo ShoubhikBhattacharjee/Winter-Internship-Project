@@ -23,7 +23,7 @@ def load_all_json_files(base_dir: Path):
 
     for file in sorted(base_dir.rglob("*.json")):
         # Skip generated/meta files
-        if file.name in {"meta.json"}:
+        if file.name in {"meta.json", "kb.json"}:
             continue
 
         # Skip hidden or temp files if any
