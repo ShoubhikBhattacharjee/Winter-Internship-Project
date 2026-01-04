@@ -1,0 +1,218 @@
+[
+  {
+    "id": "S3_DLCA_M3_001",
+    "question": "Define a Half Adder and describe its functional block diagram.",
+    "answer": "A Half Adder is a digital circuit that performs the addition of two single bit binary numbers A and B. It generates two specific outputs: Sum and Carry. In its block diagram, the inputs A and B are applied from the left, while the outputs SUM and CARRY are obtained on the right.",
+    "tags": ["Half Adder", "digital logic", "addition"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Fundamental unit of binary addition."
+  },
+  {
+    "id": "S3_DLCA_M3_002",
+    "question": "Design and explain a Full Adder using Half Adders and basic gates.",
+    "answer": "A Full Adder can be constructed using two Half Adders and an OR gate. The first Half Adder adds bits A and B to produce an intermediate sum and carry. The second Half Adder then adds this intermediate sum to the input carry Cin to produce the final Sum. The carries from both Half Adders are fed into an OR gate to generate the final Carry Output Cout. This demonstrates that complex arithmetic can be built from simpler functional units.",
+    "tags": ["Full Adder", "Half Adder", "design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Standard hierarchical design question."
+  },
+  {
+    "id": "S3_DLCA_M3_003",
+    "question": "Explain the Full Adder in detail including its truth table and logic.",
+    "answer": "A Full Adder is a combinational circuit that adds three 1 bit binary numbers A, B, and Cin. It has 8 possible input combinations. The Sum output is 1 if an odd number of inputs are 1, and Carry is 1 if two or more inputs are 1. The logic equations are Sum = A XOR B XOR Cin and Cout = AB + BCin + ACin.",
+    "tags": ["Full Adder", "theory", "logic equations"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Detailed functional explanation."
+  },
+  {
+    "id": "S3_DLCA_M3_004",
+    "question": "Differentiate between Combinational and Sequential circuits.",
+    "answer": "A Combinational Circuit is a digital circuit where the output at any time depends solely on the current combination of inputs, such as Adders or Multiplexers. They do not have memory. A Sequential Circuit is a digital circuit where the output depends on current inputs and past history or previous states. They utilize memory elements like flip flops and often a clock signal.",
+    "tags": ["combinational", "sequential", "digital logic"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Core architectural distinction."
+  },
+  {
+    "id": "S3_DLCA_M3_005",
+    "question": "Explain the advantages of Multiplexers and De-Multiplexers.",
+    "answer": "Advantages include the reduction of the number of wires needed for data transmission, simplification of circuit design, and saving of PCB space. They allow multiple signals to share a single medium efficiently.",
+    "tags": ["MUX", "DEMUX", "advantages"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Utility analysis."
+  },
+  {
+    "id": "S3_DLCA_M3_006",
+    "question": "Explain the applications of Multiplexers and De-Multiplexers.",
+    "answer": "Multiplexers are used in parallel to serial conversion, data routing in CPUs, and telecommunications. Demultiplexers are used in serial to parallel conversion, memory bank selection, and address decoding in processors.",
+    "tags": ["MUX", "DEMUX", "applications"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Real world usage."
+  },
+  {
+    "id": "S3_DLCA_M3_007",
+    "question": "Explain 4X1 MUX with truth table and Logic Circuit diagram.",
+    "answer": "A 4X1 MUX selects one of four inputs D0 through D3 using two select lines S1 and S0. The output Y is determined by the binary value of the select lines. If S1S0 is 01, Y equals D1. The logic uses AND gates for each input and a final OR gate.",
+    "tags": ["4:1 MUX", "logic design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Standard selection logic."
+  },
+  {
+    "id": "S3_DLCA_M3_008",
+    "question": "Design a 16:1 MUX using 4:1 MUX with truth table and Logic Circuit diagram.",
+    "answer": "To design a 16:1 MUX, we use five 4:1 MUXs. Four MUXs in the first stage handle 16 inputs. The outputs of these four are then fed into a fifth 4:1 MUX in the second stage. Select lines S0 and S1 control the first stage, while S2 and S3 control the second stage.",
+    "tags": ["16:1 MUX", "cascading"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Hierarchical MUX design."
+  },
+  {
+    "id": "S3_DLCA_M3_009",
+    "question": "Design 8:1 MUX using 4:1 Mux with Logic Circuit diagram.",
+    "answer": "An 8:1 MUX can be built using two 4:1 MUXs in the first stage and a 2:1 MUX in the second stage. The two 4:1 MUXs receive inputs D0 through D3 and D4 through D7. Select lines S0 and S1 are shared, while S2 is used for the final selection stage.",
+    "tags": ["8:1 MUX", "design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "MUX expansion."
+  },
+  {
+    "id": "S3_DLCA_M3_010",
+    "question": "Implement full adder using Demux with Logic Circuit.",
+    "answer": "A Full Adder can be implemented using a 1:8 Demultiplexer and two OR gates. The inputs A, B, and Cin are connected to the select lines. The data line is set to logic 1. The OR gate for Sum collects outputs 1, 2, 4, 7. The OR gate for Carry collects outputs 3, 5, 6, 7.",
+    "tags": ["Full Adder", "DEMUX"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Functional mapping."
+  },
+  {
+    "id": "S3_DLCA_M3_011",
+    "question": "Implement full adder using 8:1 Mux and Draw the Logic Diagram.",
+    "answer": "Using an 8:1 MUX, inputs A, B, and Cin act as select lines. For the Sum output, MUX inputs D1, D2, D4, and D7 are connected to high logic. For the Carry output, MUX inputs D3, D5, D6, and D7 are connected to high logic.",
+    "tags": ["Full Adder", "8:1 MUX"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Standard implementation."
+  },
+  {
+    "id": "S3_DLCA_M3_012",
+    "question": "Design 1X8 De-multiplexer using 1X4 and 1X2 De-multiplexer.",
+    "answer": "A 1X8 DEMUX is created by placing a 1X2 DEMUX at the first stage. Its two outputs feed into two 1X4 DEMUXs in the second stage. The select line of the first stage is the most significant bit, while the select lines of the 1X4 units handle the remaining bits.",
+    "tags": ["1:8 DEMUX", "design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "DEMUX cascading."
+  },
+  {
+    "id": "S3_DLCA_M3_013",
+    "question": "Explain 4 to 2 Encoder with its truth table and circuit diagram.",
+    "answer": "A 4 to 2 Encoder converts four input lines into a 2 bit binary code. Only one input is active at a time. If input I2 is high, the output is binary 10. Logic equations are Y1 = I3 + I2 and Y0 = I3 + I1.",
+    "tags": ["Encoder", "4:2 Encoder"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Basic encoding."
+  },
+  {
+    "id": "S3_DLCA_M3_014",
+    "question": "Explain Octal to Binary Encoder 8 to 3 Encoder with its truth table and circuit diagram.",
+    "answer": "This encoder converts 8 octal inputs into a 3 bit binary output. When one of the 8 inputs is activated, it generates the corresponding 3 bit binary sequence. It uses OR gates to combine signals for each bit position.",
+    "tags": ["8:3 Encoder", "Octal to Binary"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Standard octal encoder."
+  },
+  {
+    "id": "S3_DLCA_M3_015",
+    "question": "Explain Decimal to BCD Encoder with its truth table and circuit diagram.",
+    "answer": "Also known as a 10 to 4 Encoder, it takes inputs representing decimal 0 through 9 and produces the 4 bit Binary Coded Decimal equivalent. For example, activating input 9 produces 1001.",
+    "tags": ["10:4 Encoder", "BCD"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Input device logic."
+  },
+  {
+    "id": "S3_DLCA_M3_016",
+    "question": "Explain 2 to 4, 3 to 8, and 4 to 16 line Decoders with their truth tables and circuit diagrams.",
+    "answer": "Decoders accept coded binary input and activate one of 2 to the power n output lines. A 2 to 4 decoder has 2 inputs and 4 outputs, a 3 to 8 has 3 inputs and 8 outputs, and a 4 to 16 has 4 inputs and 16 outputs. Each output represents a unique minterm.",
+    "tags": ["Decoder", "Binary Decoder"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Addressing logic units."
+  },
+  {
+    "id": "S3_DLCA_M3_017",
+    "question": "Design full adder using 8:1 decoder with its truth table and circuit diagram.",
+    "answer": "A Full Adder can be implemented by using a 3 to 8 decoder. The inputs A, B, and Cin are the decoder inputs. The Sum is the OR of decoder outputs 1, 2, 4, 7. The Carry is the OR of outputs 3, 5, 6, 7.",
+    "tags": ["Full Adder", "Decoder design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Decoder based implementation."
+  },
+  {
+    "id": "S3_DLCA_M3_018",
+    "question": "Explain the difference between Encoder and Decoder.",
+    "answer": "An Encoder converts an active input signal into a coded binary output, typically having many inputs and fewer outputs. A Decoder accepts coded binary information and activates a single corresponding output line, typically having fewer inputs and many outputs.",
+    "tags": ["Encoder", "Decoder", "Comparison"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Logical inversion."
+  },
+  {
+    "id": "S3_DLCA_M3_019",
+    "question": "Explain S-R Flip-Flop in Detail; Give its truth table and logic diagram.",
+    "answer": "The Set-Reset flip flop is the basic memory element. S=1 sets the output Q to 1, while R=1 resets Q to 0. If both are 0, it holds its state. If both are 1, it enters an invalid state where outputs are unpredictable.",
+    "tags": ["SR Flip-Flop", "Memory"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Primary storage unit."
+  },
+  {
+    "id": "S3_DLCA_M3_020",
+    "question": "Design logic circuit diagram for J-K flip-flop using NAND gates. Give its truth table and logic symbol diagram.",
+    "answer": "The JK Flip-Flop improves on the SR by adding feedback. It eliminates the invalid state. When J and K are both 1, the output toggles to the opposite state. It consists of an SR latch with additional NAND steering gates.",
+    "tags": ["JK Flip-Flop", "Toggle"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Stable sequential logic."
+  },
+  {
+    "id": "S3_DLCA_M3_021",
+    "question": "Explain D Flip-Flop in Detail with its truth table and logic diagram.",
+    "answer": "The D or Delay flip flop has a single data input. It captures the value of the D input at the clock edge and holds it until the next cycle. It is the primary building block for CPU registers.",
+    "tags": ["D Flip-Flop", "Storage"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Bit delay element."
+  },
+  {
+    "id": "S3_DLCA_M3_022",
+    "question": "Explain T Flip-Flop in Detail with its truth table and logic diagram.",
+    "answer": "The T or Toggle flip flop toggles its output whenever the T input is high during a clock pulse. It is used in binary counters and frequency dividers. It is often created by shorting the J and K inputs of a JK flip flop.",
+    "tags": ["T Flip-Flop", "Counter"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Frequency division unit."
+  },
+  {
+    "id": "S3_DLCA_M3_023",
+    "question": "Explain the Processor Register Organization including User Visible and Control Status Registers.",
+    "answer": "Registers are organized into User Visible Registers, which are available to programmers for data and addressing, and Control and Status Registers, like the Program Counter and Instruction Register, which are used internally by the processor to control operation flow.",
+    "tags": ["CPU registers", "Architecture"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "CPU internal storage."
+  },
+  {
+    "id": "S3_DLCA_M3_024",
+    "question": "Describe the Instruction Cycle of the Processor and its phases.",
+    "answer": "The Instruction Cycle is the total time to execute one instruction. It consists of the Fetch cycle where the instruction is retrieved from memory, the Decode cycle where the op-code is interpreted, and the Execute cycle where the ALU performs the operation.",
+    "tags": ["Instruction Cycle", "Fetch", "Execute"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "CPU operational timeline."
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "S3_DLCA_M2_001",
+    "question": "Explain the theoretical foundation of 1's Complement and its role in digital systems.",
+    "answer": "Theoretically, 1's complement is the (r-1)'s complement of a binary system (where radix r=2). It is obtained by subtracting each bit from 1, which effectively performs a logical NOT operation on every bit. In digital hardware, this is implemented using a bank of NOT gates. While useful for simple bitwise inversions, its primary theoretical limitation is the existence of 'End-Around Carry' during addition and the representational ambiguity of having two patterns for zero (0000 and 1111 in 4-bit), which complicates equality-testing logic in processors.",
+    "tags": ["binary", "1s complement", "theory"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Deep dive into r-1 complement theory."
+  },
+  {
+    "id": "S3_DLCA_M2_002",
+    "question": "Analyze the 2's Complement system and why it is the standard for modern ALU design.",
+    "answer": "2's complement is the 'r's complement' of the binary system, calculated as (1's complement + 1). Theoretically, it is superior for hardware implementation for three reasons: 1) It provides a unique representation for zero (0000), eliminating the 'negative zero' problem. 2) It allows the Arithmetic Logic Unit (ALU) to perform subtraction using addition hardware (A - B = A + 2's complement of B), which reduces transistor count. 3) The range of represented values is asymmetrical, allowing one extra negative value (from -2ⁿ⁻¹ to 2ⁿ⁻¹-1), which is mathematically efficient for fixed-width registers.",
+    "tags": ["binary", "2s complement", "ALU hardware"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Architectural justification for 2's complement."
+  },
+  {
+    "id": "S3_DLCA_M2_003",
+    "question": "Discuss the logic of Binary Subtraction and the 'Borrow' mechanism in hardware.",
+    "answer": "Binary subtraction follows the principle of positional weightage where subtracting a larger digit from a smaller one (0 - 1) necessitates a 'borrow' from the next higher power of 2. In hardware, a borrow from the 2¹ position into the 2⁰ position effectively adds 2 to the current bit, resulting in 2 - 1 = 1. Theoretically, this is implemented using Full Subtractors, which consist of XOR gates for the difference and AND-NOT gates to propagate the borrow signal across the bit-width of the word.",
+    "tags": ["binary arithmetic", "subtraction", "hardware logic"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Theoretical look at hardware subtractors."
+  },
+  {
+    "id": "S3_DLCA_M2_004",
+    "question": "Explain Sign-Magnitude representation and its inherent computational inefficiencies.",
+    "answer": "In Sign-Magnitude, the MSB is a control bit (0 for positive, 1 for negative). While intuitive for humans, it is computationally expensive because the processor cannot simply feed operands into an adder. It must first compare the signs: if signs differ, it must perform subtraction; if they are the same, it adds. Additionally, the logic must handle two zeros (+0 and -0), which requires extra circuitry to ensure that (0000 == 1000) evaluates to true, wasting clock cycles and power.",
+    "tags": ["signed numbers", "sign-magnitude", "inefficiency"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Focus on computational overhead."
+  },
+  {
+    "id": "S3_DLCA_M2_005",
+    "question": "Detail the mathematical theory behind Booth's Multiplication Algorithm.",
+    "answer": "Booth's Algorithm leverages the fact that a sequence of 1s in a binary multiplier (e.g., 001110) can be mathematically simplified. Instead of adding the multiplicand three times, we can subtract the multiplicand at the start of the string (where 0 transitions to 1) and add it back at the end (where 1 transitions to 0). This is based on the identity: $2^k + 2^{k-1} + ... + 2^m = 2^{k+1} - 2^m$. By reducing the number of additions/subtractions, the algorithm minimizes the propagation delay through the adder circuits.",
+    "tags": ["booth algorithm", "multiplication", "bit-pair encoding"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Theoretical identity-based explanation."
+  },
+  {
+    "id": "S3_DLCA_M2_006",
+    "question": "Explain the Booth's Multiplication Algorithm using a flowchart.",
+    "answer": "The Booth's algorithm process involves initializing registers A (Accumulator) to 0 and Q_{-1} to 0. In each step, the bits Q_0 and Q_{-1} are inspected. Depending on the bit pair (01 for addition, 10 for subtraction, 00/11 for no operation), an arithmetic operation is performed on A, followed by an Arithmetic Shift Right (ASHR) across [A, Q, Q_{-1}]. This cycle repeats for N bits of the multiplier.\n\n",
+    "tags": ["booth algorithm", "flowchart", "arithmetic"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Procedural flowchart description."
+  },
+  {
+    "id": "S3_DLCA_M2_007",
+    "question": "Explain the concept of Arithmetic Shift Right (ASHR) and its necessity in signed arithmetic.",
+    "answer": "ASHR is a specialized shift operation used to divide a signed 2's complement number by 2. Unlike a Logical Shift Right (which fills the MSB with 0), ASHR replicates the existing MSB (the sign bit). This 'Sign Extension' is critical; if a negative number (starting with 1) is shifted right, filling it with a 0 would incorrectly turn it into a positive number. ASHR ensures the numerical integrity of signed products during the iterations of Booth's algorithm.",
+    "tags": ["ASHR", "sign extension", "booth algorithm"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Sign preservation logic."
+  },
+  {
+    "id": "S3_DLCA_M2_008",
+    "question": "Describe the theory and operation of Restoring Division.",
+    "answer": "Restoring Division is a digit-by-digit division algorithm that mimics long division. In each step, the divisor (M) is subtracted from the partial remainder in the Accumulator (A). If the result is negative, the algorithm has 'over-subtracted,' and the value must be 'restored' by adding M back to A. This trial-and-error approach is easy to implement but slow because every failed subtraction requires a restoration cycle, effectively doubling the time for that step.\n\n",
+    "tags": ["division", "restoring division", "algorithm"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Conceptual flow of restoring division."
+  },
+  {
+    "id": "S3_DLCA_M2_009",
+    "question": "Contrast Non-Restoring Division with Restoring Division from a theoretical perspective.",
+    "answer": "Non-Restoring Division is an optimization that avoids the restoration step. If a subtraction (A - M) yields a negative remainder, the algorithm sets the quotient bit to 0 but does not add M back immediately. Instead, in the next cycle, it performs (2A + M). Theoretically, this works because $(A - M) \\times 2 + M = 2A - M$, which is the same result as if we had restored the value ($A$), shifted it ($2A$), and then subtracted ($2A - M$). This reduction in operations makes it significantly faster than the restoring method.",
+    "tags": ["division", "non-restoring division", "optimization"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Mathematical proof of efficiency."
+  },
+  {
+    "id": "S3_DLCA_M2_010",
+    "question": "Discuss BCD Addition theory and the mathematical reason for the 'Add 6' correction.",
+    "answer": "BCD (Binary Coded Decimal) encodes decimal digits 0-9 into 4-bit binary. Since 4 bits can represent 16 states (0-15), BCD has 6 'illegal' states (10-15). When adding two BCD digits, if the result falls into this illegal range or produces a binary carry, it indicates that the sum has exceeded the capacity of a single decimal digit. Adding 6 (0110) effectively 'jumps' the sum over these 6 illegal states, forcing a carry into the next higher decimal place and leaving the correct BCD remainder in the current nibble.",
+    "tags": ["BCD", "addition", "correction theory"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Explanation of state-skipping logic."
+  },
+  {
+    "id": "S3_DLCA_M2_011",
+    "question": "Explain BCD Subtraction using 9's Complement theory.",
+    "answer": "9's complement is the (r-1) complement for decimal (base 10). Subtracting a BCD number using 9's complement turns the operation into addition: A - B = A + (9's complement of B). If the sum produces an 'End-Around Carry,' it signifies the result is positive, and the carry is added to the LSB to correct the sum. If no carry is produced, the result is negative and resides in its 9's complement form. This allows decimal subtraction to be performed using only BCD adders.",
+    "tags": ["BCD subtraction", "9s complement", "complement arithmetic"],
+    "source": { "type": "file", "path": "Sample Question Bank" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Subtraction by addition logic."
+  },
+  {
+    "id": "S3_DLCA_M2_012",
+    "question": "Analyze the structure of the IEEE 754 Single and Double Precision floating-point formats.",
+    "answer": "IEEE 754 represents real numbers using three components: 1) Sign Bit: 0 for +, 1 for -. 2) Biased Exponent: Uses an offset (127 for single, 1023 for double) so that the exponent is always a positive binary number, simplifying comparisons. 3) Mantissa/Fraction: Represents the significant digits. The format assumes a 'hidden bit' of 1 (1.M), which increases precision by 1 bit. Single precision uses 32 bits (1:8:23) for general use, while Double precision uses 64 bits (1:11:52) for scientific applications requiring extreme accuracy.\n\n",
+    "tags": ["IEEE 754", "floating point", "precision"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Detailed field analysis."
+  },
+  {
+    "id": "S3_DLCA_M2_013",
+    "question": "Explain Hexadecimal Arithmetic logic and its application in system programming.",
+    "answer": "Hexadecimal arithmetic (Base-16) is the language of memory. Addition and subtraction follow binary rules but with a radix of 16. In addition, a carry is generated when the sum ≥ 16. In subtraction, a 'borrow' from a higher nibble provides a value of 16₁₀. Hexadecimal is theoretically vital because it provides a human-readable bridge to binary; since $16 = 2⁴$, every hex digit maps exactly to 4 bits (a nibble), allowing engineers to perform arithmetic on large memory addresses (like 0xFFFF) efficiently.",
+    "tags": ["hexadecimal", "arithmetic", "memory addressing"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Linking arithmetic to byte-aligned memory."
+  },
+  {
+    "id": "S3_DLCA_M2_014",
+    "question": "Explain NAND as a universal logic gate and its theoretical significance.",
+    "answer": "A universal gate is a gate that can implement any Boolean function without the need for any other gate type. NAND is considered universal because it can replicate the functions of NOT, AND, and OR gates:\n1. NOT from NAND: By joining both inputs of a NAND gate together, the output becomes the inverse of the input ($A \\cdot A = A$, so $\\text{NAND}(A, A) = \\bar{A}$).\n2. AND from NAND: An AND gate is created by following a NAND gate with a NAND-based inverter. This double inversion returns the original AND logic.\n3. OR from NAND: According to De Morgan's Theorem, $\\bar{A} + \\bar{B} = \\overline{A \\cdot B}$. By inverting the inputs $A$ and $B$ (using NAND inverters) and then passing them through a third NAND gate, the final output is $A + B$.\nUsing only one type of gate (NAND) in an entire integrated circuit simplifies the fabrication process and lowers costs.\n\n",
+    "tags": ["logic gates", "universal gates", "NAND", "theory"],
+    "source": { "type": "file", "path": "Sample Question Bank" },
+    "created_at": "2026-01-04T23:58:00+05:30",
+    "notes": "Covers the conversion logic for NAND universality."
+  },
+  {
+    "id": "S3_DLCA_M2_015",
+    "question": "Explain NOR as a universal logic gate and its theoretical significance.",
+    "answer": "The NOR gate is universal because it can be configured to perform all fundamental logic operations (NOT, OR, AND):\n1. NOT from NOR: By shorting the inputs of a NOR gate, the output is the inversion of the input ($A + A = A$, so $\\text{NOR}(A, A) = \\bar{A}$).\n2. OR from NOR: An OR gate is formed by placing a NOR-based inverter after a NOR gate, cancelling the initial inversion.\n3. AND from NOR: Using De Morgan's Theorem ($\\bar{A} \\cdot \\bar{B} = \\overline{A + B}$), we can create an AND gate by inverting inputs $A$ and $B$ individually with NOR gates and then passing those inverted signals into a final NOR gate.\nTheoretically, having NOR as a universal gate provides flexibility in circuit minimization where NOR logic might be more efficient than NAND logic for certain expressions.\n\n",
+    "tags": ["logic gates", "universal gates", "NOR", "theory"],
+    "source": { "type": "file", "path": "Sample Question Bank" },
+    "created_at": "2026-01-04T23:58:00+05:30",
+    "notes": "Covers the conversion logic for NOR universality."
+  },
+  {
+    "id": "S3_DLCA_M2_016",
+    "question": "Explain the concept of Overflow in signed binary addition.",
+    "answer": "Overflow occurs when the addition of two N-bit signed numbers results in a value that requires N+1 bits to represent accurately. Theoretically, in 2's complement addition, overflow occurs if: 1) Two positive numbers are added and the result is negative. 2) Two negative numbers are added and the result is positive. It is typically detected in hardware by XORing the carry-in and carry-out of the Most Significant Bit (MSB).",
+    "tags": ["overflow", "binary addition", "theory"],
+    "source": { "type": "file", "path": "Module 2 PPT" },
+    "created_at": "2026-01-04T23:55:00+05:30",
+    "notes": "Concept not explicitly in question bank but vital in PPT."
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "S3_DLCA_M4_001",
+    "question": "Explain Register Organization in detail including User-Visible and Control/Status Registers.",
+    "answer": "Register organization within a processor is primarily categorized into two types: User-Visible Registers and Control/Status Registers. User-Visible Registers are those that can be referenced by the machine language that the processor executes; they include General Purpose registers (for data/addressing), Data registers, and Address registers (like Segment Pointers or Index registers). Control and Status Registers are used by the control unit to control the operation of the processor and by privileged operating system routines to control program execution. Essential registers in this category include the Program Counter (PC), which contains the address of the next instruction to be fetched; the Instruction Register (IR), which contains the instruction most recently fetched; and the Memory Address Register (MAR) and Memory Buffer Register (MBR), which handle the interface with memory.",
+    "tags": ["Register Organization", "CPU registers", "Architecture"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Fundamental CPU internal storage architecture."
+  },
+  {
+    "id": "S3_DLCA_M4_002",
+    "question": "Explain the different addressing modes with examples.",
+    "answer": "Addressing modes define how the operand address is determined. Common modes include: 1. Immediate Addressing: The operand is part of the instruction (e.g., ADD 5). 2. Direct Addressing: The address field contains the actual address of the operand (e.g., ADD 1000). 3. Indirect Addressing: The address field points to a memory location that contains the address of the operand. 4. Register Addressing: The operand is held in a register (e.g., ADD R1). 5. Register Indirect: The register contains the address of the operand in memory. 6. Displacement Addressing: Combines direct and register indirect (e.g., Indexing or Base-register addressing). 7. Stack Addressing: The operand is on the stack, and the address is implicit.",
+    "tags": ["Addressing Modes", "Instruction Set"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Covers how processors access data."
+  },
+  {
+    "id": "S3_DLCA_M4_003",
+    "question": "Explain the Delay Element Method for Hardwired Control Unit design in detail.",
+    "answer": "The Delay Element Method is a technique used to construct a control unit directly from a state flowchart. A control unit is built by assigning a delay element to each state in the flowchart. When a signal passes through a delay element, it represents the transition from one state to the next. The rules for this method involve ensuring that each state in the sequence is separated by a hardware delay that matches the clock pulse. While easy to design from a flowchart, the primary drawback is that the number of delay elements needed is approximately equal to the number of states, and each element is typically a complex sequential circuit like a flip-flop, making it hardware-intensive.",
+    "tags": ["Hardwired Control", "Delay Element Method", "Design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "One of the primary hardwired design techniques."
+  },
+  {
+    "id": "S3_DLCA_M4_004",
+    "question": "Explain the State Table Method used for designing a Hardwired Control Unit in detail.",
+    "answer": "The State Table Method represents the required behavior of a control unit using a structured table. The rows correspond to internal states, while the columns correspond to external input signals. Each entry identifies the next state and the specific set of control output signals to be activated. This method provides a formal logical approach to design. However, it is primarily used for small control units because the table size becomes excessive as the number of inputs and states increases. It is used to generate the boolean logic equations needed for the Encoder/Logic Matrix.",
+    "tags": ["Hardwired Control", "State Table Method", "Design"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Formal design approach using state logic."
+  },
+  {
+    "id": "S3_DLCA_M4_005",
+    "question": "Describe the characteristics and architecture of a Hardwired Control Unit.",
+    "answer": "A Hardwired Control Unit uses fixed logic circuits like gates and flip-flops to generate control signals. Its operation is determined by physical wiring. Architecture components: 1. Instruction Register (IR): Supplies the Op-code. 2. Control Step Counter: Provides timing signals (T1, T2... Tm). 3. Step Decoder: Decodes the counter to provide separate time-slot lines. 4. Instruction Decoder: Decodes the IR to identify the machine instruction. 5. Encoder: A combinational logic block that combines time-slots, op-codes, and status flags to output control signals. ",
+    "tags": ["Hardwired Control", "Architecture", "CU Characteristics"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Core hardware-based CU description."
+  },
+  {
+    "id": "S3_DLCA_M4_006",
+    "question": "Explain the advantages and disadvantages of a Hardwired Control Unit.",
+    "answer": "Advantages: 1. Maximum speed of operation since signals propagate through combinational logic without memory latency. 2. Minimal hardware delay. Disadvantages: 1. Extremely inflexible; modifying the instruction set requires a physical redesign. 2. Complexity increases exponentially with the instruction set size, making design and debugging difficult. 3. Expensive for complex instruction sets.",
+    "tags": ["Hardwired Control", "Analysis"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Performance analysis."
+  },
+  {
+    "id": "S3_DLCA_M4_007",
+    "question": "Explain the advantages and disadvantages of a Microprogrammed Control Unit.",
+    "answer": "Advantages: 1. High flexibility; instruction sets can be changed by updating the Control ROM (Firmware). 2. Simplified design process as it resembles programming. 3. Easier to debug and maintain. Disadvantages: 1. Slower execution because each machine instruction requires multiple 'reads' from the Control Memory. 2. Increased hardware cost due to the addition of Control ROM and Micro-sequencing logic.",
+    "tags": ["Microprogrammed Control", "Analysis"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Evaluation of microprogrammed units."
+  },
+  {
+    "id": "S3_DLCA_M4_008",
+    "question": "Describe the architecture and functioning of a Microprogrammed Control Unit.",
+    "answer": "A Microprogrammed Control Unit generates signals by reading microprograms from an internal Control ROM. Components include: 1. Control ROM: Stores the microinstructions (microroutines). 2. Microprogram Counter (uPC): Holds the address of the next microinstruction. 3. Control Address Register (CAR): Similar to uPC, holds the current micro-address. 4. Starting Address Generator: Maps the IR op-code to a ROM address. Functioning: For a machine instruction, the CU fetches the corresponding microroutine from ROM. Each microinstruction specifies the control signals for that clock cycle. The uPC is updated based on sequencing logic (increment, branch, or jump) to fetch the next microinstruction until the entire machine instruction is executed.",
+    "tags": ["Microprogrammed Control", "Architecture"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Detailed software-based CU description."
+  },
+  {
+    "id": "S3_DLCA_M4_009",
+    "question": "Explain Sequencing and Execution in a Microprogrammed Control Unit.",
+    "answer": "Sequencing is the process of determining the next micro-address to be loaded into the uPC. It can be a simple increment, a jump based on a 'Branch' microinstruction, or a mapping from a new IR op-code. Execution is the actual activation of control signals defined by the Control Word (CW) currently in the Control Buffer Register. Sequencing ensures the micro-operations happen in the correct logical order, while execution carries out the physical data movements and ALU operations.",
+    "tags": ["Microprogrammed Control", "Sequencing", "Execution"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Logical flow of the CU."
+  },
+  {
+    "id": "S3_DLCA_M4_010",
+    "question": "Explain Horizontal Micro-Instruction Format.",
+    "answer": "In a Horizontal microinstruction, each bit corresponds directly to a specific control signal. If a bit is 1, the signal is active; if 0, it is inactive. Advantages: It allows maximum parallelism as many signals can be high at once. Disadvantages: It requires a very wide control word (long bit length) and thus a larger, more expensive control memory. ",
+    "tags": ["Micro-Instruction", "Horizontal"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Structural type 1."
+  },
+  {
+    "id": "S3_DLCA_M4_011",
+    "question": "Explain Vertical Micro-Instruction Format.",
+    "answer": "Vertical microinstructions use encoded fields to represent control signals. For example, a 4-bit field might be decoded by a 4-to-16 decoder to activate one of 16 signals. Advantages: It uses a much narrower control word, significantly reducing memory size and cost. Disadvantages: It is slower due to the decoding delay and limited parallelism, as only one signal within a group can be active at a time.",
+    "tags": ["Micro-Instruction", "Vertical"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Structural type 2."
+  },
+  {
+    "id": "S3_DLCA_M4_012",
+    "question": "Explain the Instruction Cycle with the help of a state diagram.",
+    "answer": "The Instruction Cycle is the total process of executing one instruction. 1. Fetch: Read instruction from memory using PC. 2. Decode: Interpret the op-code in the IR. 3. Indirect: If addressing is indirect, fetch the actual operand address. 4. Execute: Perform the operation (ADD, MOV, etc.). 5. Interrupt: Check for hardware interrupts before starting the next cycle. ",
+    "tags": ["Instruction Cycle", "Fetch", "Execute"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Standard CPU cycle."
+  },
+  {
+    "id": "S3_DLCA_M4_013",
+    "question": "Define Micro-operations and provide examples for the Fetch cycle.",
+    "answer": "Micro-operations are the most basic, atomic operations performed by the CPU in a single clock cycle. Fetch Cycle Micro-operations: T1: MAR <- (PC); T2: MBR <- (Memory), PC <- (PC) + 1; T3: IR <- (MBR). These steps represent the physical transfer of the instruction from memory to the processor's Instruction Register.",
+    "tags": ["Micro-operations", "Fetch"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Basic CPU steps."
+  },
+  {
+    "id": "S3_DLCA_M4_014",
+    "question": "Explain Micro-operations for the Indirect and Interrupt cycles.",
+    "answer": "Indirect Cycle: MAR <- (IR_address); MBR <- (Memory); IR_address <- (MBR_address). This replaces the pointer with the actual operand address. Interrupt Cycle: T1: MBR <- (PC); T2: MAR <- Save_Address, PC <- Routine_Address; T3: Memory <- (MBR). This saves the return address and jumps to the interrupt service routine.",
+    "tags": ["Micro-operations", "Indirect", "Interrupt"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Advanced cycle steps."
+  },
+  {
+    "id": "S3_DLCA_M4_015",
+    "question": "What is the role of the Control Word (CW)?",
+    "answer": "A Control Word is a string of bits where each bit or field represents a control signal. In microprogrammed control, the Control Word is the data stored at a specific address in the Control ROM. When accessed, it acts as a template that simultaneously opens or closes specific gates in the CPU data path to execute a micro-operation.",
+    "tags": ["Control Word", "Microprogrammed Control"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "CU signal template."
+  },
+  {
+    "id": "S3_DLCA_M4_016",
+    "question": "List the various methods to design a Hardwired Control Unit.",
+    "answer": "There are three primary methods: 1. State Table Method: Uses a logical table to define state transitions and signals. 2. Delay Element Method: Uses hardware delay units to transition between states. 3. Sequence Counter Method: Uses a counter and decoders to generate timing signals sequentially. Each method seeks to optimize the logic required to produce control signals based on timing and inputs.",
+    "tags": ["Hardwired Control", "Design Methods"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Hardwired design taxonomy."
+  },
+  {
+    "id": "S3_DLCA_M4_017",
+    "question": "Explain the concept of Control Memory in a Microprogrammed Control Unit.",
+    "answer": "Control Memory (usually ROM or PROM) is a dedicated memory inside the control unit that stores microinstructions. Unlike the main memory (RAM) which stores user programs (machine instructions), the Control Memory stores the 'firmware' that defines how each machine instruction is executed. It is accessed by the Microprogram Counter to fetch the next Control Word.",
+    "tags": ["Control Memory", "Microprogrammed Control"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Internal CU storage."
+  },
+  {
+    "id": "S3_DLCA_M4_018",
+    "question": "Explain Micro-operations for an ADD R1, X instruction.",
+    "answer": "For an ADD instruction where X is a memory address: T1: MAR <- (IR_address); T2: MBR <- (Memory); T3: ALU_Input1 <- (R1), ALU_Input2 <- (MBR); T4: R1 <- ALU_Output. This sequence fetches the operand from memory and adds it to the value in register R1.",
+    "tags": ["Micro-operations", "Execute Cycle"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-04T23:59:00+05:30",
+    "notes": "Execution example."
+  }
+]

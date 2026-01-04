@@ -1,0 +1,92 @@
+[
+  {
+    "id": "DLCA_EXP_001",
+    "question": "Experiment 1: To Verify the Behaviour of Logic Gates using Truth Table.",
+    "answer": "Aim: To Verify the Behaviour of Logic Gates using Truth Table. This experiment involves getting familiar with the Digital Trainer Kit and verifying the operations of AND, OR, NOT, NAND, NOR, and XOR gates using standard TTL ICs.",
+    "tags": ["Logic-Gates", "Truth-Tables", "TTL-ICs", "Digital-Trainer-Kit"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-1.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Covers hex inverter (7404), AND (7408), OR (7432), and other basic gates."
+  },
+  {
+    "id": "DLCA_EXP_002",
+    "question": "Experiment 2: To Design of Ripple Carry Adders.",
+    "answer": "Aim: To Design of Ripple Carry Adders. The experiment explains how multiple full adders are linked to add N-bit binary numbers, where the carry bit 'ripples' from one stage to the next.",
+    "tags": ["Ripple-Carry-Adder", "Full-Adder", "Binary-Addition", "Arithmetic-Operations"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-2.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Discusses gate delay and the construction of a 4-bit adder."
+  },
+  {
+    "id": "DLCA_EXP_003",
+    "question": "Experiment 3: To implement 4-bit carry look ahead adder.",
+    "answer": "Aim: To implement 4-bit carry look ahead adder. Focuses on reducing computation time by using Carry Propagator (P) and Carry Generator (G) signals to calculate carry bits before the sum.",
+    "tags": ["Carry-Lookahead-Adder", "Fast-Adder", "Propagation-Delay", "CLA"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-3.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Highlights the efficiency improvement over ripple carry adders."
+  },
+  {
+    "id": "DLCA_EXP_004",
+    "question": "Experiment 4: To implement 4-bit Arithmetic Logic Unit.",
+    "answer": "Aim: To implement 4 - bit Arithmetic Logic Unit. The ALU is designed using 1-bit ALU blocks and a 4:1 MUX to perform operations like AND, OR, XOR, and Addition based on control signals.",
+    "tags": ["ALU", "Arithmetic-Logic-Unit", "Multiplexer", "Digital-Design"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-4.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Uses S1 and S0 control signals to determine the function."
+  },
+  {
+    "id": "DLCA_EXP_005",
+    "question": "Experiment 5: To implement Memory Design.",
+    "answer": "Aim: To implement Memory Design. This covers the internal construction of RAM, including single-bit RAM cells (binary cells) using RS Flip-Flops and 2x4 decoders for word selection.",
+    "tags": ["Memory-Design", "RAM", "RS-Flip-Flop", "Binary-Cell"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-5.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Explains Read/Write operations and decoder-based addressing."
+  },
+  {
+    "id": "DLCA_EXP_006",
+    "question": "Experiment 6: To study Half and Full adder circuits.",
+    "answer": "Aim: To study Half and Full adder circuits. The experiment demonstrates simple addition of two binary numbers (Half Adder) and the addition of two numbers with a carry input (Full Adder).",
+    "tags": ["Half-Adder", "Full-Adder", "Combinational-Circuits", "K-Map"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-6.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Uses IC 7486, 7408, and 7432 for implementation."
+  },
+  {
+    "id": "DLCA_EXP_007",
+    "question": "Experiment 7: Implementation of 4x1 Multiplexer and 1x4 Demultiplexer using logic gates.",
+    "answer": "Aim: Implementation of 4x1 Multiplexer and 1x4 Demultiplexer using logic gates. Analyzes how select lines determine which input is routed to the output or which output receives the input signal.",
+    "tags": ["Multiplexer", "Demultiplexer", "Data-Selector", "Logic-Gates"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-7.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Covers 3-input NAND and NOT gates for implementation."
+  },
+  {
+    "id": "DLCA_EXP_008",
+    "question": "Experiment 8: To Study of flip flop IC.",
+    "answer": "Aim: To Study of flip flop IC. This experiment explores basic storage elements including RS, D, JK, and T flip-flops, examining their stable states and characteristic tables.",
+    "tags": ["Flip-Flops", "Sequential-Circuits", "Binary-Storage", "JK-Flip-Flop"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-8.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Includes circuit diagrams and truth tables for each type."
+  },
+  {
+    "id": "DLCA_EXP_009",
+    "question": "Experiment 9: To implement Booth's algorithm.",
+    "answer": "Aim: To implement Booth's algorithm. This covers a multiplication algorithm for signed binary integers in 2's complement, which improves efficiency by reducing the number of additions.",
+    "tags": ["Booths-Algorithm", "Binary-Multiplication", "2s-Complement", "Arithmetic-Shift"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-9.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Outlines the design steps including Q0 and Q-1 comparisons."
+  },
+  {
+    "id": "DLCA_EXP_10",
+    "question": "Experiment 10: To implement a restoring division algorithm.",
+    "answer": "Aim: To implement a restoring division algorithm. This algorithm is used to divide two unsigned integers by restoring the value of the Accumulator after a subtraction if the result is negative.",
+    "tags": ["Restoring-Division", "Division-Algorithm", "Computer-Architecture", "Accumulator"],
+    "source": { "type": "file", "path": "Notes/DLCA_Practicals/DLCA_Expt-10.pdf", "url": null },
+    "created_at": "2026-01-04T19:03:00+05:30",
+    "notes": "Uses registers A, M, Q, and a counter n."
+  }
+]

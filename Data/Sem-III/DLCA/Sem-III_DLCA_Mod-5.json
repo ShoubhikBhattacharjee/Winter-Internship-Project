@@ -1,0 +1,191 @@
+[
+  {
+    "id": "S3_DLCA_M5_001",
+    "question": "Explain the Location characteristic of a memory system",
+    "answer": "Location refers to the position of the memory relative to the CPU. It is classified into three types: Internal to the CPU such as registers, Internal or Main memory such as Cache and RAM, and External or Secondary memory such as Hard disks and magnetic tapes",
+    "tags": ["Memory Characteristics", "Location"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Basic classification of memory based on proximity to the processor"
+  },
+  {
+    "id": "S3_DLCA_M5_002",
+    "question": "Describe the Capacity characteristic of a memory system",
+    "answer": "Capacity refers to the total amount of information a memory unit can store. For internal memory, this is typically measured in words or bytes. For external memory, it is measured in larger units like Kilobytes, Megabytes, Gigabytes, or Terabytes",
+    "tags": ["Memory Characteristics", "Capacity"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Defines the storage limits of the memory unit"
+  },
+  {
+    "id": "S3_DLCA_M5_003",
+    "question": "Explain the Sequential Access method in memory",
+    "answer": "In Sequential Access, data is organized into records. To access a specific piece of data, the system must read through all preceding data in a linear sequence. Consequently, the access time varies significantly based on the data location",
+    "tags": ["Access Methods", "Sequential Access"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Commonly used in magnetic tapes"
+  },
+  {
+    "id": "S3_DLCA_M5_004",
+    "question": "Explain the Direct Access method in memory",
+    "answer": "Direct Access allows the system to go directly to a general vicinity of the data using a unique physical address. Once in the area, a small amount of sequential searching or waiting is performed to reach the exact location",
+    "tags": ["Access Methods", "Direct Access"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Typical for disk drives"
+  },
+  {
+    "id": "S3_DLCA_M5_005",
+    "question": "Explain the Random Access method in memory",
+    "answer": "Random Access allows any memory location to be accessed directly using a unique wired-in addressing mechanism. The time required to access any location is constant and does not depend on previous access patterns",
+    "tags": ["Access Methods", "Random Access"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Used in RAM and Main Memory"
+  },
+  {
+    "id": "S3_DLCA_M5_006",
+    "question": "Describe the Associative Access method in memory",
+    "answer": "Associative Access is a type of random access where data is retrieved based on a match of its contents rather than a specific address. It allows the system to search all words in memory simultaneously for a specified bit pattern",
+    "tags": ["Access Methods", "Associative Access"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Also known as Content Addressable Memory"
+  },
+  {
+    "id": "S3_DLCA_M5_007",
+    "question": "Define Access Time as a performance measure",
+    "answer": "Access Time is the time interval between the moment an address is presented to the memory unit and the moment the data is either stored or made available for use by the CPU",
+    "tags": ["Performance", "Access Time"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Primary speed metric for memory"
+  },
+  {
+    "id": "S3_DLCA_M5_008",
+    "question": "Define Memory Cycle Time as a performance measure",
+    "answer": "Memory Cycle Time consists of the access time plus the additional time required for the system to recover or for signals to dissipate before a second access operation can begin",
+    "tags": ["Performance", "Cycle Time"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Represents the total time between successive memory operations"
+  },
+  {
+    "id": "S3_DLCA_M5_009",
+    "question": "Describe the Memory Hierarchy in computer systems",
+    "answer": "The memory hierarchy is a structured organization of memory levels where cost per bit decreases and capacity increases as you move from the CPU toward secondary storage. Conversely, access time increases as you move down the hierarchy",
+    "tags": ["Memory Hierarchy"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Organized to optimize cost and performance"
+  },
+  {
+    "id": "S3_DLCA_M5_010",
+    "question": "Explain the Principle of Temporal Locality",
+    "answer": "Temporal Locality is the tendency of a processor to access the same memory location multiple times within a short period. This typically happens during the execution of program loops or when accessing local variables",
+    "tags": ["Locality of Reference", "Temporal Locality"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Key principle for cache efficiency"
+  },
+  {
+    "id": "S3_DLCA_M5_011",
+    "question": "Explain the Principle of Spatial Locality",
+    "answer": "Spatial Locality refers to the tendency of a processor to access memory locations that are physically near a recently accessed location. This occurs because code is usually executed sequentially and data is often stored in arrays",
+    "tags": ["Locality of Reference", "Spatial Locality"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Encourages fetching blocks of data rather than individual bytes"
+  },
+  {
+    "id": "S3_DLCA_M5_012",
+    "question": "Describe the characteristics of Static RAM",
+    "answer": "Static RAM or SRAM uses flip-flops to store information. It is characterized by high speed and does not require periodic refreshing. However, it is expensive and has lower storage density, making it ideal for cache memory",
+    "tags": ["RAM", "SRAM"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Faster but more hardware intensive than DRAM"
+  },
+  {
+    "id": "S3_DLCA_M5_013",
+    "question": "Describe the characteristics of Dynamic RAM",
+    "answer": "Dynamic RAM or DRAM stores data as electric charges in capacitors. It is cheaper and more dense than SRAM but is slower and requires constant refreshing to prevent data loss. It is primarily used for main system memory",
+    "tags": ["RAM", "DRAM"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Mainstay of system RAM due to high density"
+  },
+  {
+    "id": "S3_DLCA_M5_014",
+    "question": "Explain the role of Cache Memory",
+    "answer": "Cache memory acts as a high-speed buffer between the CPU and main memory. Its role is to store copies of frequently accessed data to reduce the average time the CPU spends waiting for data from the slower main memory",
+    "tags": ["Cache Memory"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Bridges the speed gap between processor and RAM"
+  },
+  {
+    "id": "S3_DLCA_M5_015",
+    "question": "Explain the Direct Mapping technique in Cache",
+    "answer": "Direct Mapping is a cache organization where each block of main memory is mapped to exactly one specific line in the cache. The mapping is determined using the modulo operation of the block address by the number of cache lines",
+    "tags": ["Cache Mapping", "Direct Mapping"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Simple mapping but prone to conflict misses"
+  },
+  {
+    "id": "S3_DLCA_M5_016",
+    "question": "Describe the Write-through policy in Cache",
+    "answer": "The Write-through policy ensures that every write operation to the cache is simultaneously performed on the main memory. This maintains data consistency between the two levels at all times but increases memory bus traffic",
+    "tags": ["Write Policies", "Write-through"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Ensures reliability and data consistency"
+  },
+  {
+    "id": "S3_DLCA_M5_017",
+    "question": "Describe the Write-back policy in Cache",
+    "answer": "In the Write-back policy, updates are made only in the cache unit. The main memory is only updated when the specific cache line is replaced. A dirty bit is used to track if the cache data differs from the main memory data",
+    "tags": ["Write Policies", "Write-back"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Reduces bus traffic by delaying memory writes"
+  },
+  {
+    "id": "S3_DLCA_M5_018",
+    "question": "Define Cache Coherence",
+    "answer": "Cache Coherence is the discipline of ensuring that all processors in a multi-processor system see the same data. It prevents a processor from reading obsolete data when another processor has updated its local cache",
+    "tags": ["Cache Coherence"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Critical for multi-core processing environments"
+  },
+  {
+    "id": "S3_DLCA_M5_019",
+    "question": "Explain Content Addressable Memory",
+    "answer": "Content Addressable Memory or CAM is a hardware search engine that compares input data against all stored words in parallel. It returns the address where a match is found in a single clock cycle, making it faster than software searches",
+    "tags": ["Associative Memory", "CAM"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Search optimized hardware"
+  },
+  {
+    "id": "S3_DLCA_M5_020",
+    "question": "Explain High-order Memory Interleaving",
+    "answer": "High-order Interleaving uses the most significant bits of the memory address to select a specific memory module. This results in consecutive addresses being stored in the same module, which is useful for multi-tasking but not for single-stream speed",
+    "tags": ["Interleaved Memory", "High-order Interleaving"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Module selection based on MSB"
+  },
+  {
+    "id": "S3_DLCA_M5_021",
+    "question": "Explain Low-order Memory Interleaving",
+    "answer": "Low-order Interleaving uses the least significant bits of the memory address to select the module. This spreads consecutive addresses across different modules, allowing the system to access them in parallel and increase throughput",
+    "tags": ["Interleaved Memory", "Low-order Interleaving"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T00:30:00+05:30",
+    "notes": "Module selection based on LSB for higher parallelism"
+  }
+]

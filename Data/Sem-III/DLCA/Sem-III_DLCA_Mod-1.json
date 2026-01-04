@@ -1,0 +1,272 @@
+[
+  {
+    "id": "S3_DLCA_M1_001",
+    "question": "Define the Decimal Number System and its positional representation.",
+    "answer": "The Decimal number system is a base-10 (radix 10) system using ten distinct digits: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. Each digit's value is determined by its position, which represents a power of 10. For example, in (235.7)₁₀, the '2' represents 2 \u00d7 10\u00b2 and the '7' represents 7 \u00d7 10\u207b\u00b9.",
+    "tags": ["number systems", "decimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Fundamental base-10 definition."
+  },
+  {
+    "id": "S3_DLCA_M1_002",
+    "question": "What is the Binary Number System and how is it used in computers?",
+    "answer": "The Binary number system is a base-2 system using only two digits: {0, 1}. It is the fundamental language of digital computers because electronic circuits can easily represent two states (on/off). Each bit position corresponds to a power of 2. Example: (110.01)\u2082 = (1\u00d72\u00b2) + (1\u00d72\u00b9) + (0\u00d72\u2070) + (0\u00d72\u207b\u00b9) + (1\u00d72\u207b\u00b2).",
+    "tags": ["number systems", "binary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Core digital system definition."
+  },
+  {
+    "id": "S3_DLCA_M1_003",
+    "question": "Explain the Octal Number System and its elements.",
+    "answer": "The Octal number system has a base or radix of 8 and contains eight elements: {0, 1, 2, 3, 4, 5, 6, 7}. It is often used in computing as a shorthand for binary because one octal digit represents exactly three binary bits (2\u00b3=8). Digit positions are weighted by powers of 8.",
+    "tags": ["number systems", "octal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Base-8 system overview."
+  },
+  {
+    "id": "S3_DLCA_M1_004",
+    "question": "Describe the Hexadecimal Number System including its alphanumeric characters.",
+    "answer": "The Hexadecimal system is a base-16 system using 16 elements: {0-9 and A-F}. The letters A, B, C, D, E, and F represent decimal values 10, 11, 12, 13, 14, and 15, respectively. It is widely used in programming to represent large binary numbers concisely, as one hex digit corresponds to four binary bits (2\u2074=16).",
+    "tags": ["number systems", "hexadecimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Base-16 system and character mapping."
+  },
+  {
+    "id": "S3_DLCA_M1_005",
+    "question": "What is the Base-3 (Ternary) number system?",
+    "answer": "The Ternary system has a base of 3 and uses three elements: {0, 1, 2}. Like other systems, it is positional; for example, (120.02)\u2083 is calculated as (1\u00d73\u00b2) + (2\u00d73\u00b9) + (0\u00d73\u2070) + (0\u00d73\u207b\u00b9) + (2\u00d73\u207b\u00b2).",
+    "tags": ["number systems", "ternary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Specific base-3 definition from module content."
+  },
+  {
+    "id": "S3_DLCA_M1_006",
+    "question": "Explain the algorithm for converting a Decimal integer to a Base-N system.",
+    "answer": "1. Divide the decimal integer by the target base 'N'.\n2. Record the remainder on the right and use the integer quotient for the next division.\n3. Repeat the process until the quotient becomes 0.\n4. Read the remainders from bottom to top (the last remainder is the Most Significant Digit).",
+    "tags": ["conversion", "decimal to base-n"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Universal integer conversion algorithm."
+  },
+  {
+    "id": "S3_DLCA_M1_007",
+    "question": "Explain the algorithm for converting a Fractional Decimal to a Base-N system.",
+    "answer": "1. Multiply the fractional part by the target base 'N'.\n2. Record the integer part of the product (left of the decimal point).\n3. Use the remaining fractional part for the next multiplication.\n4. Repeat until the fractional part is zero or the desired precision is reached.\n5. Read the recorded integers from top to bottom.",
+    "tags": ["conversion", "fractional"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Universal fractional conversion algorithm."
+  },
+  {
+    "id": "S3_DLCA_M1_008",
+    "question": "How is a Binary number converted to Decimal?",
+    "answer": "Multiply each binary bit by 2 raised to the power of its position (index). Sum the results of all positions. For fractional bits, use negative powers of 2 (2\u207b\u00b9, 2\u207b\u00b2, etc.).",
+    "tags": ["conversion", "binary to decimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Positional weightage method."
+  },
+  {
+    "id": "S3_DLCA_M1_009",
+    "question": "Explain the shortcut method for Binary to Octal conversion.",
+    "answer": "Group the binary bits into sets of three, starting from the binary point (to the left for integers, to the right for fractions). Replace each 3-bit group with its corresponding octal digit (0-7). If a group is incomplete, add leading or trailing zeros.",
+    "tags": ["conversion", "binary to octal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "3-bit grouping shortcut."
+  },
+  {
+    "id": "S3_DLCA_M1_010",
+    "question": "Explain the shortcut method for Binary to Hexadecimal conversion.",
+    "answer": "Group the binary bits into sets of four, starting from the binary point. Replace each 4-bit group with its corresponding hexadecimal digit (0-9, A-F). Add necessary zeros to complete the 4-bit groups at the ends.",
+    "tags": ["conversion", "binary to hexadecimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "4-bit grouping shortcut."
+  },
+  {
+    "id": "S3_DLCA_M1_011",
+    "question": "How is an Octal number converted to Binary?",
+    "answer": "Each octal digit is replaced by its equivalent 3-bit binary group. For example, 5\u2088 becomes 101\u2082 and 2\u2088 becomes 010\u2082.",
+    "tags": ["conversion", "octal to binary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "3-bit expansion."
+  },
+  {
+    "id": "S3_DLCA_M1_012",
+    "question": "Explain the process for Octal to Decimal conversion.",
+    "answer": "Multiply each octal digit by 8 raised to the power of its position index and sum the total. Example: (54.3)\u2088 = (5\u00d78\u00b9) + (4\u00d78\u2070) + (3\u00d78\u207b\u00b9).",
+    "tags": ["conversion", "octal to decimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Weightage method."
+  },
+  {
+    "id": "S3_DLCA_M1_013",
+    "question": "What are the steps to convert Octal to Hexadecimal?",
+    "answer": "1. Convert the octal digits to binary (3 bits per digit).\n2. Regroup the resulting binary string into groups of 4 bits from the binary point.\n3. Convert each 4-bit group into its hexadecimal equivalent.",
+    "tags": ["conversion", "octal to hexadecimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Indirect conversion via binary."
+  },
+  {
+    "id": "S3_DLCA_M1_014",
+    "question": "How is a Hexadecimal number converted to Binary?",
+    "answer": "Each hexadecimal digit is replaced by its equivalent 4-bit binary group. For example, A\u2081\u2086 becomes 1010\u2082 and 3\u2081\u2086 becomes 0011\u2082.",
+    "tags": ["conversion", "hexadecimal to binary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "4-bit expansion."
+  },
+  {
+    "id": "S3_DLCA_M1_015",
+    "question": "Explain the Hexadecimal to Decimal conversion method.",
+    "answer": "Multiply each hex digit by 16 raised to the power of its position and sum the results. Hex digits A-F must be treated as values 10-15. Example: (1A)\u2081\u2086 = (1\u00d716\u00b9) + (10\u00d716\u2070).",
+    "tags": ["conversion", "hexadecimal to decimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Weightage method."
+  },
+  {
+    "id": "S3_DLCA_M1_016",
+    "question": "What are the steps to convert Hexadecimal to Octal?",
+    "answer": "1. Convert each hex digit to its 4-bit binary equivalent.\n2. Regroup the resulting binary string into groups of 3 bits from the binary point.\n3. Convert each 3-bit group into its octal digit.",
+    "tags": ["conversion", "hexadecimal to octal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Indirect conversion via binary."
+  },
+  {
+    "id": "S3_DLCA_M1_017",
+    "question": "Define BCD (Binary Coded Decimal) and its primary advantage.",
+    "answer": "BCD is a weighted code (typically 8421) where each decimal digit is represented by a 4-bit binary string. Its main advantage is that it allows easy conversion between computer-internal binary and human-readable decimal systems.",
+    "tags": ["codes", "bcd"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Definition and justification."
+  },
+  {
+    "id": "S3_DLCA_M1_018",
+    "question": "What is the Excess-3 (XS-3) code and how is it derived?",
+    "answer": "Excess-3 is a non-weighted code derived by adding decimal 3 (binary 0011) to the BCD representation of a decimal digit. It is an 'inverted reflected code' useful in certain arithmetic operations.",
+    "tags": ["codes", "excess-3"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Non-weighted code derivation."
+  },
+  {
+    "id": "S3_DLCA_M1_019",
+    "question": "Describe Gray Code and its 'unit distance' property.",
+    "answer": "Gray code is a non-weighted code where consecutive numbers differ by only one bit position. This 'unit distance' property is highly effective in reducing errors during digital-to-analog transitions or in position encoders.",
+    "tags": ["codes", "gray code"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Property of Gray code."
+  },
+  {
+    "id": "S3_DLCA_M1_020",
+    "question": "Explain the significance and structure of the ASCII code.",
+    "answer": "ASCII (American Standard Code for Information Interchange) is a 7-bit (or 8-bit extended) alphanumeric code used to represent text in computers. It maps characters (letters, digits, punctuation) to specific binary values, enabling data exchange between different systems.",
+    "tags": ["codes", "ascii"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Alphanumeric code fundamentals."
+  },
+  {
+    "id": "S3_DLCA_M1_021",
+    "question": "Describe the IEEE 754 Single Precision floating-point format.",
+    "answer": "This 32-bit format consists of three fields: a 1-bit sign (S), an 8-bit biased exponent (E) with a bias of 127, and a 23-bit mantissa (M). It is used to represent a wide range of real numbers in computers.",
+    "tags": ["floating point", "ieee 754", "single precision"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Standard representation fields."
+  },
+  {
+    "id": "S3_DLCA_M1_022",
+    "question": "Describe the IEEE 754 Double Precision floating-point format.",
+    "answer": "This 64-bit format provides higher precision and range. It consists of a 1-bit sign, an 11-bit biased exponent with a bias of 1023, and a 52-bit mantissa. It is used for scientific and high-accuracy calculations.",
+    "tags": ["floating point", "ieee 754", "double precision"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "64-bit precision fields."
+  },
+  {
+    "id": "S3_DLCA_M1_023",
+    "question": "Explain the characteristics of Computer Architecture.",
+    "answer": "Computer Architecture refers to the attributes of a system visible to a programmer, such as the instruction set, the number of bits used for data types, and I/O mechanisms. It serves as a consistent logical specification that remains unchanged across different hardware implementations of the same family.",
+    "tags": ["architecture", "fundamentals"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Split from comparison: Architecture description."
+  },
+  {
+    "id": "S3_DLCA_M1_024",
+    "question": "Explain the characteristics of Computer Organization.",
+    "answer": "Computer Organization refers to the physical implementation of architectural specifications. It deals with hardware-level details like control signals, memory technology, and bus interfaces. These attributes are generally invisible to the programmer and may vary between models to balance cost and performance.",
+    "tags": ["organization", "fundamentals"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Split from comparison: Organization description."
+  },
+  {
+    "id": "S3_DLCA_M1_025",
+    "question": "Describe the Von-Neumann (Princeton) Architecture model.",
+    "answer": "The Von-Neumann model uses a single shared memory to store both instructions (program) and data. It consists of a Central Processing Unit (ALU and Control Unit), a Memory Unit, and I/O. Its simplicity makes hardware inexpensive, but it faces a bottleneck due to the single bus for both instructions and data.",
+    "tags": ["architecture", "von-neumann"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Split from comparison: Von Neumann description."
+  },
+  {
+    "id": "S3_DLCA_M1_026",
+    "question": "Describe the Harvard Architecture model.",
+    "answer": "Harvard Architecture uses physically separate memories and signal pathways for instructions and data. This separation allows the CPU to fetch an instruction and access data simultaneously, leading to higher execution speeds. It is commonly found in specialized processors like DSPs and microcontrollers.",
+    "tags": ["architecture", "harvard"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Split from comparison: Harvard description."
+  },
+  {
+    "id": "S3_DLCA_M1_027",
+    "question": "Identify and explain the primary functional units of a computer.",
+    "answer": "A computer typically consists of five functional units: \n1. **Input Unit**: Receives data/instructions from the outside.\n2. **Memory Unit**: Stores programs and data.\n3. **Arithmetic and Logic Unit (ALU)**: Performs processing operations.\n4. **Output Unit**: Presents processed information to the user.\n5. **Control Unit**: Coordinates the operation of all other units using timing and control signals.",
+    "tags": ["organization", "functional units"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Block-level description."
+  },
+  {
+    "id": "S3_DLCA_M1_028",
+    "question": "Explain the concept of Universal Gates and the role of the NAND gate.",
+    "answer": "A universal gate is a logic gate that can be used to implement any Boolean function without the need for any other gate type. The NAND gate is universal because a combination of NAND gates can produce the functions of NOT, AND, OR, NOR, and XOR gates.",
+    "tags": ["logic gates", "nand", "universal gates"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Logic universality."
+  },
+  {
+    "id": "S3_DLCA_M1_029",
+    "question": "Numerical: Convert decimal number 85.125 to IEEE 754 Single Precision format.",
+    "answer": "1. **Binary**: 85 = 1010101; 0.125 = 001. Total: 1010101.001.\n2. **Normalized**: 1.010101001 \u00d7 2\u2076.\n3. **Sign**: 0 (Positive).\n4. **Biased Exponent**: 127 + 6 = 133 \u2192 10000101\u2082.\n5. **Mantissa**: 010101001 (padded to 23 bits).\nResult: 0 10000101 01010100100000000000000.",
+    "tags": ["problems", "ieee 754", "conversion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Numerical step-by-step problem."
+  },
+  {
+    "id": "S3_DLCA_M1_030",
+    "question": "What is the role of 1\u2019s and 2\u2019s complement in computer arithmetic?",
+    "answer": "Complement methods are used to represent and perform arithmetic on signed binary numbers. 1's complement is obtained by inverting all bits. 2's complement is obtained by adding 1 to the 1's complement. 2's complement is standard in modern computers because it simplifies hardware logic for subtraction and handles the value zero consistently.",
+    "tags": ["binary arithmetic", "complements"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-04T23:10:00+05:30",
+    "notes": "Arithmetic fundamentals."
+  }
+]

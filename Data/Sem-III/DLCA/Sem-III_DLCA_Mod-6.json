@@ -1,0 +1,353 @@
+[
+  {
+    "id": "S3_DLCA_M6_001",
+    "question": "Explain the detailed architecture of a Basic Pipelined Datapath and Control Section",
+    "answer": "A pipelined processor is architecturally divided into the Datapath and the Control Section. The Datapath consists of the hardware components that process data including the ALU multipliers and registers while the Control Section generates the synchronization signals. In a pipelined design the datapath is partitioned into independent segments separated by interface latches or buffers. These latches store the intermediate results of one stage and hold them as input for the next stage during the subsequent clock cycle. This allows the Control Section to issue multiple instructions simultaneously where each instruction occupies a different hardware segment at any given time resulting in temporal parallelism",
+    "tags": ["Pipelining", "Architecture", "Datapath"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Comprehensive overview of pipelined CPU components"
+  },
+  {
+    "id": "S3_DLCA_M6_002",
+    "question": "Describe the operational flow of a 4 Stage Instruction Pipeline",
+    "answer": "The 4 stage pipeline optimizes instruction throughput by breaking execution into four distinct phases: 1 Instruction Fetch IF where the CPU reads the instruction from memory based on the address in the Program Counter and stores it in the Instruction Register 2 Instruction Decode ID where the control unit identifies the opcode and fetches necessary operands from the register file 3 Execute EX where the ALU performs the specified arithmetic or logic operation 4 Write Back WB where the result of the execution is updated in the destination register. Each stage operates on a different instruction every clock cycle after the initial pipeline latency is overcome",
+    "tags": ["Pipeline Stages", "Instruction Cycle"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Detailed breakdown of the 4 stage model"
+  },
+  {
+    "id": "S3_DLCA_M6_003",
+    "question": "Explain the theoretical impact of Pipeline Hazards on CPU performance",
+    "answer": "Pipeline hazards are functional conflicts that prevent the hardware from completing an instruction in its allocated clock cycle. There are three primary types: 1 Structural Hazards which occur when multiple instructions require the same hardware resource like a single memory port simultaneously 2 Data Hazards which arise when an instruction depends on the result of a previous instruction that has not yet finished its Write Back stage causing a Read After Write RAW conflict 3 Control Hazards which occur due to branch instructions where the pipeline does not know the next instruction address until the branch is evaluated. These hazards force the insertion of stalls or bubbles which increases the CPI and reduces the effective throughput",
+    "tags": ["Hazards", "Performance"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Theoretical analysis of pipeline bottlenecks"
+  },
+  {
+    "id": "S3_DLCA_M6_004",
+    "question": "Differentiate between Delayed Branch and Branch Prediction techniques",
+    "answer": "Delayed Branch is a software centric approach where the compiler reorders instructions so that the slot immediately following a branch instruction is filled with a useful instruction that does not depend on the branch outcome ensuring the pipeline remains full. In contrast Branch Prediction is a hardware centric approach where the processor uses logic to guess the outcome of a branch before it is calculated. Static prediction uses fixed rules like always taken or always not taken while Dynamic prediction uses a Branch History Table to track past behavior. If the prediction is incorrect the pipeline must be flushed and restarted with the correct instruction which incurs a performance penalty",
+    "tags": ["Branching", "Delayed Branch", "Branch Prediction"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Comparison of control hazard mitigation strategies"
+  },
+  {
+    "id": "S3_DLCA_M6_005",
+    "question": "Provide a detailed explanation of Amdahl Law and its implications for speedup",
+    "answer": "Amdahl Law provides a mathematical model to determine the maximum speedup achievable by improving a specific portion of a system. It states that the speedup is constrained by the sequential fraction of the task that cannot be parallelized. If S is the speedup of the enhanced portion and f is the fraction of the task that can use that enhancement the overall speedup is 1 divided by the sum of 1 minus f and f divided by S. This implies that even if the parallel portion is made infinitely fast the overall performance will still be limited by the serial part highlighting the diminishing returns of simply adding more processors to a fixed size problem",
+    "tags": ["Amdahl Law", "Performance Laws"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Mathematical performance modeling"
+  },
+  {
+    "id": "S3_DLCA_M6_006",
+    "question": "Explain the concept of Bus Arbitration and its primary techniques",
+    "answer": "Bus Arbitration is a critical management process in multi master systems where multiple devices like the CPU and DMA controller compete for access to the system bus. The arbiter ensures that only one master controls the bus at any time to prevent data collisions. Centralized Arbitration uses a single dedicated hardware controller that receives Bus Request signals and issues Bus Grant signals based on priority algorithms like Fixed Priority or Round Robin. Distributed Arbitration removes the central bottleneck by allowing each device to participate in a decentralized decision process using self selection logic and priority identification numbers across shared control lines",
+    "tags": ["Bus Systems", "Arbitration"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Theory of bus management and access control"
+  },
+  {
+    "id": "S3_DLCA_M6_007",
+    "question": "Explain the categorization of architectures according to Flynn Classification",
+    "answer": "Flynn Classification is a taxonomy based on the number of concurrent instruction and data streams in a system: 1 SISD Single Instruction Single Data is the traditional Von Neumann model where one instruction operates on one data item at a time 2 SIMD Single Instruction Multiple Data involves a single instruction stream controlling multiple processing units to perform the same operation on different data sets simultaneously common in vector processors 3 MISD Multiple Instruction Single Data is a rare architecture where multiple instructions process the same data stream often for fault tolerance 4 MIMD Multiple Instruction Multiple Data consists of multiple independent processors executing different instruction streams on different data sets which is the basis for modern multi core and distributed computing",
+    "tags": ["Flynn Classification", "Parallel Computing"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Standard architectural taxonomy"
+  },
+  {
+    "id": "S3_DLCA_M6_008",
+    "question": "Analyze the functional differences between ISA and PCI Buses",
+    "answer": "The Industry Standard Architecture ISA bus is a legacy 8 bit or 16 bit parallel bus that operates at a low clock frequency and lacks support for advanced features like bus mastering making it suitable only for slow peripherals. The Peripheral Component Interconnect PCI bus is a more modern high performance local bus that supports a 32 bit or 64 bit data path and operates at higher speeds. PCI features include synchronous operation plug and play capability and a centralized arbitration mechanism that allows peripheral devices to take control of the bus for high speed data transfers directly to memory without constant CPU intervention",
+    "tags": ["Bus Systems", "ISA", "PCI"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Comparison of peripheral communication standards"
+  },
+  {
+    "id": "S3_DLCA_M6_009",
+    "question": "Explain Data Dependencies in detail with examples",
+    "answer": "Data dependencies occur when the execution of an instruction depends on the data results of a previous instruction. The three main types are: 1 RAW Read After Write where an instruction tries to read a register before a previous instruction has finished writing to it 2 WAR Write After Read where an instruction tries to write to a destination before a previous instruction has read it 3 WAW Write After Write where two instructions try to write to the same destination out of order. In pipelining these dependencies lead to data hazards because the value needed by an instruction in the Decode or Execute stage might still be in the pipeline latches of a preceding instruction and has not yet reached the register file",
+    "tags": ["Data Dependencies", "RAW", "WAR", "WAW"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Detailed theory on data conflicts"
+  },
+  {
+    "id": "S3_DLCA_M6_010",
+    "question": "Explain Instruction Pipelining in detail with a functional diagram overview",
+    "answer": "Instruction pipelining is the implementation of concurrency at the instruction level within a single processor. It works by overlapping the execution of several instructions by dividing the hardware into stages where each stage performs a specific task. For example in a 5 stage pipeline while the 1st instruction is being executed in the 3rd stage the 2nd instruction is being decoded in the 2nd stage and the 3rd instruction is being fetched in the 1st stage. This process increases the instruction throughput of the CPU meaning more instructions are completed per unit of time even though the latency of an individual instruction remains the same",
+    "tags": ["Instruction Pipelining", "Throughput"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Core concept of modern CPU performance"
+  },
+  {
+    "id": "S3_DLCA_M6_011",
+    "question": "Explain Micro-instruction format and provide a microprogram example for ADD R1 R2",
+    "answer": "The Micro instruction format defines the structure of the control word stored in the Control ROM. It typically contains fields for control signals to be activated and the address of the next micro instruction. For the instruction ADD R1 R2 the microprogram involves several steps: 1 Fetch PC value and move to MAR 2 Read memory and load instruction into IR 3 Decode opcode 4 Select R1 and R2 operands and route them to ALU inputs 5 Set ALU control to ADD 6 Store the ALU result back into R1. Each of these steps corresponds to one or more micro instructions that specify the register transfers and control line activations required to complete the operation",
+    "tags": ["Micro-programming", "ADD Instruction", "Micro-instruction Format"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Procedural microprogramming theory"
+  },
+  {
+    "id": "S3_DLCA_M6_012",
+    "question": "Describe the Centralized Bus Arbitration method in detail",
+    "answer": "In Centralized Bus Arbitration a single hardware unit known as the Bus Arbiter is responsible for managing bus access. The process begins when one or more master devices pull the Bus Request line high. The Arbiter then evaluates these requests based on a priority logic. In a Daisy Chaining configuration the Bus Grant signal is passed from one device to the next in sequence until it reaches the requesting device. In a Polling method the Arbiter sends a device ID on a set of poll lines and the device with a matching ID that has a pending request takes control. Once the master completes its transfer it releases the Bus Busy line allowing the Arbiter to grant access to the next requester",
+    "tags": ["Bus Arbitration", "Centralized"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Standard bus management logic"
+  },
+  {
+    "id": "S3_DLCA_M6_013",
+    "question": "Describe the Distributed Bus Arbitration method in detail",
+    "answer": "Distributed Bus Arbitration eliminates the need for a central controller by distributing the arbitration logic among all potential bus masters. Each device is assigned a unique priority identification number. When multiple devices want to use the bus they all place their IDs on a shared set of arbitration lines. Each device then compares the value on the shared lines with its own ID. If a device detects a higher priority ID on the lines it withdraws its request. Through this process of bitwise comparison the device with the highest priority ID eventually wins access to the bus. This method is more robust against single point failures and is commonly used in modern high speed system buses",
+    "tags": ["Bus Arbitration", "Distributed"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Decentralized bus control theory"
+  },
+  {
+    "id": "S3_DLCA_M6_014",
+    "question": "List out and explain the Performance Measures of a CPU",
+    "answer": "The performance of a CPU is typically evaluated using four key metrics: 1 CPI Clocks Per Instruction which measures the average number of clock cycles required to execute an instruction 2 Speedup Ratio which compares the execution time of a non pipelined processor to a pipelined one 3 Efficiency which is the ratio of speedup to the number of stages in the pipeline indicating how well the hardware is utilized 4 Throughput which is the rate at which instructions are completed per second. Improving performance involves minimizing CPI by reducing hazards and maximizing clock frequency through efficient hardware design",
+    "tags": ["Performance Measures", "CPI", "Throughput"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Summary of CPU efficiency metrics"
+  },
+  {
+    "id": "S3_DLCA_M6_015",
+    "question": "Explain the role and function of the USB Bus",
+    "answer": "The Universal Serial Bus USB is an industry standard designed to provide a universal interface for connecting a wide range of external peripherals to a computer. It operates on a tiered star topology with a single host controller managing up to 127 devices. USB supports three main data transfer speeds: Low Speed Full Speed and High Speed along with SuperSpeed in newer versions. Its primary functions include supplying electric power to small devices supporting plug and play and hot swapping and providing a standardized protocol for communication that has replaced legacy serial and parallel ports",
+    "tags": ["Bus Systems", "USB"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Theory of external peripheral communication"
+  },
+  {
+    "id": "S3_DLCA_M6_016",
+    "question": "Explain Horizontal vs Vertical Micro-instructions",
+    "answer": "Horizontal and Vertical micro instructions represent different methods of encoding control signals in a microprogrammed control unit. Horizontal micro instructions use a wide control word where each bit directly corresponds to a specific control signal. This allows for maximum parallelism as many signals can be activated at once but it requires a very large Control ROM. Vertical micro instructions use an encoded format where a few bits represent a command that must be decoded by hardware to activate the control signals. This significantly reduces the size of the Control ROM but limits parallelism because only one or a few signals can be active in a single micro instruction cycle",
+    "tags": ["Micro-programming", "Horizontal", "Vertical"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Comparison of control word encoding"
+  },
+  {
+    "id": "S3_DLCA_M6_017",
+    "question": "Explain the One-Bus vs Three-Bus Organization of the Datapath",
+    "answer": "In a One Bus Organization all functional units like the ALU and registers are connected to a single internal bus meaning only one data transfer can occur per clock cycle. This creates a bottleneck in instruction execution. In a Three Bus Organization there are two source buses to provide operands simultaneously to the two inputs of the ALU and a third destination bus to carry the result back to the registers. This allows an entire arithmetic operation and result storage to occur in a single clock cycle greatly improving the speed and efficiency of the pipelined datapath",
+    "tags": ["Datapath", "One-Bus", "Three-Bus"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Evolution of internal CPU bus structures"
+  },
+  {
+    "id": "S3_DLCA_M6_018",
+    "question": "Explain the concept of temporal vs spatial parallelism in advanced processors",
+    "answer": "Temporal parallelism is achieved through pipelining where a single task is broken into subtasks that are executed in overlapping time segments across different hardware stages. Spatial parallelism is achieved through the duplication of functional units where multiple independent tasks are executed in different pieces of hardware at the exact same time as seen in superscalar processors. Modern advanced processors combine both techniques by having multiple parallel pipelines to execute several instructions per clock cycle",
+    "tags": ["Parallelism", "Temporal", "Spatial"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Advanced theory on processor concurrency"
+  },
+  {
+    "id": "S3_DLCA_M6_019",
+    "question": "What is the role of the Program Counter PC in a pipelined processor",
+    "answer": "The Program Counter PC holds the address of the next instruction to be fetched from memory. In a non pipelined system the PC is incremented after each instruction fetch. However in a pipelined system the PC must be incremented every clock cycle to fetch the next instruction in sequence even while previous instructions are still being processed. In the event of a branch or jump the PC is updated with the target address which may cause the current instructions in the fetch and decode stages of the pipeline to be invalidated or flushed",
+    "tags": ["Pipelining", "Program Counter"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Instruction sequencing theory"
+  },
+  {
+    "id": "S3_DLCA_M6_020",
+    "question": "Explain the purpose of the Instruction Register IR",
+    "answer": "The Instruction Register IR is a storage unit that holds the current instruction that has just been fetched from memory. Once the instruction is in the IR its opcode is decoded by the control unit to determine the required control signals for the execution of that specific operation. In a pipelined architecture the IR is effectively part of the interface between the Fetch and Decode stages ensuring that the instruction remains stable while the control signals are being generated",
+    "tags": ["Instruction Register", "Decode"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Basic component theory"
+  },
+  {
+    "id": "S3_DLCA_M6_021",
+    "question": "Describe the function of the Memory Address Register MAR",
+    "answer": "The Memory Address Register MAR is used to hold the address of the memory location that the CPU wants to read from or write to. It is connected directly to the address bus lines. In a pipelined processor the MAR is loaded during the Fetch stage to retrieve instructions and during the Execute or Memory stage to retrieve or store data operands",
+    "tags": ["MAR", "Memory Interface"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Standard register function"
+  },
+  {
+    "id": "S3_DLCA_M6_022",
+    "question": "Describe the function of the Memory Data Register MDR",
+    "answer": "The Memory Data Register MDR acts as a buffer for data being transferred between the CPU and memory. When performing a read operation the data from the memory location specified by the MAR is placed into the MDR. When performing a write operation the CPU places the data into the MDR which is then sent to the specified memory location. It serves as the primary gateway for all data entering or leaving the processor core",
+    "tags": ["MDR", "Memory Interface"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Standard register function"
+  },
+  {
+    "id": "S3_DLCA_M6_023",
+    "question": "Explain the concept of Pipeline Latency",
+    "answer": "Pipeline latency is the total time required for a single instruction to pass through all stages of the pipeline from fetch to write back. While pipelining improves the overall throughput of instructions per second it actually slightly increases the latency of an individual instruction due to the overhead of the latches between stages. If a pipeline has K stages and a clock period T the latency for one instruction is K times T",
+    "tags": ["Pipelining", "Latency"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Performance trade off theory"
+  },
+  {
+    "id": "S3_DLCA_M6_024",
+    "question": "Describe the Instruction Hazard in detail",
+    "answer": "Instruction hazards also known as control hazards occur when the pipeline cannot fetch the correct next instruction due to the delay in determining the outcome of a branch. If a branch is taken the instructions that have already entered the pipeline from the sequential path are incorrect and must be discarded resulting in lost clock cycles. This is managed using branch prediction or by introducing a delay slot in the instruction set architecture",
+    "tags": ["Hazards", "Control Hazards"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Instruction flow bottleneck theory"
+  },
+  {
+    "id": "S3_DLCA_M6_025",
+    "question": "How does data forwarding resolve RAW hazards",
+    "answer": "Data forwarding also known as bypassing is a hardware technique where the result of an ALU operation is sent directly to the input of the ALU for the next instruction instead of waiting for it to be written back to the register file and then read again. This allows the dependent instruction to proceed without a stall as long as the data is available at the end of the execution stage of the previous instruction",
+    "tags": ["Hazards", "Data Forwarding"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Optimization technique for data hazards"
+  },
+  {
+    "id": "S3_DLCA_M6_026",
+    "question": "Explain the fetch cycle micro-operations",
+    "answer": "The fetch cycle micro-operations are the atomic steps required to retrieve an instruction from memory. 1 The content of the Program Counter PC is transferred to the Memory Address Register MAR. 2 The control unit issues a memory read signal. 3 The memory retrieves the instruction at the address in MAR and places it into the Memory Data Register MDR. 4 Simultaneously the PC is incremented to the next address. 5 Finally the instruction in the MDR is transferred to the Instruction Register IR for decoding",
+    "tags": ["Micro-operations", "Fetch Cycle"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Foundational CPU procedure"
+  },
+  {
+    "id": "S3_DLCA_M6_027",
+    "question": "Describe the execution cycle micro-operations for a LOAD instruction",
+    "answer": "For a LOAD instruction the execution cycle micro-operations involve: 1 Calculating the effective address of the data operand. 2 Transferring this address to the MAR. 3 Issuing a memory read signal. 4 Retrieving the data from memory and placing it in the MDR. 5 Transferring the contents of the MDR to the specified destination register. These steps ensure that data is correctly moved from the system memory into the processor registers",
+    "tags": ["Micro-operations", "LOAD Instruction"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Instruction specific micro-code steps"
+  },
+  {
+    "id": "S3_DLCA_M6_028",
+    "question": "What are the advantages of Hardwired Control Units",
+    "answer": "Hardwired control units are designed using fixed logic gates and flip flops meaning they are optimized for speed. Because the control signals are generated directly by combinational circuits there is no overhead for fetching micro instructions from a control ROM. This makes hardwired units ideal for RISC processors where instructions are simple and execution speed is a primary priority. However they are difficult to modify or extend once the hardware is manufactured",
+    "tags": ["Control Unit", "Hardwired"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Design trade off theory"
+  },
+  {
+    "id": "S3_DLCA_M6_029",
+    "question": "What are the advantages of Microprogrammed Control Units",
+    "answer": "Microprogrammed control units store control signals in a special memory called the Control Store. The primary advantage is flexibility as changes to the instruction set can be made by simply updating the microprogram in the ROM without redesigning the physical hardware. This makes them suitable for CISC processors with complex and varying instruction formats. They are easier to design and debug but are generally slower than hardwired units due to the time required to access the control memory",
+    "tags": ["Control Unit", "Microprogrammed"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Design trade off theory"
+  },
+  {
+    "id": "S3_DLCA_M6_030",
+    "question": "Describe the components of a Microprogrammed Control Unit",
+    "answer": "A microprogrammed control unit consists of 1 Control Store or Control Memory which stores the microprograms. 2 Micro-program Counter uPC which holds the address of the next micro instruction. 3 Control Address Register CAR which specifies the current location being accessed in the control store. 4 Control Data Register CDR which holds the micro instruction once it is fetched. 5 Next Address Generator logic which determines whether to increment the uPC or jump to a branch address based on status flags",
+    "tags": ["Control Unit", "Micro-programming"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Architectural breakdown"
+  },
+  {
+    "id": "S3_DLCA_M6_031",
+    "question": "Explain the concept of Bus Mastering",
+    "answer": "Bus Mastering is a feature of advanced bus systems where a peripheral device can take full control of the system bus to initiate data transfers without involving the CPU. This is commonly used by DMA controllers and high speed network cards. When a device wants to become a bus master it sends a request to the arbiter. Once granted the device provides its own addresses and control signals effectively acting as the temporary controller of the system bus for the duration of the transfer",
+    "tags": ["Bus Systems", "Bus Mastering"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "System level communication theory"
+  },
+  {
+    "id": "S3_DLCA_M6_032",
+    "question": "What is the purpose of an Internal CPU Bus",
+    "answer": "An internal CPU bus provides a communication path between the various functional units inside the processor chip such as the ALU registers and control unit. Unlike the system bus which connects the CPU to external memory and I/O the internal bus is designed for extremely high speed transfers over very short distances. Modern processors often use multiple internal buses to support parallel data paths and pipelining",
+    "tags": ["Bus Systems", "Internal Bus"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Internal architecture theory"
+  },
+  {
+    "id": "S3_DLCA_M6_033",
+    "question": "Explain the concept of synchronous vs asynchronous bus transfers",
+    "answer": "Synchronous bus transfers use a global clock signal to coordinate all activities on the bus. Every data transfer occurs at a fixed time relative to the clock pulse which simplifies the design but requires all devices to operate at the same speed. Asynchronous bus transfers use handshaking signals like Ready and Acknowledge to coordinate the transfer. This allows devices of different speeds to communicate effectively but requires more complex control logic for each device",
+    "tags": ["Bus Systems", "Synchronous", "Asynchronous"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Timing and synchronization theory"
+  },
+  {
+    "id": "S3_DLCA_M6_034",
+    "question": "Describe the function of the System Bus",
+    "answer": "The system bus is the primary communication link that connects the CPU to the main memory and the I/O subsystem. It is composed of three separate sets of lines: the data bus the address bus and the control bus. The capacity and speed of the system bus are major factors in determining the overall performance of a computer system as it dictates how quickly instructions and data can be moved into the processor for execution",
+    "tags": ["Bus Systems", "System Bus"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "System level architecture theory"
+  },
+  {
+    "id": "S3_DLCA_M6_035",
+    "question": "Explain the role of the Bus Arbiter",
+    "answer": "The Bus Arbiter is a logic circuit responsible for managing the allocation of the bus to different master devices. It receives bus requests evaluates their priorities and issues bus grants. The arbiter's primary goal is to ensure that no two masters try to drive the bus at the same time which would result in data corruption and potential hardware damage. It can implement various algorithms such as fixed priority where the CPU always wins or fair share where every device eventually gets a turn",
+    "tags": ["Bus Systems", "Arbitration"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Bus management component theory"
+  },
+  {
+    "id": "S3_DLCA_M6_036",
+    "question": "Describe the micro-instruction sequencing process",
+    "answer": "Micro-instruction sequencing is the method used to determine the address of the next micro-instruction. The process starts by fetching the current micro-instruction from the control store. The sequencing logic then checks the next address field of the micro-instruction and any relevant status flags from the ALU. If a branch condition is met the logic loads the branch address into the uPC. Otherwise the uPC is simply incremented to the next sequential address. This allows for complex control flows like loops and conditional branches within the micro-program",
+    "tags": ["Micro-programming", "Sequencing"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Micro-code execution theory"
+  },
+  {
+    "id": "S3_DLCA_M6_037",
+    "question": "Explain the concept of Pipeline Flushing",
+    "answer": "Pipeline flushing occurs when the processor determines that the instructions currently in the pipeline are no longer valid for execution. This typically happens after a branch misprediction where the CPU has fetched instructions from the wrong path. To flush the pipeline all instructions in the stages prior to the branch are cleared or converted into NOPs No Operation and the Program Counter is reset to the correct target address. Flushing is a necessary but expensive operation as it wastes several clock cycles of work",
+    "tags": ["Pipelining", "Flushing"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Control hazard recovery theory"
+  },
+  {
+    "id": "S3_DLCA_M6_038",
+    "question": "What is the relationship between Clock Speed and Pipelining",
+    "answer": "Pipelining allows for higher clock speeds because each stage of the pipeline performs a smaller and simpler task than a full unpipelined execution. Since the clock period is determined by the slowest stage in the system breaking a complex operation into many small stages allows the overall clock frequency to be increased. This is the primary reason why modern CPUs can operate at several gigahertz while still maintaining high instruction throughput",
+    "tags": ["Pipelining", "Clock Speed"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Performance optimization theory"
+  },
+  {
+    "id": "S3_DLCA_M6_039",
+    "question": "Explain the role of Pipeline Registers or Latches",
+    "answer": "Pipeline registers also known as latches are the storage elements placed between the stages of a pipeline. Their role is to hold the data and control signals produced by one stage so that they can be used by the next stage in the following clock cycle. Without these registers the data from different instructions would interfere with each other as it flows through the hardware. The registers effectively isolate each stage allowing it to work on its own instruction independently and synchronously with the rest of the pipeline",
+    "tags": ["Pipelining", "Latches"],
+    "source": { "type": "file" },
+    "created_at": "2026-01-05T01:00:00+05:30",
+    "notes": "Hardware component theory"
+  }
+]
