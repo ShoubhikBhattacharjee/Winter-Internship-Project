@@ -1,0 +1,47 @@
+[
+  {
+    "id": "S4_AOA_M0_001",
+    "question": "What is Analysis of Algorithms?",
+    "answer": "Analysis of Algorithms is the study of algorithm efficiency in terms of time and space required to solve a problem, independent of hardware or programming language.",
+    "tags": ["analysis-of-algorithms", "introduction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:00:00+05:30",
+    "notes": "Subject definition."
+  },
+  {
+    "id": "S4_AOA_M0_002",
+    "question": "Why is algorithm analysis important?",
+    "answer": "Algorithm analysis helps compare different solutions, predict performance, choose efficient algorithms, and ensure scalability for large inputs.",
+    "tags": ["analysis-of-algorithms", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:02:00+05:30",
+    "notes": "Motivation question."
+  },
+  {
+    "id": "S4_AOA_M0_003",
+    "question": "What makes an algorithm good?",
+    "answer": "A good algorithm is correct, efficient in time and space, scalable to large inputs, and simple enough to be implemented and maintained.",
+    "tags": ["analysis-of-algorithms", "algorithm-quality"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:04:00+05:30",
+    "notes": "Conceptual criteria."
+  },
+  {
+    "id": "S4_AOA_M0_004",
+    "question": "Difference between algorithm design and algorithm analysis",
+    "answer": "Algorithm design focuses on creating correct solutions, while algorithm analysis focuses on measuring and comparing their efficiency.",
+    "tags": ["analysis-of-algorithms", "design-vs-analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:06:00+05:30",
+    "notes": "Clarifies scope."
+  },
+  {
+    "id": "S4_AOA_M0_005",
+    "question": "Types of problems studied in Analysis of Algorithms",
+    "answer": "AOA studies problems related to searching, sorting, optimization, graph traversal, resource allocation, and combinatorial decision-making.",
+    "tags": ["analysis-of-algorithms", "problem-types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:08:00+05:30",
+    "notes": "Problem landscape."
+  }
+]

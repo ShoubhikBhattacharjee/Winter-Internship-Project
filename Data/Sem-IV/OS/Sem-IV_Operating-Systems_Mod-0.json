@@ -1,0 +1,47 @@
+[
+  {
+    "id": "S4_OS_M0_001",
+    "question": "What is the purpose of studying Operating Systems?",
+    "answer": "Studying Operating Systems helps understand how computer hardware is managed, how resources are shared, and how programs execute efficiently and safely.",
+    "tags": ["operating-systems", "introduction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:15:00+05:30",
+    "notes": "Course motivation."
+  },
+  {
+    "id": "S4_OS_M0_002",
+    "question": "Why is an Operating System needed?",
+    "answer": "An Operating System is needed to manage hardware complexity, provide abstractions, ensure resource sharing, and offer a safe execution environment for applications.",
+    "tags": ["operating-systems", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:17:00+05:30",
+    "notes": "Why OS exists."
+  },
+  {
+    "id": "S4_OS_M0_003",
+    "question": "Operating System as a resource manager",
+    "answer": "The Operating System acts as a resource manager by allocating CPU time, memory, storage, and I/O devices among competing processes.",
+    "tags": ["operating-systems", "resource-management"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:19:00+05:30",
+    "notes": "Central OS role."
+  },
+  {
+    "id": "S4_OS_M0_004",
+    "question": "Operating System as an extended machine",
+    "answer": "As an extended machine, the OS hides hardware complexity and provides simple abstractions such as files, processes, and virtual memory.",
+    "tags": ["operating-systems", "abstraction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:21:00+05:30",
+    "notes": "Conceptual model."
+  },
+  {
+    "id": "S4_OS_M0_005",
+    "question": "Relationship between hardware, operating system, and applications",
+    "answer": "Applications run on top of the operating system, which in turn manages and interacts directly with the underlying hardware.",
+    "tags": ["operating-systems", "system-stack"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:23:00+05:30",
+    "notes": "System layering."
+  }
+]
