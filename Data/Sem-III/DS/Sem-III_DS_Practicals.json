@@ -1,92 +1,72 @@
 [
   {
     "id": "DS_EXP_001",
-    "question": "Experiment 1: Implement Stack ADT using an array.",
-    "answer": "Aim: Implement Stack ADT using an array.\nTheory: A Stack follows the LIFO (Last In, First Out) principle. Primitive operations include Push (add to top) and Pop (remove from top).\nAlgorithm:\n1. Push: Check for overflow (TOP == MAX-1), else increment TOP and assign ITEM.\n2. Pop: Check for underflow (TOP == -1), else assign STACK[TOP] to ITEM and decrement TOP.",
-    "tags": ["Stack", "LIFO", "Array-Implementation"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-1.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Basic stack operations."
+    "question": "DS Experiment 1",
+    "answer": "Aim: Implement Stack ADT using an array.",
+    "tags": ["ds_practical", "ds_experiment_1", "ds_lab_expt1", "ds_practicals_file", "ds_experiment1_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-1.pdf" }
   },
   {
     "id": "DS_EXP_002",
-    "question": "Experiment 2: Convert an Infix expression to postfix expression using stack ADT.",
-    "answer": "Aim: Convert an Infix expression to postfix expression using stack ADT.\nAlgorithm: Scan infix from left to right. Operands are added to postfix string. Operators are pushed onto the stack based on precedence rules. Parentheses are handled by popping the stack until the matching '(' is found.",
-    "tags": ["Stack-Application", "Infix-to-Postfix", "Expression-Conversion"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-2.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Uses precedence and associativity rules."
+    "question": "DS Experiment 2",
+    "answer": "Aim: Convert an Infix expression to postfix expression using stack ADT.",
+    "tags": ["ds_practical", "ds_experiment_2", "ds_lab_expt2", "ds_practicals_file", "ds_experiment2_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-2.pdf" }
   },
   {
     "id": "DS_EXP_003",
-    "question": "Experiment 3: Stack application for Balanced Brackets.",
-    "answer": "Aim: WAP to check if an expression contains balanced brackets: (), {}, and [].\nAlgorithm: Push opening brackets onto a stack. When a closing bracket is encountered, check if it matches the top of the stack. If the stack is empty at the end, the expression is balanced.",
-    "tags": ["Stack-Application", "Balanced-Parentheses", "Validation"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-3.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Classic application of LIFO."
+    "question": "DS Experiment 3",
+    "answer": "Aim: WAP to check if an expression contains balanced brackets: (), {}, and [].",
+    "tags": ["ds_practical", "ds_experiment_3", "ds_lab_expt3", "ds_practicals_file", "ds_experiment3_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-3.pdf" }
   },
   {
     "id": "DS_EXP_004",
-    "question": "Experiment 4: Implement Linear Queue ADT using an array.",
-    "answer": "Aim: Implement Linear Queue ADT using an array.\nTheory: A Queue follows the FIFO (First In, First Out) principle. It uses two pointers: FRONT (removal) and REAR (insertion).\nAlgorithm:\n1. Insertion: If REAR == MAX-1 (Overflow), else increment REAR and add element.\n2. Deletion: If FRONT == -1 (Underflow), else extract element and increment FRONT.",
-    "tags": ["Queue", "FIFO", "Linear-Queue"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-4.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Queue implementation using fixed-size array."
+    "question": "DS Experiment 4",
+    "answer": "Aim: Implement Linear Queue ADT using an array.",
+    "tags": ["ds_practical", "ds_experiment_4", "ds_lab_expt4", "ds_practicals_file", "ds_experiment4_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-4.pdf" }
   },
   {
     "id": "DS_EXP_005",
-    "question": "Experiment 5: Implementation of Circular Queue using Array.",
-    "answer": "Aim: Implementation of Circular Queue using Array.\nTheory: A circular queue (Ring Buffer) connects the last position back to the first. This overcomes the limitation of linear queues where space is wasted after deletions.\nOperations: enQueue(value) and deQueue().",
-    "tags": ["Circular-Queue", "Ring-Buffer", "Queue-Optimization"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-5.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "More efficient memory utilization than linear queue."
+    "question": "DS Experiment 5",
+    "answer": "Aim: Implementation of Circular Queue using Array.",
+    "tags": ["ds_practical", "ds_experiment_5", "ds_lab_expt5", "ds_practicals_file", "ds_experiment5_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-5.pdf" }
   },
   {
     "id": "DS_EXP_006",
-    "question": "Experiment 6: Implement a Singly Linked List.",
-    "answer": "Aim: Implement a Singly Linked List.\nTheory: A linear data structure where elements are not stored in contiguous memory. Each node contains data and a 'next' pointer.\nOperations: Insertion (Beginning, Middle, End) and Deletion (Beginning, Middle, End).",
-    "tags": ["Linked-List", "Singly-Linked-List", "Dynamic-Memory"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-6.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Uses pointers to link nodes."
+    "question": "DS Experiment 6",
+    "answer": "Aim: Implement a Singly Linked List.",
+    "tags": ["ds_practical", "ds_experiment_6", "ds_lab_expt6", "ds_practicals_file", "ds_experiment6_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-6.pdf" }
   },
   {
     "id": "DS_EXP_007",
-    "question": "Experiment 7: Implement Doubly Linked List ADT.",
-    "answer": "Aim: Implement Doubly Linked List ADT.\nTheory: A DLL contains an extra 'previous' pointer in each node, allowing traversal in both forward and backward directions.\nOperations: Insertion and Deletion at front, end, or after/before a given node.",
-    "tags": ["Doubly-Linked-List", "DLL", "Two-way-Traversal"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-7.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Nodes have both Prev and Next pointers."
+    "question": "DS Experiment 7",
+    "answer": "Aim: Implement Doubly Linked List ADT.",
+    "tags": ["ds_practical", "ds_experiment_7", "ds_lab_expt7", "ds_practicals_file", "ds_experiment7_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-7.pdf" }
   },
   {
     "id": "DS_EXP_008",
-    "question": "Experiment 8: Binary Search Tree ADT.",
-    "answer": "Aim: Binary search tree ADT.\nTheory: A node-based structure where the left subtree contains keys less than the root, and the right subtree contains keys greater than the root.\nOperations: Insertion (at leaf), Searching, and Deletion (Leaf, One child, or Two children scenarios).",
-    "tags": ["BST", "Tree", "Binary-Search-Tree"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-8.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Includes inorder successor logic for deletion."
+    "question": "DS Experiment 8",
+    "answer": "Aim: Binary search tree ADT.",
+    "tags": ["ds_practical", "ds_experiment_8", "ds_lab_expt8", "ds_practicals_file", "ds_experiment8_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-8.pdf" }
   },
   {
     "id": "DS_EXP_009",
-    "question": "Experiment 9: Graph Traversal Techniques.",
-    "answer": "Aim: Graph Traversal Techniques (BFS and DFS).\nTheory:\n1. BFS (Breadth First Search): Uses a queue to explore nodes level by level.\n2. DFS (Depth First Search): Uses recursion or a stack to explore as deep as possible before backtracking.",
-    "tags": ["Graph", "BFS", "DFS", "Traversal"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-9.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Uses visited arrays to handle cycles in graphs."
+    "question": "DS Experiment 9",
+    "answer": "Aim: Graph Traversal Techniques (BFS and DFS).",
+    "tags": ["ds_practical", "ds_experiment_9", "ds_lab_expt9", "ds_practicals_file", "ds_experiment9_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-9.pdf" }
   },
   {
     "id": "DS_EXP_010",
-    "question": "Experiment 10: Binary Search in Sorted Array.",
-    "answer": "Aim: To find an element in a sorted array using binary search technique.\nAlgorithm: Divide the search interval in half repeatedly. If the search key is less than the middle item, narrow the interval to the lower half; otherwise, narrow it to the upper half.",
-    "tags": ["Binary-Search", "Searching-Algorithms", "Sorting"],
-    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-10.pdf", "url": null },
-    "created_at": "2026-01-04T17:30:00+05:30",
-    "notes": "Requires the input array to be sorted."
+    "question": "DS Experiment 10",
+    "answer": "Aim: To find an element in a sorted array using binary search technique.",
+    "tags": ["ds_practical", "ds_experiment_10", "ds_lab_expt10", "ds_practicals_file", "ds_experiment10_aim"],
+    "source": { "type": "file", "path": "Notes/DS_Practicals/DS_Expt-10.pdf" }
   }
 ]
