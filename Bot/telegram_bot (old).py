@@ -111,10 +111,6 @@ def semantic_search(query: str, top_k: int):
     return scores[0], indices[0]
 
 
-# -------------------------
-# Similarity & confidence
-# -------------------------
-
 def confidence_from_score(score: float) -> str:
     """Map cosine similarity score to a confidence label."""
     for threshold, level in CONFIDENCE_LEVELS:
@@ -122,31 +118,6 @@ def confidence_from_score(score: float) -> str:
             return level
     return "none"
 
-
-def is_dominant(best_score: float, second_score: float) -> bool:
-    """
-    Determine whether the top result clearly dominates the second-best.
-    """
-    return (best_score - second_score) >= DOMINANCE_MARGIN
-
-
-def tag_overlap_count(tags_a, tags_b) -> int:
-    """Return number of common tags between two tag lists."""
-    return len(set(tags_a) & set(tags_b))
-
-
-def is_concept_demanded_semantic(
-    query_embedding: np.ndarray,
-    item_embedding: np.ndarray
-) -> bool:
-    """Check whether the query semantically demands this concept."""
-    similarity = float(np.dot(query_embedding, item_embedding))
-    return similarity >= CONCEPT_SIM_THRESHOLD
-
-
-# -------------------------
-# Query intent helpers
-# -------------------------
 
 def infer_intent(query: str) -> str:
     """Lightweight intent inference based on keywords."""
@@ -160,18 +131,11 @@ def infer_intent(query: str) -> str:
     return "general"
 
 
-def is_combo_query(query: str) -> bool:
-    """Detect whether the query likely demands multiple concepts."""
-    q = query.lower()
-    return any(k in q for k in COMBO_KEYWORDS)
-
-
-# -------------------------
-# Answer construction
-# -------------------------
-
 def frame_answer(answer: str, intent: str, confidence: str) -> str:
-    """Frame a single KB answer based on intent and confidence."""
+    """
+    Frame a single KB answer based on user intent and confidence.
+    No factual rewriting is done here.
+    """
     prefix = {
         "high": "I’m confident this addresses what you’re asking.\n\n",
         "medium": "This should help, though it may not cover every detail.\n\n",
@@ -198,8 +162,38 @@ def merge_prefix(confidence: str) -> str:
 
 
 def merge_answers(results):
-    """Merge multiple KB answers safely by concatenation."""
+    """
+    Merge multiple KB answers safely by concatenation.
+    results: list of (score, kb_item)
+    """
     return "\n\n---\n\n".join(item["answer"].strip() for _, item in results)
+
+
+def is_dominant(best_score: float, second_score: float) -> bool:
+    """
+    Determine whether the top result clearly dominates the second-best result.
+
+    Returns True if the difference exceeds the configured dominance margin.
+    """
+    return (best_score - second_score) >= DOMINANCE_MARGIN
+
+
+def tag_overlap_count(tags_a, tags_b) -> int:
+    """Return number of common tags between two tag lists."""
+    return len(set(tags_a) & set(tags_b))
+
+
+def is_combo_query(query: str) -> bool:
+    q = query.lower()
+    return any(k in q for k in COMBO_KEYWORDS)
+
+
+def is_concept_demanded_semantic(
+    query_embedding: np.ndarray,
+    item_embedding: np.ndarray
+) -> bool:
+    similarity = float(np.dot(query_embedding, item_embedding))
+    return similarity >= CONCEPT_SIM_THRESHOLD
 
 # ============================================================
 # Telegram handlers
@@ -207,13 +201,20 @@ def merge_answers(results):
 
 async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # ------------------------------------------------------------
-    # Phase 1: Validate and extract user input
+    # 1. Defensive guard: ensure this update actually contains a
+    #    text message (Telegram can send many update types)
     # ------------------------------------------------------------
     if not update.message:
         return
 
+    # ------------------------------------------------------------
+    # 2. Extract and normalize the user query
+    # ------------------------------------------------------------
     query = update.message.text.strip()
 
+    # ------------------------------------------------------------
+    # 3. Reject queries that are too short to be meaningful
+    # ------------------------------------------------------------
     if len(query) < 4:
         await update.message.reply_text(
             "😅 That doesn’t look like a real question yet."
@@ -221,76 +222,77 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         return
 
     # ------------------------------------------------------------
-    # Phase 2: Retrieve candidate KB entries via semantic search
+    # 4. Perform semantic search against the FAISS index
+    #    Returns similarity scores and KB indices
     # ------------------------------------------------------------
     scores, indices = semantic_search(query, TOP_K_RESULTS)
-    candidates = [(s, KB[i]) for s, i in zip(scores, indices)]
 
-    # ------------------------------------------------------------
-    # Phase 3: Filter out weak semantic matches
-    # ------------------------------------------------------------
-    relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
-
-    if not relevant:
-        await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
-        return
-
-    # Sort strongest-first for downstream logic
-    relevant.sort(key=lambda x: x[0], reverse=True)
-
-    # ------------------------------------------------------------
-    # Phase 4: Prepare semantic context for deeper filtering
-    # ------------------------------------------------------------
     query_embedding = EMBED_MODEL.encode(
         query,
         convert_to_numpy=True,
         normalize_embeddings=True
     )
 
-    combo_query = is_combo_query(query)
-    top_tags = relevant[0][1].get("tags", [])
+    # ------------------------------------------------------------
+    # 5. Pair FAISS results with KB metadata
+    # ------------------------------------------------------------
+    candidates = [(s, KB[i]) for s, i in zip(scores, indices)]
 
     # ------------------------------------------------------------
-    # Phase 5: Enforce conceptual and tag coherence
+    # 6. Filter out weak matches below the merge threshold
     # ------------------------------------------------------------
+    relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
+
+    # ------------------------------------------------------------
+    # 7. If nothing relevant is found, return a confidence-aware
+    #    fallback response
+    # ------------------------------------------------------------
+    if not relevant:
+        await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
+        return
+
+    # ------------------------------------------------------------
+    # 8. Sort remaining results by descending similarity
+    # ------------------------------------------------------------
+    relevant.sort(key=lambda x: x[0], reverse=True)
+
     filtered_relevant = []
+    combo = is_combo_query(query)
 
     for score, item in relevant:
-        concept_match = is_concept_demanded_semantic(
+        concept_similar = is_concept_demanded_semantic(
             query_embedding,
             item["_concept_embedding"]
         )
 
         common_tags = tag_overlap_count(
-            top_tags,
+            relevant[0][1].get("tags", []),
             item.get("tags", [])
         )
 
-        if concept_match:
+        if concept_similar:
             filtered_relevant.append((score, item))
-        elif combo_query:
+        elif combo:
             filtered_relevant.append((score, item))
-        elif common_tags >= MIN_COMMON_TAGS:
-            filtered_relevant.append((score, item))
+        else:
+            if common_tags >= MIN_COMMON_TAGS:
+                filtered_relevant.append((score, item))
 
     if not filtered_relevant:
         await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
         return
 
     # ------------------------------------------------------------
-    # Phase 6: Confidence and dominance assessment
+    # 10. Compute confidence and dominance metrics
     # ------------------------------------------------------------
     best_score = filtered_relevant[0][0]
-    second_score = (
-        filtered_relevant[1][0]
-        if len(filtered_relevant) > 1
-        else 0.0
-    )
-
+    second_score = filtered_relevant[1][0] if len(filtered_relevant) > 1 else 0.0
     confidence = confidence_from_score(best_score)
 
     # ------------------------------------------------------------
-    # Phase 7: Single-answer resolution path
+    # 11. Single-answer path:
+    #     Used when only one result exists OR when the best
+    #     result clearly dominates the rest
     # ------------------------------------------------------------
     if len(filtered_relevant) == 1 or is_dominant(best_score, second_score):
         item = filtered_relevant[0][1]
@@ -302,6 +304,7 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             confidence=confidence,
         )
 
+        # Attach a button allowing the user to request source files
         button = InlineKeyboardButton(
             "Get Source Files",
             callback_data=f"src:{item['id']}",
@@ -314,7 +317,8 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         return
 
     # ------------------------------------------------------------
-    # Phase 8: Multi-answer merge resolution path
+    # 12. Multi-answer merge path:
+    #     Used when multiple results are relevant and comparable
     # ------------------------------------------------------------
     merged = (
         merge_prefix(confidence)
