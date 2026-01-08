@@ -39,7 +39,14 @@ import numpy as np
 # Configuration
 # ============================================================
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.FileHandler("bot.log"),
+        logging.StreamHandler(),  # keep console output too
+    ],
+)
 LOGGER = logging.getLogger(__name__)
 
 BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
