@@ -39,7 +39,6 @@ import logging
 
 LOGGER = logging.getLogger(__name__)
 
-#BOT_TOKEN = "PUT_YOUR_BOT_TOKEN_HERE"
 BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
 
 DATA_DIR = Path("./Data")

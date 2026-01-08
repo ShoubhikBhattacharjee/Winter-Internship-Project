@@ -1,0 +1,123 @@
+[
+  {
+    "id": "S4_AOA_M2_001",
+    "question": "What is the Divide and Conquer approach?",
+    "answer": "Divide and Conquer is an algorithm design strategy that works by:\n1. Dividing the problem into smaller subproblems\n2. Conquering the subproblems by solving them recursively\n3. Combining the solutions of subproblems to get the final solution\n\nThis approach is effective when subproblems are independent and similar in nature.",
+    "tags": ["analysis-of-algorithms", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:00:00+05:30",
+    "notes": "Core paradigm definition."
+  },
+  {
+    "id": "S4_AOA_M2_002",
+    "question": "General structure of a Divide and Conquer algorithm",
+    "answer": "A Divide and Conquer algorithm generally follows this structure:\n- Divide: Split the problem into smaller subproblems\n- Conquer: Solve each subproblem recursively\n- Combine: Merge the solutions of subproblems\n\nBase cases stop the recursion when the problem becomes simple enough to solve directly.",
+    "tags": ["analysis-of-algorithms", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:02:00+05:30",
+    "notes": "Conceptual framework."
+  },
+  {
+    "id": "S4_AOA_M2_003",
+    "question": "Merge Sort algorithm",
+    "answer": "Merge Sort is a Divide and Conquer sorting algorithm that:\n1. Divides the array into two halves\n2. Recursively sorts each half\n3. Merges the sorted halves\n\nIt guarantees O(n log n) time complexity in all cases.",
+    "tags": ["analysis-of-algorithms", "merge-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:04:00+05:30",
+    "notes": "Stable and efficient sorting algorithm."
+  },
+  {
+    "id": "S4_AOA_M2_004",
+    "question": "Pseudocode for Merge Sort",
+    "answer": "MergeSort(A, low, high):\n  if low < high:\n    mid = (low + high) / 2\n    MergeSort(A, low, mid)\n    MergeSort(A, mid+1, high)\n    Merge(A, low, mid, high)",
+    "tags": ["analysis-of-algorithms", "merge-sort", "pseudocode"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:06:00+05:30",
+    "notes": "Algorithm representation."
+  },
+  {
+    "id": "S4_AOA_M2_005",
+    "question": "Time complexity analysis of Merge Sort",
+    "answer": "The recurrence relation for Merge Sort is:\nT(n) = 2T(n/2) + Θ(n)\n\nUsing the Master Theorem:\nT(n) = Θ(n log n)\n\nThis complexity holds for best, average, and worst cases.",
+    "tags": ["analysis-of-algorithms", "merge-sort", "time-complexity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:08:00+05:30",
+    "notes": "Classic recurrence example."
+  },
+  {
+    "id": "S4_AOA_M2_006",
+    "question": "Quick Sort algorithm",
+    "answer": "Quick Sort is a Divide and Conquer sorting algorithm that:\n1. Selects a pivot element\n2. Partitions the array around the pivot\n3. Recursively sorts the partitions\n\nIt is generally faster in practice than Merge Sort.",
+    "tags": ["analysis-of-algorithms", "quick-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:10:00+05:30",
+    "notes": "In-place sorting algorithm."
+  },
+  {
+    "id": "S4_AOA_M2_007",
+    "question": "Partitioning in Quick Sort",
+    "answer": "Partitioning rearranges elements so that:\n- Elements smaller than pivot come before it\n- Elements greater than pivot come after it\n\nAfter partitioning, the pivot is placed in its correct sorted position.",
+    "tags": ["analysis-of-algorithms", "quick-sort"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:12:00+05:30",
+    "notes": "Key step in Quick Sort."
+  },
+  {
+    "id": "S4_AOA_M2_008",
+    "question": "Time complexity of Quick Sort",
+    "answer": "Best case: O(n log n)\nAverage case: O(n log n)\nWorst case: O(n²) when pivot selection is poor\n\nDespite worst-case behavior, Quick Sort performs very well in practice.",
+    "tags": ["analysis-of-algorithms", "quick-sort", "time-complexity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:14:00+05:30",
+    "notes": "Pivot choice matters."
+  },
+  {
+    "id": "S4_AOA_M2_009",
+    "question": "Finding minimum and maximum using Divide and Conquer",
+    "answer": "The Divide and Conquer approach finds both minimum and maximum using fewer comparisons.\n\nThe array is divided into pairs, and min/max are found recursively.\n\nThis approach reduces the total number of comparisons compared to the naive method.",
+    "tags": ["analysis-of-algorithms", "divide-and-conquer"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:16:00+05:30",
+    "notes": "Efficiency improvement example."
+  },
+  {
+    "id": "S4_AOA_M2_010",
+    "question": "Comparison analysis for finding minimum and maximum",
+    "answer": "Naive method uses 2(n−1) comparisons.\n\nDivide and Conquer method uses approximately 3n/2 − 2 comparisons.\n\nThus, Divide and Conquer is more efficient for this problem.",
+    "tags": [
+      "analysis-of-algorithms",
+      "divide-and-conquer",
+      "comparison-analysis"
+    ],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:18:00+05:30",
+    "notes": "Quantitative improvement."
+  },
+  {
+    "id": "S4_AOA_M2_011",
+    "question": "Binary Search algorithm",
+    "answer": "Binary Search is a Divide and Conquer searching algorithm.\n\nIt repeatedly divides a sorted array into halves to locate a target element.\n\nBinary Search requires the array to be sorted.",
+    "tags": ["analysis-of-algorithms", "binary-search"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:20:00+05:30",
+    "notes": "Classic search algorithm."
+  },
+  {
+    "id": "S4_AOA_M2_012",
+    "question": "Pseudocode for Binary Search",
+    "answer": "BinarySearch(A, low, high, key):\n  if low <= high:\n    mid = (low + high) / 2\n    if A[mid] == key:\n      return mid\n    else if key < A[mid]:\n      return BinarySearch(A, low, mid-1, key)\n    else:\n      return BinarySearch(A, mid+1, high, key)",
+    "tags": ["analysis-of-algorithms", "binary-search", "pseudocode"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:22:00+05:30",
+    "notes": "Recursive version."
+  },
+  {
+    "id": "S4_AOA_M2_013",
+    "question": "Time complexity analysis of Binary Search",
+    "answer": "The recurrence relation for Binary Search is:\nT(n) = T(n/2) + Θ(1)\n\nUsing the Master Theorem:\nT(n) = Θ(log n)",
+    "tags": ["analysis-of-algorithms", "binary-search", "time-complexity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T10:24:00+05:30",
+    "notes": "Efficient searching technique."
+  }
+]
