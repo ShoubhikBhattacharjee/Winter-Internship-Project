@@ -8,7 +8,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "Core definition of Graph structure."
   },
-  
+
   {
     "id": "S3_DS_M5_002",
     "question": "Define the graph terminologies: Vertex, Edge, and Adjacency.",
@@ -45,7 +45,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "Definition of directed graph."
   },
-  
+
   {
     "id": "S3_DS_M5_006",
     "question": "What is a Weighted Graph?",
@@ -64,7 +64,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "Matrix-based graph storage."
   },
-  
+
   {
     "id": "S3_DS_M5_008",
     "question": "Explain the Adjacency List representation of a graph.",
@@ -83,7 +83,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "BFS logic using Queue."
   },
-  
+
   {
     "id": "S3_DS_M5_010",
     "question": "Explain the Depth First Search (DFS) Traversal algorithm.",
@@ -93,7 +93,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "DFS logic using Stack."
   },
-  
+
   {
     "id": "S3_DS_M5_011",
     "question": "What is Topological Sorting?",
@@ -112,7 +112,7 @@
     "created_at": "2026-01-03T22:30:00+05:30",
     "notes": "In-degree based sorting."
   },
-  
+
   {
     "id": "S3_DS_M5_013",
     "question": "List the common applications of Graphs.",

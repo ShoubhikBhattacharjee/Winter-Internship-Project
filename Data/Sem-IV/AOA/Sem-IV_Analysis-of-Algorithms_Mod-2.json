@@ -84,7 +84,11 @@
     "id": "S4_AOA_M2_010",
     "question": "Comparison analysis for finding minimum and maximum",
     "answer": "Naive method uses 2(n−1) comparisons.\n\nDivide and Conquer method uses approximately 3n/2 − 2 comparisons.\n\nThus, Divide and Conquer is more efficient for this problem.",
-    "tags": ["analysis-of-algorithms", "divide-and-conquer", "comparison-analysis"],
+    "tags": [
+      "analysis-of-algorithms",
+      "divide-and-conquer",
+      "comparison-analysis"
+    ],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T10:18:00+05:30",
     "notes": "Quantitative improvement."

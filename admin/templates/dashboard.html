@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<h3>Knowledge Base Entries</h3>
+
+<div class="row g-3 mt-2">
+  <div class="col-md-6">
+    <input
+      id="searchBox"
+      class="form-control"
+      placeholder="Search by ID, question, answer, tags"
+    />
+  </div>
+</div>
+
+<table class="table table-hover mt-3 align-middle">
+  <thead>
+    <tr>
+      <th>
+        Date
+        <button class="btn btn-sm btn-link" onclick="toggleSort('created_at')">
+          ▲▼
+        </button>
+      </th>
+      <th>
+        ID
+        <button class="btn btn-sm btn-link" onclick="toggleSort('id')">
+          ▲▼
+        </button>
+      </th>
+      <th>Question</th>
+      <th>Tags</th>
+      <th>Source</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="entryTable">
+    <!-- Rows injected via JS -->
+  </tbody>
+</table>
+{% endblock %}
+
+<script>
+  loadEntries();
+</script>
