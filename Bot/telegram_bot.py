@@ -31,9 +31,13 @@ from telegram.ext import (
     filters,
 )
 
+import logging
+
 # ============================================================
 # Configuration
 # ============================================================
+
+LOGGER = logging.getLogger(__name__)
 
 #BOT_TOKEN = "PUT_YOUR_BOT_TOKEN_HERE"
 BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
@@ -64,6 +68,8 @@ CONFIDENCE_MESSAGES = {
 # If the top result is this much better than the second-best,
 # we assume a single clear answer and avoid merging.
 DOMINANCE_MARGIN = 0.12
+
+MIN_COMMON_TAGS = 2
 
 # ============================================================
 # Load models and data (once at startup)
@@ -155,39 +161,91 @@ def is_dominant(best_score: float, second_score: float) -> bool:
     """
     return (best_score - second_score) >= DOMINANCE_MARGIN
 
+
+def tag_overlap_count(tags_a, tags_b) -> int:
+    """Return number of common tags between two tag lists."""
+    return len(set(tags_a) & set(tags_b))
+
 # ============================================================
 # Telegram handlers
 # ============================================================
 
-async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
-    """Handle all non-command text messages as KB queries."""
+async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    # ------------------------------------------------------------
+    # 1. Defensive guard: ensure this update actually contains a
+    #    text message (Telegram can send many update types)
+    # ------------------------------------------------------------
+    if not update.message:
+        return
+
+    # ------------------------------------------------------------
+    # 2. Extract and normalize the user query
+    # ------------------------------------------------------------
     query = update.message.text.strip()
 
+    # ------------------------------------------------------------
+    # 3. Reject queries that are too short to be meaningful
+    # ------------------------------------------------------------
     if len(query) < 4:
         await update.message.reply_text(
-            "😅 That doesn’t look like a meaningful question yet."
+            "😅 That doesn’t look like a real question yet."
         )
         return
 
+    # ------------------------------------------------------------
+    # 4. Perform semantic search against the FAISS index
+    #    Returns similarity scores and KB indices
+    # ------------------------------------------------------------
     scores, indices = semantic_search(query, TOP_K_RESULTS)
 
+    # ------------------------------------------------------------
+    # 5. Pair FAISS results with KB metadata
+    # ------------------------------------------------------------
     candidates = [(s, KB[i]) for s, i in zip(scores, indices)]
-    relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
-    relevant.sort(key=lambda x: x[0], reverse=True)
 
+    # ------------------------------------------------------------
+    # 6. Filter out weak matches below the merge threshold
+    # ------------------------------------------------------------
+    relevant = [(s, it) for s, it in candidates if s >= MIN_MERGE_SCORE]
+
+    # ------------------------------------------------------------
+    # 7. If nothing relevant is found, return a confidence-aware
+    #    fallback response
+    # ------------------------------------------------------------
     if not relevant:
         await update.message.reply_text(CONFIDENCE_MESSAGES["none"])
         return
 
-    best_score = relevant[0][0]
-    second_score = relevant[1][0] if len(relevant) > 1 else 0.0
+    # ------------------------------------------------------------
+    # 8. Sort remaining results by descending similarity
+    # ------------------------------------------------------------
+    relevant.sort(key=lambda x: x[0], reverse=True)
+
+    # ------------------------------------------------------------
+    # 9. Enforce semantic coherence by keeping only results
+    #    that share enough tags with the top result
+    # ------------------------------------------------------------
+    top_tags = relevant[0][1].get("tags", [])
+    filtered = [
+        (s, it)
+        for s, it in relevant
+        if tag_overlap_count(top_tags, it.get("tags", [])) >= MIN_COMMON_TAGS
+    ]
+
+    # ------------------------------------------------------------
+    # 10. Compute confidence and dominance metrics
+    # ------------------------------------------------------------
+    best_score = filtered[0][0]
+    second_score = filtered[1][0] if len(filtered) > 1 else 0.0
     confidence = confidence_from_score(best_score)
 
     # ------------------------------------------------------------
-    # Dominance-aware single-answer path
+    # 11. Single-answer path:
+    #     Used when only one result exists OR when the best
+    #     result clearly dominates the rest
     # ------------------------------------------------------------
-    if len(relevant) == 1 or is_dominant(best_score, second_score):
-        item = relevant[0][1]
+    if len(filtered) == 1 or is_dominant(best_score, second_score):
+        item = filtered[0][1]
         intent = infer_intent(query)
 
         reply = frame_answer(
@@ -196,6 +254,7 @@ async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
             confidence=confidence,
         )
 
+        # Attach a button allowing the user to request source files
         button = InlineKeyboardButton(
             "Get Source Files",
             callback_data=f"src:{item['id']}",
@@ -206,21 +265,36 @@ async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup([[button]]),
         )
         return
-    
-    # Multi-answer merge path
+
+    # ------------------------------------------------------------
+    # 12. Multi-answer merge path:
+    #     Used when multiple results are relevant and comparable
+    # ------------------------------------------------------------
     merged = (
         merge_prefix(confidence)
-        + merge_answers(relevant)
-        + f"\n\n_(This answer combines {len(relevant)} related notes.)_"
+        + merge_answers(filtered)
+        + f"\n\n_(Combined from {len(filtered)} related notes.)_"
     )
+
+    LOGGER.info("Merged response generated for query: %s", query)
     await update.message.reply_text(merged)
 
 
-async def handle_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
-    """Handle inline keyboard callbacks."""
+async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    # ------------------------------------------------------------
+    # 1. Defensive guard: ensure callback data exists
+    # ------------------------------------------------------------
     query = update.callback_query
-    data = query.data
+    if not query:
+        return
 
+    data = query.data or ""
+
+    # ------------------------------------------------------------
+    # 2. Source selection stage:
+    #    User clicked "Get Source Files"
+    #    → Show available file formats
+    # ------------------------------------------------------------
     if data.startswith("src:"):
         item_id = data.split(":", 1)[1]
         item = next(it for it in KB if it["id"] == item_id)
@@ -240,29 +314,44 @@ async def handle_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         )
         return
 
+    # ------------------------------------------------------------
+    # 3. File delivery stage:
+    #    User selected a specific source file to download
+    # ------------------------------------------------------------
     if data.startswith("getfile:"):
         _, item_id, ext = data.split(":", 2)
         item = next(it for it in KB if it["id"] == item_id)
 
-        # file_path = Path("Notes"+item["source"]["path"][ext])
-        file_path = NOTES_DIR / Path(item["source"]["path"][ext].lstrip("/"))
+        # Resolve file path safely relative to NOTES_DIR
+        file_path = NOTES_DIR / item["source"]["path"][ext].lstrip("/")
 
+        # --------------------------------------------------------
+        # 4. Validate file existence before sending
+        # --------------------------------------------------------
         if not file_path.exists():
-            await query.answer("File not found on disk.")
+            await query.answer("File not found.")
             return
 
-        await ctx.bot.send_document(
+        # --------------------------------------------------------
+        # 5. Send file to user via Telegram
+        # --------------------------------------------------------
+        await context.bot.send_document(
             chat_id=query.message.chat_id,
             document=file_path.open("rb"),
             filename=file_path.name,
         )
+
         await query.answer("File sent 📎")
 
 
-async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "Hi! Just type anything — I’ll search my knowledge base and help if I can."
-    )
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    # ------------------------------------------------------------
+    # Entry greeting for first-time or returning users
+    # ------------------------------------------------------------
+    if update.message:
+        await update.message.reply_text(
+            "Hi! Ask me anything — I’ll search my knowledge base and help if I can."
+        )
 
 # ============================================================
 # Entrypoint
