@@ -1,92 +1,72 @@
 [
   {
     "id": "DBMS_EXP_001",
-    "question": "Experiment 1: Design an Entity-Relationship (ER)/ Extended Entity-Relationship (EER) Model.",
+    "question": "DBMS Experiment 1",
     "answer": "Aim: Identify the case study and detail statement of problem. Design an Entity-Relationship (ER)/ Extended Entity-Relationship (EER) Model.\nCase Study: Company Database (Departments, Projects, Employees, and Dependents).",
-    "tags": ["ER-Diagram", "EER-Model", "Data-Modeling"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-1.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Covers notations for ER/EER like entities, attributes, and cardinality."
+    "tags": ["dbms_practical", "dbms_experiment_1", "dbms_lab_expt1", "dbms_practicals_file", "dbms_experiment1_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-1.pdf" }
   },
   {
     "id": "DBMS_EXP_002",
-    "question": "Experiment 2: Relational Database Design by ER and EER-to-Relational Mapping.",
-    "answer": "Aim: To draw ER-EER model and relational model for a given case study.\nMapping Steps: 1. Regular Entities, 2. Weak Entities, 3. Binary 1:1, 4. Binary 1:N, 5. Binary M:N, 6. Multivalued attributes, 7. N-ary relationships, 8. Specialization/Generalization, 9. Union Types.",
-    "tags": ["Relational-Schema", "Mapping-Algorithm", "Database-Design"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-2.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Uses 9-step algorithm to convert diagrams into tables."
+    "question": "DBMS Experiment 2",
+    "answer": "Aim: To draw ER-EER model and relational model for a given case study.",
+    "tags": ["dbms_practical", "dbms_experiment_2", "dbms_lab_expt2", "dbms_practicals_file", "dbms_experiment2_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-2.pdf" }
   },
   {
     "id": "DBMS_EXP_003",
-    "question": "Experiment 3: Data Definition Language (DDL) Commands.",
-    "answer": "Theory: DDL commands define/modify database structure. Includes CREATE (database/table), ALTER (Add/Drop/Modify columns), TRUNCATE (delete all records), DROP (remove table/db), and RENAME.",
-    "tags": ["DDL", "SQL", "Schema"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-3.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Includes syntax for Student and Books database examples."
+    "question": "DBMS Experiment 3",
+    "answer": "Aim: Define and modify database structure using Student and Books database examples.",
+    "tags": ["dbms_practical", "dbms_experiment_3", "dbms_lab_expt3", "dbms_practicals_file", "dbms_experiment3_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-3.pdf" }
   },
   {
     "id": "DBMS_EXP_004",
-    "question": "Experiment 4: Data Manipulation Language (DML) Commands.",
-    "answer": "Theory: DML statements are used for manipulating data. Commands: INSERT INTO (adding records), UPDATE (modifying existing data), DELETE (removing specific or all rows), and SELECT (retrieving data).",
-    "tags": ["DML", "SQL", "CRUD"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-4.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "DML changes can be rolled back unlike DDL."
+    "question": "DBMS Experiment 4",
+    "answer": "Aim: Manipulating data records including inserting, updating, and deleting rows.",
+    "tags": ["dbms_practical", "dbms_experiment_4", "dbms_lab_expt4", "dbms_practicals_file", "dbms_experiment4_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-4.pdf" }
   },
   {
     "id": "DBMS_EXP_005",
-    "question": "Experiment 5: SQL Operators and Built-in Functions.",
-    "answer": "Theory: Use of advanced filtering and grouping. Includes LIKE (pattern matching), Logical Operators (AND/OR/NOT), IN, BETWEEN, IS NULL, ORDER BY, DISTINCT, GROUP BY, and HAVING clauses.",
-    "tags": ["Operators", "Filtering", "Aggregate-Functions"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-5.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Exercises based on Product and Employee tables."
+    "question": "DBMS Experiment 5",
+    "answer": "Aim: Implementation of advanced filtering and grouping using Product and Employee tables.",
+    "tags": ["dbms_practical", "dbms_experiment_5", "dbms_lab_expt5", "dbms_practicals_file", "dbms_experiment5_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-5.pdf" }
   },
   {
     "id": "DBMS_EXP_006",
-    "question": "Experiment 6: Implementation of SQL Joins.",
-    "answer": "Theory: Joins are used to combine rows from two or more tables based on a related column. Types: Inner Join, Left Join, Right Join, and Full Outer Join.",
-    "tags": ["Joins", "Inner-Join", "Outer-Join"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-6.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Examples include Employee-Project and Customer-Order mappings."
+    "question": "DBMS Experiment 6",
+    "answer": "Aim: Combine rows from two or more tables using Employee-Project and Customer-Order mappings.",
+    "tags": ["dbms_practical", "dbms_experiment_6", "dbms_lab_expt6", "dbms_practicals_file", "dbms_experiment6_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-6.pdf" }
   },
   {
     "id": "DBMS_EXP_007",
-    "question": "Experiment 7: Nested Queries and Complex Queries.",
-    "answer": "Aim: To understand various ways to retrieve data using nested queries in SQL.\nIncludes: Subqueries to find employees with higher than average salary and inserting results into new tables.",
-    "tags": ["Nested-Queries", "Subqueries", "Complex-Queries"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-7.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Software: MySQL 5.6 on Ubuntu 16.04."
+    "question": "DBMS Experiment 7",
+    "answer": "Aim: To understand various ways to retrieve data using nested queries in SQL.",
+    "tags": ["dbms_practical", "dbms_experiment_7", "dbms_lab_expt7", "dbms_practicals_file", "dbms_experiment7_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-7.pdf" }
   },
   {
     "id": "DBMS_EXP_008",
-    "question": "Experiment 8: Views and Triggers.",
-    "answer": "Theory: \nViews: Virtual tables created via CREATE VIEW, updated with CREATE OR REPLACE, and removed with DROP VIEW.\nTriggers: Automated actions on the database during events.",
-    "tags": ["Views", "Triggers", "Automation"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-8.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "Covers view creation on employee and department tables."
+    "question": "DBMS Experiment 8",
+    "answer": "Aim: Creation of virtual tables and automated actions on employee and department tables.",
+    "tags": ["dbms_practical", "dbms_experiment_8", "dbms_lab_expt8", "dbms_practicals_file", "dbms_experiment8_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Expt-8.pdf" }
   },
   {
     "id": "DBMS_EXP_009",
-    "question": "Experiment 9: Transaction Control (TCL) and Data Control (DCL) Commands.",
-    "answer": "Theory: TCL commands manage transactions (COMMIT, ROLLBACK, SAVEPOINT). DCL commands manage permissions and access control (GRANT, REVOKE).",
-    "tags": ["TCL", "DCL", "Transactions", "Security"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "No PDF file available for this experiment."
+    "question": "DBMS Experiment 9",
+    "answer": "Aim: Management of transactions and access control permissions.",
+    "tags": ["dbms_practical", "dbms_experiment_9", "dbms_lab_expt9", "dbms_practicals_file", "dbms_experiment9_aim"],
+    "source": { "type": "file", "path": null }
   },
   {
     "id": "DBMS_EXP_010",
-    "question": "Experiment 10: CRUD operations from front end using Database connectivity.",
-    "answer": "Aim: Perform Create, Read, Update, Delete from a web interface.\nStack: MySQL (Backend DB), Node.js/Express (Server), and HTML/JS (Frontend).",
-    "tags": ["CRUD", "NodeJS", "Connectivity", "Full-Stack"],
-    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Exp-10.pdf", "url": null },
-    "created_at": "2026-01-04T17:20:00+05:30",
-    "notes": "End-to-end integration guide."
+    "question": "DBMS Experiment 10",
+    "answer": "Aim: Perform Create, Read, Update, Delete from a web interface using MySQL, Node.js, and HTML.",
+    "tags": ["dbms_practical", "dbms_experiment_10", "dbms_lab_expt10", "dbms_practicals_file", "dbms_experiment10_aim"],
+    "source": { "type": "file", "path": "Notes/DBMS_Practicals/DBMS_Exp-10.pdf" }
   }
 ]
