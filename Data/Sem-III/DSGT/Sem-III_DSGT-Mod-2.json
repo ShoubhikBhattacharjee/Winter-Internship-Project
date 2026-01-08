@@ -1,0 +1,236 @@
+[
+  {
+    "id": "S3_DSGT_M2_001",
+    "question": "What is a Set?",
+    "answer": "A set is a well-defined collection of distinct objects, called elements or members. For example, if A is the set of even numbers less than 10, then A = {2, 4, 6, 8}.",
+    "tags": ["set", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:00:00+05:30",
+    "notes": "Basic definition of a set."
+  },
+  {
+    "id": "S3_DSGT_M2_002",
+    "question": "How are sets represented?",
+    "answer": "Sets can be represented using roster form, which lists all elements, or set-builder form, which describes the property of the elements. Example: Roster form is {1, 2, 3}, while Set-builder form is {x | x is a natural number and x < 4}.",
+    "tags": ["set representation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:01:00+05:30",
+    "notes": "Common methods of representation."
+  },
+  {
+    "id": "S3_DSGT_M2_003",
+    "question": "What is a Subset?",
+    "answer": "A set A is a subset of set B if every element of A is also an element of B. For example, if A = {1, 2} and B = {1, 2, 3}, then A ⊆ B because all elements of A are present in B.",
+    "tags": ["subset"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:02:00+05:30",
+    "notes": "Denoted by ⊆."
+  },
+  {
+    "id": "S3_DSGT_M2_004",
+    "question": "What is the Power Set?",
+    "answer": "The power set of a set A is the set of all possible subsets of A, including the empty set and A itself. Example: If A = {a, b}, the power set P(A) = {∅, {a}, {b}, {a, b}}.",
+    "tags": ["power set"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:03:00+05:30",
+    "notes": "Contains 2^n elements."
+  },
+  {
+    "id": "S3_DSGT_M2_005",
+    "question": "What is the Union of Sets?",
+    "answer": "The union of two sets A and B is the set containing all elements that belong to A or B or both. Example: If A = {1, 2} and B = {2, 3}, then A ∪ B = {1, 2, 3}.",
+    "tags": ["set operations", "union"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:04:00+05:30",
+    "notes": "Denoted by ∪."
+  },
+  {
+    "id": "S3_DSGT_M2_006",
+    "question": "What is the Intersection of Sets?",
+    "answer": "The intersection of two sets A and B is the set containing elements common to both A and B. Example: If A = {1, 2, 3} and B = {2, 3, 4}, then A ∩ B = {2, 3}.",
+    "tags": ["set operations", "intersection"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:05:00+05:30",
+    "notes": "Denoted by ∩."
+  },
+  {
+    "id": "S3_DSGT_M2_007",
+    "question": "What is the Difference of Sets?",
+    "answer": "The difference of sets A and B consists of elements that are in A but not in B. Example: If A = {1, 2, 3} and B = {3, 4, 5}, then A − B = {1, 2}.",
+    "tags": ["set operations", "difference"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:06:00+05:30",
+    "notes": "Denoted by A − B."
+  },
+  {
+    "id": "S3_DSGT_M2_008",
+    "question": "What is the Complement of a Set?",
+    "answer": "The complement of a set A consists of all elements in the universal set U that are not in A. Example: If U = {1, 2, 3, 4, 5} and A = {1, 2}, then A' = {3, 4, 5}.",
+    "tags": ["set operations", "complement"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:07:00+05:30",
+    "notes": "Depends on universal set."
+  },
+  {
+    "id": "S3_DSGT_M2_009",
+    "question": "What are Set Identities?",
+    "answer": "Set identities are algebraic laws used to simplify set expressions, such as De Morgan's Law: (A ∪ B)' = A' ∩ B'. These include identity, domination, idempotent, and distributive laws.",
+    "tags": ["set identities"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:08:00+05:30",
+    "notes": "Used to simplify expressions."
+  },
+  {
+    "id": "S3_DSGT_M2_010",
+    "question": "What is a Relation?",
+    "answer": "A relation from set A to set B is a subset of the Cartesian product A × B, representing a connection between elements. Example: If A = {1, 2} and B = {x}, a relation R could be {(1, x)}.",
+    "tags": ["relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:09:00+05:30",
+    "notes": "Basic definition of relation."
+  },
+  {
+    "id": "S3_DSGT_M2_011",
+    "question": "What is the Cartesian Product of Sets?",
+    "answer": "The Cartesian product of sets A and B is the set of all ordered pairs (a, b) where a ∈ A and b ∈ B. Example: If A = {1, 2} and B = {a}, then A × B = {(1, a), (2, a)}.",
+    "tags": ["cartesian product"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:10:00+05:30",
+    "notes": "Forms the basis of relations."
+  },
+  {
+    "id": "S3_DSGT_M2_012",
+    "question": "What is a Reflexive Relation?",
+    "answer": "A relation R on a set A is reflexive if every element relates to itself, i.e., (a, a) ∈ R for all a ∈ A. Example: For A = {1, 2}, R = {(1, 1), (2, 2)} is reflexive.",
+    "tags": ["reflexive relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:11:00+05:30",
+    "notes": "Key property of relations."
+  },
+  {
+    "id": "S3_DSGT_M2_013",
+    "question": "What is a Symmetric Relation?",
+    "answer": "A relation R is symmetric if whenever (a, b) ∈ R, then (b, a) must also be in R. Example: For A = {1, 2}, R = {(1, 2), (2, 1)} is symmetric.",
+    "tags": ["symmetric relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:12:00+05:30",
+    "notes": "Order can be reversed."
+  },
+  {
+    "id": "S3_DSGT_M2_014",
+    "question": "What is a Transitive Relation?",
+    "answer": "A relation R is transitive if (a, b) ∈ R and (b, c) ∈ R imply (a, c) ∈ R. Example: If R = {(1, 2), (2, 3), (1, 3)}, it is transitive because 1 is linked to 3 through 2.",
+    "tags": ["transitive relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:13:00+05:30",
+    "notes": "Chain property."
+  },
+  {
+    "id": "S3_DSGT_M2_015",
+    "question": "What is an Antisymmetric Relation?",
+    "answer": "A relation R is antisymmetric if (a, b) ∈ R and (b, a) ∈ R imply that a = b. Example: The 'less than or equal to' relation (≤) is antisymmetric because if x ≤ y and y ≤ x, then x = y.",
+    "tags": ["antisymmetric relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:14:00+05:30",
+    "notes": "Important for partial orders."
+  },
+  {
+    "id": "S3_DSGT_M2_016",
+    "question": "What is an Equivalence Relation?",
+    "answer": "An equivalence relation is a relation that is simultaneously reflexive, symmetric, and transitive. Example: The relation 'has the same age' among a group of people is an equivalence relation.",
+    "tags": ["equivalence relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:15:00+05:30",
+    "notes": "Groups elements into classes."
+  },
+  {
+    "id": "S3_DSGT_M2_017",
+    "question": "What is a Partial Order Relation?",
+    "answer": "A partial order relation is a relation that is reflexive, antisymmetric, and transitive. Example: The divisibility relation on a set of positive integers is a partial order.",
+    "tags": ["partial order"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:16:00+05:30",
+    "notes": "Used in ordering systems."
+  },
+  {
+    "id": "S3_DSGT_M2_018",
+    "question": "How can a Relation be represented?",
+    "answer": "Relations can be represented as a set of ordered pairs, using a matrix (M_R), or through a directed graph (digraph). Example: R = {(1, 2)} can be shown as an arrow from node 1 to node 2.",
+    "tags": ["representing relations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:17:00+05:30",
+    "notes": "Multiple representations."
+  },
+  {
+    "id": "S3_DSGT_M2_019",
+    "question": "What is Matrix Representation of a Relation?",
+    "answer": "In matrix representation, entry m_ij is 1 if (a_i, b_j) ∈ R, and 0 otherwise. Example: For A = {1, 2}, if R = {(1, 2)}, the matrix has a 1 at row 1, column 2 and 0s elsewhere.",
+    "tags": ["matrix representation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:18:00+05:30",
+    "notes": "Uses 0s and 1s."
+  },
+  {
+    "id": "S3_DSGT_M2_020",
+    "question": "What is a Directed Graph Representation of a Relation?",
+    "answer": "In a directed graph, elements are vertices and ordered pairs (a, b) are shown as directed edges from a to b. Example: A loop at vertex 'a' represents the pair (a, a).",
+    "tags": ["digraph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:19:00+05:30",
+    "notes": "Visual representation."
+  },
+  {
+    "id": "S3_DSGT_M2_021",
+    "question": "What is the Closure of a Relation?",
+    "answer": "The closure of a relation R with respect to a property (like reflexivity) is the smallest relation that contains R and possesses that property.",
+    "tags": ["closure of relation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:20:00+05:30",
+    "notes": "Used to enforce properties."
+  },
+  {
+    "id": "S3_DSGT_M2_022",
+    "question": "What is Reflexive Closure?",
+    "answer": "The reflexive closure is obtained by adding all missing (a, a) pairs to R. Example: For R = {(1, 2)} on set {1, 2}, the reflexive closure is {(1, 2), (1, 1), (2, 2)}.",
+    "tags": ["reflexive closure"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:21:00+05:30",
+    "notes": "Ensures reflexivity."
+  },
+  {
+    "id": "S3_DSGT_M2_023",
+    "question": "What is Symmetric Closure?",
+    "answer": "The symmetric closure is obtained by adding (b, a) for every (a, b) in R. Example: If R = {(1, 2)}, the symmetric closure is {(1, 2), (2, 1)}.",
+    "tags": ["symmetric closure"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:22:00+05:30",
+    "notes": "Ensures symmetry."
+  },
+  {
+    "id": "S3_DSGT_M2_024",
+    "question": "What is Transitive Closure?",
+    "answer": "The transitive closure adds pairs (a, c) if there is a path from a to c through other elements. Example: If R = {(1, 2), (2, 3)}, the transitive closure adds (1, 3).",
+    "tags": ["transitive closure"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:23:00+05:30",
+    "notes": "Ensures transitivity."
+  },
+  {
+    "id": "S3_DSGT_M2_025",
+    "question": "Why is Transitive Closure important?",
+    "answer": "It is critical for determining reachability in networks. For example, it helps find if a computer in a network can communicate with another through intermediate nodes.",
+    "tags": ["transitive closure", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:24:00+05:30",
+    "notes": "Used in graph algorithms."
+  },
+  {
+    "id": "S3_DSGT_M2_026",
+    "question": "Why are Relations important in Discrete Mathematics?",
+    "answer": "Relations allow for the modeling of structures like databases, where tables are linked, and hierarchies, where elements are ordered or grouped by equivalence.",
+    "tags": ["relations", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T10:25:00+05:30",
+    "notes": "Core concept of DSGT."
+  }
+]

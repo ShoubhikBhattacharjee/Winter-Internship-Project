@@ -1,0 +1,218 @@
+[
+  {
+    "id": "S3_DSGT_M5_001",
+    "question": "What is an Algebraic Structure?",
+    "answer": "An algebraic structure is a mathematical system consisting of a non-empty set 'S' and one or more binary operations (like addition or multiplication) that satisfy specific axioms. The structure is typically denoted as (S, *), where '*' is the operation.\n\n**Example:** The set of integers with the addition operation, denoted as (Z, +), is a basic algebraic structure.",
+    "tags": ["algebraic structures", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:00:00+05:30",
+    "notes": "Foundation of abstract algebra."
+  },
+  {
+    "id": "S3_DSGT_M5_002",
+    "question": "What is a Semigroup?",
+    "answer": "A semigroup is an algebraic structure (S, *) that satisfies two properties: \n1. **Closure:** For all a, b in S, a * b is also in S. \n2. **Associativity:** For all a, b, c in S, (a * b) * c = a * (b * c).\n\n**Example:** The set of natural numbers under addition (N, +) is a semigroup because the sum of two natural numbers is always a natural number and addition is associative.",
+    "tags": ["semigroup"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:01:00+05:30",
+    "notes": "Associativity is mandatory."
+  },
+  {
+    "id": "S3_DSGT_M5_003",
+    "question": "What is a Monoid?",
+    "answer": "A monoid is a semigroup that includes an **identity element** 'e'. This means for every element 'a' in the set, a * e = e * a = a.\n\n**Example:** (N, ×) is a monoid where the identity element is 1. Note that (N, +) is only a monoid if we include 0 as the identity element.",
+    "tags": ["monoid"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:02:00+05:30",
+    "notes": "Has identity element."
+  },
+  {
+    "id": "S3_DSGT_M5_004",
+    "question": "What is a Group?",
+    "answer": "A group (G, *) is a monoid where every element 'a' has an **inverse** 'a⁻¹' such that a * a⁻¹ = a⁻¹ * a = e (the identity). Thus, it satisfies Closure, Associativity, Identity, and Inverse.\n\n**Example:** The set of integers under addition (Z, +) is a group. The identity is 0, and the inverse of any integer 'n' is '-n'.",
+    "tags": ["group"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:03:00+05:30",
+    "notes": "All four properties required."
+  },
+  {
+    "id": "S3_DSGT_M5_005",
+    "question": "What is an Abelian Group?",
+    "answer": "An Abelian group (named after Niels Henrik Abel) is a group that additionally satisfies the **Commutative Law**: for all a, b in G, a * b = b * a.\n\n**Example:** (Z, +) is an Abelian group because 2 + 3 = 3 + 2. However, the group of non-singular matrices under multiplication is generally non-Abelian because AB ≠ BA.",
+    "tags": ["abelian group"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:04:00+05:30",
+    "notes": "Commutativity added."
+  },
+  {
+    "id": "S3_DSGT_M5_006",
+    "question": "What properties must be verified to identify a group?",
+    "answer": "To prove a structure (G, *) is a group, you must verify:\n1. **Closure:** Is the result of the operation always in the set?\n2. **Associativity:** Does (a*b)*c = a*(b*c)?\n3. **Identity:** Is there an element 'e' that leaves others unchanged?\n4. **Inverse:** Does every element have a 'partner' that returns the identity?\n\n**Example:** If testing ({1, -1}, ×), closure holds (1×-1=-1), associativity holds, 1 is the identity, and each element is its own inverse.",
+    "tags": ["group properties"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:05:00+05:30",
+    "notes": "Standard exam question."
+  },
+  {
+    "id": "S3_DSGT_M5_007",
+    "question": "How do you distinguish between Semigroup, Monoid, and Group?",
+    "answer": "It is a hierarchy of increasing constraints:\n- **Semigroup:** Just Closure + Associativity.\n- **Monoid:** Semigroup + Identity.\n- **Group:** Monoid + Inverses.\n\n\n\n**Example:** The set of even natural numbers {2, 4, 6...} under addition is a semigroup (no identity 0), the set of all natural numbers {0, 1, 2...} is a monoid, and the set of all integers {..., -1, 0, 1, ...} is a group.",
+    "tags": ["comparison"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:06:00+05:30",
+    "notes": "Important classification."
+  },
+  {
+    "id": "S3_DSGT_M5_008",
+    "question": "What is an additive modulo group?",
+    "answer": "An additive modulo group, denoted as (Zn, +n), consists of the set {0, 1, 2, ..., n-1}. The operation is addition followed by taking the remainder when divided by 'n'.\n\n**Example:** In (Z4, +4), 2 + 3 = 5. Since 5 mod 4 = 1, the result is 1. The identity is always 0.",
+    "tags": ["additive modulo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:07:00+05:30",
+    "notes": "Common numerical question."
+  },
+  {
+    "id": "S3_DSGT_M5_009",
+    "question": "Is an additive modulo group always Abelian?",
+    "answer": "Yes. Because regular integer addition is commutative (a + b = b + a), it follows that (a + b) mod n will always equal (b + a) mod n. Therefore, every (Zn, +n) structure is an Abelian group.\n\n**Example:** In Z6, 4 + 5 (mod 6) = 3, and 5 + 4 (mod 6) = 3.",
+    "tags": ["additive modulo", "abelian"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:08:00+05:30",
+    "notes": "Frequently asked."
+  },
+  {
+    "id": "S3_DSGT_M5_010",
+    "question": "What is a multiplicative modulo group?",
+    "answer": "A multiplicative modulo group (Zn*, ×n) consists of the subset of Zn containing only elements that are relatively prime to n (i.e., gcd(a, n) = 1). This condition ensures that every element has a multiplicative inverse.\n\n**Example:** For n=10, the set is {1, 3, 7, 9}. 3 × 7 = 21, and 21 mod 10 = 1, so 3 and 7 are inverses of each other.",
+    "tags": ["multiplicative modulo"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:09:00+05:30",
+    "notes": "Inverse must exist."
+  },
+  {
+    "id": "S3_DSGT_M5_011",
+    "question": "How do you check whether a modulo group is Abelian?",
+    "answer": "You can verify this by checking if the Cayley table (operation table) is symmetric along the main diagonal. If for every row 'i' and column 'j', the entry at (i, j) equals the entry at (j, i), the group is Abelian.\n\n",
+    "tags": ["abelian check"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:10:00+05:30",
+    "notes": "Key verification step."
+  },
+  {
+    "id": "S3_DSGT_M5_012",
+    "question": "What is Group Encoding?",
+    "answer": "Group encoding uses the properties of groups (usually binary blocks under XOR) to add redundancy to data. This redundancy allows the receiver to detect if bits were flipped during transmission.\n\n**Example:** If we want to send 1 bit (0 or 1), we might encode 0 as '000' and 1 as '111'. This is a simple (3, 1) repetition code.",
+    "tags": ["group encoding"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:11:00+05:30",
+    "notes": "Used in coding theory."
+  },
+  {
+    "id": "S3_DSGT_M5_013",
+    "question": "What is Group Decoding?",
+    "answer": "Decoding is the mathematical process of removing the redundancy added during encoding to retrieve the original message. In group codes, this often involves 'Syndrome Decoding' where we check if the received vector still obeys the group's rules.\n\n**Example:** If a receiver gets '101' in a (3,1) repetition code, they use a decoding rule to decide if the original message was 0 or 1.",
+    "tags": ["group decoding"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:12:00+05:30",
+    "notes": "Reverse of encoding."
+  },
+  {
+    "id": "S3_DSGT_M5_014",
+    "question": "What is meant by (m, n) type group in coding?",
+    "answer": "In an (m, n) code, 'n' represents the number of information bits (data) and 'm' represents the total length of the codeword (data + parity bits). The number of parity bits added is m - n.\n\n**Example:** A (7, 4) Hamming code takes 4 bits of data and adds 3 parity bits to create a 7-bit codeword that can correct single-bit errors.",
+    "tags": ["group codes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:13:00+05:30",
+    "notes": "Common decoding question."
+  },
+  {
+    "id": "S3_DSGT_M5_015",
+    "question": "How do you decode an (m, n) type group code?",
+    "answer": "Decoding is typically done by comparing the received vector 'r' to all possible valid codewords and choosing the one with the smallest Hamming distance (the fewest bit differences).\n\n**Example:** In a code where valid words are {000, 111}, if you receive '110', you calculate the distance to 000 (dist=2) and 111 (dist=1). You decode it as 111.",
+    "tags": ["decoding", "group codes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:14:00+05:30",
+    "notes": "Exam-focused."
+  },
+  {
+    "id": "S3_DSGT_M5_016",
+    "question": "What is the Maximum Likelihood Decoding method?",
+    "answer": "Maximum Likelihood Decoding (MLD) assumes that the codeword received is the one that was most likely to have been sent. Mathematically, for a binary symmetric channel, this is equivalent to 'Nearest Neighbor Decoding'—picking the valid codeword closest in Hamming distance to the received signal.\n\n",
+    "tags": ["maximum likelihood", "decoding"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:15:00+05:30",
+    "notes": "Used in noisy channels."
+  },
+  {
+    "id": "S3_DSGT_M5_017",
+    "question": "Why is Maximum Likelihood Decoding important?",
+    "answer": "It is optimal in the sense that it minimizes the 'Word Error Rate' (WER). In communication systems where noise is random and independent, MLD provides the best possible chance of recovering the correct data from a corrupted transmission.\n\n**Example:** In deep-space communications, where signals are extremely weak and noisy, MLD-based algorithms like Viterbi decoding are used to ensure data integrity.",
+    "tags": ["maximum likelihood", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:16:00+05:30",
+    "notes": "Core decoding principle."
+  },
+  {
+    "id": "S3_DSGT_M5_018",
+    "question": "What is a Parity Check Matrix?",
+    "answer": "A Parity Check Matrix (H) is a matrix whose rows represent the linear equations that the bits of a codeword must satisfy. A vector 'c' is a valid codeword if and only if c · Hᵀ = 0.\n\n**Example:** For a (3, 2) parity code, H might be [1 1 1]. If the codeword is [1 0 1], then 1+0+1 = 2 ≡ 0 (mod 2), so it is valid.",
+    "tags": ["parity check matrix"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:17:00+05:30",
+    "notes": "Key matrix in coding theory."
+  },
+  {
+    "id": "S3_DSGT_M5_019",
+    "question": "How is a Parity Check Matrix used in decoding?",
+    "answer": "When a vector 'r' is received, we calculate the **syndrome** S = r · Hᵀ. If S = 0, no detectable error occurred. If S ≠ 0, the specific value of the syndrome points to the location of the error bit.\n\n",
+    "tags": ["parity check matrix", "decoding"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:18:00+05:30",
+    "notes": "Syndrome-based decoding."
+  },
+  {
+    "id": "S3_DSGT_M5_020",
+    "question": "How do you identify encoding using a Parity Check Matrix?",
+    "answer": "Encoding is defined by a Generator Matrix (G). To check if a code is valid using H, you verify that G · Hᵀ = 0. This ensures that every message encoded by G will result in a codeword that passes the parity check 'test' defined by H.",
+    "tags": ["encoding", "parity check"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:19:00+05:30",
+    "notes": "Matrix multiplication check."
+  },
+  {
+    "id": "S3_DSGT_M5_021",
+    "question": "What is the role of groups in coding theory?",
+    "answer": "Groups ensure that the 'sum' (XOR) of two valid codewords is also a valid codeword (Closure). This allows us to use linear algebra (matrices) to represent codes, making the encoding and decoding processes computationally efficient rather than relying on massive look-up tables.",
+    "tags": ["groups", "coding theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:20:00+05:30",
+    "notes": "Conceptual importance."
+  },
+  {
+    "id": "S3_DSGT_M5_022",
+    "question": "Why is Abelian group property useful in coding?",
+    "answer": "Because bitwise XOR is commutative (0 ⊕ 1 = 1 ⊕ 0), the groups used in binary coding are inherently Abelian. This symmetry allows for simplified syndrome calculation and ensures that the order in which we apply parity checks does not change the result.",
+    "tags": ["abelian group", "coding"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:21:00+05:30",
+    "notes": "Simplifies calculations."
+  },
+  {
+    "id": "S3_DSGT_M5_023",
+    "question": "What are common mistakes in identifying algebraic structures?",
+    "answer": "Common errors include:\n1. **Forgetting 0 or 1:** Not checking if the identity element is actually in the set.\n2. **Checking only one side:** Forgetting that an inverse/identity must work for both a*e and e*a.\n3. **Ignoring the Set:** Assuming a structure is a group because addition/multiplication is 'normal', without checking if the specific set 'S' is closed under that operation.\n\n**Example:** The set of odd integers is not a group under addition because it lacks closure (1 + 3 = 4, which is even).",
+    "tags": ["mistakes", "algebraic structures"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:22:00+05:30",
+    "notes": "Exam caution."
+  },
+  {
+    "id": "S3_DSGT_M5_024",
+    "question": "Why is Module 5 important in Discrete Mathematics?",
+    "answer": "It serves as the bridge between pure logic and engineering. By understanding algebraic structures like Groups, we gain the tools to design systems that can store and transmit data reliably across noisy channels (like the Internet or satellite links). It is the mathematical heart of modern Information Theory.",
+    "tags": ["importance", "summary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T13:23:00+05:30",
+    "notes": "Module summary."
+  }
+]

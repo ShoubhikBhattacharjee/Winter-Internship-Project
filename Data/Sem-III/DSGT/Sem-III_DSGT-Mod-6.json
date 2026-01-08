@@ -1,0 +1,218 @@
+[
+  {
+    "id": "S3_DSGT_M6_001",
+    "question": "What is a graph in Discrete Mathematics?",
+    "answer": "A graph is a mathematical structure used to model pairwise relations between objects. It is formally defined as G = (V, E), where V is a non-empty set of vertices (or nodes) and E is a set of edges (or links) that connect these vertices. If the edges have no direction, it is an undirected graph; otherwise, it is a directed graph.\n\n**Example:** A social network where each person is a vertex and a 'friendship' is an edge connecting two people.\n\n",
+    "tags": ["graph", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:00:00+05:30",
+    "notes": "Basic definition."
+  },
+  {
+    "id": "S3_DSGT_M6_002",
+    "question": "What are the main components of a graph?",
+    "answer": "The primary components are:\n1. **Vertices (V):** The individual points or nodes in the graph.\n2. **Edges (E):** The lines that connect two vertices. An edge is represented as a set {u, v} for undirected graphs or an ordered pair (u, v) for directed graphs.\n3. **Degree:** The number of edges incident to a vertex. In directed graphs, this is split into 'in-degree' and 'out-degree'.\n\n**Example:** In a city map graph, intersections are vertices and the roads connecting them are edges.",
+    "tags": ["graph", "components"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:01:00+05:30",
+    "notes": "Exam-frequent concept."
+  },
+  {
+    "id": "S3_DSGT_M6_003",
+    "question": "Define a simple graph.",
+    "answer": "A simple graph is a graph that contains no self-loops (an edge connecting a vertex to itself) and no multiple edges (more than one edge between the same two vertices). Every edge in a simple graph connects two distinct vertices and is unique.\n\n**Example:** A standard 'square' graph with 4 vertices and 4 edges forming a perimeter is a simple graph.\n\n",
+    "tags": ["graph", "simple graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:02:00+05:30",
+    "notes": "Basic graph type."
+  },
+  {
+    "id": "S3_DSGT_M6_004",
+    "question": "What is a directed graph (digraph)?",
+    "answer": "A directed graph, or digraph, consists of vertices connected by directed edges (arrows). Each edge has a specific orientation, meaning the relationship is not necessarily reciprocal. The edge (u, v) is distinct from (v, u).\n\n**Example:** A website's structure where vertices are pages and edges are hyperlinks. Clicking a link takes you from Page A to Page B, but Page B may not link back to Page A.\n\n",
+    "tags": ["graph", "directed"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:03:00+05:30",
+    "notes": "Important graph type."
+  },
+  {
+    "id": "S3_DSGT_M6_005",
+    "question": "What is a weighted graph?",
+    "answer": "A weighted graph is a graph where each edge is assigned a numerical label, called a 'weight' or 'cost'. This weight can represent distance, time, capacity, or any other quantifiable metric associated with the connection.\n\n**Example:** An airline flight map where vertices are airports and edge weights represent the cost of a ticket or the flight duration between them.\n\n",
+    "tags": ["graph", "weighted"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:04:00+05:30",
+    "notes": "Used in shortest path problems."
+  },
+  {
+    "id": "S3_DSGT_M6_006",
+    "question": "How are graphs represented in computer memory?",
+    "answer": "There are three primary ways to represent graphs in data structures:\n1. **Adjacency Matrix:** A 2D array used for dense graphs.\n2. **Adjacency List:** An array of linked lists/vectors, ideal for sparse graphs.\n3. **Incidence Matrix:** A matrix showing the relationship between vertices and edges.\n\n**Example:** For a graph with 1,000 vertices but only 2,000 edges, an adjacency list is much more memory-efficient than a 1,000x1,000 matrix.",
+    "tags": ["graph representation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:05:00+05:30",
+    "notes": "Core representation techniques."
+  },
+  {
+    "id": "S3_DSGT_M6_007",
+    "question": "What is an adjacency matrix?",
+    "answer": "An adjacency matrix is a square n x n matrix where 'n' is the number of vertices. If there is an edge between vertex i and vertex j, the entry A[i][j] is 1 (or the weight); otherwise, it is 0. For undirected graphs, the matrix is always symmetric.\n\n**Example:** If vertex 1 is connected to 2 and 3, the first row of the matrix would be [0, 1, 1, ...].\n\n[Image showing a graph and its corresponding adjacency matrix]",
+    "tags": ["graph representation", "adjacency matrix"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:06:00+05:30",
+    "notes": "Matrix representation."
+  },
+  {
+    "id": "S3_DSGT_M6_008",
+    "question": "What is an adjacency list?",
+    "answer": "An adjacency list stores a graph as an array of lists. The index of the array represents a vertex, and each element in the list at that index represents a neighbor of that vertex. It saves space because it only stores existing edges.\n\n**Example:** \nVertex A: [B, C]\nVertex B: [A, D]\nVertex C: [A]\nVertex D: [B]",
+    "tags": ["graph representation", "adjacency list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:07:00+05:30",
+    "notes": "Memory-efficient representation."
+  },
+  {
+    "id": "S3_DSGT_M6_009",
+    "question": "What is graph isomorphism?",
+    "answer": "Two graphs G and H are isomorphic if they are essentially the same graph drawn differently. Formally, there exists a bijection f: V(G) -> V(H) such that any two vertices u and v are adjacent in G if and only if f(u) and f(v) are adjacent in H.\n\n**Example:** A square graph and a 'diamond' shaped graph with 4 vertices and 4 edges are isomorphic.\n\n",
+    "tags": ["graph isomorphism"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:08:00+05:30",
+    "notes": "Key concept in graph theory."
+  },
+  {
+    "id": "S3_DSGT_M6_010",
+    "question": "How can you check if two graphs are isomorphic?",
+    "answer": "While there is no single 'quick' formula, you check for 'invariants' (properties that must match):\n1. Same number of vertices and edges.\n2. Same degree sequence (e.g., both have two vertices of degree 3 and three of degree 2).\n3. Existence of cycles of the same length.\n\n**Example:** If Graph A has a cycle of length 3 (a triangle) but Graph B does not, they cannot be isomorphic even if they have the same number of vertices and edges.",
+    "tags": ["graph isomorphism", "verification"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:09:00+05:30",
+    "notes": "Stepwise verification."
+  },
+  {
+    "id": "S3_DSGT_M6_011",
+    "question": "What is an Euler path and Euler circuit?",
+    "answer": "An **Euler Path** is a trail in a graph that visits every edge exactly once. An **Euler Circuit** is an Euler path that starts and ends on the same vertex.\n\n**Example:** The 'Königsberg Bridge Problem' was the first historical study of Euler circuits—finding a route that crosses every bridge over a river exactly once.",
+    "tags": ["euler path", "euler circuit"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:10:00+05:30",
+    "notes": "Important for graph traversal problems."
+  },
+  {
+    "id": "S3_DSGT_M6_012",
+    "question": "What is Euler's theorem for Euler circuits?",
+    "answer": "A connected graph has an Euler circuit if and only if every single vertex in the graph has an **even degree**. If even one vertex has an odd degree, a circuit (returning to the start) is impossible because every time you 'enter' a vertex via one edge, you must 'leave' it via another.\n\n",
+    "tags": ["euler theorem"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:11:00+05:30",
+    "notes": "Classic theorem."
+  },
+  {
+    "id": "S3_DSGT_M6_013",
+    "question": "What is Euler's theorem for Euler paths?",
+    "answer": "A connected graph has an Euler path (but no circuit) if and only if it has exactly **two vertices of odd degree**. These two vertices must be the start and end points of the path.\n\n**Example:** A graph shaped like an envelope (a rectangle with an 'X' inside and a triangle on top) often contains an Euler path if the degrees are checked correctly.",
+    "tags": ["euler theorem"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:12:00+05:30",
+    "notes": "Path-specific theorem."
+  },
+  {
+    "id": "S3_DSGT_M6_014",
+    "question": "What is a Hamilton path and Hamilton circuit?",
+    "answer": "A **Hamilton Path** visits every vertex in the graph exactly once. A **Hamilton Circuit** visits every vertex exactly once and returns to the starting vertex.\n\n**Example:** The 'Traveling Salesperson Problem' is the most famous application, where a salesman must visit every city (vertex) exactly once and return home using the shortest total distance.",
+    "tags": ["hamilton path", "hamilton circuit"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:13:00+05:30",
+    "notes": "Vertex-focused traversal."
+  },
+  {
+    "id": "S3_DSGT_M6_015",
+    "question": "What is the difference between Euler and Hamilton graphs?",
+    "answer": "The core difference is the 'unit' of traversal:\n- **Euler:** Uses every **Edge** once. Easy to determine (check vertex degrees).\n- **Hamilton:** Visits every **Vertex** once. Extremely difficult to determine (NP-complete problem) as there is no simple degree-based rule that works for all graphs.\n\n**Example:** In a graph, you might be able to visit every room (Hamilton) without walking through every hallway (Euler).",
+    "tags": ["euler vs hamilton"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:14:00+05:30",
+    "notes": "Common exam question."
+  },
+  {
+    "id": "S3_DSGT_M6_016",
+    "question": "What are the conditions for a Hamilton circuit to exist?",
+    "answer": "While there is no general 'if and only if' rule, several sufficient conditions exist:\n1. **Dirac's Theorem:** If n ≥ 3 and every vertex has degree ≥ n/2, a Hamilton circuit exists.\n2. **Ore's Theorem:** If n ≥ 3 and for every pair of non-adjacent vertices u and v, deg(u) + deg(v) ≥ n, a Hamilton circuit exists.\n\n**Example:** In a graph of 6 vertices, if every vertex is connected to at least 3 others, Dirac's theorem guarantees a Hamilton circuit.",
+    "tags": ["hamilton circuit", "dirac theorem"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:15:00+05:30",
+    "notes": "Advanced theorem."
+  },
+  {
+    "id": "S3_DSGT_M6_017",
+    "question": "What is the shortest path problem in graphs?",
+    "answer": "It is the problem of finding a path between two vertices in a weighted graph such that the sum of the weights of its constituent edges is minimized. This is the foundation of GPS and network routing.\n\n**Example:** Finding the quickest driving route from New York to Los Angeles on a map where weights represent travel time or distance.",
+    "tags": ["shortest path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:16:00+05:30",
+    "notes": "Important for algorithm design."
+  },
+  {
+    "id": "S3_DSGT_M6_018",
+    "question": "What is Dijkstra’s algorithm?",
+    "answer": "Dijkstra’s algorithm is a 'greedy' algorithm that finds the shortest path from a starting node to all other nodes in a graph. It maintains a set of 'visited' nodes and continually updates the minimum distance to 'unvisited' nodes.\n\n**Limitation:** It only works for graphs with non-negative edge weights. If negative weights exist, the Bellman-Ford algorithm must be used instead.\n\n",
+    "tags": ["dijkstra", "shortest path"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:17:00+05:30",
+    "notes": "Classical shortest path algorithm."
+  },
+  {
+    "id": "S3_DSGT_M6_019",
+    "question": "How can graphs be classified based on edges?",
+    "answer": "Classification includes:\n1. **Simple Graph:** No loops, no multi-edges.\n2. **Multigraph:** Allows multiple edges between same vertices.\n3. **Pseudograph:** Allows both multi-edges and self-loops.\n4. **Directed Graph (Digraph):** Edges have direction.\n5. **Weighted Graph:** Edges have numerical values.\n\n[Image showing examples of a simple graph, multigraph, and pseudograph side-by-side]",
+    "tags": ["graph types"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:18:00+05:30",
+    "notes": "Important classification."
+  },
+  {
+    "id": "S3_DSGT_M6_020",
+    "question": "What are connected and disconnected graphs?",
+    "answer": "A graph is **connected** if there is a path between every pair of vertices. If there is at least one pair of vertices with no path between them, the graph is **disconnected**. The isolated groups of connected vertices in a disconnected graph are called 'connected components'.\n\n**Example:** The global internet is a connected graph. A local network not connected to the outside world would be a separate component.",
+    "tags": ["graph types", "connected"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:19:00+05:30",
+    "notes": "Connectivity concept."
+  },
+  {
+    "id": "S3_DSGT_M6_021",
+    "question": "What is a complete graph?",
+    "answer": "A complete graph, denoted as Kn, is a simple graph where every vertex is connected to every other vertex by exactly one edge. The number of edges in a complete graph with n vertices is given by n(n-1)/2.\n\n**Example:** K4 has 4 vertices and 4(3)/2 = 6 edges. It looks like a square with an 'X' in the middle.\n\n",
+    "tags": ["special graph", "complete graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:20:00+05:30",
+    "notes": "Special graph type."
+  },
+  {
+    "id": "S3_DSGT_M6_022",
+    "question": "What is a bipartite graph?",
+    "answer": "A bipartite graph is a graph where vertices can be split into two sets, U and V, such that every edge connects a vertex in U to a vertex in V. No edges exist between vertices within the same set. A graph is bipartite if and only if it contains no odd-length cycles.\n\n**Example:** A 'job-applicant' graph where one set of nodes is 'Applicants' and the other is 'Jobs'. An edge exists if an applicant is qualified for a job.\n\n",
+    "tags": ["special graph", "bipartite graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:21:00+05:30",
+    "notes": "Special graph type."
+  },
+  {
+    "id": "S3_DSGT_M6_023",
+    "question": "What is a tree in graph theory?",
+    "answer": "A tree is a connected graph that contains no cycles (acyclic). In a tree with 'n' vertices, there are always exactly 'n-1' edges. Any two vertices in a tree are connected by exactly one unique simple path.\n\n**Example:** A family tree or a file directory structure on a computer.\n\n",
+    "tags": ["tree", "special graph"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:22:00+05:30",
+    "notes": "Important special type."
+  },
+  {
+    "id": "S3_DSGT_M6_024",
+    "question": "Why is module 6 important in Discrete Mathematics?",
+    "answer": "Module 6 is crucial because it provides the language to model almost any network-based system. From routing data packets across the internet to scheduling tasks and analyzing social structures, graph theory provides the algorithms (like Dijkstra) and structural properties (like connectivity and trees) required for efficient computation and problem-solving.",
+    "tags": ["importance", "module 6"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T18:23:00+05:30",
+    "notes": "Conceptual relevance."
+  }
+]

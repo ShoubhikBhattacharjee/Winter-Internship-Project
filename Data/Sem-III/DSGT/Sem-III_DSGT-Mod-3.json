@@ -1,0 +1,326 @@
+[
+  {
+    "id": "S3_DSGT_M3_001",
+    "question": "What is a Function?",
+    "answer": "A function from set A to set B is a special type of relation that assigns exactly one element of B to each element of A. In formal terms, for a relation f to be a function, every input x in the domain must have a unique output y in the codomain. \n\n**Example:** If A = {1, 2, 3} and B = {x, y, z}, a function could be f = {(1, x), (2, y), (3, z)}. However, if we had g = {(1, x), (1, y), (2, z)}, it would not be a function because the element 1 is associated with two different elements in B.\n\n",
+    "tags": ["function", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:00:00+05:30",
+    "notes": "Basic definition of function."
+  },
+  {
+    "id": "S3_DSGT_M3_002",
+    "question": "What are Domain, Codomain, and Range of a Function?",
+    "answer": "The Domain is the set of all possible input values (Set A). The Codomain is the set of all potential output values (Set B). The Range (or Image) is the subset of the codomain that contains only the elements actually produced by the function's mapping. \n\n**Example:** Consider a function f from Integers to Integers defined by f(x) = x squared. The Domain is all integers, the Codomain is all integers, but the Range is only the set of perfect squares {0, 1, 4, 9, 16, ...}.",
+    "tags": ["domain", "codomain", "range"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:01:00+05:30",
+    "notes": "Key components of a function."
+  },
+  {
+    "id": "S3_DSGT_M3_003",
+    "question": "What is an Injective (One-to-One) Function?",
+    "answer": "A function is injective if different elements of the domain always map to different elements of the codomain. This means that no two distinct inputs share the same output; if f(a) = f(b), then a must equal b. \n\n**Example:** The function f(x) = 2x for real numbers is injective because every unique x results in a unique 2x. Conversely, f(x) = x squared is not injective over the set of all real numbers because f(2) = 4 and f(-2) = 4.\n\n",
+    "tags": ["injective function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:02:00+05:30",
+    "notes": "No two inputs have the same output."
+  },
+  {
+    "id": "S3_DSGT_M3_004",
+    "question": "What is a Surjective (Onto) Function?",
+    "answer": "A function is surjective if every element in the codomain is an image of at least one element from the domain. In other words, the Range of the function is exactly equal to its Codomain, and no element in B is left unmapped. \n\n**Example:** Let f(x) = x + 1 for real numbers. Since every real number y in the codomain can be reached by the input x = y - 1, the function is surjective. However, f(x) = e^x is not surjective over real numbers because negative numbers are never reached.\n\n",
+    "tags": ["surjective function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:03:00+05:30",
+    "notes": "Range equals codomain."
+  },
+  {
+    "id": "S3_DSGT_M3_005",
+    "question": "What is a Bijective Function?",
+    "answer": "A bijective function is a function that is both injective (one-to-one) and surjective (onto). It creates a perfect one-to-one correspondence where every element in the domain is paired with exactly one unique element in the codomain, and vice versa. \n\n**Example:** The identity function f(x) = x on the set of real numbers is bijective. Similarly, f(x) = x cubed is a bijection because it is both one-to-one and covers all real numbers.\n\n[Image comparing injective, surjective, and bijective functions]",
+    "tags": ["bijective function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:04:00+05:30",
+    "notes": "Has an inverse."
+  },
+  {
+    "id": "S3_DSGT_M3_006",
+    "question": "What is an Inverse Function?",
+    "answer": "An inverse function f^-1 is a function that reverses the mapping of a original function f. It exists if and only if the original function is a bijection. If f maps a to b, then f^-1 maps b back to a. \n\n**Example:** If f(x) = 3x - 2, we find the inverse by solving x = 3y - 2 for y, yielding f^-1(x) = (x + 2) / 3.",
+    "tags": ["inverse function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:05:00+05:30",
+    "notes": "Exists only for bijections."
+  },
+  {
+    "id": "S3_DSGT_M3_007",
+    "question": "What is a Composition of Functions?",
+    "answer": "The composition of functions f and g is an operation that takes an input x, applies g to it, and then applies f to the result. It is denoted as (f o g)(x) = f(g(x)). \n\n**Example:** If g(x) = x + 2 and f(x) = x squared, then (f o g)(x) = f(x + 2) = (x + 2) squared. Order matters, as (g o f)(x) = x squared + 2.\n\n[Image illustrating function composition f(g(x)) with sets]",
+    "tags": ["function composition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:06:00+05:30",
+    "notes": "Order matters."
+  },
+  {
+    "id": "S3_DSGT_M3_008",
+    "question": "What is an Identity Function?",
+    "answer": "An identity function is a function that always returns the same value that was used as its argument. On a set A, the identity function maps every element x to itself. \n\n**Example:** In a coordinate system, the line y = x represents the identity function. It acts as the neutral element in function composition.",
+    "tags": ["identity function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:07:00+05:30",
+    "notes": "Acts as neutral element."
+  },
+  {
+    "id": "S3_DSGT_M3_009",
+    "question": "What is a Constant Function?",
+    "answer": "A constant function is a function whose output value is the same for every input value in its domain. Regardless of what x you choose, f(x) remains a fixed value c. \n\n**Example:** f(x) = 5 is a constant function. Whether x is 1, 100, or -50, the result is always 5.",
+    "tags": ["constant function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:08:00+05:30",
+    "notes": "Output is fixed."
+  },
+  {
+    "id": "S3_DSGT_M3_010",
+    "question": "How can Functions be represented?",
+    "answer": "Functions can be expressed through various methods: 1) Algebraic formulas, 2) Tables, 3) Graphs, or 4) Arrow diagrams. \n\n**Example:** The squaring function can be shown as f(x) = x squared, a table listing (2, 4), (3, 9), or a parabola plotted on a graph.",
+    "tags": ["function representation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:09:00+05:30",
+    "notes": "Multiple representations."
+  },
+  {
+    "id": "S3_DSGT_M3_011",
+    "question": "What is a Partial Ordering?",
+    "answer": "A partial ordering is a binary relation on a set that satisfies three properties: Reflexivity (a relates to a), Antisymmetry (if a relates to b and b relates to a, then a = b), and Transitivity (if a relates to b and b relates to c, then a relates to c). \n\n**Example:** The 'subset of' relation is a partial ordering. A set is a subset of itself; if A is a subset of B and B is a subset of A, then A = B; and if A is a subset of B and B is a subset of C, then A is a subset of C.",
+    "tags": ["partial ordering"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:10:00+05:30",
+    "notes": "Defines ordering."
+  },
+  {
+    "id": "S3_DSGT_M3_012",
+    "question": "What is a Poset?",
+    "answer": "A Poset, or Partially Ordered Set, is a mathematical structure consisting of a set S and a partial order relation. It provides a way to rank elements, though not every pair of elements needs to be comparable. \n\n**Example:** The set of integers ordered by the standard 'less than or equal to' relation is a poset.",
+    "tags": ["poset"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:11:00+05:30",
+    "notes": "Partially ordered set."
+  },
+  {
+    "id": "S3_DSGT_M3_013",
+    "question": "What are Comparable and Incomparable Elements in a Poset?",
+    "answer": "In a poset, two elements a and b are comparable if either a <= b or b <= a holds. If neither is true, they are incomparable. \n\n**Example:** In the power set of {x, y} ordered by subset, the sets {x} and {y} are incomparable because neither is a subset of the other.",
+    "tags": ["poset elements"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:12:00+05:30",
+    "notes": "Important property."
+  },
+  {
+    "id": "S3_DSGT_M3_014",
+    "question": "What is a Hasse Diagram?",
+    "answer": "A Hasse diagram is a simplified visual representation of a finite poset. It omits loops and transitive edges, arranging elements such that larger elements are higher than smaller ones. \n\n**Example:** For the divisibility relation on {1, 2, 3, 6}, the diagram places 1 at the bottom, 2 and 3 above it, and 6 at the top.\n\n",
+    "tags": ["hasse diagram"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:13:00+05:30",
+    "notes": "Simplified digraph."
+  },
+  {
+    "id": "S3_DSGT_M3_015",
+    "question": "What are Maximal and Minimal Elements?",
+    "answer": "A maximal element is an element m such that no other element is greater than it. A minimal element is an element k such that no other element is smaller than it. A poset can have multiple maximal or minimal elements. \n\n**Example:** In the set of divisors of 12 (excluding 1 and 12), 4 and 6 are maximal elements.",
+    "tags": ["maximal", "minimal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:14:00+05:30",
+    "notes": "May not be unique."
+  },
+  {
+    "id": "S3_DSGT_M3_016",
+    "question": "What are Greatest and Least Elements?",
+    "answer": "The greatest element is a unique element that is greater than or equal to every other element. The least element is a unique element that is less than or equal to every other element. \n\n**Example:** In a power set ordered by subset, the whole set is the greatest element and the empty set is the least element.",
+    "tags": ["greatest", "least"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:15:00+05:30",
+    "notes": "Unique if exists."
+  },
+  {
+    "id": "S3_DSGT_M3_017",
+    "question": "What is an Upper Bound?",
+    "answer": "Given a subset A of a poset, an upper bound of A is an element u such that every element in A is less than or equal to u. \n\n**Example:** In real numbers, for the interval [2, 5), the number 5 is an upper bound.",
+    "tags": ["upper bound"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:16:00+05:30",
+    "notes": "Used in lattice theory."
+  },
+  {
+    "id": "S3_DSGT_M3_018",
+    "question": "What is a Lower Bound?",
+    "answer": "A lower bound of a subset A is an element l such that l is less than or equal to every element in A. \n\n**Example:** For the set {10, 20, 30} in integers, 10 and 5 are lower bounds.",
+    "tags": ["lower bound"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:17:00+05:30",
+    "notes": "Opposite of upper bound."
+  },
+  {
+    "id": "S3_DSGT_M3_019",
+    "question": "What is the Least Upper Bound (Supremum)?",
+    "answer": "The Least Upper Bound (LUB), or Supremum, of a subset is the smallest element among all its upper bounds. In a lattice, this is the Join operation. \n\n**Example:** For {2, 3} in divisibility, the upper bounds are multiples of 6. The LUB is 6.",
+    "tags": ["lub", "supremum", "join"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:18:00+05:30",
+    "notes": "Denoted as LUB."
+  },
+  {
+    "id": "S3_DSGT_M3_020",
+    "question": "What is the Greatest Lower Bound (Infimum)?",
+    "answer": "The Greatest Lower Bound (GLB), or Infimum, of a subset is the largest element among all its lower bounds. In a lattice, this is the Meet operation. \n\n**Example:** For {8, 12} in divisibility, the lower bounds (common divisors) are {1, 2, 4}. The GLB is 4.",
+    "tags": ["glb", "infimum", "meet"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:19:00+05:30",
+    "notes": "Denoted as GLB."
+  },
+  {
+    "id": "S3_DSGT_M3_021",
+    "question": "What is a Lattice?",
+    "answer": "A lattice is a poset in which every pair of elements has a unique least upper bound (Join) and a unique greatest lower bound (Meet). \n\n**Example:** The factors of 30 under divisibility form a lattice because any two factors have a unique LCM and GCD in the set.\n\n",
+    "tags": ["lattice", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:00:00+05:30",
+    "notes": "Advanced poset structure."
+  },
+  {
+    "id": "S3_DSGT_M3_022",
+    "question": "What is a Totally Ordered Set?",
+    "answer": "A totally ordered set (or chain) is a poset where every pair of elements is comparable. \n\n**Example:** Real numbers under the standard 'less than or equal to' relation is a total order.",
+    "tags": ["total order"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:21:00+05:30",
+    "notes": "Special case of poset."
+  },
+  {
+    "id": "S3_DSGT_M3_023",
+    "question": "How are Partial Orderings used in Computer Science?",
+    "answer": "They are used for modeling dependencies, such as task scheduling, version control branching, and software package dependency resolution. \n\n**Example:** A build system uses partial orders to ensure source code is compiled before it is linked.",
+    "tags": ["partial ordering", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:22:00+05:30",
+    "notes": "Practical relevance."
+  },
+  {
+    "id": "S3_DSGT_M3_024",
+    "question": "What is the difference between Partial Order and Total Order?",
+    "answer": "In a partial order, some elements may be incomparable. In a total order, every pair of elements must be comparable. \n\n**Example:** An organizational hierarchy is a partial order; a ranked list of students is a total order.",
+    "tags": ["partial order", "total order"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:23:00+05:30",
+    "notes": "Key distinction."
+  },
+  {
+    "id": "S3_DSGT_M3_025",
+    "question": "Why are Functions and Partial Orderings important in Discrete Mathematics?",
+    "answer": "They provide the language to describe data transformation (functions) and data structure/priority (orderings). They are key to database theory, logic, and cryptography.",
+    "tags": ["importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T11:24:00+05:30",
+    "notes": "Module summary."
+  },
+  {
+    "id": "S3_DSGT_M3_026",
+    "question": "What is a bounded lattice?",
+    "answer": "A bounded lattice is a lattice that has a greatest element (1) and a least element (0). Every element x satisfies 0 <= x <= 1. \n\n**Example:** A power set lattice is bounded by the empty set and the universal set.",
+    "tags": ["bounded lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:04:00+05:30",
+    "notes": "Contains top and bottom elements."
+  },
+  {
+    "id": "S3_DSGT_M3_027",
+    "question": "What is a distributive lattice?",
+    "answer": "A lattice is distributive if the Join and Meet operations distribute over each other. \n\n**Example:** Power set lattices are distributive. The Pentagon and Diamond lattices are the standard examples of non-distributive lattices.\n\n",
+    "tags": ["distributive lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:05:00+05:30",
+    "notes": "Important property."
+  },
+  {
+    "id": "S3_DSGT_M3_028",
+    "question": "What is a modular lattice?",
+    "answer": "A modular lattice is one where if a <= c, then a OR (b AND c) = (a OR b) AND c. All distributive lattices are modular.",
+    "tags": ["modular lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:06:00+05:30",
+    "notes": "Intermediate structure."
+  },
+  {
+    "id": "S3_DSGT_M3_029",
+    "question": "What is a complemented lattice?",
+    "answer": "In a bounded lattice, an element a has a complement b if a OR b = 1 and a AND b = 0. A lattice is complemented if every element has at least one complement.",
+    "tags": ["complemented lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:07:00+05:30",
+    "notes": "Each element has an inverse-like element."
+  },
+  {
+    "id": "S3_DSGT_M3_030",
+    "question": "What is a Boolean lattice?",
+    "answer": "A Boolean lattice (or Boolean Algebra) is a lattice that is both distributive and complemented. It is the basis for binary logic and computer circuits. \n\n**Example:** Power set lattices are Boolean lattices.\n\n",
+    "tags": ["boolean lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:08:00+05:30",
+    "notes": "Very important for logic."
+  },
+  {
+    "id": "S3_DSGT_M3_031",
+    "question": "How is a lattice represented graphically?",
+    "answer": "Lattices are represented using Hasse diagrams, which show the Meet and Join relationships through a hierarchical node structure.",
+    "tags": ["lattice representation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:09:00+05:30",
+    "notes": "Visual representation."
+  },
+  {
+    "id": "S3_DSGT_M3_032",
+    "question": "How do you identify whether a poset is a lattice?",
+    "answer": "Check if every possible pair of elements has a unique least upper bound and a unique greatest lower bound. If any pair lacks these, it is not a lattice.",
+    "tags": ["lattice identification"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:10:00+05:30",
+    "notes": "Key exam question."
+  },
+  {
+    "id": "S3_DSGT_M3_033",
+    "question": "Can every poset be a lattice?",
+    "answer": "No. A poset fails to be a lattice if it contains elements without a unique Join or Meet. \n\n**Example:** A poset where two elements have two upper bounds but neither is smaller than the other is not a lattice.",
+    "tags": ["poset vs lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:11:00+05:30",
+    "notes": "Conceptual clarity."
+  },
+  {
+    "id": "S3_DSGT_M3_034",
+    "question": "What laws are satisfied by lattice operations?",
+    "answer": "Lattice operations satisfy Idempotent, Commutative, Associative, and Absorption laws.",
+    "tags": ["lattice laws"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:13:00+05:30",
+    "notes": "Theoretical question."
+  },
+  {
+    "id": "S3_DSGT_M3_035",
+    "question": "What is the absorption law in lattices?",
+    "answer": "The absorption law states that a OR (a AND b) = a and a AND (a OR b) = a.",
+    "tags": ["absorption law"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:14:00+05:30",
+    "notes": "Key lattice identity."
+  },
+  {
+    "id": "S3_DSGT_M3_036",
+    "question": "What is the dual of a lattice?",
+    "answer": "The dual of a lattice is formed by reversing the order relation. Joins become Meets and Meets become Joins.",
+    "tags": ["dual lattice"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T15:16:00+05:30",
+    "notes": "Advanced concept."
+  }
+]

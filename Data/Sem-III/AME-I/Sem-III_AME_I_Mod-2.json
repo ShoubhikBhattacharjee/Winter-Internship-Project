@@ -1,0 +1,212 @@
+[
+  {
+    "id": "S3_AME_I_M2_001",
+    "question": "What is the Inverse Laplace Transform and its mathematical foundation?",
+    "answer": "The Inverse Laplace Transform is the mathematical operation used to transform a function from the complex frequency domain F(s) back into the time domain f(t). If L{f(t)} = F(s), then f(t) = L^-1{F(s)}. Theoretically, it is based on the Mellin's inversion formula, also known as the Bromwich Integral, which is a complex line integral. In practice, engineers avoid complex integration by using standard transform tables and the property of uniqueness, which states that if two functions have the same Laplace transform, they are identical except at isolated points.",
+    "tags": ["inverse laplace", "definition", "theory"],
+    "notes": "Fundamental recovery process."
+  },
+  {
+    "id": "S3_AME_I_M2_002",
+    "question": "What is the Linearity property of the Inverse Laplace Transform?",
+    "answer": "Linearity is a core property stating that L^-1{a F(s) + b G(s)} = a L^-1{F(s)} + b L^-1{G(s)}, where a and b are constants. This allows us to decompose complex, multi-term rational functions into simpler components that can be solved individually. For example, if a control system's output is represented by a sum of different frequency components, linearity allows us to find the time-domain response of each component and sum them to find the total response.",
+    "tags": ["inverse laplace", "linearity"],
+    "notes": "Directly analogous to Laplace linearity."
+  },
+  {
+    "id": "S3_AME_I_M2_003",
+    "question": "Find the inverse Laplace Transform of 1 / (s - a).",
+    "answer": "The inverse is L^-1{1 / (s - a)} = e^(at). This is the most fundamental inverse transform, representing an exponential growth (if a > 0) or exponential decay (if a < 0). In circuit analysis, this typically represents the voltage discharge across a capacitor or the current decay in an RL circuit.",
+    "tags": ["inverse laplace", "standard functions"],
+    "notes": "Standard formula."
+  },
+  {
+    "id": "S3_AME_I_M2_004",
+    "question": "Find the inverse Laplace Transform of s / (s^2 + a^2).",
+    "answer": "The inverse is L^-1{s / (s^2 + a^2)} = cos(at). This represents a pure, undamped harmonic oscillation in the time domain. The presence of 's' in the numerator indicates that the function is related to the rate of change of a sine wave. It is used to model steady-state AC signals or mechanical systems without friction.",
+    "tags": ["inverse laplace", "standard functions"],
+    "notes": "Standard formula."
+  },
+  {
+    "id": "S3_AME_I_M2_005",
+    "question": "Find the inverse Laplace Transform of a / (s^2 + a^2).",
+    "answer": "The inverse is L^-1{a / (s^2 + a^2)} = sin(at). Like the cosine transform, this represents a harmonic oscillation. The constant 'a' in the numerator ensures the magnitude and frequency are correctly scaled. If the numerator is just 1, you must multiply and divide by 'a' to complete the transform.",
+    "tags": ["inverse laplace", "standard functions"],
+    "notes": "Standard formula."
+  },
+  {
+    "id": "S3_AME_I_M2_006",
+    "question": "Find the inverse Laplace Transform of s / (s^2 - a^2).",
+    "answer": "The inverse is L^-1{s / (s^2 - a^2)} = cosh(at). Hyperbolic functions appear in the study of structural beams and catenary curves. The difference between the circular cosine and hyperbolic cosine is the sign in the denominator; a negative sign results in non-oscillatory, growing hyperbolic behavior.",
+    "tags": ["inverse laplace", "standard functions", "hyperbolic"],
+    "notes": "Standard formula."
+  },
+  {
+    "id": "S3_AME_I_M2_007",
+    "question": "Find the inverse Laplace Transform of a / (s^2 - a^2).",
+    "answer": "The inverse is L^-1{a / (s^2 - a^2)} = sinh(at). Similar to cosh(at), this hyperbolic sine function is used to solve differential equations where the system response grows exponentially in both positive and negative directions, often seen in specific types of wave propagation.",
+    "tags": ["inverse laplace", "standard functions", "hyperbolic"],
+    "notes": "Standard formula."
+  },
+  {
+    "id": "S3_AME_I_M2_008",
+    "question": "Find the inverse Laplace Transform of 1 / s^n, n >= 1.",
+    "answer": "The inverse is L^-1{1 / s^n} = t^(n-1) / (n-1)!. This power function transform is vital for solving equations where the output depends on the accumulation of time, such as constant acceleration leading to parabolic displacement. For non-integer values of n, the factorial is replaced by the Gamma function.",
+    "tags": ["inverse laplace", "standard functions", "power functions"],
+    "notes": "Useful for solving integrals."
+  },
+  {
+    "id": "S3_AME_I_M2_009",
+    "question": "How can derivatives be used to find Inverse Laplace Transforms?",
+    "answer": "If F(s) = L{f(t)}, then the property L^-1{-dF(s)/ds} = t f(t) is used. This is particularly effective for inverse transforms of functions involving logarithms or inverse tangents, where the derivative of the frequency-domain function is a simpler rational function whose inverse is easily found.",
+    "tags": ["inverse laplace", "derivatives"],
+    "notes": "Derivative property."
+  },
+  {
+    "id": "S3_AME_I_M2_010",
+    "question": "Explain the Partial Fractions Method for inverse Laplace Transform.",
+    "answer": "Partial fraction expansion is an algebraic technique used to break down complex rational functions into a sum of simpler fractions. For example, a function with a quadratic denominator can be broken into two linear terms. This is necessary because Laplace tables only list simple forms. By solving for the constants (A, B, etc.), we can apply standard inverse transforms to each piece. This is the primary method for solving higher-order Ordinary Differential Equations (ODEs).",
+    "tags": ["inverse laplace", "partial fractions"],
+    "notes": "Key method for rational functions."
+  },
+  {
+    "id": "S3_AME_I_M2_011",
+    "question": "Find L^-1{(2s+3)/(s^2+3s+2)} using partial fractions.",
+    "answer": "First, factor the denominator: s^2 + 3s + 2 = (s+1)(s+2). Set up the partial fractions: (2s+3)/((s+1)(s+2)) = A/(s+1) + B/(s+2). Solving for A and B: multiply by the denominator and substitute s = -1 and s = -2. For s = -1, 1 = A(1) -> A=1. For s = -2, -1 = B(-1) -> B=1. The inverse is L^-1{1/(s+1) + 1/(s+2)} = e^(-t) + e^(-2t).",
+    "tags": ["inverse laplace", "partial fractions", "example"],
+    "notes": "Worked example."
+  },
+  {
+    "id": "S3_AME_I_M2_012",
+    "question": "What is the Convolution Theorem for Inverse Laplace Transform?",
+    "answer": "The Convolution Theorem states L^-1{F(s) G(s)} = integral from 0 to t of f(tau) g(t - tau) dtau. This is used when the frequency-domain function is a product of two functions whose inverses are known. It avoids the need for partial fractions by performing a time-domain integration. In signal processing, this describes how an input signal is modified by a system's impulse response.",
+    "tags": ["inverse laplace", "convolution theorem"],
+    "notes": "Used to handle products of transforms."
+  },
+  {
+    "id": "S3_AME_I_M2_013",
+    "question": "Find L^-1{1/(s(s+1))} using Convolution Theorem.",
+    "answer": "Let F(s) = 1/s and G(s) = 1/(s+1). Then f(t) = 1 and g(t) = e^(-t). By the convolution theorem, the result is the integral from 0 to t of (1 * e^-(t-tau)) dtau. Evaluating this integral yields [e^-(t-tau)] from 0 to t = e^0 - e^-t = 1 - e^-t.",
+    "tags": ["inverse laplace", "convolution", "example"],
+    "notes": "Worked example."
+  },
+  {
+    "id": "S3_AME_I_M2_014",
+    "question": "What is the importance of the inverse Laplace transform in solving differential equations?",
+    "answer": "The Laplace Transform turns differential equations into algebraic equations in terms of 's'. Once solved algebraically, the inverse transform is required to return the solution to the time domain 't'. Without the inverse transform, the solution would remain in an abstract frequency domain that is unusable for predicting physical behavior over time.",
+    "tags": ["inverse laplace", "applications", "ODE"],
+    "notes": "Application in differential equations."
+  },
+  {
+    "id": "S3_AME_I_M2_015",
+    "question": "Compute L^-1{(s+2)/(s^2+4s+5)} using shifting.",
+    "answer": "First, complete the square of the denominator: s^2 + 4s + 5 = (s+2)^2 + 1. The expression becomes (s+2) / ((s+2)^2 + 1). Recognizing the first shifting theorem L^-1{F(s+a)} = e^(-at)f(t), we see this is a shifted version of s/(s^2+1). The inverse is e^(-2t) cos(t). This represents a damped oscillation.",
+    "tags": ["inverse laplace", "shifting", "example"],
+    "notes": "Worked example using shift theorem."
+  },
+  {
+    "id": "S3_AME_I_M2_016",
+    "question": "Find L^-1{s/(s^2+6s+10)} using completing the square.",
+    "answer": "Complete the square: s^2 + 6s + 10 = (s+3)^2 + 1. We must also adjust the numerator to match the shift: s = (s+3) - 3. The expression becomes [(s+3) - 3] / [(s+3)^2 + 1]. Splitting this gives L^-1{(s+3)/((s+3)^2+1)} - 3 L^-1{1/((s+3)^2+1)}. The result is e^(-3t) cos(t) - 3 e^(-3t) sin(t).",
+    "tags": ["inverse laplace", "standard functions", "example"],
+    "notes": "Shift and standard function combined."
+  },
+  {
+    "id": "S3_AME_I_M2_017",
+    "question": "How is L^-1{F(s)/s} related to integration in the time domain?",
+    "answer": "The property states L^-1{F(s)/s} = integral from 0 to t of f(tau) dtau. In engineering, dividing a transform by 's' is the frequency-domain equivalent of integrating the function in time. This is used to find the 'Step Response' of a system (how a system behaves when a constant input is applied) if the system's impulse response f(t) is already known.",
+    "tags": ["inverse laplace", "integration property"],
+    "notes": "Useful for integrals."
+  },
+  {
+    "id": "S3_AME_I_M2_018",
+    "question": "Compute L^-1{1/(s^2 (s+1))} using convolution theorem.",
+    "answer": "Let F(s) = 1/s^2 (inverse f(t) = t) and G(s) = 1/(s+1) (inverse g(t) = e^-t). The inverse is the integral from 0 to t of tau * e^-(t-tau) dtau. Using integration by parts, the result is t - 1 + e^(-t). This represents a system that has a linear ramp response that eventually settles or combines with decay.",
+    "tags": ["inverse laplace", "convolution", "example"],
+    "notes": "Worked example."
+  },
+  {
+    "id": "S3_AME_I_M2_019",
+    "question": "Find L^-1{(2s+5)/(s^2+4s+5)} using standard functions.",
+    "answer": "Complete the square: (s+2)^2 + 1. Rewrite the numerator: 2s + 5 = 2(s+2) + 1. The expression becomes [2(s+2) + 1] / [(s+2)^2 + 1]. This splits into 2 L^-1{(s+2)/((s+2)^2+1)} + L^-1{1/((s+2)^2+1)}. The final inverse is 2 e^(-2t) cos(t) + e^(-2t) sin(t).",
+    "tags": ["inverse laplace", "standard functions", "example"],
+    "notes": "Combination of methods."
+  },
+  {
+    "id": "S3_AME_I_M2_020",
+    "question": "Compute L^-1{(s+3)/(s^2+6s+10)} stepwise.",
+    "answer": "1. Identify the denominator cannot be factored linearly: s^2 + 6s + 10. 2. Complete the square: (s+3)^2 + 1. 3. Observe the numerator is already (s+3), which matches the shift. 4. Use the first shifting theorem with the cosine formula: L^-1{(s+3)/((s+3)^2+1^2)}. Result: e^(-3t) cos(t).",
+    "tags": ["inverse laplace", "example", "stepwise"],
+    "notes": "Stepwise computation."
+  },
+  {
+    "id": "S3_AME_I_M2_021",
+    "question": "Why is the inverse Laplace Transform essential in Control Systems engineering?",
+    "answer": "In control systems, the 'Transfer Function' of a system is defined in the s-domain. To understand how a system (like a robot arm or a thermostat) will actually move or change over time when given a command, engineers must take the inverse transform. This tells them if the system will be stable, if it will oscillate too much, or how fast it will reach its target state.",
+    "tags": ["inverse laplace", "applications", "engineering"],
+    "notes": "Conceptual relevance."
+  },
+  {
+    "id": "S3_AME_I_M2_022",
+    "question": "Explain the Inverse Second Shifting Theorem (Time Delay).",
+    "answer": "The theorem states that L^-1{e^(-as) F(s)} = f(t - a) u(t - a), where u(t-a) is the unit step function. This is critical for modeling systems with 'dead time' or delays. For example, if you turn on a heater, there is a delay before the temperature starts to rise. The term e^(-as) represents that delay in the frequency domain, and its inverse shows the function starting only after 'a' seconds.",
+    "tags": ["inverse laplace", "shifting theorem"],
+    "notes": "Shift in s-domain."
+  },
+  {
+    "id": "S3_AME_I_M2_023",
+    "question": "Compute L^-1{1/(s+2)^2} using the derivative property.",
+    "answer": "Recognize that 1/(s+2)^2 is the derivative of -1/(s+2) with respect to s. Since L^-1{1/(s+2)} = e^(-2t), and using the property L^-1{-dF(s)/ds} = t f(t), the inverse is t e^(-2t). This is often used in systems with repeated roots, describing a 'critically damped' response.",
+    "tags": ["inverse laplace", "example", "derivatives"],
+    "notes": "Derivative property."
+  },
+  {
+    "id": "S3_AME_I_M2_024",
+    "question": "Compute L^-1{s/(s^2+4)^2} using the multiplication-by-t property.",
+    "answer": "Using the derivative of a transform property in reverse, we know L{t sin(at)} = 2as / (s^2 + a^2)^2. For a=2, L{t sin(2t)} = 4s / (s^2 + 4)^2. Therefore, L^-1{s / (s^2 + 4)^2} = (1/4) t sin(2t). This represents resonance where an oscillation grows linearly with time.",
+    "tags": ["inverse laplace", "derivative property", "example"],
+    "notes": "Worked example."
+  },
+  {
+    "id": "S3_AME_I_M2_025",
+    "question": "What is the relationship between the Inverse Laplace Transform and the Impulse Response?",
+    "answer": "The Impulse Response h(t) of a system is the inverse Laplace transform of its Transfer Function H(s). It describes how a system reacts to a Dirac Delta pulse (an instantaneous high-intensity input). Knowing the impulse response via the inverse transform allows us to predict the response to any other input through the convolution integral.",
+    "tags": ["inverse laplace", "impulse response", "system analysis"],
+    "notes": "System dynamics foundation."
+  },
+  {
+    "id": "S3_AME_I_M2_026",
+    "question": "How do you handle Inverse Laplace Transforms of functions with logarithms, such as ln((s+1)/s)?",
+    "answer": "Logarithmic functions do not have direct inverse transforms in most tables. To solve L^-1{ln(s+1) - ln(s)}, we differentiate the function: d/ds [ln(s+1) - ln(s)] = 1/(s+1) - 1/s. The inverse of the derivative is e^-t - 1. Using the property L^-1{F'(s)} = -t f(t), we get e^-t - 1 = -t f(t). Solving for f(t), we get (1 - e^-t) / t.",
+    "tags": ["inverse laplace", "logarithm", "advanced"],
+    "notes": "Advanced algebraic technique."
+  },
+  {
+    "id": "S3_AME_I_M2_027",
+    "question": "What is Heaviside's Expansion Theorem?",
+    "answer": "Heaviside's Expansion Theorem is a formula for finding the inverse Laplace transform of a rational function P(s)/Q(s) without explicitly doing partial fractions. If Q(s) has distinct roots r1, r2, ... rn, then L^-1{P(s)/Q(s)} = sum from i=1 to n of [P(ri)/Q'(ri)] * e^(ri * t). This is a highly efficient shortcut for systems with many distinct poles.",
+    "tags": ["inverse laplace", "heaviside expansion", "shortcuts"],
+    "notes": "Computational shortcut."
+  },
+  {
+    "id": "S3_AME_I_M2_028",
+    "question": "Explain the Final Value Theorem and its inverse implication.",
+    "answer": "The Final Value Theorem states that the limit of f(t) as t goes to infinity is equal to the limit of sF(s) as s goes to zero. While this is an s-domain property, its inverse implication is vital for finding the steady-state error of a system without performing the full inverse transform. It allows engineers to see the long-term behavior of a system directly from its frequency-domain model.",
+    "tags": ["inverse laplace", "final value theorem", "steady state"],
+    "notes": "Control system stability check."
+  },
+  {
+    "id": "S3_AME_I_M2_029",
+    "question": "Find the inverse Laplace transform of F(s) = e^(-3s) / (s^2 + 9).",
+    "answer": "This requires the Second Shifting Theorem. First, find the inverse of 1/(s^2+9), which is (1/3)sin(3t). The e^(-3s) term indicates a delay of a = 3 units. Applying the theorem, the inverse is (1/3) sin(3(t-3)) u(t-3). This represents a sine wave that starts after a delay of 3 seconds.",
+    "tags": ["inverse laplace", "delay", "sine"],
+    "notes": "Combined shifting example."
+  },
+  {
+    "id": "S3_AME_I_M2_030",
+    "question": "What is the inverse Laplace transform of a constant C?",
+    "answer": "The inverse Laplace transform of a constant C is C * delta(t), where delta(t) is the Dirac Delta function (or unit impulse). This is because the transform of an impulse is 1. In physical systems, this represents a sudden, infinite magnitude shock applied at t = 0, which is used to test system stability and resonance.",
+    "tags": ["inverse laplace", "dirac delta", "impulse"],
+    "notes": "Impulse transform definition."
+  }
+]

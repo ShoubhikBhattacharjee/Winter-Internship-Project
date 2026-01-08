@@ -1,0 +1,254 @@
+[
+  {
+    "id": "S3_DSGT_M1_001",
+    "question": "What is Propositional Logic?",
+    "answer": "Propositional Logic is a branch of discrete mathematics that deals with propositions and logical relationships between them using logical connectives. Theory: It is a formal system in which formulas representing propositions can be formed by combining atomic propositions using logical connectives. Example: In computer science, it is used to simplify boolean expressions in code to improve efficiency.",
+    "tags": ["propositional logic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:40:00+05:30",
+    "notes": "Foundation of logic."
+  },
+  {
+    "id": "S3_DSGT_M1_002",
+    "question": "What is a Proposition?",
+    "answer": "A proposition is a declarative statement that has a definite truth value, either true or false but not both. Theory: To be a proposition, a sentence must assert a fact; therefore, questions, commands, and exclamations are excluded. Example: 'Paris is the capital of France' is a proposition (True), whereas 'Close the door' is not.",
+    "tags": ["proposition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:41:00+05:30",
+    "notes": "Basic logical statement."
+  },
+  {
+    "id": "S3_DSGT_M1_003",
+    "question": "What are Simple and Compound Propositions?",
+    "answer": "A simple proposition contains no logical connectives, while a compound proposition is formed by combining propositions using logical connectives. Theory: Simple propositions are 'atomic' and cannot be broken down further, whereas compound propositions are 'molecular'. Example: Simple: 'It is sunny'. Compound: 'It is sunny AND it is hot'.",
+    "tags": ["simple proposition", "compound proposition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:42:00+05:30",
+    "notes": "Classification of propositions."
+  },
+  {
+    "id": "S3_DSGT_M1_004",
+    "question": "What are Logical Connectives?",
+    "answer": "Logical connectives are symbols used to connect propositions, including AND (∧), OR (∨), NOT (¬), IMPLIES (→), and IF AND ONLY IF (↔). Theory: They define the operations performed on truth values. Example: Conjunction (∧) requires both parts to be true; Disjunction (∨) requires at least one to be true.",
+    "tags": ["logical connectives"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:43:00+05:30",
+    "notes": "Used to build expressions."
+  },
+  {
+    "id": "S3_DSGT_M1_005",
+    "question": "What is a Truth Table?",
+    "answer": "A truth table is a table that shows all possible combinations of truth values of propositions and the resulting truth value of a logical expression. Theory: For n propositions, the table has 2^n rows. Example: A truth table for 'p AND q' lists the result for (T,T), (T,F), (F,T), and (F,F).",
+    "tags": ["truth table"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:44:00+05:30",
+    "notes": "Used for evaluation."
+  },
+  {
+    "id": "S3_DSGT_M1_006",
+    "question": "What is a Tautology?",
+    "answer": "A tautology is a compound proposition that is always true for all possible truth values of its variables. Theory: It represents a logical certainty. Example: The statement 'p OR NOT p' (p ∨ ¬p) is a tautology because one of the two must always be true.",
+    "tags": ["tautology"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:45:00+05:30",
+    "notes": "Always true."
+  },
+  {
+    "id": "S3_DSGT_M1_007",
+    "question": "What is a Contradiction?",
+    "answer": "A contradiction is a compound proposition that is always false for all possible truth values of its variables. Theory: Also known as an absurdity. Example: 'p AND NOT p' (p ∧ ¬p) is a contradiction because a statement cannot be true and false at the same time.",
+    "tags": ["contradiction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:46:00+05:30",
+    "notes": "Always false."
+  },
+  {
+    "id": "S3_DSGT_M1_008",
+    "question": "What is a Contingency?",
+    "answer": "A contingency is a proposition that is true for some truth values and false for others. Theory: It is a statement whose truth depends on the specific values of its components (neither a tautology nor a contradiction). Example: The proposition 'p AND q' is a contingency because it is true only when both are true.",
+    "tags": ["contingency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:47:00+05:30",
+    "notes": "Depends on values."
+  },
+  {
+    "id": "S3_DSGT_M1_009",
+    "question": "What are Applications of Propositional Logic?",
+    "answer": "Propositional Logic is applied in digital circuit design, programming, artificial intelligence, database queries, and software engineering. Theory: It serves as the foundation for binary logic used by computers. Example: Designing complex SQL queries using WHERE clauses with AND/OR logic.",
+    "tags": ["applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:48:00+05:30",
+    "notes": "Real-world usage."
+  },
+  {
+    "id": "S3_DSGT_M1_010",
+    "question": "How is Propositional Logic used in Digital Circuits?",
+    "answer": "Logical connectives correspond to logic gates such as AND, OR, and NOT used in digital circuits. Theory: Gates process electrical signals (0 for false, 1 for true) based on logical operations. Example: An OR gate outputs a signal if at least one input is high.",
+    "tags": ["digital circuits"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:49:00+05:30",
+    "notes": "Hardware application."
+  },
+  {
+    "id": "S3_DSGT_M1_011",
+    "question": "What is Logical Equivalence?",
+    "answer": "Two propositions are logically equivalent if they have the same truth values for all possible combinations of variables. Theory: It is denoted by the symbol ≡. Example: p → q is logically equivalent to ¬p ∨ q.",
+    "tags": ["logical equivalence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:50:00+05:30",
+    "notes": "Denoted by ≡."
+  },
+  {
+    "id": "S3_DSGT_M1_012",
+    "question": "State De Morgan’s Laws.",
+    "answer": "De Morgan's Laws state: ¬(p ∧ q) ≡ ¬p ∨ ¬q and ¬(p ∨ q) ≡ ¬p ∧ ¬q. Theory: These laws allow for the negation of conjunctions and disjunctions. Example: 'It is not the case that it is both raining and sunny' is equivalent to 'It is not raining OR it is not sunny'.",
+    "tags": ["De Morgan laws"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:51:00+05:30",
+    "notes": "Important equivalence laws."
+  },
+  {
+    "id": "S3_DSGT_M1_013",
+    "question": "What are Propositional Equivalences?",
+    "answer": "Propositional equivalences are logical laws used to replace one expression with another logically equivalent expression. Theory: Key laws include Identity, Domination, Idempotent, and Double Negation laws. Example: Using the Idempotent law, 'p ∧ p' can be simplified to just 'p'.",
+    "tags": ["propositional equivalences"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:52:00+05:30",
+    "notes": "Used for simplification."
+  },
+  {
+    "id": "S3_DSGT_M1_014",
+    "question": "What is a Predicate?",
+    "answer": "A predicate is a statement containing variables that becomes a proposition when values are assigned to the variables. Theory: It describes a property of or a relationship between objects. Example: In P(x) = 'x > 3', P is the predicate; it becomes true if x = 5.",
+    "tags": ["predicate"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:53:00+05:30",
+    "notes": "Used in predicate logic."
+  },
+  {
+    "id": "S3_DSGT_M1_015",
+    "question": "What is a Quantifier?",
+    "answer": "A quantifier specifies the quantity of elements for which a predicate is true. Theory: Quantifiers turn predicates into propositions by defining the scope of the variable. Example: Using quantifiers to say 'Some integers are even' or 'All birds have wings'.",
+    "tags": ["quantifier"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:54:00+05:30",
+    "notes": "Links predicate to domain."
+  },
+  {
+    "id": "S3_DSGT_M1_016",
+    "question": "What is a Universal Quantifier?",
+    "answer": "The universal quantifier (∀) states that a predicate is true for all elements in a domain. Theory: It is denoted as ∀x P(x). Example: '∀x (x + 1 > x)' is true for the domain of all real numbers.",
+    "tags": ["universal quantifier"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:55:00+05:30",
+    "notes": "Means 'for all'."
+  },
+  {
+    "id": "S3_DSGT_M1_017",
+    "question": "What is an Existential Quantifier?",
+    "answer": "The existential quantifier (∃) states that a predicate is true for at least one element in the domain. Theory: It is denoted as ∃x P(x). Example: '∃x (x^2 = 4)' is true because there exists an x (like 2) that satisfies the equation.",
+    "tags": ["existential quantifier"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:56:00+05:30",
+    "notes": "Means 'there exists'."
+  },
+  {
+    "id": "S3_DSGT_M1_018",
+    "question": "What are Nested Quantifiers?",
+    "answer": "Nested quantifiers occur when a statement contains more than one quantifier applied to different variables. Theory: They are used to express complex relationships between two or more sets of data. Example: ∀x ∃y (x + y = 0) means for every number x, there exists a number y such that their sum is zero.",
+    "tags": ["nested quantifiers"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:57:00+05:30",
+    "notes": "Order matters."
+  },
+  {
+    "id": "S3_DSGT_M1_019",
+    "question": "Why is the order of Nested Quantifiers important?",
+    "answer": "Changing the order of nested quantifiers can change the meaning and truth of a logical statement. Theory: The leftmost quantifier has the widest scope. Example: ∀x ∃y (Loves(x,y)) means 'Everyone loves someone', but ∃y ∀x (Loves(x,y)) means 'There is one person whom everyone loves'.",
+    "tags": ["nested quantifiers", "order"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:58:00+05:30",
+    "notes": "Key exam concept."
+  },
+  {
+    "id": "S3_DSGT_M1_020",
+    "question": "What are Rules of Inference?",
+    "answer": "Rules of inference are logical rules used to derive conclusions from premises. Theory: They provide the justification for each step in a logical proof. Example: If we know 'It is raining' and 'If it rains, the ground is wet', we infer 'The ground is wet'.",
+    "tags": ["rules of inference"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-06T23:59:00+05:30",
+    "notes": "Used in proofs."
+  },
+  {
+    "id": "S3_DSGT_M1_021",
+    "question": "What is Modus Ponens?",
+    "answer": "Modus Ponens states that if p → q is true and p is true, then q must be true. Theory: It is also called the Law of Detachment. Example: If 'If it's a holiday, I sleep late' and it is a holiday, then I sleep late.",
+    "tags": ["modus ponens"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:00:00+05:30",
+    "notes": "Basic inference rule."
+  },
+  {
+    "id": "S3_DSGT_M1_022",
+    "question": "What is Modus Tollens?",
+    "answer": "Modus Tollens states that if p → q is true and q is false, then p must be false. Theory: This is the rule of denying the consequent. Example: If 'If it's a dog, it barks' is true and the animal doesn't bark, it's not a dog.",
+    "tags": ["modus tollens"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:01:00+05:30",
+    "notes": "Important inference rule."
+  },
+  {
+    "id": "S3_DSGT_M1_023",
+    "question": "What is Hypothetical Syllogism?",
+    "answer": "Hypothetical syllogism states that if p → q and q → r are true, then p → r is true. Theory: This rule allows for chain reasoning. Example: If 'If I study, I pass' and 'If I pass, I graduate', then 'If I study, I graduate'.",
+    "tags": ["hypothetical syllogism"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:02:00+05:30",
+    "notes": "Chain reasoning."
+  },
+  {
+    "id": "S3_DSGT_M1_024",
+    "question": "What is Disjunctive Syllogism?",
+    "answer": "Disjunctive syllogism states that if p ∨ q is true and p is false, then q must be true. Theory: It involves eliminating one of two possibilities. Example: 'I will go to the gym or the park.' I didn't go to the gym, so I must be at the park.",
+    "tags": ["disjunctive syllogism"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:03:00+05:30",
+    "notes": "Inference with OR."
+  },
+  {
+    "id": "S3_DSGT_M1_025",
+    "question": "What is Resolution Rule?",
+    "answer": "The resolution rule is an inference technique used to derive conclusions by eliminating variables. Theory: Based on the premise that if (p ∨ q) and (¬p ∨ r) are true, then (q ∨ r) must be true. Example: It is used in artificial intelligence for automated theorem proving.",
+    "tags": ["resolution"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:04:00+05:30",
+    "notes": "Used in AI and proofs."
+  },
+  {
+    "id": "S3_DSGT_M1_026",
+    "question": "What is Universal Instantiation?",
+    "answer": "Universal instantiation allows us to infer that a predicate holds for a specific element if it holds for all elements. Theory: It takes a general statement and applies it to a particular case. Example: If 'All men are mortal' (∀x M(x)), and Socrates is a man, then Socrates is mortal.",
+    "tags": ["universal instantiation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:05:00+05:30",
+    "notes": "Predicate inference rule."
+  },
+  {
+    "id": "S3_DSGT_M1_027",
+    "question": "What is Existential Instantiation?",
+    "answer": "Existential instantiation allows us to assume the existence of an element for which a predicate is true. Theory: If ∃x P(x) is true, we can conclude P(c) for some element c in the domain. Example: If 'Someone won the lottery', we can call that person 'Winner c' for the sake of the proof.",
+    "tags": ["existential instantiation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:06:00+05:30",
+    "notes": "Used with ∃ quantifier."
+  },
+  {
+    "id": "S3_DSGT_M1_028",
+    "question": "Why are Rules of Inference important?",
+    "answer": "Rules of inference help derive valid conclusions logically and form the basis of mathematical proofs and automated reasoning. Theory: Without these rules, it would be impossible to verify the validity of complex logical arguments or computer algorithms. Example: Verification of safety-critical software in aviation.",
+    "tags": ["importance", "inference"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T00:07:00+05:30",
+    "notes": "Core reasoning tool."
+  }
+]

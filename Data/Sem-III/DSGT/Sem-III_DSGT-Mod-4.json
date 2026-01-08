@@ -1,0 +1,209 @@
+[
+  {
+    "id": "S3_DSGT_M4_001",
+    "question": "What is the Sum Rule in counting?",
+    "answer": "The Sum Rule (also known as the Addition Principle) states that if an operation can be performed in 'm' ways and another independent operation can be performed in 'n' ways, and these operations cannot be performed simultaneously, then there are m + n ways to perform one of these operations. It is the fundamental principle for 'OR' logic in combinatorics.\n\n**Example:** If a student can choose a project from 5 topics in AI or 7 topics in Cyber Security, the total number of project choices is 5 + 7 = 12.",
+    "tags": ["sum rule", "counting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:00:00+05:30",
+    "notes": "Used when choices are mutually exclusive."
+  },
+  {
+    "id": "S3_DSGT_M4_002",
+    "question": "When is the Sum Rule applied?",
+    "answer": "The Sum Rule is applied specifically when the sets of outcomes are disjoint (mutually exclusive). This means that the occurrence of one event excludes the possibility of the other occurring at the same time. In set theory, this is represented as the cardinality of the union of disjoint sets: |A ∪ B| = |A| + |B|.\n\n**Example:** When rolling a single die, the ways to get a 2 or a 5 are mutually exclusive. Since there is 1 way to get a 2 and 1 way to get a 5, there are 1 + 1 = 2 total ways.",
+    "tags": ["sum rule", "application"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:01:00+05:30",
+    "notes": "Important condition."
+  },
+  {
+    "id": "S3_DSGT_M4_003",
+    "question": "What is the Product Rule in counting?",
+    "answer": "The Product Rule (or Multiplication Principle) states that if a procedure can be broken down into a sequence of two tasks, where there are 'm' ways to do the first task and 'n' ways to do the second task after the first has been completed, then there are m × n ways to do the procedure. This represents 'AND' logic.\n\n**Example:** If a person has 3 different shirts and 4 different pairs of pants, the total number of possible outfits (one shirt AND one pair of pants) is 3 × 4 = 12.\n\n",
+    "tags": ["product rule", "counting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:02:00+05:30",
+    "notes": "Used when choices occur together."
+  },
+  {
+    "id": "S3_DSGT_M4_004",
+    "question": "When is the Product Rule applied?",
+    "answer": "The Product Rule is used when a process consists of multiple independent stages or steps that must occur in succession. It is the basis for calculating permutations and the total size of a Cartesian product (A × B). Each choice in the first stage must be able to be paired with every choice in the second stage.\n\n**Example:** To create a 4-digit PIN where each digit can be 0-9, there are 10 choices for the first digit, 10 for the second, 10 for the third, and 10 for the fourth, resulting in 10 × 10 × 10 × 10 = 10,000 possible PINs.",
+    "tags": ["product rule", "application"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:03:00+05:30",
+    "notes": "All steps are required."
+  },
+  {
+    "id": "S3_DSGT_M4_005",
+    "question": "What is the difference between Sum Rule and Product Rule?",
+    "answer": "The fundamental difference lies in the relationship between the tasks. The Sum Rule is for alternative choices ('Either Task A OR Task B'), whereas the Product Rule is for sequential or simultaneous tasks ('Task A AND Task B'). If you must pick only one item from two categories, you add. If you must pick one item from category A and another from category B, you multiply.\n\n**Example:** If a cafe has 5 types of tea and 10 types of coffee. \n1. To buy one drink (tea or coffee): 5 + 10 = 15 ways (Sum Rule).\n2. To buy one tea and one coffee for two friends: 5 × 10 = 50 ways (Product Rule).",
+    "tags": ["sum rule", "product rule", "difference"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:04:00+05:30",
+    "notes": "Very important for exams."
+  },
+  {
+    "id": "S3_DSGT_M4_006",
+    "question": "What is the Principle of Inclusion–Exclusion?",
+    "answer": "The Principle of Inclusion–Exclusion (PIE) is a technique to find the cardinality of the union of sets that are not necessarily disjoint. It accounts for the fact that simply adding the sizes of the sets will double-count the elements in their intersection. To fix this, the intersection is 'excluded' (subtracted) after the individual sets are 'included' (added).\n\n**Example:** To count people who drink Coffee or Tea, you add all Coffee drinkers and all Tea drinkers, but then you must subtract those who drink both to ensure they are only counted once.\n\n",
+    "tags": ["inclusion exclusion", "basics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:05:00+05:30",
+    "notes": "Avoids double counting."
+  },
+  {
+    "id": "S3_DSGT_M4_007",
+    "question": "Why is the Inclusion–Exclusion Principle needed?",
+    "answer": "It is essential for accuracy in any counting problem involving overlapping criteria. Without it, any element that satisfies more than one condition would be over-represented in the total count. This principle provides a systematic way to adjust for these overlaps, ensuring each unique element is counted exactly once.\n\n**Example:** In a class where 20 students play football and 15 play basketball, the total number of athletes isn't necessarily 35. If 5 students play both, the total is actually 30. PIE provides the math to reach this correct number.",
+    "tags": ["inclusion exclusion", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:06:00+05:30",
+    "notes": "Corrects overcounting."
+  },
+  {
+    "id": "S3_DSGT_M4_008",
+    "question": "State the Inclusion–Exclusion Principle for two sets.",
+    "answer": "For any two finite sets A and B, the size of their union is given by the formula: |A ∪ B| = |A| + |B| − |A ∩ B|. This formula adds the elements of A and B, then removes the overlap (A ∩ B) because it was included twice (once in A and once in B).\n\n**Example:** Let A = {multiples of 2 less than 10} = {2, 4, 6, 8} and B = {multiples of 3 less than 10} = {3, 6, 9}. \n|A| = 4, |B| = 3. The overlap is {6}, so |A ∩ B| = 1. \n|A ∪ B| = 4 + 3 - 1 = 6. (The sets combined are {2, 3, 4, 6, 8, 9}).",
+    "tags": ["inclusion exclusion", "two sets"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:07:00+05:30",
+    "notes": "Most basic formula."
+  },
+  {
+    "id": "S3_DSGT_M4_009",
+    "question": "State the Inclusion–Exclusion Principle for three sets.",
+    "answer": "For three sets A, B, and C, the formula is: |A ∪ B ∪ C| = |A| + |B| + |C| − (|A ∩ B| + |A ∩ C| + |B ∩ C|) + |A ∩ B ∩ C|. \nYou add the individual sets, subtract the double-counted pairwise intersections, and then add back the triple intersection which was subtracted too many times during the exclusion step.\n\n**Example:** Counting students taking Math, Physics, or Chemistry. You add the totals for each subject, subtract students taking two subjects, and add back the students taking all three.\n\n",
+    "tags": ["inclusion exclusion", "three sets"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:08:00+05:30",
+    "notes": "Extension to three sets."
+  },
+  {
+    "id": "S3_DSGT_M4_010",
+    "question": "What happens if intersection terms are not subtracted in Inclusion–Exclusion?",
+    "answer": "Failing to subtract intersections leads to an 'overcount' or a 'greedy' total. The result will be larger than the actual number of unique elements because the common elements are counted as many times as the number of sets they belong to. This violates the 'distinctness' requirement of set counting.\n\n**Example:** In a deck of cards, if you count 'Aces' (4) and 'Hearts' (13) and don't subtract the 'Ace of Hearts' (1), you would claim there are 17 cards that are either Aces or Hearts, when there are actually only 16.",
+    "tags": ["inclusion exclusion", "error"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:09:00+05:30",
+    "notes": "Leads to incorrect counting."
+  },
+  {
+    "id": "S3_DSGT_M4_011",
+    "question": "How does Inclusion–Exclusion generalize for n sets?",
+    "answer": "For n sets, the cardinality of the union is found by taking the sum of the sizes of individual sets, then subtracting the sum of all possible intersections of 2 sets, adding the sum of all intersections of 3 sets, subtracting 4-set intersections, and so on. This alternating sum is known as the general Inclusion-Exclusion formula.\n\n**Example:** For 4 sets, the signs follow the pattern: + (size of 1 set) - (size of 2-set intersection) + (size of 3-set intersection) - (size of 4-set intersection).",
+    "tags": ["inclusion exclusion", "general form"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:10:00+05:30",
+    "notes": "Generalized principle."
+  },
+  {
+    "id": "S3_DSGT_M4_012",
+    "question": "How is Inclusion–Exclusion used in counting problems?",
+    "answer": "It is frequently used to solve 'at least one' problems. It is also the primary method for finding 'Derangements' (permutations where no element is in its original position) and for calculating the number of surjective (onto) functions from one set to another.\n\n**Example:** Finding how many integers between 1 and 100 are not divisible by 2, 3, or 5. You calculate the total integers (100) and subtract the union of sets of numbers divisible by 2, 3, and 5 using the PIE formula.",
+    "tags": ["counting", "inclusion exclusion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:11:00+05:30",
+    "notes": "Common exam application."
+  },
+  {
+    "id": "S3_DSGT_M4_013",
+    "question": "What is double counting?",
+    "answer": "Double counting is a logical error where an element is counted twice because it satisfies two different categories being summed. While usually a mistake, the 'Technique of Double Counting' is actually a formal proof method where you count the same set in two different ways to prove an identity (like the Handshaking Lemma in Graph Theory).\n\n**Example (Mistake):** Counting 'students who like Pizza' and 'students who like Burger' and adding them without checking if some students like both. Those who like both are double counted.",
+    "tags": ["double counting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:12:00+05:30",
+    "notes": "Solved by Inclusion–Exclusion."
+  },
+  {
+    "id": "S3_DSGT_M4_014",
+    "question": "How do Sum Rule and Inclusion–Exclusion differ?",
+    "answer": "The Sum Rule is a special case of the Principle of Inclusion-Exclusion. When sets are disjoint (A ∩ B = ∅), the intersection term |A ∩ B| becomes zero, and the PIE formula simplifies to the Sum Rule (|A| + |B|). Therefore, Sum Rule = PIE for non-overlapping sets.\n\n**Example:** Picking a fruit from a basket of 3 apples and 4 oranges (disjoint categories) uses the Sum Rule. Picking a card that is a King or a Spade (overlapping categories) requires the full Inclusion-Exclusion Principle.",
+    "tags": ["sum rule", "inclusion exclusion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:13:00+05:30",
+    "notes": "Important comparison."
+  },
+  {
+    "id": "S3_DSGT_M4_015",
+    "question": "How do Product Rule and Inclusion–Exclusion differ?",
+    "answer": "They handle different dimensions of counting. The Product Rule calculates the total size of a combination space (e.g., how many different coordinate pairs (x, y) exist). Inclusion-Exclusion calculates the total size of a combined group of items that might share properties.\n\n**Example:** Determining the number of possible 2-topping pizzas from a list of 10 toppings involves the Product Rule (and combinations). Determining how many people ordered 'Pepperoni' or 'Mushroom' requires Inclusion-Exclusion.",
+    "tags": ["product rule", "inclusion exclusion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:14:00+05:30",
+    "notes": "Different counting strategies."
+  },
+  {
+    "id": "S3_DSGT_M4_016",
+    "question": "Give an example scenario where Sum Rule is used.",
+    "answer": "Imagine a university department offering 3 elective courses in Literature and 4 in History. If a student is required to choose exactly one elective course from either category, the Sum Rule applies.\n\n**Calculation:** Total ways = 3 (Literature) + 4 (History) = 7 ways. This works because the student cannot be in two classes at the same time for that elective slot.",
+    "tags": ["sum rule", "example"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:15:00+05:30",
+    "notes": "Mutually exclusive choices."
+  },
+  {
+    "id": "S3_DSGT_M4_017",
+    "question": "Give an example scenario where Product Rule is used.",
+    "answer": "Consider building a custom computer. You must choose 1 CPU from 3 options and 1 GPU from 5 options. Since the computer requires both a CPU AND a GPU to function, the Product Rule is used.\n\n**Calculation:** Total configurations = 3 (CPUs) × 5 (GPUs) = 15 different computer builds.",
+    "tags": ["product rule", "example"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:16:00+05:30",
+    "notes": "Multiple stages."
+  },
+  {
+    "id": "S3_DSGT_M4_018",
+    "question": "Give an example scenario where Inclusion–Exclusion is used.",
+    "answer": "In a survey of 100 people, 60 use WhatsApp, 50 use Telegram, and 20 use both. To find how many people use at least one of these apps, we use PIE.\n\n**Calculation:** |W ∪ T| = |W| + |T| - |W ∩ T| = 60 + 50 - 20 = 90. So, 90 people use at least one app, and 10 people use neither.",
+    "tags": ["inclusion exclusion", "example"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:17:00+05:30",
+    "notes": "Overlapping preferences."
+  },
+  {
+    "id": "S3_DSGT_M4_019",
+    "question": "What is meant by mutually exclusive events?",
+    "answer": "In the context of counting, events are mutually exclusive (or disjoint) if they have no common elements. The intersection of these events is an empty set (∅). If one event occurs, the other cannot occur.\n\n**Example:** When drawing one card from a deck, the event 'The card is a Heart' and 'The card is a Club' are mutually exclusive. You cannot draw a card that is both a Heart and a Club.",
+    "tags": ["mutually exclusive"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:18:00+05:30",
+    "notes": "Key condition for Sum Rule."
+  },
+  {
+    "id": "S3_DSGT_M4_020",
+    "question": "What is meant by independent choices in Product Rule?",
+    "answer": "Choices are independent if the number of ways to perform the second task is the same regardless of which option was picked in the first task. If the first choice limits or changes the options for the second choice, the standard Product Rule must be adjusted (often seen in permutations without replacement).\n\n**Example:** Choosing a password where characters can repeat. The choice of the first letter ('A') doesn't stop you from choosing 'A' again or any other letter for the second position.",
+    "tags": ["product rule", "independence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:19:00+05:30",
+    "notes": "Requirement for multiplication."
+  },
+  {
+    "id": "S3_DSGT_M4_021",
+    "question": "How are counting principles useful in computer science?",
+    "answer": "Counting principles are the bedrock of Big O notation and algorithm analysis (counting how many operations a loop performs). They are used in networking to calculate IP address spaces, in security to estimate the time required for a brute-force password attack, and in database design to calculate possible record combinations.\n\n**Example:** A nested loop where the outer loop runs 'n' times and the inner loop runs 'm' times executes the inner code n × m times (Product Rule).",
+    "tags": ["applications", "counting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:20:00+05:30",
+    "notes": "Real-world relevance."
+  },
+  {
+    "id": "S3_DSGT_M4_022",
+    "question": "What are common mistakes while applying Inclusion–Exclusion?",
+    "answer": "The most frequent error is the 'Sign Error'—forgetting that the signs alternate (plus, minus, plus, minus). Another mistake is failing to identify the 'triple intersection' in three-set problems, or assuming sets are disjoint when they actually overlap.\n\n**Example:** In a three-set problem, a student might subtract all pairwise intersections but forget to add the triple intersection back in, resulting in a total that is too low.",
+    "tags": ["inclusion exclusion", "mistakes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:21:00+05:30",
+    "notes": "Exam caution."
+  },
+  {
+    "id": "S3_DSGT_M4_023",
+    "question": "Why are Sum Rule, Product Rule, and Inclusion–Exclusion important in Discrete Mathematics?",
+    "answer": "These three principles allow mathematicians and computer scientists to quantify the 'size' of discrete structures without listing every element. They enable the study of probability, the optimization of algorithms, and the formal proof of combinatorial identities. They move counting from a manual task to an algebraic one.\n\n**Example:** Without these rules, calculating the number of possible outcomes in a complex system like a lottery or a cryptographic key space would be impossible.",
+    "tags": ["importance", "summary"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-07T12:22:00+05:30",
+    "notes": "Module summary."
+  }
+]
