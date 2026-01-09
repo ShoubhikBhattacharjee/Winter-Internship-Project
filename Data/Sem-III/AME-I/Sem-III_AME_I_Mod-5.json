@@ -4,6 +4,8 @@
     "question": "Define Karl Pearson’s coefficient of correlation (r) and its theoretical basis.",
     "answer": "Karl Pearson's coefficient of correlation (r) is a parametric measure of the strength and direction of the linear relationship between two continuous variables. Theoretically, it is the ratio of the covariance of X and Y to the product of their standard deviations. It assumes that the data is normally distributed and that the relationship is strictly linear. In engineering, it quantifies how much of the change in one variable (e.g., thermal expansion) is directly proportional to the change in another (e.g., temperature rise).",
     "tags": ["correlation", "pearson", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Measures linear association only."
   },
   {
@@ -11,6 +13,8 @@
     "question": "What are the fundamental properties of Pearson’s correlation coefficient?",
     "answer": "1. Range: -1 ≤ r ≤ 1, where ±1 indicates perfect linearity. 2. Dimensionless: It is a pure number, making it independent of the units of measurement. 3. Symmetry: The correlation of X with Y is identical to Y with X. 4. Invariance: r remains unchanged by a change of origin or scale. These properties allow engineers to compare relationships between entirely different physical systems, such as electrical voltage vs. mechanical stress.",
     "tags": ["correlation", "pearson", "properties"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Invariant to scale and origin."
   },
   {
@@ -18,6 +22,8 @@
     "question": "Define Spearman’s rank correlation coefficient (R) and its use case.",
     "answer": "Spearman's rank correlation (R) is a non-parametric measure of statistical dependence between the rankings of two variables. It assesses how well the relationship can be described using a monotonic function. Unlike Pearson, it does not assume normality and is less sensitive to outliers. It is calculated as R = 1 - [6 Σdi² / n(n² - 1)]. It is ideal for qualitative data or when the relationship is non-linear but consistently increasing or decreasing.",
     "tags": ["correlation", "spearman", "non-parametric"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Focuses on monotonic trends."
   },
   {
@@ -25,6 +31,8 @@
     "question": "Explain the theoretical adjustment for 'Tied Ranks' in Spearman’s correlation.",
     "answer": "Tied ranks occur when multiple observations have the same value. Theoretically, we assign each tied observation the average of the ranks they would have occupied. To maintain the mathematical integrity of the variance, a correction factor m(m²-1)/12 is added to the Σdi² for each group of ties (where m is the number of tied items). This adjustment ensures the coefficient remains within the [-1, 1] range even when the data is not strictly distinct.",
     "tags": ["correlation", "spearman", "tied ranks"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Corrects for variance loss."
   },
   {
@@ -32,6 +40,8 @@
     "question": "What is the 'Principle of Least Squares' in curve fitting?",
     "answer": "The Principle of Least Squares is an optimization strategy where the 'best' curve is the one that minimizes the sum of the squares of the vertical offsets (residuals) between the observed data and the fitted curve. Squaring the residuals is crucial because it ensures all errors are positive (preventing cancellation) and penalizes larger deviations more heavily than smaller ones, leading to a model that is more robust against minor fluctuations.",
     "tags": ["curve fitting", "least squares", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Foundational optimization technique."
   },
   {
@@ -39,6 +49,8 @@
     "question": "State the 'Normal Equations' for fitting a straight line (y = a + bx).",
     "answer": "To fit a line y = a + bx using least squares, we derive two Normal Equations by setting the partial derivatives of the error function with respect to 'a' and 'b' to zero. These are: (1) Σy = na + bΣx and (2) Σxy = aΣx + bΣx². Solving this system of linear equations provides the unique values for the intercept (a) and slope (b) that yield the minimum total squared error for the dataset.",
     "tags": ["linear regression", "normal equations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Derived via calculus."
   },
   {
@@ -46,6 +58,8 @@
     "question": "Define the Line of Regression of Y on X.",
     "answer": "The line of regression of Y on X is the linear model used to predict the dependent variable (Y) based on the independent variable (X). The equation is (Y - ȳ) = r(σy/σx)(X - x̄). This line is specifically designed to minimize 'vertical' errors. In a lab setting, if you control the temperature (X) and measure the pressure (Y), this is the line you would use for prediction.",
     "tags": ["regression", "Y on X", "prediction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Minimizes sum of vertical squared errors."
   },
   {
@@ -53,6 +67,8 @@
     "question": "Define the Line of Regression of X on Y.",
     "answer": "The line of regression of X on Y treats Y as the independent variable to predict X. Its equation is (X - x̄) = r(σx/σy)(Y - ȳ). This line minimizes 'horizontal' errors. While it may seem redundant, the lines of Y on X and X on Y are different unless r = ±1 (perfect correlation), because the minimization criteria (vertical vs. horizontal) target different variances.",
     "tags": ["regression", "X on Y"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Minimizes sum of horizontal squared errors."
   },
   {
@@ -60,6 +76,8 @@
     "question": "What are the Regression Coefficients and their mathematical properties?",
     "answer": "Regression coefficients byx = r(σy/σx) and bxy = r(σx/σy) represent the slopes of the respective regression lines. Properties include: (1) The correlation coefficient r is the geometric mean of the two coefficients (r = ±√[byx * bxy]). (2) Both coefficients must have the same algebraic sign. (3) If one coefficient is greater than 1, the other must be less than 1, ensuring their product doesn't violate the |r| ≤ 1 constraint.",
     "tags": ["regression", "coefficients", "slopes"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Slopes of the best-fit lines."
   },
   {
@@ -67,6 +85,8 @@
     "question": "Explain the geometric relationship between the two regression lines.",
     "answer": "The two regression lines always intersect at the 'centroid' of the data (x̄, ȳ). The angle between the lines indicates the strength of the correlation: if the lines are perpendicular, r = 0 (no correlation); if the lines coincide (0° angle), r = ±1 (perfect correlation). The closer the lines are to each other, the stronger the linear association between the variables.",
     "tags": ["regression", "geometry", "centroid"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Intersect at the mean of X and Y."
   },
   {
@@ -74,6 +94,8 @@
     "question": "Describe the theory of fitting a second-degree parabola (y = a + bx + cx²).",
     "answer": "For a quadratic fit, we minimize the error function relative to three constants (a, b, c). This leads to three Normal Equations: (1) Σy = na + bΣx + cΣx², (2) Σxy = aΣx + bΣx² + cΣx³, and (3) Σx²y = aΣx² + bΣx³ + cΣx⁴. Parabolic fitting is essential in physics to model displacement under constant acceleration or the efficiency curves of engines.",
     "tags": ["curve fitting", "parabola", "quadratic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for accelerated growth/decay."
   },
   {
@@ -81,6 +103,8 @@
     "question": "What is the 'Coefficient of Determination' (r²) and its interpretation?",
     "answer": "The coefficient of determination (r²) is the square of the correlation coefficient. It represents the proportion of the total variance in the dependent variable that is explained by the independent variable through the linear model. For example, r² = 0.64 means 64% of the variability in Y is due to X, while the remaining 36% is due to error or other factors.",
     "tags": ["r-squared", "variance", "interpretation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Measure of fit quality."
   },
   {
@@ -88,6 +112,8 @@
     "question": "Explain the difference between Causation and Correlation.",
     "answer": "Correlation is a statistical measure of association, while causation is a functional or physical link where one event produces another. High correlation (r close to 1) does not imply that X causes Y; they could both be influenced by a third 'lurking' variable. Establishing causation requires controlled experimental design or underlying physical laws, not just statistical alignment.",
     "tags": ["logic", "causation", "correlation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "A vital distinction in data science."
   },
   {
@@ -95,6 +121,8 @@
     "question": "How is the correlation coefficient computed for grouped data?",
     "answer": "For grouped data presented in a bivariate frequency table, we use mid-values for classes of X and Y. The formula incorporates frequencies: r = [Σfxy - (ΣfxΣfy)/N] / √[Σfx² - (Σfx)²/N]√[Σfy² - (Σfy)²/N]. This allows researchers to analyze large datasets that have been condensed into frequency distributions without losing the relational trend.",
     "tags": ["correlation", "grouped data", "frequency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for large condensed datasets."
   },
   {
@@ -102,6 +130,8 @@
     "question": "Explain the 'Standard Error of Estimate'.",
     "answer": "The standard error of estimate measures the dispersion of observed values around the regression line. It serves as a metric for the accuracy of predictions made by the regression model. A smaller standard error indicates that the data points are clustered closely to the line, implying that the linear model is a very reliable predictor for the physical system being studied.",
     "tags": ["regression", "standard error", "accuracy"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Predictive reliability metric."
   },
   {
@@ -109,6 +139,8 @@
     "question": "Explain how to fit an exponential curve y = ae^(bx).",
     "answer": "To fit y = ae^(bx), we use a 'Logarithmic Transformation' to linearize the model: ln(y) = ln(a) + bx. Letting Y' = ln(y) and A = ln(a), we get the linear form Y' = A + bx. We then solve for A and b using standard linear normal equations. Finally, we convert back to the original form by calculating a = e^A. This is vital for modeling bacterial growth or radioactive decay.",
     "tags": ["curve fitting", "exponential", "linearization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Uses natural logs for transformation."
   },
   {
@@ -116,6 +148,8 @@
     "question": "What is 'Residual Analysis' in curve fitting?",
     "answer": "Residual analysis involves studying the difference between observed and predicted values (e = y - ŷ). If the residuals show a random pattern, the chosen model (linear, quadratic, etc.) is appropriate. However, if the residuals show a systematic pattern (like a 'U' shape), it indicates that the model is missing a non-linear component and a higher-degree curve should be used.",
     "tags": ["residuals", "error analysis", "diagnostics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Checks model appropriateness."
   },
   {
@@ -123,6 +157,8 @@
     "question": "Interpret r = 0 and R = 0 in a real-world context.",
     "answer": "r = 0 indicates the absence of a 'linear' relationship, though a strong non-linear relationship (like a circle) might still exist. R = 0 (Spearman) indicates that there is no 'monotonic' relationship, meaning the variables do not consistently increase or decrease together. Engineers must use scatter plots to visualize the data before concluding that no relationship exists.",
     "tags": ["correlation", "interpretation", "zero correlation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "r=0 only excludes linear trends."
   },
   {
@@ -130,6 +166,8 @@
     "question": "What is a 'Scatter Diagram' and why is it the first step in correlation analysis?",
     "answer": "A scatter diagram is a graphical plot of the bivariate data points (x, y). It provides an immediate visual representation of the nature of the relationship (linear, non-linear, or random) and the direction of correlation. It helps identify 'outliers'—data points that deviate significantly from the general trend and could disproportionately affect the Pearson coefficient.",
     "tags": ["scatter plot", "visualization", "outliers"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Initial diagnostic tool."
   },
   {
@@ -137,6 +175,8 @@
     "question": "Define 'Partial Correlation'.",
     "answer": "Partial correlation measures the strength of the relationship between two variables while mathematically removing the effect of one or more additional 'control' variables. For instance, in analyzing the relationship between engine speed and fuel consumption, partial correlation could 'control' for the effect of vehicle weight to reveal the pure relationship between speed and efficiency.",
     "tags": ["correlation", "partial correlation", "control"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Isolates the effect of specific variables."
   },
   {
@@ -144,6 +184,8 @@
     "question": "Explain the concept of 'Multiple Linear Regression'.",
     "answer": "Multiple linear regression extends simple regression by using two or more independent variables to predict a single dependent variable (e.g., predicting the strength of concrete based on water content, age, and temperature). The model takes the form y = a + b1x1 + b2x2 + ... + bnxn. It is used to understand the relative contribution of each factor to the final result.",
     "tags": ["regression", "multiple regression", "multivariate"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Predicts Y using multiple X variables."
   },
   {
@@ -151,6 +193,8 @@
     "question": "How do outliers affect Pearson’s vs. Spearman’s correlation?",
     "answer": "Pearson’s (r) is highly sensitive to outliers because it uses the actual distance of points from the mean; one distant point can drastically pull the line of best fit. Spearman’s (R) is more 'robust' because it only considers the rank (order). An outlier still occupies the highest or lowest rank, but its actual numerical distance from the other points does not distort the result as heavily.",
     "tags": ["outliers", "robustness", "comparison"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Spearman is more robust."
   },
   {
@@ -158,6 +202,8 @@
     "question": "Explain 'Monotonic Relationships' in the context of Spearman's R.",
     "answer": "A relationship is monotonic if, as one variable increases, the other either consistently increases or consistently decreases. It doesn't have to be a straight line (it can be a curve). Spearman's R measures this consistency. If the relationship is perfectly monotonic but non-linear (like y = x³), Spearman will be 1.0, while Pearson will be less than 1.0.",
     "tags": ["spearman", "monotonic", "non-linear"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Captures non-linear consistency."
   },
   {
@@ -165,6 +211,8 @@
     "question": "What is the 'Line of Best Fit' in a physical sense?",
     "answer": "Physically, the line of best fit represents the underlying 'signal' or 'law' governing the system, while the deviations (residuals) represent the 'noise' or 'measurement error'. By minimizing the squared errors, we effectively filter out the noise to uncover the most probable physical law relating the variables.",
     "tags": ["regression", "signal vs noise", "physics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Statistical representation of physical laws."
   },
   {
@@ -172,6 +220,8 @@
     "question": "Discuss the 'Significance of Correlation' (p-value).",
     "answer": "The significance of a correlation determines whether the observed r-value is likely due to a real relationship or just random chance. A p-value is calculated; if p < 0.05, the correlation is considered 'statistically significant'. This prevents engineers from making incorrect assumptions about relationships based on small sample sizes that might show high correlation purely by accident.",
     "tags": ["correlation", "significance", "p-value"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Determines reliability of r."
   }
 ]

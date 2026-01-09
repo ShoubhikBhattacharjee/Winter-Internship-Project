@@ -4,6 +4,8 @@
     "question": "What are Dirichlet’s conditions for a function to have a Fourier series expansion?",
     "answer": "A function f(x) can be expanded into a Fourier series in a given interval if it satisfies three specific criteria known as Dirichlet's conditions: (1) f(x) must be periodic, single-valued, and finite. (2) f(x) must have a finite number of maxima and minima within one period. (3) f(x) must have a finite number of finite discontinuities within one period. These conditions are sufficient but not strictly necessary; however, for most physical signals in engineering, they ensure the series converges to the function at points of continuity and to the average value at points of jump discontinuity.",
     "tags": ["fourier series", "dirichlet conditions", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Fundamental criteria for convergence."
   },
   {
@@ -11,6 +13,8 @@
     "question": "Define the Fourier series and explain its physical significance.",
     "answer": "A Fourier series represents a periodic function f(x) as an infinite sum of simple harmonic oscillations (sines and cosines): f(x) = a0/2 + Σ [an cos(nx) + bn sin(nx)]. Physically, it decomposes a complex periodic waveform into its fundamental frequency and higher-order harmonics. This is the basis for frequency-domain analysis, allowing engineers to understand the harmonic content of electrical signals, vibrations, and acoustic waves.",
     "tags": ["fourier series", "definition", "harmonics"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Basic definition for period 2π."
   },
   {
@@ -18,6 +22,8 @@
     "question": "What is Parseval’s Identity and how is it related to energy?",
     "answer": "Parseval's Identity states that for a function f(x) with a Fourier series, the average power (or energy) in the time domain is equal to the sum of the powers of its individual frequency components: (1/π) ∫ |f(x)|^2 dx = (a0^2)/2 + Σ (an^2 + bn^2). In engineering, this theorem is vital because it proves that the total energy of a signal is preserved when transforming from the time domain to the frequency domain, allowing for energy-based filtering and noise analysis.",
     "tags": ["fourier series", "parseval", "energy"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Energy conservation in Fourier analysis."
   },
   {
@@ -25,6 +31,8 @@
     "question": "State the formulas for the Euler coefficients for a function with period 2π.",
     "answer": "For a function defined on the interval [-π, π], the Fourier coefficients are determined using Euler's formulas: a0 = (1/π) ∫ f(x) dx, an = (1/π) ∫ f(x) cos(nx) dx, and bn = (1/π) ∫ f(x) sin(nx) dx. The constant a0/2 represents the DC component or the average value of the function over one period, while an and bn determine the amplitude of the cosine and sine harmonics respectively.",
     "tags": ["fourier series", "euler coefficients", "formulas"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard coefficients for 2π period."
   },
   {
@@ -32,6 +40,8 @@
     "question": "How are Fourier coefficients adjusted for a function with a general period 2l?",
     "answer": "When a function has a period 2l (from -l to l), the harmonics are scaled to fit the interval. The series becomes f(x) = a0/2 + Σ [an cos(nπx/l) + bn sin(nπx/l)]. The coefficients are calculated as: a0 = (1/l) ∫ f(x) dx, an = (1/l) ∫ f(x) cos(nπx/l) dx, and bn = (1/l) ∫ f(x) sin(nπx/l) dx. This generalization allows Fourier analysis to be applied to any physical system regardless of its natural frequency.",
     "tags": ["fourier series", "period 2l", "scaling"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "General period formulas."
   },
   {
@@ -39,6 +49,8 @@
     "question": "Describe the Fourier series expansion for an Even Function.",
     "answer": "If f(x) is an even function (f(-x) = f(x)), the product f(x)sin(nx) becomes odd, causing all sine coefficients (bn) to become zero. Consequently, the Fourier series consists only of cosine terms: f(x) = a0/2 + Σ an cos(nπx/l). This is known as a Fourier Cosine Series. In mechanics, even functions often represent symmetrical loading on a beam or symmetrical waveforms in power electronics.",
     "tags": ["fourier series", "even function", "symmetry"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "bn = 0 for even functions."
   },
   {
@@ -46,6 +58,8 @@
     "question": "Describe the Fourier series expansion for an Odd Function.",
     "answer": "If f(x) is an odd function (f(-x) = -f(x)), the product f(x)cos(nx) becomes odd, and the average value (a0) is zero. Thus, all an coefficients disappear, leaving only sine terms: f(x) = Σ bn sin(nπx/l). This is known as a Fourier Sine Series. Odd functions are common in modeling square waves or the vibration of strings fixed at both ends.",
     "tags": ["fourier series", "odd function", "symmetry"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "an = 0 for odd functions."
   },
   {
@@ -53,6 +67,8 @@
     "question": "Explain the orthogonality of sines and cosines in the context of Fourier coefficients.",
     "answer": "The calculation of an and bn relies on the principle of orthogonality. Over a period, the integral of cos(nx)sin(mx) is always zero, and the integral of cos(nx)cos(mx) or sin(nx)sin(mx) is zero unless n = m. This mathematical property acts as a filter, allowing us to 'extract' the amplitude of a specific frequency component from a complex signal by multiplying by the corresponding sine or cosine wave and integrating.",
     "tags": ["fourier series", "orthogonality", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Mathematical basis for coefficient extraction."
   },
   {
@@ -60,6 +76,8 @@
     "question": "What is the Fourier Transform and how does it differ from a Fourier Series?",
     "answer": "While the Fourier Series is used for periodic functions, the Fourier Transform (FT) is used for non-periodic signals. It represents a signal f(t) as a continuous spectrum of frequencies F(ω) = ∫ f(t) e^(-iωt) dt. Effectively, the Fourier Transform is the limit of a Fourier series as the period approaches infinity. It is essential in signal processing to convert time-varying data into the frequency domain for filtering and spectral analysis.",
     "tags": ["fourier transform", "definition", "spectral analysis"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Transition from discrete to continuous spectra."
   },
   {
@@ -67,6 +85,8 @@
     "question": "Define the Fourier Sine Transform and its typical usage.",
     "answer": "The Fourier Sine Transform of f(t) is defined as Fs(ω) = ∫ f(t) sin(ωt) dt, usually over the interval [0, infinity]. It is specifically used for functions that are odd or for solving boundary value problems (like heat conduction in a semi-infinite rod) where the boundary condition at t=0 is specified as zero.",
     "tags": ["fourier sine transform", "definition", "heat equation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for semi-infinite domains."
   },
   {
@@ -74,6 +94,8 @@
     "question": "Define the Fourier Cosine Transform and its typical usage.",
     "answer": "The Fourier Cosine Transform of f(t) is defined as Fc(ω) = ∫ f(t) cos(ωt) dt over [0, infinity]. It is used for even functions or for solving physical problems where the rate of change (derivative) at the boundary t=0 is specified, such as insulated boundaries in thermal engineering.",
     "tags": ["fourier cosine transform", "definition", "boundary problems"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for even function extensions."
   },
   {
@@ -81,6 +103,8 @@
     "question": "Compute the Fourier series of f(x) = x on the interval [-π, π].",
     "answer": "f(x) = x is an odd function, so a0 = 0 and an = 0. We only need to find bn = (2/π) ∫ [0 to π] x sin(nx) dx. Integrating by parts, we get bn = (2/π) [(-x cos(nx)/n) + (sin(nx)/n^2)] from 0 to π. This simplifies to bn = 2(-1)^(n+1)/n. Thus, f(x) = 2[sin(x) - sin(2x)/2 + sin(3x)/3 - ...]. This represents a sawtooth wave in signal processing.",
     "tags": ["fourier series", "example", "odd function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard sawtooth wave expansion."
   },
   {
@@ -88,6 +112,8 @@
     "question": "Compute the Fourier series of f(x) = x^2 on the interval [-π, π].",
     "answer": "f(x) = x^2 is an even function, so bn = 0. a0 = (2/π) ∫ [0 to π] x^2 dx = 2π^2/3. an = (2/π) ∫ [0 to π] x^2 cos(nx) dx. Integrating by parts twice gives an = 4(-1)^n / n^2. The series is f(x) = π^2/3 + 4 Σ [(-1)^n/n^2] cos(nx). This expansion is often used to prove that the sum of 1/n^2 converges to π^2/6.",
     "tags": ["fourier series", "example", "even function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for mathematical deductions."
   },
   {
@@ -95,6 +121,8 @@
     "question": "State the complex form of the Fourier Series.",
     "answer": "The Fourier series can be written more compactly using complex exponentials: f(x) = Σ [cn e^(inπx/l)], where cn = (1/2l) ∫ f(x) e^(-inπx/l) dx. This form is widely preferred in modern communications and signal processing because it combines both phase and amplitude into a single complex coefficient cn, making the math of frequency shifts much simpler.",
     "tags": ["fourier series", "complex form", "exponentials"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Basis for Fast Fourier Transform (FFT)."
   },
   {
@@ -102,6 +130,8 @@
     "question": "What is a Half-Range Sine Series?",
     "answer": "If a function f(x) is only defined on [0, l], we can extend it as an odd function on [-l, l]. The resulting expansion is the Half-Range Sine Series: f(x) = Σ bn sin(nπx/l), where bn = (2/l) ∫ [0 to l] f(x) sin(nπx/l) dx. This is used when the physical system is fixed at the boundaries, such as a vibrating string.",
     "tags": ["fourier sine series", "half-range", "0 to l"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Forces function to be zero at boundaries."
   },
   {
@@ -109,6 +139,8 @@
     "question": "What is a Half-Range Cosine Series?",
     "answer": "If a function f(x) is defined on [0, l], we can extend it as an even function on [-l, l]. This leads to the Half-Range Cosine Series: f(x) = a0/2 + Σ an cos(nπx/l), where an = (2/l) ∫ [0 to l] f(x) cos(nπx/l) dx. This is applied in cases where the slope (derivative) must be zero at the boundaries, like heat flow through an insulated rod.",
     "tags": ["fourier cosine series", "half-range", "0 to l"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "No sine terms included."
   },
   {
@@ -116,6 +148,8 @@
     "question": "Explain Parseval’s identity for a 2π period function.",
     "answer": "For period 2π, Parseval's identity is (1/π) ∫ [from -π to π] [f(x)]^2 dx = (a0^2)/2 + Σ (an^2 + bn^2). It relates the RMS (Root Mean Square) value of the signal to its Fourier coefficients. In power electronics, this is used to calculate Total Harmonic Distortion (THD) by comparing the energy in the harmonics to the energy in the fundamental frequency.",
     "tags": ["parseval", "fourier series", "thd"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Power/Energy relation."
   },
   {
@@ -123,6 +157,8 @@
     "question": "Generalize Parseval’s identity for a period 2l.",
     "answer": "For a general period 2l, the identity becomes (1/l) ∫ [from -l to l] [f(x)]^2 dx = (a0^2)/2 + Σ (an^2 + bn^2). This allows for energy calculations across any repeating interval, ensuring that the 'energy in the time domain' always equals the 'energy in the frequency domain,' regardless of the length of the signal's period.",
     "tags": ["parseval", "fourier series", "period 2l"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Energy theorem for general period."
   },
   {
@@ -130,6 +166,8 @@
     "question": "Find the Fourier sine transform of f(t) = e^(-at) for t >= 0.",
     "answer": "Fs(ω) = ∫ [0 to infinity] e^(-at) sin(ωt) dt. Using the standard integral result for e^(ax)sin(bx), we get Fs(ω) = ω / (a^2 + ω^2). This result shows that the frequency spectrum of an exponential decay is a Lorentzian-type curve, which is a fundamental concept in spectroscopy and circuit resonance.",
     "tags": ["fourier sine transform", "example", "exponential decay"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard transform pair."
   },
   {
@@ -137,6 +175,8 @@
     "question": "Find the Fourier cosine transform of f(t) = e^(-at) for t >= 0.",
     "answer": "Fc(ω) = ∫ [0 to infinity] e^(-at) cos(ωt) dt. Evaluating the integral gives Fc(ω) = a / (a^2 + ω^2). Note that as frequency ω increases, the magnitude of the transform decreases, indicating that high-frequency components are less significant in a slowly decaying exponential function.",
     "tags": ["fourier cosine transform", "example", "exponential decay"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard transform pair."
   },
   {
@@ -144,6 +184,8 @@
     "question": "How are Fourier transforms used in Image Processing?",
     "answer": "In image processing, the 2D Fourier Transform decomposes an image into spatial frequencies. Low frequencies correspond to smooth regions (general shapes), while high frequencies correspond to edges and fine details. By applying filters in the Fourier domain (like a low-pass filter), engineers can remove noise or blur images, and by high-pass filtering, they can perform edge detection.",
     "tags": ["fourier transform", "applications", "image processing"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Spatial frequency concept."
   },
   {
@@ -151,6 +193,8 @@
     "question": "Compute the Fourier series for f(x) = x^3 on [-π, π].",
     "answer": "Since x^3 is an odd function, a0 = 0 and an = 0. The coefficients bn = (2/π) ∫ [0 to π] x^3 sin(nx) dx. Using repeated integration by parts (or the tabular method), we find bn = [2(-1)^(n+1) / n] * (π^2 - 6/n^2). This shows that the harmonics of x^3 decay at a rate related to 1/n, similar to the sawtooth wave but with higher-order corrections.",
     "tags": ["fourier series", "example", "odd function"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Involves triple integration by parts."
   },
   {
@@ -158,6 +202,8 @@
     "question": "Express f(x) = x on [0, l] as a Half-Range Cosine series.",
     "answer": "We extend f(x) as an even function. a0 = (2/l) ∫ [0 to l] x dx = l. an = (2/l) ∫ [0 to l] x cos(nπx/l) dx. Evaluating the integral: an = (2l / (n^2 π^2)) [cos(nπ) - 1]. This means an = 0 for even n and an = -4l / (n^2 π^2) for odd n. The series is f(x) = l/2 - (4l/π^2) Σ [cos(nπx/l) / n^2] for n = 1, 3, 5...",
     "tags": ["fourier cosine series", "example", "0 to l"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Converges faster than sine series."
   },
   {
@@ -165,6 +211,8 @@
     "question": "Express f(x) = k (constant) on [0, l] as a Half-Range Sine series.",
     "answer": "We extend f(x) as an odd function (a square wave). bn = (2/l) ∫ [0 to l] k sin(nπx/l) dx = (2k / nπ) [1 - cos(nπ)]. This means bn = 4k/nπ for odd n and 0 for even n. The series is f(x) = (4k/π) [sin(πx/l) + sin(3πx/l)/3 + sin(5πx/l)/5 + ...]. This is the classic Fourier representation of a square wave.",
     "tags": ["fourier sine series", "example", "square wave"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Classic engineering example."
   },
   {
@@ -172,6 +220,8 @@
     "question": "Why is the Gibbs Phenomenon important in Fourier analysis?",
     "answer": "The Gibbs Phenomenon describes the 'overshoot' that occurs at sharp discontinuities in a Fourier series. No matter how many terms are added, the series will always overshoot the true value by about 9% at a jump. In engineering, this is a critical limitation when using Fourier series to approximate square waves or digital signals, as it can lead to 'ringing artifacts' in filters and signal reconstructions.",
     "tags": ["gibbs phenomenon", "convergence", "limitations"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Critical for digital signal processing."
   }
 ]

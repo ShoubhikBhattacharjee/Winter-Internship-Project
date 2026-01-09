@@ -4,6 +4,8 @@
     "question": "What is the Laplace Transform and why is it used?",
     "answer": "The Laplace Transform is an integral transform that maps a function of time f(t) into a function of a complex variable s. It is defined by the integral L{f(t)} = F(s) = integral from 0 to infinity of e^(-st)f(t) dt. Theoretically, it acts as a functional operator that maps differential operators in the time domain to algebraic operators in the s-domain. This is critical in engineering because it allows for the analysis of Linear Time-Invariant (LTI) systems using algebraic manipulation rather than solving complex calculus problems.",
     "tags": ["laplace transform", "definition", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Fundamental definition for t >= 0."
   },
   {
@@ -11,6 +13,8 @@
     "question": "Explain the conditions for the existence of the Laplace Transform.",
     "answer": "For the Laplace integral to converge, a function f(t) must satisfy: 1. Piecewise Continuity, meaning the function has a finite number of breaks or jumps in any finite interval. 2. Exponential Order, meaning there exist constants M and alpha such that the absolute value of f(t) is less than or equal to Me^(alpha*t) for all t greater than some time T. If a function grows faster than any exponential (like e^(t^2)), the integral will diverge and the transform will not exist.",
     "tags": ["laplace transform", "existence", "convergence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Essential for mathematical validity."
   },
   {
@@ -18,6 +22,8 @@
     "question": "What is the First Shifting Theorem?",
     "answer": "The First Shifting Theorem states that if L{f(t)} = F(s), then L{e^(at)f(t)} = F(s - a). In physical terms, multiplying a signal by an exponential in the time domain results in a translation or shift of its frequency spectrum in the s-domain. This is particularly useful for solving differential equations involving damped oscillations, such as a mass-spring-damper system.",
     "tags": ["laplace transform", "properties", "shifting"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Also known as s-domain shifting."
   },
   {
@@ -25,6 +31,8 @@
     "question": "How are derivatives handled in Laplace Transforms?",
     "answer": "The transform of a derivative is given by L{f'(t)} = sF(s) - f(0) and for the second derivative, L{f''(t)} = s^2F(s) - s f(0) - f'(0). This property is the cornerstone of the Laplace method because it transforms differential equations into algebraic equations while simultaneously incorporating initial conditions into the expression. This eliminates the need to find a general solution and a particular solution separately.",
     "tags": ["laplace transform", "derivatives", "ODEs"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Critical for solving initial value problems."
   },
   {
@@ -32,6 +40,8 @@
     "question": "What is the Unit Step Function (Heaviside Function)?",
     "answer": "The Unit Step Function u(t-a) is defined as 0 for t < a and 1 for t >= a. Its Laplace Transform is L{u(t-a)} = (e^(-as))/s. In engineering, this function models sudden changes or 'switching' events, such as turning on a voltage source in a circuit at a specific time. It is often used in conjunction with the Second Shifting Theorem.",
     "tags": ["unit step", "heaviside", "switching"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Models discontinuous inputs."
   },
   {
@@ -39,6 +49,8 @@
     "question": "Explain the Dirac Delta Function and its transform.",
     "answer": "The Dirac Delta function delta(t-a) represents an idealized impulse that is zero everywhere except at t=a, with an integral of unity over the real line. Its Laplace Transform is L{delta(t-a)} = e^(-as). If a=0, the transform is 1. This is used to model instantaneous forces, such as a hammer blow to a mechanical system or a spike in electrical current.",
     "tags": ["dirac delta", "impulse", "signals"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used for impulse response analysis."
   },
   {
@@ -46,6 +58,8 @@
     "question": "What is the Convolution Theorem in Laplace Transforms?",
     "answer": "The Convolution Theorem states that the Laplace Transform of the convolution of two functions f(t) and g(t) is the product of their individual transforms: L{f(t) * g(t)} = F(s)G(s). Convolution in the time domain is defined as the integral from 0 to t of f(tau)g(t-tau) dtau. This theorem is vital for finding the response of a system to any arbitrary input if the impulse response is known.",
     "tags": ["convolution", "system response", "theorems"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Simplifies finding inverse transforms of products."
   },
   {
@@ -53,6 +67,8 @@
     "question": "What is the Final Value Theorem?",
     "answer": "The Final Value Theorem allows us to find the steady-state value of a system in the time domain directly from its s-domain representation. It states that the limit of f(t) as t approaches infinity is equal to the limit of sF(s) as s approaches 0, provided that all poles of sF(s) are in the left half of the s-plane. This is highly useful in control theory to determine the long-term error of a system.",
     "tags": ["final value theorem", "steady state", "control theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Only valid if the limit exists."
   }
 ]

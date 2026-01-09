@@ -1,9 +1,19 @@
 [
   {
     "id": "2025-11-25-001",
+<<<<<<< Updated upstream
     "question": "Chunking long documents for vector databases",
     "answer": "Chunking is the process of splitting long documents into smaller pieces before embedding.\n\nKey points:\n- Use chunks of 200–400 tokens\n- Preserve source metadata\n- Store chunk index for traceability\n- Improves retrieval accuracy\n- Reduces hallucination during synthesis",
     "tags": ["nlp", "vector-db", "ingestion"],
+=======
+    "question": "How to chunk long notes when ingesting into a vector DB?",
+    "answer": "Break long notes into 200�400 token chunks, keep `source` and `chunk_index` metadata, and include a short title for each chunk so you can cite the source chunk in UI.",
+    "tags": [
+      "nlp",
+      "ingest",
+      "chunking"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -12,14 +22,46 @@
       "url": null
     },
     "created_at": "2025-11-25T20:40:00+05:30",
+<<<<<<< Updated upstream
     "notes": "Atomic concept describing document ingestion best practices."
+=======
+    "notes": "Helps retrieval and reduces hallucination when synthesizing answers."
+  },
+  {
+    "id": "2025-12-22-004",
+    "question": "What is the purpose of the Notes folder in this project?",
+    "answer": "The Notes folder stores the raw markdown files that serve as the primary source of truth for the knowledge base entries in kb.json.",
+    "tags": [
+      "project-structure",
+      "documentation"
+    ],
+    "source": {
+      "type": "file",
+      "path": {
+        ".docx": "/vector_db.docx"
+      },
+      "url": null
+    },
+    "created_at": "2025-12-22T15:45:00+05:30",
+    "notes": "Explains the relationship between the JSON index and the Markdown source files."
+>>>>>>> Stashed changes
   },
 
   {
     "id": "2025-12-22-005",
+<<<<<<< Updated upstream
     "question": "Type 1 hypervisor (bare-metal hypervisor)",
     "answer": "A Type 1 hypervisor runs directly on system hardware without a host operating system.\n\nKey points:\n- Direct hardware access\n- High performance\n- Used in servers and data centers\n- Examples: VMware ESXi, Xen",
     "tags": ["virtualization", "hypervisor"],
+=======
+    "question": "What is the difference between Type 1 and Type 2 hypervisors?",
+    "answer": "Type 1 hypervisors run directly on the system hardware (bare metal), while Type 2 hypervisors run as an application on top of an existing operating system.",
+    "tags": [
+      "virtualization",
+      "hypervisor",
+      "infrastructure"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -49,9 +91,20 @@
 
   {
     "id": "2025-12-22-006",
+<<<<<<< Updated upstream
     "question": "Updating system packages on Linux Mint",
     "answer": "Linux Mint package updates are performed using APT.\n\nSteps:\n- `sudo apt update` refreshes package lists\n- `sudo apt upgrade` installs updates\n- Requires administrator privileges",
     "tags": ["linux", "mint", "package-management"],
+=======
+    "question": "How do I update the system packages on Linux Mint using the terminal?",
+    "answer": "To update Linux Mint, run 'sudo apt update' to refresh the package list and then 'sudo apt upgrade' to install the available updates.",
+    "tags": [
+      "linux",
+      "mint",
+      "terminal",
+      "updates"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -65,9 +118,19 @@
 
   {
     "id": "2025-12-22-007",
+<<<<<<< Updated upstream
     "question": "Python list (mutable sequence)",
     "answer": "A list is a mutable, ordered collection in Python.\n\nKey points:\n- Elements can be modified\n- Allows duplicates\n- Supports indexing and slicing\n- Uses square brackets []",
     "tags": ["python", "data-structures"],
+=======
+    "question": "What is the difference between a List and a Tuple in Python?",
+    "answer": "The main difference is mutability: Lists are mutable (can be changed after creation), while Tuples are immutable (cannot be changed). Lists use square brackets [] and Tuples use parentheses ().",
+    "tags": [
+      "python",
+      "coding",
+      "data-structures"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -97,9 +160,19 @@
 
   {
     "id": "2025-12-22-008",
+<<<<<<< Updated upstream
     "question": "HTTP (HyperText Transfer Protocol)",
     "answer": "HTTP is a stateless protocol used to transfer data over the web.\n\nKey points:\n- Data sent in plain text\n- No encryption\n- Uses port 80 by default\n- Faster but insecure",
     "tags": ["networking", "web", "protocol"],
+=======
+    "question": "What is the difference between HTTP and HTTPS?",
+    "answer": "HTTP (Hypertext Transfer Protocol) transmits data in plain text, making it vulnerable to interception. HTTPS (Hypertext Transfer Protocol Secure) encrypts the data using SSL/TLS protocols to ensure secure communication.",
+    "tags": [
+      "networking",
+      "security",
+      "web-protocols"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -129,9 +202,19 @@
 
   {
     "id": "2025-12-22-009",
+<<<<<<< Updated upstream
     "question": "CRUD operations in SQL",
     "answer": "CRUD represents the four fundamental database operations.\n\nOperations:\n- Create → INSERT\n- Read → SELECT\n- Update → UPDATE\n- Delete → DELETE",
     "tags": ["sql", "database"],
+=======
+    "question": "What are the four basic CRUD operations in SQL?",
+    "answer": "CRUD stands for Create (INSERT), Read (SELECT), Update (UPDATE), and Delete (DELETE). These are the four fundamental functions used to manage persistent data in a relational database.",
+    "tags": [
+      "sql",
+      "database",
+      "data-management"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -145,9 +228,19 @@
 
   {
     "id": "2025-12-22-010",
+<<<<<<< Updated upstream
     "question": "Supervised learning",
     "answer": "Supervised learning trains models using labeled data.\n\nKey points:\n- Input-output pairs\n- Used for prediction\n- Examples: classification, regression",
     "tags": ["machine-learning", "ai"],
+=======
+    "question": "What is the primary difference between Supervised and Unsupervised Learning?",
+    "answer": "The main difference is the use of labeled data: Supervised learning uses labeled input and output datasets to train models to predict outcomes, while Unsupervised learning analyzes unlabeled data to discover hidden patterns and structures.",
+    "tags": [
+      "machine-learning",
+      "ai",
+      "data-science"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -177,9 +270,20 @@
 
   {
     "id": "2025-12-22-011",
+<<<<<<< Updated upstream
     "question": "SQL databases (relational databases)",
     "answer": "SQL databases store structured data using tables and fixed schemas.\n\nKey points:\n- Relational model\n- Strong consistency\n- Supports complex queries\n- Examples: MySQL, PostgreSQL",
     "tags": ["databases", "sql"],
+=======
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "answer": "SQL databases are relational, use structured schemas, and are best for complex queries. NoSQL databases are non-relational, have flexible schemas, and are designed for high-volume, unstructured data and horizontal scaling.",
+    "tags": [
+      "databases",
+      "sql",
+      "nosql",
+      "architecture"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -209,9 +313,20 @@
 
   {
     "id": "2025-12-22-012",
+<<<<<<< Updated upstream
     "question": "Windows environment variables",
     "answer": "Environment variables are system-wide configuration values.\n\nKey points:\n- Accessible by processes\n- Store paths and settings\n- Used by shells and programs",
     "tags": ["windows", "configuration"],
+=======
+    "question": "What are Windows Environment Variables and how does the PATH variable work?",
+    "answer": "Environment variables are global strings used to store system-wide configuration. The 'PATH' variable is the most critical; it contains a list of directory paths that Windows searches through to find executable files when a command is entered into a shell without its full path.",
+    "tags": [
+      "windows",
+      "configuration",
+      "path",
+      "dev-ops"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -241,9 +356,20 @@
 
   {
     "id": "2025-12-22-013",
+<<<<<<< Updated upstream
     "question": "Retrieval-Augmented Generation (RAG)",
     "answer": "RAG combines document retrieval with language models.\n\nKey points:\n- Retrieves relevant documents\n- Grounds responses in facts\n- Reduces hallucination\n- Used in knowledge-based AI systems",
     "tags": ["ai", "rag", "knowledge-base"],
+=======
+    "question": "What is RAG (Retrieval-Augmented Generation) and why is it used?",
+    "answer": "RAG is an AI framework that retrieves relevant documents from an external knowledge base (like your Notes folder) and gives them to a Large Language Model (LLM) to generate an accurate answer. It prevents the AI from 'hallucinating' by grounding it in real facts.",
+    "tags": [
+      "ai",
+      "rag",
+      "llm",
+      "knowledge-base"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -257,9 +383,19 @@
 
   {
     "id": "2025-12-22-014",
+<<<<<<< Updated upstream
     "question": "Compiler (program translation model)",
     "answer": "A compiler translates source code into machine code before execution.\n\nKey points:\n- One-time translation\n- Produces executable files\n- Faster runtime performance",
     "tags": ["programming", "execution", "compiler", "compilers"],
+=======
+    "question": "What is the difference between a Compiler and an Interpreter?",
+    "answer": "A compiler translates the entire source code into machine code all at once before execution (like C++), whereas an interpreter translates and executes the code line-by-line during runtime (like Python).",
+    "tags": [
+      "programming",
+      "computer-science",
+      "software-engineering"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -289,9 +425,19 @@
 
   {
     "id": "2025-12-22-015",
+<<<<<<< Updated upstream
     "question": "Stack data structure",
     "answer": "A stack is a linear data structure following the LIFO principle.\n\nKey points:\n- Last-In, First-Out\n- Supports push and pop\n- Used in recursion and undo operations",
     "tags": ["data-structures", "algorithms"],
+=======
+    "question": "What is a Stack data structure and what is the LIFO principle?",
+    "answer": "A Stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. This means the last element added to the stack is the first one to be removed, similar to a stack of plates.",
+    "tags": [
+      "data-structures",
+      "programming",
+      "algorithms"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -305,9 +451,19 @@
 
   {
     "id": "2025-12-24-001",
+<<<<<<< Updated upstream
     "question": "Basic Linux commands",
     "answer": "Common Linux commands:\n- File operations: ls, cp, mv, rm, mkdir\n- Navigation: cd, pwd\n- Permissions: chmod, chown\n- Text processing: grep, awk, sort",
     "tags": ["linux", "cli"],
+=======
+    "question": "What are the basic linux commands?",
+    "answer": "Some of the basic linux commands are:\n1. touch\n2. cat\n3. cp\n4. mv\n5. rm\n6. mkdir\n7. rmdir\n8. cd\n9. pwd\n\nFile Manipulation Commands:\n1. chmod\n2. chown\n3. chgrp\n\nSystem calls:\n1.  open\n2.  read\n3.  write\n4.  close\n5.  getpid\n6.  setpid\n7.  getpid\n8.  setpid\n9.  getuid\n10. getgid\n11. getegid\n12. geteuid\n13. sort\n14. grep\n15. awk\n\n",
+    "tags": [
+      "basic",
+      "linux",
+      "commands"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -321,9 +477,22 @@
 
   {
     "id": "2025-12-24-002",
+<<<<<<< Updated upstream
     "question": "Shell scripting",
     "answer": "Shell scripting automates command execution in a shell.\n\nKey points:\n- Uses shell commands\n- Runs sequentially\n- Used for automation and system tasks",
     "tags": ["linux", "shell", "automation"],
+=======
+    "question": "What's shell scripting?",
+    "answer": "A shell is the command-line interface (like bash, zsh, or sh) that lets you interact with your operating system.\nA shell script is simply a text file containing a sequence of commands you�d normally type manually, automated to run in order.",
+    "tags": [
+      "linux",
+      "shell",
+      "scripting",
+      "commands",
+      "cheat",
+      "sheet"
+    ],
+>>>>>>> Stashed changes
     "source": {
       "type": "file",
       "path": {
@@ -333,6 +502,7 @@
       "url": null
     },
     "created_at": "2025-12-24T23:28:07+05:30",
+<<<<<<< Updated upstream
     "notes": "Practical shell automation reference."
   },
   {
@@ -1683,5 +1853,22 @@
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-04T10:50:00+05:30",
     "notes": "ARP vs RARP confusion resolver."
+=======
+    "notes": "Covers basic shell scripting syntax used 90% of the time."
+  },
+  {
+    "id": "2025-12-28-001",
+    "question": "who r uh",
+    "answer": "thing",
+    "tags": [],
+    "notes": "",
+    "created_at": "2025-12-28T15:19:46.650339",
+    "source": {
+      "type": "file",
+      "path": {
+        ".pdf": "Notes\\Uploads\\bhagubhai.pdf"
+      }
+    }
+>>>>>>> Stashed changes
   }
 ]
