@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, jsonify
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / Path("Data")
 
-KB_PATH = DATA_DIR / Path("kb.json")
+KB_PATH = DATA_DIR / Path("meta.json")
 ADMIN_PATH = BASE_DIR / Path("admin_identity.json")
 
 app = Flask(

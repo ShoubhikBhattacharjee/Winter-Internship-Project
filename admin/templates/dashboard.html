@@ -33,12 +33,8 @@ content %}
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody id="entryTable">
-    <!-- Rows injected via JS -->
-  </tbody>
+  <tbody id="entryTable"></tbody>
 </table>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
 {% endblock %}
-
-<script>
-  loadEntries();
-</script>
