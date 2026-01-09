@@ -37,6 +37,9 @@ import numpy as np
 
 import time
 
+import os
+from dotenv import load_dotenv
+
 # from admin_access import is_admin, start_ngrok
 
 # ============================================================
@@ -53,7 +56,8 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
+load_dotenv()
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 DATA_DIR = Path("./Data")
 NOTES_DIR = Path("./Notes")
