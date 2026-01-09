@@ -1,72 +1,92 @@
 [
   {
-    "id": "DBMS_EXP_001",
+    "id": "S3_DBMS_P_001",
     "question": "DBMS Experiment 1",
     "answer": "Aim: Identify the case study and detail statement of problem. Design an Entity-Relationship (ER)/ Extended Entity-Relationship (EER) Model.\nCase Study: Company Database (Departments, Projects, Employees, and Dependents).",
     "tags": ["dbms_practical", "dbms_experiment_1", "dbms_lab_expt1", "dbms_practicals_file", "dbms_experiment1_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-1.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-1.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Focuses on the initial design phase using ER and EER models for a Company Database."
   },
   {
-    "id": "DBMS_EXP_002",
+    "id": "S3_DBMS_P_002",
     "question": "DBMS Experiment 2",
     "answer": "Aim: To draw ER-EER model and relational model for a given case study.",
     "tags": ["dbms_practical", "dbms_experiment_2", "dbms_lab_expt2", "dbms_practicals_file", "dbms_experiment2_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-2.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-2.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Extends design by mapping ER-EER models into relational schemas."
   },
   {
-    "id": "DBMS_EXP_003",
+    "id": "S3_DBMS_P_003",
     "question": "DBMS Experiment 3",
     "answer": "Aim: Define and modify database structure using Student and Books database examples.",
     "tags": ["dbms_practical", "dbms_experiment_3", "dbms_lab_expt3", "dbms_practicals_file", "dbms_experiment3_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-3.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-3.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Covers Data Definition Language (DDL) using Student and Books examples."
   },
   {
-    "id": "DBMS_EXP_004",
+    "id": "S3_DBMS_P_004",
     "question": "DBMS Experiment 4",
     "answer": "Aim: Manipulating data records including inserting, updating, and deleting rows.",
     "tags": ["dbms_practical", "dbms_experiment_4", "dbms_lab_expt4", "dbms_practicals_file", "dbms_experiment4_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-4.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-4.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Covers Data Manipulation Language (DML) for record management."
   },
   {
-    "id": "DBMS_EXP_005",
+    "id": "S3_DBMS_P_005",
     "question": "DBMS Experiment 5",
     "answer": "Aim: Implementation of advanced filtering and grouping using Product and Employee tables.",
     "tags": ["dbms_practical", "dbms_experiment_5", "dbms_lab_expt5", "dbms_practicals_file", "dbms_experiment5_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-5.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-5.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Uses Product and Employee tables to practice filtering and aggregate functions."
   },
   {
-    "id": "DBMS_EXP_006",
+    "id": "S3_DBMS_P_006",
     "question": "DBMS Experiment 6",
     "answer": "Aim: Combine rows from two or more tables using Employee-Project and Customer-Order mappings.",
     "tags": ["dbms_practical", "dbms_experiment_6", "dbms_lab_expt6", "dbms_practicals_file", "dbms_experiment6_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-6.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-6.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Focuses on table joins using Employee, Project, Customer, and Order data."
   },
   {
-    "id": "DBMS_EXP_007",
+    "id": "S3_DBMS_P_007",
     "question": "DBMS Experiment 7",
     "answer": "Aim: To understand various ways to retrieve data using nested queries in SQL.",
     "tags": ["dbms_practical", "dbms_experiment_7", "dbms_lab_expt7", "dbms_practicals_file", "dbms_experiment7_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-7.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-7.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Demonstrates data retrieval through nested SQL queries."
   },
   {
-    "id": "DBMS_EXP_008",
+    "id": "S3_DBMS_P_008",
     "question": "DBMS Experiment 8",
     "answer": "Aim: Creation of virtual tables and automated actions on employee and department tables.",
     "tags": ["dbms_practical", "dbms_experiment_8", "dbms_lab_expt8", "dbms_practicals_file", "dbms_experiment8_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Expt-8.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Expt-8.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Covers the creation of Views and Triggers for automation."
   },
   {
-    "id": "DBMS_EXP_009",
+    "id": "S3_DBMS_P_009",
     "question": "DBMS Experiment 9",
     "answer": "Aim: Management of transactions and access control permissions.",
     "tags": ["dbms_practical", "dbms_experiment_9", "dbms_lab_expt9", "dbms_practicals_file", "dbms_experiment9_aim"],
-    "source": { "type": "file", "path": null }
+    "source": { "type": "file", "path": null },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Explores transaction control and database security/permissions."
   },
   {
-    "id": "DBMS_EXP_010",
+    "id": "S3_DBMS_P_010",
     "question": "DBMS Experiment 10",
     "answer": "Aim: Perform Create, Read, Update, Delete from a web interface using MySQL, Node.js, and HTML.",
     "tags": ["dbms_practical", "dbms_experiment_10", "dbms_lab_expt10", "dbms_practicals_file", "dbms_experiment10_aim"],
-    "source": { "type": "file", "path": "./Notes/DBMS_Practicals/DBMS_Exp-10.pdf" }
+    "source": { "type": "file", "path": "/DBMS_Practicals/DBMS_Exp-10.pdf" },
+    "created_at": "2026-01-09T15:00:26Z",
+    "notes": "Practical implementation of a CRUD application via a web interface."
   }
 ]

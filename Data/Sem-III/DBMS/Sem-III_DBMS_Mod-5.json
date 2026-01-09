@@ -3,7 +3,7 @@
     "id": "S3_DBMS_M5_001",
     "question": "What are the pitfalls in Relational Database Design?",
     "answer": "Pitfalls in database design suggest the negative effects that occur when a database design is wrong or incorrect. Poor design leads to several major issues: \n1. Redundant Data: This is the root of many problems, leading to storage wastage and anomalies. For example, storing Department Name in every Employee record instead of a separate Department table causes data to be repeated unnecessarily.\n2. Inability to represent some data: Occurs when certain information cannot be stored without the presence of other data. For example, if project details are tied to employee records, you cannot store a new project until an employee is assigned to it.\n3. Dependency of various attributes: Misinterpreted dependencies between attributes lead to poor schema design. For example, assuming Salary depends on Name instead of Emp_Id.\n4. Loss of information: Occurs when decomposition or summary tables omit qualitative or nuanced data, such as failing to capture specific student-teacher interactions in a simplified grade tracking system.",
-    "tags": ["database-design", "pitfalls"],
+    "tags": ["database_design_pitfalls"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Introduction to design issues."
@@ -12,7 +12,7 @@
     "id": "S3_DBMS_M5_002",
     "question": "What is an Insertion Anomaly?",
     "answer": "An insertion anomaly occurs when certain data cannot be inserted into the database without the presence of other unrelated data. This happens when we attempt to store information about two different entities in a single table where one entity's existence is dependent on the other's primary key. \nExample: Consider a table 'Student_Course(RollNo, SName, CourseID, CName)'. If we want to add a new course that has no students enrolled yet, we cannot insert the CourseID and CName because the Primary Key (RollNo) cannot be NULL. This prevents the storage of valid entity information until a student joins.",
-    "tags": ["anomalies", "insertion-anomaly"],
+    "tags": ["types_of_anomalies", "insertion_anomaly"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific anomaly definition."
@@ -21,7 +21,7 @@
     "id": "S3_DBMS_M5_003",
     "question": "What is a Deletion Anomaly?",
     "answer": "A deletion anomaly occurs when the deletion of one set of data accidentally causes the loss of other unrelated, important data. This is a side effect of redundancy where information about multiple entities is bundled together.\nExample: In a table 'Emp_Dept(EmpID, EName, DeptName, DeptLocation)', if a department has only one employee and we delete that employee record, we unintentionally lose all information about the department, including its name and location, because that row was the only source of that department's data.",
-    "tags": ["anomalies", "deletion-anomaly"],
+    "tags": ["types_of_anomalies", "deletion_anomaly"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific anomaly definition."
@@ -30,7 +30,7 @@
     "id": "S3_DBMS_M5_004",
     "question": "What is an Update Anomaly?",
     "answer": "An update (or modification) anomaly occurs when a change in a single data value requires multiple updates in different rows due to data redundancy. \nTheory: Because the same fact is stored in multiple places, the database system must ensure every instance is changed simultaneously to maintain integrity. If one instance is updated but others are missed, the database enters an inconsistent state.\nExample: If a department's location changes and that location is stored in every employee record, failure to update every single row results in data inconsistency where some employees appear to be in the old location while others are in the new one.",
-    "tags": ["anomalies", "update-anomaly"],
+    "tags": ["types_of_anomalies", "update_anomaly"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific anomaly definition."
@@ -39,7 +39,7 @@
     "id": "S3_DBMS_M5_005",
     "question": "What are the Design Guidelines for Relational Schema?",
     "answer": "To ensure a high-quality relational schema, four primary guidelines are followed: \n1. Avoid Redundancy: Use normalization to reduce duplication. Redundant data leads to anomalies and wastes storage. \n2. Preserve Dependencies: Ensure that functional dependencies are maintained after decomposition. This ensures that the constraints of the real-world entities are still enforced by the database.\n3. Minimize Null Values: Design schemas to avoid frequent NULLs. NULL values are difficult to handle in queries, complicate joins (e.g., inner joins will skip them), and their meaning can be ambiguous (unknown vs. non-applicable).\n4. Avoid Spurious Joins: Relations should be decomposed such that when they are joined back, the result is exactly the original relation. Improper decomposition leads to 'spurious tuples'—extra, fake records generated during the join that do not exist in reality.",
-    "tags": ["design-guidelines", "schema"],
+    "tags": ["schema_design_guidelines"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Syllabus-specific design rules."
@@ -48,161 +48,142 @@
     "id": "S3_DBMS_M5_006",
     "question": "What is Functional Dependency (FD)?",
     "answer": "Functional Dependency is a constraint between two sets of attributes in a relation. Denoted as X → Y (X determines Y), it means that the value of X uniquely determines the value of Y. \nTheory: Formally, for any two tuples t1 and t2 in a relation R, if t1[X] = t2[X], then it must be that t1[Y] = t2[Y]. This implies that Y is 'functionally dependent' on X. It is the primary tool used to identify redundancy and guide normalization.\nExample: In a Student table, Roll_No → Name. If two rows have the same Roll_No, they must have the same Name. Here, Roll_No is the determinant and Name is the dependent.",
-    "tags": ["functional-dependency", "definition"],
+    "tags": ["types_of_functional_dependencies", "fd_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Core mathematical foundation of normalization."
   },
   {
     "id": "S3_DBMS_M5_007",
-    "question": "What are the types of Functional Dependencies?",
-    "answer": "Functional dependencies are classified based on the relationship between attributes and their role in a relation: \n1. Trivial FD: When the dependent is a subset of the determinant.\n2. Non-Trivial FD: When the dependent is not a subset of the determinant.\n3. Full Functional Dependency: When an attribute is dependent on the whole set of a composite key and not on any partial subset.\n4. Partial Dependency: When a non-prime attribute depends on only a part of a composite candidate key.\n5. Transitive Dependency: When a non-prime attribute depends on another non-prime attribute rather than directly on the primary key.\n6. Multivalued Dependency: When the presence of one or more rows in a table implies the presence of certain other rows, representing a one-to-many relationship independent of other attributes.",
-    "tags": ["functional-dependency", "types"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Classification list."
-  },
-  {
-    "id": "S3_DBMS_M5_008",
     "question": "What is a Trivial Functional Dependency?",
     "answer": "A functional dependency X → Y is called trivial if Y is a subset of X (Y ⊆ X). It is 'trivial' because it is always true by definition and does not represent a real-world constraint that needs to be enforced by the database designer.\nExample: {Employee_ID, Name} → Employee_ID. Since Employee_ID is already part of the left-hand side, the dependency holds automatically in any valid relation instance.",
-    "tags": ["functional-dependency", "trivial-fd"],
+    "tags": ["types_of_functional_dependencies", "trivial_fd"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual FD type."
   },
   {
-    "id": "S3_DBMS_M5_009",
+    "id": "S3_DBMS_M5_008",
     "question": "What is a Full Functional Dependency?",
     "answer": "A functional dependency X → Y is a full functional dependency if removal of any attribute A from X means that the dependency no longer holds. This concept is vital for 2NF.\nTheory: If Y is dependent on X, and Y is not dependent on any proper subset of X, then Y is fully functionally dependent on X.\nExample: In a 'Project_Assignment' table with composite key {EmpID, ProjectID}, the attribute 'Hours_Worked' is fully dependent on {EmpID, ProjectID}. You cannot determine hours worked by just knowing the EmpID or just the ProjectID; you need both identifiers.",
-    "tags": ["functional-dependency", "full-fd"],
+    "tags": ["types_of_functional_dependencies", "full_fd"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Required for 2NF definition."
   },
   {
-    "id": "S3_DBMS_M5_010",
+    "id": "S3_DBMS_M5_009",
     "question": "What is a Partial Dependency?",
     "answer": "A partial dependency occurs when a non-prime attribute is functionally dependent on only a part of a composite candidate key rather than the entire key.\nTheory: In a relation with a composite key {A, B}, if a non-prime attribute C is determined by just A (A → C), then C is partially dependent on the key. This leads to redundancy as C will be repeated for every B associated with A.\nExample: In a table 'Work(EmpID, ProjectID, EmpName)', the Primary Key is {EmpID, ProjectID}. However, EmpName depends only on EmpID. Since EmpName (non-prime) depends on a part of the key, it is a partial dependency and violates 2NF.",
-    "tags": ["functional-dependency", "partial-dependency"],
+    "tags": ["types_of_functional_dependencies", "partial_dependency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Individual FD type."
+  },
+  {
+    "id": "S3_DBMS_M5_010",
+    "question": "What is a Transitive Dependency?",
+    "answer": "A transitive dependency occurs when a non-prime attribute is functionally dependent on another non-prime attribute, creating an indirect link to the primary key.\nTheory: If A is the primary key and we have dependencies A → B and B → C (where B is not a key), then A → C is a transitive dependency. This means C's value is determined by B, and B is determined by A.\nExample: In a table 'Emp(EmpID, DeptID, DeptName)', EmpID is the primary key. We have EmpID → DeptID and DeptID → DeptName. DeptName is transitively dependent on EmpID through DeptID. This causes issues if we want to store Department info without employees (Insertion Anomaly).",
+    "tags": ["types_of_functional_dependencies", "transitive_dependency"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual FD type."
   },
   {
     "id": "S3_DBMS_M5_011",
-    "question": "What is a Transitive Dependency?",
-    "answer": "A transitive dependency occurs when a non-prime attribute is functionally dependent on another non-prime attribute, creating an indirect link to the primary key.\nTheory: If A is the primary key and we have dependencies A → B and B → C (where B is not a key), then A → C is a transitive dependency. This means C's value is determined by B, and B is determined by A.\nExample: In a table 'Emp(EmpID, DeptID, DeptName)', EmpID is the primary key. We have EmpID → DeptID and DeptID → DeptName. DeptName is transitively dependent on EmpID through DeptID. This causes issues if we want to store Department info without employees (Insertion Anomaly).",
-    "tags": ["functional-dependency", "transitive-dependency"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Individual FD type."
-  },
-  {
-    "id": "S3_DBMS_M5_012",
     "question": "What is a Multivalued Dependency (MVD)?",
     "answer": "A multivalued dependency occurs when for a single value of attribute A, there exists a set of values for attribute B and a set of values for attribute C, but the set of values for B and C are independent of each other. It is denoted as A ↠ B.\nTheory: Unlike Functional Dependency which maps to a single value, MVD maps to a set of values. It represents a 'one-to-many' relationship. If a table stores two independent 1:N relationships for the same entity, MVDs arise, leading to massive redundancy. MVDs are addressed in Fourth Normal Form (4NF).",
-    "tags": ["functional-dependency", "multivalued-dependency"],
+    "tags": ["types_of_functional_dependencies", "multivalued_dependency"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific FD type."
   },
   {
-    "id": "S3_DBMS_M5_013",
+    "id": "S3_DBMS_M5_012",
     "question": "What are Armstrong’s Axioms?",
     "answer": "Armstrong's Axioms are fundamental inference rules used to derive all possible functional dependencies (the closure F+) in a relation from a given set of dependencies (F).\n1. Reflexivity: If Y is a subset of X, then X → Y. (Example: {Name, Age} → Name)\n2. Augmentation: If X → Y, then XZ → YZ. This allows adding context to both sides. (Example: If ID → Name, then {ID, Dept} → {Name, Dept})\n3. Transitivity: If X → Y and Y → Z, then X → Z. This links dependencies. (Example: If ID → DeptID and DeptID → Location, then ID → Location)\nThese axioms are sound (they only derive valid FDs) and complete (they can derive all valid FDs).",
-    "tags": ["armstrong-axioms", "rules"],
+    "tags": ["armstrong_axioms_rules"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Inference rules."
   },
   {
-    "id": "S3_DBMS_M5_014",
+    "id": "S3_DBMS_M5_013",
     "question": "What is the Reflexivity Axiom?",
     "answer": "The Reflexivity axiom states that if Y is a subset of X (Y ⊆ X), then the functional dependency X → Y holds. \nTheory: This is an inherent property of sets. If we know the values for a larger set of attributes (X), we automatically know the values for any smaller subset (Y) contained within it. It is the basis for identifying trivial dependencies.",
-    "tags": ["armstrong-axioms", "reflexivity"],
+    "tags": ["armstrong_reflexivity_axiom"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Primary axiom."
+  },
+  {
+    "id": "S3_DBMS_M5_014",
+    "question": "What is the Augmentation Axiom?",
+    "answer": "The Augmentation axiom states that if a functional dependency X → Y holds, then XZ → YZ also holds for any set of attributes Z. \nTheory: This rule allows us to 'augment' or expand an existing dependency by adding the same attribute set to both the determinant and the dependent. It shows that adding extra information to the left side does not destroy the ability to determine the right side.",
+    "tags": ["armstrong_augmentation_axiom"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Primary axiom."
   },
   {
     "id": "S3_DBMS_M5_015",
-    "question": "What is the Augmentation Axiom?",
-    "answer": "The Augmentation axiom states that if a functional dependency X → Y holds, then XZ → YZ also holds for any set of attributes Z. \nTheory: This rule allows us to 'augment' or expand an existing dependency by adding the same attribute set to both the determinant and the dependent. It shows that adding extra information to the left side does not destroy the ability to determine the right side.",
-    "tags": ["armstrong-axioms", "augmentation"],
+    "question": "What is the Transitivity Axiom?",
+    "answer": "The Transitivity axiom states that if the functional dependencies X → Y and Y → Z both hold, then the functional dependency X → Z must also hold. \nTheory: This is the most critical rule for identifying multi-step dependencies. It explains how a non-key attribute might depend on the primary key through an intermediate attribute, which is the primary cause of redundancy addressed in 3NF.",
+    "tags": ["armstrong_transitivity_axiom"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Primary axiom."
   },
   {
     "id": "S3_DBMS_M5_016",
-    "question": "What is the Transitivity Axiom?",
-    "answer": "The Transitivity axiom states that if the functional dependencies X → Y and Y → Z both hold, then the functional dependency X → Z must also hold. \nTheory: This is the most critical rule for identifying multi-step dependencies. It explains how a non-key attribute might depend on the primary key through an intermediate attribute, which is the primary cause of redundancy addressed in 3NF.",
-    "tags": ["armstrong-axioms", "transitivity"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Primary axiom."
-  },
-  {
-    "id": "S3_DBMS_M5_017",
     "question": "What is Normalization?",
     "answer": "Normalization is a formal, step-by-step process of organizing data in a database to minimize redundancy and eliminate anomalies (insertion, update, deletion). \nTheory: The process involves decomposing a large 'universal' relation into smaller, more focused relations. This ensures that data is stored logically and that every non-key attribute is dependent on 'the key, the whole key, and nothing but the key.' By separating different themes into different tables, we ensure that each fact is stored in exactly one place, making the database easier to maintain and update.",
-    "tags": ["normalization", "definition"],
+    "tags": ["levels_of_normal_forms", "normalization_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Core definition."
   },
   {
-    "id": "S3_DBMS_M5_018",
-    "question": "What are the levels of Normal Forms?",
-    "answer": "Normalization is achieved through several levels, each addressing a specific type of dependency issue to ensure structural integrity:\n1. First Normal Form (1NF): Eliminates multi-valued and composite attributes. Data must be atomic.\n2. Second Normal Form (2NF): Relation must be in 1NF and must not have any partial dependencies; every non-prime attribute must depend on the whole primary key.\n3. Third Normal Form (3NF): Relation must be in 2NF and must not have any transitive dependencies; non-prime attributes should not depend on other non-prime attributes.\n4. Boyce-Codd Normal Form (BCNF): A stricter version of 3NF where every determinant in every non-trivial FD must be a candidate key.",
-    "tags": ["normalization", "types"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Normalization hierarchy."
-  },
-  
-  {
-    "id": "S3_DBMS_M5_019",
+    "id": "S3_DBMS_M5_017",
     "question": "What is First Normal Form (1NF)?",
     "answer": "A relation is in 1NF if every attribute contains only atomic (indivisible) values and there are no repeating groups.\nTheory: This is the basic requirement of the relational model. Each cell must hold exactly one value from the domain of that attribute. Multi-valued attributes (like multiple phone numbers) or composite attributes (like an address split into Street, City) must be flattened or moved to separate tables.\nExample: A table 'Student(ID, Phone)' where one student has multiple phone numbers in a single cell (e.g., '999, 888') violates 1NF. To correct this, we must ensure each row contains only one phone number.",
-    "tags": ["normalization", "1nf"],
+    "tags": ["levels_of_normal_forms", "1nf_definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Individual normal form."
+  },
+  {
+    "id": "S3_DBMS_M5_018",
+    "question": "What is Second Normal Form (2NF)?",
+    "answer": "A relation is in 2NF if it is in 1NF and every non-prime attribute is fully functionally dependent on the primary key (no partial dependencies).\nTheory: This normal form specifically targets relations with composite primary keys. If a non-prime attribute depends on only part of the key, it will be redundantly repeated for every record that shares that part of the key.\nExample: Consider 'Order_Items(OrderID, ItemID, ItemName, Quantity)'. The key is {OrderID, ItemID}. Quantity depends on both (Full FD). However, ItemName depends only on ItemID (Partial FD). To achieve 2NF, we move ItemID and ItemName to a separate 'Items' table so ItemName is stored only once per ItemID.",
+    "tags": ["levels_of_normal_forms", "2nf_definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Individual normal form."
+  },
+  {
+    "id": "S3_DBMS_M5_019",
+    "question": "What is Third Normal Form (3NF)?",
+    "answer": "A relation is in 3NF if it is in 2NF and there are no transitive dependencies of non-prime attributes on the primary key.\nTheory: A relation is in 3NF if for every non-trivial FD X → A, either X is a superkey or A is a prime attribute. It ensures that non-key attributes are independent of each other and only dependent on the key. This prevents 'indirect' redundancy.\nExample: In 'Employee(ID, DeptID, DeptName)', ID is the key. ID → DeptID and DeptID → DeptName. DeptName is transitively dependent on ID. If all employees of a department leave, we lose the DeptName (Deletion Anomaly). To fix this, we split it into 'Employee(ID, DeptID)' and 'Department(DeptID, DeptName)'.",
+    "tags": ["levels_of_normal_forms", "3nf_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual normal form."
   },
   {
     "id": "S3_DBMS_M5_020",
-    "question": "What is Second Normal Form (2NF)?",
-    "answer": "A relation is in 2NF if it is in 1NF and every non-prime attribute is fully functionally dependent on the primary key (no partial dependencies).\nTheory: This normal form specifically targets relations with composite primary keys. If a non-prime attribute depends on only part of the key, it will be redundantly repeated for every record that shares that part of the key.\nExample: Consider 'Order_Items(OrderID, ItemID, ItemName, Quantity)'. The key is {OrderID, ItemID}. Quantity depends on both (Full FD). However, ItemName depends only on ItemID (Partial FD). To achieve 2NF, we move ItemID and ItemName to a separate 'Items' table so ItemName is stored only once per ItemID.",
-    "tags": ["normalization", "2nf"],
+    "question": "What is Boyce-Codd Normal Form (BCNF)?",
+    "answer": "BCNF is a stricter form of 3NF. A relation is in BCNF if for every non-trivial functional dependency X → A, X must be a superkey.\nTheory: While 3NF allows X → A if A is a prime attribute (even if X is not a key), BCNF forbids this. BCNF is required when a table has overlapping candidate keys. It ensures that every determinant in the table is capable of uniquely identifying a row.\nExample: If a table tracks 'Student, Subject, Professor' where a Professor teaches only one Subject, but a Subject has multiple Professors, a dependency 'Professor → Subject' exists. Even if both are part of keys, BCNF requires moving this to a separate table because Professor is not a superkey of the whole relation.",
+    "tags": ["levels_of_normal_forms", "bcnf_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual normal form."
   },
   {
     "id": "S3_DBMS_M5_021",
-    "question": "What is Third Normal Form (3NF)?",
-    "answer": "A relation is in 3NF if it is in 2NF and there are no transitive dependencies of non-prime attributes on the primary key.\nTheory: A relation is in 3NF if for every non-trivial FD X → A, either X is a superkey or A is a prime attribute. It ensures that non-key attributes are independent of each other and only dependent on the key. This prevents 'indirect' redundancy.\nExample: In 'Employee(ID, DeptID, DeptName)', ID is the key. ID → DeptID and DeptID → DeptName. DeptName is transitively dependent on ID. If all employees of a department leave, we lose the DeptName (Deletion Anomaly). To fix this, we split it into 'Employee(ID, DeptID)' and 'Department(DeptID, DeptName)'.",
-    "tags": ["normalization", "3nf"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Individual normal form."
-  },
-  {
-    "id": "S3_DBMS_M5_022",
-    "question": "What is Boyce-Codd Normal Form (BCNF)?",
-    "answer": "BCNF is a stricter form of 3NF. A relation is in BCNF if for every non-trivial functional dependency X → A, X must be a superkey.\nTheory: While 3NF allows X → A if A is a prime attribute (even if X is not a key), BCNF forbids this. BCNF is required when a table has overlapping candidate keys. It ensures that every determinant in the table is capable of uniquely identifying a row.\nExample: If a table tracks 'Student, Subject, Professor' where a Professor teaches only one Subject, but a Subject has multiple Professors, a dependency 'Professor → Subject' exists. Even if both are part of keys, BCNF requires moving this to a separate table because Professor is not a superkey of the whole relation.",
-    "tags": ["normalization", "bcnf"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Individual normal form."
-  },
-  {
-    "id": "S3_DBMS_M5_023",
     "question": "What is Attribute Closure?",
     "answer": "Attribute closure of a set of attributes α (denoted as α⁺) is the set of all attributes that are functionally determined by α based on the given set of functional dependencies (F).\nTheory: The closure is found using an iterative algorithm: start with α, then for every FD X → Y in F, if X is already in the closure, add Y to the closure. Repeat until no more attributes can be added. Attribute closure is the primary tool used to determine if a set of attributes is a candidate key (if its closure contains all attributes of the relation) and to check if a specific FD holds.\nExample: If F = {A→B, B→C}, the closure of A is {A, B, C}. This proves A is a candidate key if the relation contains attributes A, B, and C.",
-    "tags": ["functional-dependency", "attribute-closure"],
+    "tags": ["attribute_closure_procedure"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Procedural concept."

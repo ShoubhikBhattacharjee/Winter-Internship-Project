@@ -4,6 +4,8 @@
     "question": "Define probability and the structure of a Sample Space.",
     "answer": "Probability is a mathematical measure of the likelihood of an event occurring within a random experiment. It is defined over a Sample Space (S), which is the set of all possible outcomes. For any event E in S, the probability P(E) must satisfy 0 <= P(E) <= 1. In engineering, this is used to model uncertainty in systems, such as the probability of a component failing within a specific timeframe.",
     "tags": ["probability", "definition", "sample space"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Foundation of stochastic modeling."
   },
   {
@@ -11,6 +13,8 @@
     "question": "State the Kolmogorov Axioms of Probability.",
     "answer": "The modern theory of probability is based on three axioms: 1. Non-negativity: P(E) >= 0 for every event E. 2. Normalization: P(S) = 1, meaning some outcome in the sample space must occur. 3. Additivity: For any sequence of mutually exclusive events E1, E2, etc., the probability of their union is the sum of their individual probabilities: P(E1 union E2) = P(E1) + P(E2). These axioms ensure mathematical consistency in complex statistical models.",
     "tags": ["axioms", "kolmogorov", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Rules for consistent probability measures."
   },
   {
@@ -18,6 +22,8 @@
     "question": "Explain Conditional Probability and its intuitive meaning.",
     "answer": "Conditional probability measures the probability of an event A occurring given that another event B has already occurred. It is defined as P(A|B) = P(A intersection B) / P(B), provided P(B) > 0. Conceptually, it represents a shrinking of the sample space from S to B. This is vital in communication engineering to determine the probability of a specific signal being sent given that a noisy signal was received.",
     "tags": ["conditional probability", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Sample space reduction."
   },
   {
@@ -25,6 +31,8 @@
     "question": "State the Multiplication Rule and the concept of Independent Events.",
     "answer": "The Multiplication Rule states that P(A intersection B) = P(B) * P(A|B). If two events are independent, the occurrence of one does not affect the other, implying P(A|B) = P(A). In this specific case, the rule simplifies to P(A intersection B) = P(A) * P(B). Engineering systems often use parallel components where independence is assumed to calculate overall system reliability.",
     "tags": ["multiplication rule", "independence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Key for system reliability."
   },
   {
@@ -32,6 +40,8 @@
     "question": "Explain the Law of Total Probability.",
     "answer": "The Law of Total Probability allows us to calculate the probability of an event A that can happen through several distinct, mutually exclusive scenarios B1, B2, ..., Bn that partition the sample space. It is given by P(A) = Sum of [P(A|Bi) * P(Bi)] for all i. This is frequently used in manufacturing quality control to find the total defect rate by summing the defect rates of different production shifts.",
     "tags": ["total probability", "partition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Summing across scenarios."
   },
   {
@@ -39,6 +49,8 @@
     "question": "Define Bayes Theorem and its importance in Inference.",
     "answer": "Bayes Theorem provides a way to update the probability of a hypothesis (Bi) given new evidence (A): P(Bi|A) = [P(A|Bi) * P(Bi)] / Sum of [P(A|Bj) * P(Bj)]. It transitions from prior knowledge to posterior knowledge. In modern engineering, this is the backbone of machine learning and diagnostics, calculating the probability of a root cause given a set of symptoms.",
     "tags": ["Bayes theorem", "inference", "posterior"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Inverse probability calculation."
   },
   {
@@ -46,6 +58,8 @@
     "question": "What is a Discrete Random Variable and its Probability Mass Function (PMF)?",
     "answer": "A discrete random variable X takes on a finite or countably infinite set of isolated values, such as the number of defects in a batch. Its distribution is defined by a PMF, p(x) = P(X=x), which satisfies p(x) >= 0 and the sum of all p(x) = 1. The PMF gives the probability of the variable being exactly equal to a specific value.",
     "tags": ["discrete", "random variable", "PMF"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Counts and isolated values."
   },
   {
@@ -53,6 +67,8 @@
     "answer": "A continuous random variable takes any value within an interval, such as the voltage of a battery. Because there are infinite points, the probability of X being exactly one value is zero, P(X=x) = 0. Instead, we use a PDF f(x) where the area under the curve represents probability: P(a <= X <= b) = Integral from a to b of f(x)dx. The total area under f(x) must equal 1.",
     "question": "Define a Continuous Random Variable and its Probability Density Function (PDF).",
     "tags": ["continuous", "PDF", "random variable"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Interval-based probability."
   },
   {
@@ -60,6 +76,8 @@
     "question": "What is the Cumulative Distribution Function (CDF)?",
     "answer": "The CDF, F(x), is defined for both discrete and continuous variables as F(x) = P(X <= x). For continuous variables, it is the integral of the PDF from negative infinity to x. The CDF is always non-decreasing, starts at 0, and ends at 1. It is useful for finding the probability that a system's life is at most a certain value.",
     "tags": ["CDF", "cumulative"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "F(x) = P(X <= x)."
   },
   {
@@ -67,6 +85,8 @@
     "question": "Define Mathematical Expectation (Mean) and its physical interpretation.",
     "answer": "The Expectation E[X] or Mean is the long-term average value of a random variable. For discrete variables, E[X] = Sum of x*p(x); for continuous, E[X] = Integral of x*f(x)dx. Physically, it represents the center of mass of the probability distribution. In engineering, it represents the expected performance or central tendency of a process.",
     "tags": ["expectation", "mean", "center of mass"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Weighted average of outcomes."
   },
   {
@@ -74,6 +94,8 @@
     "question": "Define Variance and Standard Deviation.",
     "answer": "Variance, Var(X), measures the spread or dispersion of the random variable around its mean. It is defined as E[(X - Mean)^2] = E[X^2] - (E[X])^2. Standard deviation is the square root of variance. In signal processing, variance represents the power of the noise component; high variance indicates high uncertainty.",
     "tags": ["variance", "standard deviation", "dispersion"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Measures volatility/uncertainty."
   },
   {
@@ -81,6 +103,8 @@
     "question": "What are Raw Moments and Central Moments?",
     "answer": "Moments describe the shape of a distribution. Raw moments are moments about the origin; the first raw moment is the mean. Central moments are moments about the mean. The 2nd central moment is variance, the 3rd relates to Skewness (asymmetry), and the 4th relates to Kurtosis (peakedness).",
     "tags": ["moments", "raw moments", "central moments"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Defines distribution shape."
   },
   {
@@ -88,6 +112,8 @@
     "question": "Define the Moment Generating Function (MGF) and its utility.",
     "answer": "The MGF is defined as M(t) = E[e^(tX)]. It is called moment generating because the nth derivative of M(t) evaluated at t=0 gives the nth raw moment. It provides a powerful algebraic way to find mean and variance and is used to prove various limit theorems in probability.",
     "tags": ["MGF", "moments", "theory"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Transforms sums to products."
   },
   {
@@ -95,6 +121,8 @@
     "question": "Explain the Linearity Property of Expectation.",
     "answer": "Expectation is a linear operator, meaning E[aX + bY] = aE[X] + bE[Y] for any constants a, b and random variables X, Y. This holds true regardless of whether the variables are independent or dependent. This allows for calculating the expected total load on a system by summing individual expected loads.",
     "tags": ["expectation", "linearity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Valid even for dependent variables."
   },
   {
@@ -102,6 +130,8 @@
     "question": "State the properties of Variance for linear combinations.",
     "answer": "Variance is not strictly linear. For a constant a, Var(aX) = a^2 * Var(X). For two variables, Var(X + Y) = Var(X) + Var(Y) + 2*Cov(X, Y). If X and Y are independent, the covariance is zero and variances add linearly. This is why noise power in independent circuit stages adds up.",
     "tags": ["variance", "properties"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Constants square when pulled out."
   },
   {
@@ -109,6 +139,8 @@
     "question": "How do you check if a function is a valid PDF?",
     "answer": "To be a valid PDF, f(x) must satisfy two conditions: 1. Non-negativity: f(x) >= 0 for all x. 2. Total Area: The integral of f(x) over all possible values must equal 1. In problems with a missing constant k, you integrate the function and set the result to 1 to solve for k.",
     "tags": ["PDF", "verification"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Must integrate to unity."
   },
   {
@@ -116,6 +148,8 @@
     "question": "Compute Expectation for X with PDF f(x) = 3x^2 for x between 0 and 1.",
     "answer": "E[X] = Integral from 0 to 1 of x * (3x^2) dx = Integral of 3x^3 dx = [3x^4 / 4] evaluated from 0 to 1, which equals 0.75. This represents the long-term average value for this distribution.",
     "tags": ["example", "expectation", "continuous"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard integration example."
   },
   {
@@ -123,6 +157,8 @@
     "question": "Compute Variance for the PDF f(x) = 3x^2 for x between 0 and 1.",
     "answer": "First, find E[X^2] = Integral from 0 to 1 of x^2 * (3x^2) dx = Integral of 3x^4 dx = 0.6. Then, Variance = E[X^2] - (E[X])^2 = 0.6 - (0.75)^2 = 0.6 - 0.5625 = 0.0375.",
     "tags": ["example", "variance", "continuous"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Requires E[X^2] calculation."
   },
   {
@@ -130,6 +166,8 @@
     "question": "Derive the Mean of a Discrete Variable X from its MGF.",
     "answer": "Given M(t), the mean is the first derivative M'(t) evaluated at t=0. For example, if M(t) is e^[L*(e^t - 1)], the derivative at 0 is L. This method is often more efficient than direct summation for complex distributions.",
     "tags": ["MGF", "derivation", "mean"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Derivative at zero equals mean."
   },
   {
@@ -137,6 +175,8 @@
     "question": "What is the relationship between the CDF and the PDF?",
     "answer": "The PDF is the derivative of the CDF: f(x) = d/dx F(x). Conversely, the CDF is the integral of the PDF. In reliability engineering, if you have the probability of failure up to time t (CDF), differentiating it gives the failure density at that exact instant.",
     "tags": ["PDF", "CDF", "calculus"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Fundamental calculus link."
   },
   {
@@ -144,6 +184,8 @@
     "question": "Explain Chebyshevs Inequality and its theoretical significance.",
     "answer": "Chebyshevs Inequality states that for any random variable, the probability that X deviates from the mean by more than k standard deviations is at most 1 / k^2. This is powerful because it applies to any distribution, providing a guaranteed upper bound on risk regardless of the shape of the data.",
     "tags": ["Chebyshev", "inequality", "bounds"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Universal distribution bound."
   },
   {
@@ -151,6 +193,8 @@
     "question": "Define the concept of Skewness and its importance.",
     "answer": "Skewness measures the asymmetry of a distribution about its mean. It is the 3rd central moment normalized by the cube of the standard deviation. Positive skew indicates a long right tail (outliers on the high end), while negative skew indicates a long left tail. This helps engineers identify bias in data.",
     "tags": ["skewness", "asymmetry", "moments"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Measures lack of symmetry."
   },
   {
@@ -158,6 +202,8 @@
     "question": "What is Kurtosis and what does it indicate?",
     "answer": "Kurtosis measures the peakedness or tailedness of a distribution, defined by the 4th central moment. High kurtosis indicates a sharp peak and heavy tails, meaning extreme events (outliers) are more frequent. This is critical in risk management for structural safety and extreme weather modeling.",
     "tags": ["kurtosis", "tails", "outliers"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Measures tail heaviness."
   },
   {
@@ -165,6 +211,8 @@
     "question": "Define the Joint Probability Distribution for two variables.",
     "answer": "The joint distribution f(x, y) describes the probability that two random variables X and Y occur simultaneously. For continuous variables, the double integral over the entire plane must equal 1. This is used in robotics to model the joint coordinates (x, y) of a mechanical system.",
     "tags": ["joint distribution", "bivariate", "marginal"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Models two variables together."
   },
   {
@@ -172,6 +220,8 @@
     "question": "Explain the Law of Large Numbers (LLN).",
     "answer": "The Law of Large Numbers states that as the number of independent trials increases, the sample mean will converge to the theoretical population mean. This principle ensures that averages become stable and predictable with enough data, which is the basis for insurance, polling, and industrial quality control.",
     "tags": ["LLN", "law of large numbers", "convergence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Basis of statistical stability."
   }
 ]

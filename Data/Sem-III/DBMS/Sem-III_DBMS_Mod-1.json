@@ -2,6 +2,7 @@
   {
     "id": "S3_DBMS_M1_001",
     "question": "What is DBMS?",
+<<<<<<< HEAD
     "answer": "A Database Management System (DBMS) is a sophisticated software package designed to define, manipulate, retrieve, and manage data in a database. It serves as an interface between the database and its end-users or application programs, ensuring that data is consistently organized and remains easily accessible.\r\n\r\nPrimary Goal:\r\n- To provide a way to store and retrieve database information that is both convenient and efficient.\r\n- To manage large bodies of information, involving both the definition of structures for storage and the provision of mechanisms for the manipulation of information in a safe and secure manner.",
     "tags": ["dbms", "definition", "fundamentals"],
     "source": {
@@ -9,6 +10,11 @@
       "path": null,
       "url": null
     },
+=======
+    "answer": "A Database Management System (DBMS) is a sophisticated software package designed to define, manipulate, retrieve, and manage data in a database. It serves as an interface between the database and its end-users or application programs, ensuring that data is consistently organized and remains easily accessible.\n\nPrimary Goal:\n- To provide a way to store and retrieve database information that is both convenient and efficient.\n- To manage large bodies of information, involving both the definition of structures for storage and the provision of mechanisms for the manipulation of information.",
+    "tags": ["dbms", "definition", "fundamentals", "Database Management System"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Comprehensive definition based on provided course materials.",
     "modified": "2026-01-09T14:39:20.008994"
@@ -17,12 +23,17 @@
     "id": "S3_DBMS_M1_002",
     "question": "What are characteristics of DBMS?",
     "answer": "The database approach possesses several distinguishing characteristics that set it apart from traditional file processing:\n\n1. Self-describing nature: Unlike file systems, a database contains the data plus a complete definition of its structure and constraints (metadata), stored in the DBMS catalog.\n2. Insulation between programs and data: Known as program-data independence; the structure of data files is stored in the DBMS catalog separately from the access programs.\n3. Data Abstraction: A DBMS provides users with a conceptual representation of data, hiding technical storage details (e.g., how bytes are ordered on a disk).\n4. Support of multiple views: The system allows different users to perceive the data in different ways. A view may be a subset of the database or virtual data derived from the database.\n5. Sharing of data and multi-user transaction processing: Allows multiple users to access the database at the same time. The DBMS must include concurrency control software to ensure that multiple users trying to update the same data do so in a controlled manner.",
+<<<<<<< HEAD
     "tags": ["dbms", "characteristics", "features"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": [ "characteristics of dbms", "features", "dbms features"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Detailed breakdown of core DBMS properties."
   },
@@ -43,12 +54,17 @@
     "id": "S3_DBMS_M1_004",
     "question": "Define database system.",
     "answer": "A Database System is a broad term that encompasses the entire environment required to manage and process data. It is the integration of four primary components:\n1. The Database: The collection of logically related data.\n2. The DBMS: The software that manages and controls access to the database.\n3. The Application Programs: Software that uses the DBMS to access the data for specific business purposes.\n4. The Hardware/Users: The physical systems where data resides and the personnel (DBAs, end-users) who interact with it.",
+<<<<<<< HEAD
     "tags": ["database-system", "definition", "components"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["database-system", "components"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Distinguishes between software (DBMS) and the whole system."
   },
@@ -56,12 +72,17 @@
     "id": "S3_DBMS_M1_005",
     "question": "Applications of DBMS.",
     "answer": "DBMS is foundational to modern digital infrastructure across various sectors:\n\n- Enterprise Information: Management of Sales (customer/product data), Accounting (transactions), and Human Resources (payroll, employee tracking).\n- Banking and Finance: Maintaining customer accounts, processing loans, managing credit card transactions, and tracking real-time stock market data.\n- Airlines & Travel: Real-time reservation systems, flight scheduling, and global distribution systems.\n- Education: University systems for student registration, grade tracking, and course management.\n- E-commerce & Web Services: Powering online retailers for order tracking and recommendation engines, and Social Media platforms for managing user profiles and posts.",
+<<<<<<< HEAD
     "tags": ["dbms", "applications", "real-world"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["applications of dbms", "real-world"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Categorized industry examples."
   },
@@ -69,12 +90,17 @@
     "id": "S3_DBMS_M1_006",
     "question": "Explain three schema architecture with diagram and example.(internal level, conceptual level, external level).",
     "answer": "The Three-Schema Architecture, also known as the ANSI-SPARC architecture, aims to separate the user applications and the physical database.\n\n\n\n1. Internal Level (Physical Schema): Describes the physical storage structure of the database. It uses a physical data model and describes the complete details of data storage and access paths (e.g., indexes, hashing, block sizes).\n- Example: Specifying that Employee records are stored in a clustered B-tree index on Emp_ID.\n\n2. Conceptual Level (Logical Schema): Describes the structure of the whole database for a community of users. It hides physical storage details and concentrates on describing entities, data types, relationships, and constraints.\n- Example: A definition of an Employee table with fields: Name (String), Age (Integer), and Dept (String).\n\n3. External Level (View Schema): Describes the part of the database that a particular user group is interested in and hides the rest. Multiple external schemas can exist.\n- Example: A Payroll Clerk sees a view with Employee Name and Salary, while a Security Guard sees a view with Employee Name and Access Level.",
+<<<<<<< HEAD
     "tags": ["architecture", "three-schema", "ansi-sparc"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["three schema architecture", "three-schema", "ansi-sparc"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard architecture for achieving data independence."
   },
@@ -82,18 +108,23 @@
     "id": "S3_DBMS_M1_007",
     "question": "Explain data abstraction levels by using suitable diagram",
     "answer": "Data abstraction refers to the process of hiding irrelevant details from users to simplify their interaction with the system. It is typically divided into three levels:\n\n\n\n1. Physical Level (Low Level): The lowest level of abstraction describes how the data is actually stored. It involves complex low-level data structures.\n2. Logical Level (Middle Level): The next higher level of abstraction describes what data are stored in the database, and what relationships exist among those data. The entire database is described in terms of a small number of relatively simple structures.\n3. View Level (High Level): The highest level of abstraction describes only part of the entire database. Many users of the database system do not need all the information; the view level simplifies their interaction by showing only relevant data.",
+<<<<<<< HEAD
     "tags": ["abstraction", "levels", "data-modeling"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["data abstraction", "levels", "data-modeling"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Fundamental concept to manage system complexity."
   },
   {
     "id": "S3_DBMS_M1_008",
-    "question": "Explain in detail data independence with diagram and example. (Logical data independence and physical data independence).",
+    "question": "Explain in detail data independence with example. (Logical data independence and physical data independence).",
     "answer": "Data independence is defined as the capacity to change the schema at one level of a database system without having to change the schema at the next higher level.\n\n\n\n1. Physical Data Independence: The capacity to change the internal schema without having to change the conceptual schema. Hence, external schemas and application programs need not be changed.\n- Example: Changing the storage from a hard disk to a Cloud storage or changing the file access method (like adding an index) to improve performance. The logical table structure remains the same.\n\n2. Logical Data Independence: The capacity to change the conceptual schema without having to change external schemas or application programs.\n- Example: Adding a new attribute (like Phone Number) to a Student table or splitting a table into two. As long as the views (External Level) are updated to map to the new conceptual structure, the user applications don't need to be rewritten.",
     "tags": ["data-independence", "logical", "physical"],
     "source": {
@@ -108,12 +139,17 @@
     "id": "S3_DBMS_M1_009",
     "question": "Explain DBMS architecture with diagram.",
     "answer": "Modern DBMS applications usually follow a Multi-Tier Architecture to distribute responsibilities:\n\n\n\n1. Presentation Layer (User Interface): This is the topmost level. It is the interface through which the user interacts with the application (e.g., a Web Browser or a Mobile App). It handles data entry and displaying results.\n2. Business Logic Layer (Application Layer): This layer acts as a middleman. It contains the business rules and logic (e.g., calculating taxes, validating user input). It processes commands from the presentation layer and makes logical decisions.\n3. Data Access Layer (Database Layer): This layer consists of the DBMS software and the actual database. It is responsible for the persistent storage of data and executing queries passed down from the business layer.",
+<<<<<<< HEAD
     "tags": ["architecture", "tiers", "3-tier"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["dbms architecture", "tiers", "3-tier"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Focuses on the logical separation of application components."
   },
@@ -121,12 +157,17 @@
     "id": "S3_DBMS_M1_010",
     "question": "List and explain DBMS Languages.",
     "answer": "DBMS provides specialized languages to perform different operations on the database:\n\n- Data Definition Language (DDL): Used by the DBA and database designers to define the conceptual schema, internal schema, and views. It specifies the data structures and constraints.\n- Commands: CREATE, ALTER, DROP, TRUNCATE.\n- Data Manipulation Language (DML): Used to specify database retrievals and updates. It includes a query language (like SQL).\n- High-level (Non-procedural) DML: Specifies what data is needed without specifying how to get it (e.g., SQL).\n- Low-level (Procedural) DML: Requires a user to specify how to get the data (record-at-a-time).\n- Commands: SELECT, INSERT, UPDATE, DELETE.\n- Data Control Language (DCL): Used to control access to data within the database.\n- Commands: GRANT, REVOKE.\n- Transaction Control Language (TCL): Used to manage the changes made by DML statements.\n- Commands: COMMIT, ROLLBACK, SAVEPOINT.",
+<<<<<<< HEAD
     "tags": ["languages", "sql", "ddl", "dml"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["dbms languages", "sql", "ddl", "dml"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Standard classification of database commands."
   },
@@ -134,12 +175,17 @@
     "id": "S3_DBMS_M1_011",
     "question": "What do you mean by two levels architecture?",
     "answer": "A Two-Level (or 2-Tier) Architecture is a client-server architecture where the application is split into two parts:\n\n\n\n1. Client Tier: The client-side machine contains the user interface and the application programs. It handles the logic required to interact with the user.\n2. Server Tier: The server-side machine contains the DBMS and the database. The server is responsible for data validation, transaction management, and query processing.\n\nCommunication: The client application connects directly to the server (often via ODBC or JDBC) to send requests and receive data. This architecture is efficient for small-scale applications but can become difficult to manage as the number of clients grows.",
+<<<<<<< HEAD
     "tags": ["architecture", "2-tier", "client-server"],
     "source": {
       "type": "file",
       "path": null,
       "url": null
     },
+=======
+    "tags": ["two-level architecture", "2-tier", "client-server"],
+    "source": { "type": "file", "path": null, "url": null },
+>>>>>>> de98acbb56c35a11a1cd9ac95e355f52e5dd56c4
     "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "A simpler form of system organization compared to 3-tier."
   }

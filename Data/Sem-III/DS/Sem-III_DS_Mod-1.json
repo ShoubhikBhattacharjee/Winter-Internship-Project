@@ -3,7 +3,7 @@
     "id": "S3_DS_M1_001",
     "question": "What is a Data Structure?",
     "answer": "A Data Structure is a specialized format for organizing, processing, retrieving, and storing data so that it can be accessed and modified efficiently. \nTheory: It defines the relationship between data elements and the operations that can be performed on them. Choosing the right data structure is crucial for improving performance and optimizing memory usage, especially when managing large amounts of data. It ensures that operations like searching, sorting, and insertion are performed with minimal time complexity.",
-    "tags": ["data-structure", "definition"],
+    "tags": ["data-structure", "definition" , "DS"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Core introduction to DS."
@@ -12,7 +12,7 @@
     "id": "S3_DS_M1_002",
     "question": "What are the different types of Data Structures?",
     "answer": "Data structures are primarily classified into two main categories based on how they are predefined and their complexity: \n1. Primitive Data Structures: Basic data types provided by the language, such as int and float. \n2. Non-Primitive Data Structures: Complex structures derived from primitive types, which are further divided into Linear Data Structures and Non-Linear Data Structures.\n\nDefinitions of categories:\n- Linear Data Structures: A data structure where data elements are arranged in a sequential or linear order. Every element (except the first and last) has a unique predecessor and successor.\n- Non-Linear Data Structures: A data structure where data elements are not arranged in a sequential order but follow a hierarchical or interconnected pattern across multiple levels.",
-    "tags": ["data-structure", "classification"],
+    "tags": ["data-structure", "classification","types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Structural classification."

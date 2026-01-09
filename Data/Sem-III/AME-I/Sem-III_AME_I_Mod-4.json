@@ -4,6 +4,8 @@
     "question": "Define a function of a complex variable and its components.",
     "answer": "A function of a complex variable f(z) is a rule that assigns a complex value w to each complex number z = x + iy in a domain D. It is expressed as w = f(z) = u(x,y) + iv(x,y), where u and v are real-valued functions of the coordinates x and y. In engineering, u often represents a potential (like electrostatic potential) and v represents a stream function, which are essential for modeling fluid flow and electromagnetic fields.",
     "tags": ["complex variable", "definition", "components"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Foundation of complex mapping."
   },
   {
@@ -11,6 +13,8 @@
     "question": "What is the formal definition of the limit for a complex function?",
     "answer": "The limit of f(z) as z approaches z0 is L if, for every ε > 0, there exists a δ > 0 such that |f(z) - L| < ε whenever 0 < |z - z0| < δ. Unlike real calculus where z can only approach from two directions, in the complex plane, z can approach z0 from any direction. For the limit to exist, the value must be the same regardless of the path taken.",
     "tags": ["limit", "complex analysis", "epsilon-delta"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Path independence is key."
   },
   {
@@ -18,6 +22,8 @@
     "question": "Define continuity and its requirements in the complex plane.",
     "answer": "A complex function f(z) is continuous at z0 if three conditions are met: (1) f(z0) is defined, (2) the limit of f(z) as z → z0 exists, and (3) the limit equals f(z0). In physical terms, continuity ensures that small changes in the input (position in the complex plane) result in small changes in the output (field strength or potential).",
     "tags": ["continuity", "definition"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Prerequisite for differentiability."
   },
   {
@@ -25,6 +31,8 @@
     "question": "Explain differentiability for a complex function.",
     "answer": "f(z) is differentiable at z0 if the derivative f'(z0) = lim_{z→z0} [f(z) - f(z0)] / (z - z0) exists and is unique. This is a much stronger condition than in real variables because the limit must be identical for an infinite number of approach paths in the 2D complex plane. This unique property leads to the concept of analyticity.",
     "tags": ["differentiability", "derivative"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Stronger than real differentiation."
   },
   {
@@ -32,6 +40,8 @@
     "question": "What is an Analytic (Regular) Function?",
     "answer": "A function f(z) is analytic at a point z0 if it is differentiable not only at z0, but at every point in some neighborhood of z0. If a function is analytic everywhere in the finite complex plane, it is called an 'Entire Function' (e.g., e^z, sin z). Analytic functions are the 'well-behaved' functions used to solve Laplace's equation in physics.",
     "tags": ["analytic function", "definition", "holomorphic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Also known as holomorphic functions."
   },
   {
@@ -39,6 +49,8 @@
     "question": "State the Cauchy-Riemann (C-R) equations and their significance.",
     "answer": "For f(z) = u + iv, the necessary conditions for analyticity are the Cauchy-Riemann equations: ∂u/∂x = ∂v/∂y and ∂u/∂y = -∂v/∂x. These equations link the real and imaginary parts of a complex function. They ensure that the mapping performed by f(z) is 'conformal' (preserves angles), which is critical in airfoil design and heat distribution modeling.",
     "tags": ["Cauchy-Riemann", "analyticity", "conformal mapping"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Necessary for differentiation."
   },
   {
@@ -46,6 +58,8 @@
     "question": "What are the sufficient conditions for a function to be analytic?",
     "answer": "For f(z) = u + iv to be analytic in a region, the following must hold: (1) The partial derivatives ux, uy, vx, vy must exist, (2) These partials must be continuous in the region, and (3) They must satisfy the Cauchy-Riemann equations. Continuity of the derivatives ensures that the function doesn't have 'sharp' changes that would break differentiability.",
     "tags": ["analytic function", "sufficiency"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Continuity + C-R = Analyticity."
   },
   {
@@ -53,6 +67,8 @@
     "question": "Explain the Milne-Thomson method for constructing f(z) from its real part u.",
     "answer": "The Milne-Thomson method allows us to find f(z) directly in terms of z without first finding v. Given u(x,y): (1) Find ux and uy. (2) Replace x with z and y with 0 to get φ1(z,0) = ux(z,0) and φ2(z,0) = uy(z,0). (3) Integrate f(z) = ∫ [φ1(z,0) - iφ2(z,0)] dz + C. This shortcut is faster than solving for the harmonic conjugate v via integration.",
     "tags": ["Milne-Thomson", "construction", "method"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Direct z-domain construction."
   },
   {
@@ -60,6 +76,8 @@
     "question": "Construct f(z) using Milne-Thomson when the imaginary part v is given.",
     "answer": "Given v(x,y): (1) Find vx and vy. (2) Replace x with z and y with 0 to get ψ1(z,0) = vy(z,0) and ψ2(z,0) = vx(z,0). (3) Integrate f(z) = ∫ [ψ1(z,0) + iψ2(z,0)] dz + C. This method is used in fluid dynamics to find the complex potential when only the stream function is known.",
     "tags": ["Milne-Thomson", "imaginary part"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Used in fluid mechanics."
   },
   {
@@ -67,6 +85,8 @@
     "question": "Define a Harmonic Function and the Laplace Equation.",
     "answer": "A real function φ(x,y) is harmonic if it has continuous second-order partial derivatives and satisfies the Laplace Equation: ∇²φ = ∂²φ/∂x² + ∂²φ/∂y² = 0. In complex analysis, the real and imaginary parts of any analytic function are automatically harmonic. This links complex analysis directly to steady-state heat flow and gravity.",
     "tags": ["harmonic function", "Laplace equation"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "∇²φ = 0."
   },
   {
@@ -74,6 +94,8 @@
     "question": "What is a Harmonic Conjugate?",
     "answer": "If u(x,y) is a harmonic function, then v(x,y) is its harmonic conjugate if f(z) = u + iv is analytic. This means v must satisfy the C-R equations relative to u. Physically, if u represents equipotential lines, v represents the lines of force (orthogonal to u).",
     "tags": ["harmonic conjugate", "analytic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "u and v form an analytic pair."
   },
   {
@@ -81,6 +103,8 @@
     "question": "How do you find the Harmonic Conjugate using C-R equations?",
     "answer": "Given u: (1) Use ∂v/∂y = ∂u/∂x and integrate with respect to y, adding a constant function g(x). (2) Differentiate the result with respect to x and set it equal to -∂u/∂y. (3) Solve for g(x) and integrate to find the complete function v. This process is essential for determining the stream function of a flow when the velocity potential is known.",
     "tags": ["harmonic conjugate", "integration"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Stepwise recovery of v."
   },
   {
@@ -88,6 +112,8 @@
     "question": "Explain Orthogonal Trajectories in the complex plane.",
     "answer": "Two families of curves are orthogonal if they intersect at right angles at every point. For any analytic function f(z) = u + iv, the level curves u(x,y) = c1 and v(x,y) = c2 form a set of orthogonal trajectories. This property is used in mapping electric fields around conductors, where u are the voltages and v are the field lines.",
     "tags": ["orthogonal trajectories", "geometry"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Intersection at 90 degrees."
   },
   {
@@ -95,6 +121,8 @@
     "question": "Verify if f(z) = z^2 is analytic and find its components.",
     "answer": "f(z) = (x + iy)^2 = (x^2 - y^2) + i(2xy). Here u = x^2 - y^2 and v = 2xy. C-R check: ux = 2x, vy = 2x (Equal); uy = -2y, vx = 2y (uy = -vx). Since C-R equations are satisfied and the derivatives are continuous, f(z) = z^2 is analytic everywhere.",
     "tags": ["example", "analytic", "verification"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Basic polynomial example."
   },
   {
@@ -102,6 +130,8 @@
     "question": "Determine the orthogonal trajectories of the family u = x^2 - y^2.",
     "answer": "The harmonic conjugate of u = x^2 - y^2 is v = 2xy. Therefore, the orthogonal trajectories of the hyperbolas x^2 - y^2 = c1 are the rectangular hyperbolas 2xy = c2. Every point where these curves meet, their tangents are perpendicular.",
     "tags": ["example", "orthogonal trajectories"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Hyperbolic orthogonality."
   },
   {
@@ -109,6 +139,8 @@
     "question": "What are the C-R equations in Polar Coordinates?",
     "answer": "For f(z) = u(r,θ) + iv(r,θ), the C-R equations are: ∂u/∂r = (1/r) ∂v/∂θ and ∂v/∂r = -(1/r) ∂u/∂θ. These are used when dealing with circular domains, such as heat flow in a disk or the stress around a circular hole in a plate.",
     "tags": ["polar coordinates", "Cauchy-Riemann"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Essential for circular symmetry."
   },
   {
@@ -116,6 +148,8 @@
     "question": "Construct f(z) if u = e^x cos y using Milne-Thomson.",
     "answer": "1. ux = e^x cos y, uy = -e^x sin y. 2. φ1(z,0) = e^z cos(0) = e^z. 3. φ2(z,0) = -e^z sin(0) = 0. 4. f(z) = ∫ [e^z - i(0)] dz = e^z + C. Thus, e^x cos y is the real part of the exponential function.",
     "tags": ["Milne-Thomson", "example"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "e^z construction."
   },
   {
@@ -123,6 +157,8 @@
     "question": "Prove that the real part of an analytic function satisfies Laplace's Equation.",
     "answer": "Given f(z) = u + iv is analytic, ux = vy and uy = -vx. Differentiating the first with respect to x: uxx = vyx. Differentiating the second with respect to y: uyy = -vxy. Since vxy = vyx for smooth functions, uxx + uyy = vyx - vxy = 0. Thus, u is harmonic. This proof confirms why complex analysis is so powerful for solving 2D physics problems.",
     "tags": ["proof", "Laplace equation", "analyticity"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "The uxx + uyy = 0 derivation."
   },
   {
@@ -130,6 +166,8 @@
     "question": "What is a Singular Point (Singularity)?",
     "answer": "A singular point of f(z) is a point where the function fails to be analytic. If f(z) = 1/(z-2), then z=2 is a singularity. In engineering, singularities often represent sources or sinks (like a drain in a fluid tank or a point charge in electricity).",
     "tags": ["singularity", "analytic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Points of non-analyticity."
   },
   {
@@ -137,6 +175,8 @@
     "question": "Define Conformal Mapping.",
     "answer": "A mapping w = f(z) is conformal if it preserves the angle between two curves in both magnitude and direction. Every analytic function f(z) is conformal at all points where f'(z) ≠ 0. This allows us to transform a complex geometric shape (like an airplane wing) into a simple circle to solve flow equations more easily.",
     "tags": ["conformal mapping", "analytic"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Angle-preserving transformation."
   },
   {
@@ -144,6 +184,8 @@
     "question": "Determine the analytic function f(z) if u - v = (x - y)(x^2 + 4xy + y^2).",
     "answer": "This requires a modified Milne-Thomson approach. By setting F(z) = (1+i)f(z), we can treat the given u - v as the real part of a new function. After differentiation and substituting z=x, y=0, we integrate to find f(z) = z^3 + C. This shows how we can solve for functions even when the real and imaginary parts are mixed.",
     "tags": ["Milne-Thomson", "mixed parts", "example"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "Advanced construction technique."
   },
   {
@@ -151,6 +193,8 @@
     "question": "Explain the significance of the 'Complex Potential' in fluid flow.",
     "answer": "In fluid dynamics, we define Ω(z) = φ + iψ, where φ is the velocity potential and ψ is the stream function. If Ω(z) is analytic, the flow is both irrotational and incompressible. The derivative Ω'(z) gives the complex velocity, providing a highly efficient way to calculate flow speed and direction at any point.",
     "tags": ["fluid flow", "complex potential", "applications"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T22:15:00+05:30",
     "notes": "φ = potential, ψ = stream."
   }
 ]
