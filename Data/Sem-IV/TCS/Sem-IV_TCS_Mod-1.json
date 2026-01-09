@@ -2,39 +2,6 @@
   {
     "id": "S4_TCS_M1_001",
     "question": "What is an alphabet in Theory of Computer Science?",
-    "answer": "An alphabet is a finite, non-empty set of symbols, usually denoted by \u03a3.\",",
-    "tags": [
-      "tcs",
-      "alphabet"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T20:28:43.904428",
-    "notes": "Basic definition."
-  },
-  {
-    "id": "S4_TCS_M1_002",
-    "question": "What is a string?",
-    "answer": "A string is a finite sequence of symbols taken from an alphabet. The empty string is denoted by \u03b5.\",",
-    "tags": [
-      "tcs",
-      "string"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T20:30:11.775232",
-    "notes": "Core building block."
-  }
-][
-  {
-    "id": "S4_TCS_M1_001",
-    "question": "What is an alphabet in Theory of Computer Science?",
     "answer": "An alphabet is a finite, non-empty set of symbols, usually denoted by Σ.",
     "tags": ["tcs", "alphabet"],
     "source": { "type": "file", "path": null, "url": null },
