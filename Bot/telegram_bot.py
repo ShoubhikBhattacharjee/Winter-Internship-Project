@@ -35,6 +35,8 @@ import logging
 
 import numpy as np
 
+import time
+
 # from admin_access import is_admin, start_ngrok
 
 # ============================================================
@@ -443,16 +445,22 @@ async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     state = json.loads(ADMIN_STATE_FILE.read_text())
 
+    # Request admin panel if not active
     if not state.get("active"):
+        state["activate"] = True
+        state["last_activity"] = time.time()
+        ADMIN_STATE_FILE.write_text(json.dumps(state, indent=2))
+
         await update.message.reply_text(
-            "⚠ Admin panel is currently offline.\n"
-            "Please start admin_access.py."
+            "🛠 Admin panel is starting…\n"
+            "Please retry `/admin` in a few seconds."
         )
         return
 
+    # Already active → show link
     await update.message.reply_text(
         f"🛠 Admin panel access:\n\n{state['ngrok_url']}\n\n"
-        "⏱ Auto-closes on inactivity."
+        "⏱ Auto-closes after inactivity."
     )
 
 # ============================================================

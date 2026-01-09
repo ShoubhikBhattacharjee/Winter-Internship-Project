@@ -5,94 +5,44 @@ import json
 from pathlib import Path
 import requests
 
+# =========================================================
+# Configuration
+# =========================================================
+
 NGROK_PORT = 5000
-INACTIVITY_TIMEOUT = 300
+INACTIVITY_TIMEOUT = 300  # seconds
 
 STATE_FILE = Path("admin_state.json")
-CONFIG_FILE = Path("admin_config.json")
 
-LAST_ACTIVITY = time.time()
 NGROK_PROCESS = None
 
-
-# ---------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------
-
-def write_state(url=None, active=False):
-    STATE_FILE.write_text(json.dumps({
-        "ngrok_url": url,
-        "active": active,
-        "last_updated": time.time()
-    }, indent=2))
-
+# =========================================================
+# State helpers
+# =========================================================
 
 def touch_activity():
     global LAST_ACTIVITY
     LAST_ACTIVITY = time.time()
 
+def load_state() -> dict:
+    return json.loads(STATE_FILE.read_text())
 
-def ngrok_running() -> bool:
-    return NGROK_PROCESS is not None
+def save_state(**updates):
+    state = load_state()
+    state.update(updates)
+    STATE_FILE.write_text(json.dumps(state, indent=2))
 
-
-# ---------------------------------------------------------
-# Admin validation (optional reuse)
-# ---------------------------------------------------------
-
-def is_admin(user_id: int) -> bool:
-    data = json.loads(CONFIG_FILE.read_text())
-    return user_id in data.get("admins", [])
-
-
-# ---------------------------------------------------------
+# =========================================================
 # Ngrok control
-# ---------------------------------------------------------
-
-"""
-def start_ngrok():
-    global NGROK_PROCESS, LAST_ACTIVITY
-
-    LAST_ACTIVITY = time.time()
-
-    NGROK_PROCESS = subprocess.Popen(
-        ["ngrok", "http", str(NGROK_PORT)],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
-
-    url = None
-    for _ in range(10):
-        try:
-            tunnels = requests.get("http://127.0.0.1:4040/api/tunnels").json()
-            for t in tunnels["tunnels"]:
-                if t["proto"] == "https":
-                    url = t["public_url"]
-                    break
-            if url:
-                break
-        except Exception:
-            time.sleep(0.5)
-
-    write_state(url=url, active=True)
-
-    threading.Thread(target=_watch_inactivity, daemon=True).start()
-    print(f"[ADMIN] ngrok started: {url}")
-"""
+# =========================================================
 
 def start_ngrok():
-    global NGROK_PROCESS, LAST_ACTIVITY
+    global NGROK_PROCESS
 
     if NGROK_PROCESS:
-        touch_activity()
-        # Read URL from state file
-        try:
-            state = json.loads(STATE_FILE.read_text())
-            return state.get("ngrok_url")
-        except Exception:
-            return None
+        return
 
-    LAST_ACTIVITY = time.time()
+    print("[ADMIN] Starting ngrok…")
 
     NGROK_PROCESS = subprocess.Popen(
         ["ngrok", "http", str(NGROK_PORT)],
@@ -103,82 +53,74 @@ def start_ngrok():
     url = None
     for _ in range(20):
         try:
-            tunnels = requests.get(
-                "http://127.0.0.1:4040/api/tunnels",
-                timeout=1
-            ).json()
-
-            for t in tunnels.get("tunnels", []):
+            r = requests.get("http://127.0.0.1:4040/api/tunnels", timeout=1).json()
+            for t in r.get("tunnels", []):
                 if t.get("proto") == "https":
                     url = t.get("public_url")
                     break
-
             if url:
                 break
-
         except Exception:
             time.sleep(0.5)
 
-    write_state(url=url, active=bool(url))
+    save_state(
+        active=True,
+        ngrok_url=url,
+        last_activity=time.time()
+    )
 
-    threading.Thread(
-        target=_watch_inactivity,
-        daemon=True
-    ).start()
-
-    print(f"[ADMIN] ngrok started: {url}")
-    return url
-
+    threading.Thread(target=watch_inactivity, daemon=True).start()
+    print(f"[ADMIN] ngrok live: {url}")
 
 def stop_ngrok():
     global NGROK_PROCESS
+
     if NGROK_PROCESS:
         NGROK_PROCESS.terminate()
         NGROK_PROCESS = None
 
-    write_state(url=None, active=False)
+    save_state(
+        activate=False,
+        active=False,
+        ngrok_url=None,
+        last_activity=None
+    )
+
     print("[ADMIN] ngrok stopped")
 
-
-# ---------------------------------------------------------
+# =========================================================
 # Inactivity watchdog
-# ---------------------------------------------------------
+# =========================================================
 
-def _watch_inactivity():
-    while NGROK_PROCESS:
-        time.sleep(5)
-        if time.time() - LAST_ACTIVITY > INACTIVITY_TIMEOUT:
-            print("[ADMIN] Inactive — shutting down ngrok")
-            stop_ngrok()
-            break
-
-
-# ---------------------------------------------------------
-# Standalone entrypoint
-# ---------------------------------------------------------
-
-"""
-if __name__ == "__main__":
-    print("[ADMIN] Starting admin access service...")
-    start_ngrok()
-
+def watch_inactivity():
     while True:
-        time.sleep(1)
-"""
+        time.sleep(5)
+        state = load_state()
+
+        if not state["active"]:
+            return
+
+        if time.time() - state["last_activity"] > INACTIVITY_TIMEOUT:
+            print("[ADMIN] Inactivity timeout reached")
+            stop_ngrok()
+            return
+
+# =========================================================
+# Main supervisor loop
+# =========================================================
 
 if __name__ == "__main__":
-    print("[ADMIN] Admin access service running")
+    print("[ADMIN] Admin access supervisor running")
 
     while True:
         try:
-            # If ngrok is not running, wait for activity trigger
-            if not ngrok_running():
-                start_ngrok()
-                time.sleep(2)
-                continue
+            state = load_state()
 
-            # ngrok is running — just idle
-            time.sleep(5)
+            # Bot requested admin panel
+            if state["activate"] and not state["active"]:
+                start_ngrok()
+
+            time.sleep(2)
 
         except KeyboardInterrupt:
             print("\n[ADMIN] Shutting down")

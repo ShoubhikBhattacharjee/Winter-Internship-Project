@@ -1,0 +1,18 @@
+[
+  {
+    "id": "S4_TCS_M1_001",
+    "question": "What is an alphabet in Theory of Computer Science?",
+    "answer": "An alphabet is a finite, non-empty set of symbols, usually denoted by \u03a3.",
+    "tags": [
+      "tcs",
+      "alphabet"
+    ],
+    "source": {
+      "type": "file",
+      "path": null,
+      "url": null
+    },
+    "created_at": "2026-01-09T23:39:05.311068",
+    "notes": "Basic definition."
+  }
+]

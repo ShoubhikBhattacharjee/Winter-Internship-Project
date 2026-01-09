@@ -1,5 +1,6 @@
 {
-  "ngrok_url": null,
+  "activate": false,
   "active": false,
-  "last_updated": 1767977546.1490986
+  "ngrok_url": null,
+  "last_activity": null
 }
