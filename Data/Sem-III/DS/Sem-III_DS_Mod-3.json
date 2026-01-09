@@ -3,17 +3,16 @@
     "id": "S3_DS_M3_001",
     "question": "What is a Linked List?",
     "answer": "A Linked List is a linear data structure where elements, called nodes, are not stored in contiguous memory locations. Instead, they are connected through pointers.\nTheory: Each node consists of two parts: 'Data' (the actual value) and 'Pointer/Link' (a reference to the next node in the sequence). The list uses a pointer variable called 'START' or 'HEAD' to store the address of the first node. If START is NULL, the list is empty.",
-    "tags": ["linked-list", "definition", "node"],
+    "tags": ["linked_list_definition", "ll_node_structure", "ll_basics"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Core definition of Linked List."
   },
-  
   {
     "id": "S3_DS_M3_002",
     "question": "What are the different types of Linked Lists?",
     "answer": "Linked lists are categorized based on their linking structure:\n1. Singly Linked List (SLL): Each node points to the next node, and the last node points to NULL.\n2. Doubly Linked List (DLL): Each node has two pointers, one pointing to the next node and one to the previous node.\n3. Circular Linked List (CLL): The last node points back to the first node, forming a circle.",
-    "tags": ["linked-list", "types"],
+    "tags": ["linked_list_types", "ll_classification", "sll_dll_cll_overview"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Linked list classification."
@@ -22,7 +21,7 @@
     "id": "S3_DS_M3_003",
     "question": "Compare Linked Lists and Arrays.",
     "answer": "Arrays and Linked Lists differ in memory and access:\n1. Memory: Arrays use static, contiguous memory; Linked Lists use dynamic, non-contiguous memory.\n2. Size: Arrays have a fixed size; Linked Lists are dynamic and can grow/shrink.\n3. Insertion/Deletion: Costly in arrays due to element shifting; efficient in Linked Lists as only pointers change.\n4. Access: Arrays allow random access (O(1)); Linked Lists allow only sequential access (O(n)).",
-    "tags": ["comparison", "array", "linked-list"],
+    "tags": ["ll_vs_array_comparison", "linked_list_advantages", "array_limitations"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Structural comparison."
@@ -31,17 +30,16 @@
     "id": "S3_DS_M3_004",
     "question": "Explain Singly Linked List (SLL).",
     "answer": "A Singly Linked List is a basic linear collection of nodes where navigation is only possible in one direction.\nTheory: Each node contains a data field and a 'next' pointer. The sequence begins at 'START' and terminates at a node whose 'next' pointer is NULL. It is memory-efficient compared to DLL but lacks backward traversal.",
-    "tags": ["SLL", "singly-linked-list"],
+    "tags": ["sll_theory", "singly_linked_list_explanation", "sll_structure"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "SLL explanation."
   },
-
   {
     "id": "S3_DS_M3_005",
     "question": "Explain the Algorithm for SLL Insertion at the Beginning.",
     "answer": "Inserting at the start involves making the new node the new head of the list.\nAlgorithm:\n1. Allocate memory for NewNode and set its Data.\n2. Set NewNode->Next = START.\n3. Set START = NewNode.\nTheory: This is an O(1) operation as no traversal is required.",
-    "tags": ["SLL", "insertion", "algorithm"],
+    "tags": ["sll_insert_beginning", "sll_insert_head", "sll_algo_insert_start", "sll_beginning_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "O(1) insertion."
@@ -50,7 +48,7 @@
     "id": "S3_DS_M3_006",
     "question": "Explain the Algorithm for SLL Insertion at the End.",
     "answer": "Inserting at the end requires finding the current tail node.\nAlgorithm:\n1. Allocate NewNode and set Data and NewNode->Next = NULL.\n2. If START == NULL, set START = NewNode.\n3. Else, traverse using Temp until Temp->Next == NULL.\n4. Set Temp->Next = NewNode.\nTheory: This is O(n) due to the traversal to the end of the list.",
-    "tags": ["SLL", "insertion", "algorithm"],
+    "tags": ["sll_insert_end", "sll_insert_tail", "sll_algo_insert_last", "sll_end_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Insertion at tail."
@@ -59,7 +57,7 @@
     "id": "S3_DS_M3_007",
     "question": "Explain the Algorithm for SLL Insertion after a Given Node.",
     "answer": "This operation inserts a new node in the middle of a Singly Linked List after a specific existing node.\nAlgorithm:\n1. Allocate memory for NewNode and set its Data.\n2. Traverse the list to find the node containing the target value (let it be Temp).\n3. If target not found, Exit.\n4. Set NewNode->Next = Temp->Next.\n5. Set Temp->Next = NewNode.\nTheory: This requires locating the node first (traversal) and then rearranging two pointers to insert the new node between existing ones.",
-    "tags": ["SLL", "insertion", "algorithm"],
+    "tags": ["sll_insert_middle", "sll_insert_after_node", "sll_algo_insert_specific", "sll_middle_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Middle insertion logic for SLL."
@@ -68,7 +66,7 @@
     "id": "S3_DS_M3_008",
     "question": "Explain the Algorithm for SLL Deletion from the Beginning.",
     "answer": "Removing the first node involves shifting the START pointer.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. Set Temp = START.\n3. Set START = START->Next.\n4. Free(Temp).\nTheory: This efficiently removes the head node in O(1) time.",
-    "tags": ["SLL", "deletion", "algorithm"],
+    "tags": ["sll_delete_beginning", "sll_delete_head", "sll_algo_delete_start", "sll_beginning_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "O(1) deletion."
@@ -77,7 +75,7 @@
     "id": "S3_DS_M3_009",
     "question": "Explain the Algorithm for SLL Deletion from the End.",
     "answer": "Deleting the last node requires stopping at the second-to-last node.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. If START->Next == NULL, Free(START) and set START = NULL.\n3. Traverse using Temp and PreTemp until Temp->Next == NULL.\n4. Set PreTemp->Next = NULL.\n5. Free(Temp).",
-    "tags": ["SLL", "deletion", "algorithm"],
+    "tags": ["sll_delete_end", "sll_delete_tail", "sll_algo_delete_last", "sll_end_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Deletion from tail."
@@ -86,7 +84,7 @@
     "id": "S3_DS_M3_010",
     "question": "Explain the Algorithm for SLL Deletion of a Given Node.",
     "answer": "This operation deletes a node with a specific value from the middle of a Singly Linked List.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. If START->Data == Value, set Temp = START, START = START->Next, and Free(Temp).\n3. Else, traverse using Temp and PreTemp until Temp->Data == Value or end of list.\n4. If found, set PreTemp->Next = Temp->Next and Free(Temp).\nTheory: The algorithm maintains a pointer to the previous node (PreTemp) to link it to the node following the one being deleted.",
-    "tags": ["SLL", "deletion", "algorithm"],
+    "tags": ["sll_delete_middle", "sll_delete_specific_node", "sll_algo_delete_value", "sll_middle_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Specific node deletion logic for SLL."
@@ -95,17 +93,16 @@
     "id": "S3_DS_M3_011",
     "question": "Explain Doubly Linked List (DLL).",
     "answer": "A Doubly Linked List is a linear data structure where each node contains three fields: 'Prev' pointer, 'Data', and 'Next' pointer.\nTheory: The 'Prev' pointer stores the address of the previous node, while 'Next' stores the address of the next node. This structure allows bidirectional traversal. The Prev of the first node and Next of the last node are NULL.",
-    "tags": ["DLL", "doubly-linked-list"],
+    "tags": ["dll_theory", "doubly_linked_list_explanation", "dll_structure"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "DLL explanation."
   },
-  
   {
     "id": "S3_DS_M3_012",
     "question": "What are the advantages of a Doubly Linked List over a Singly Linked List?",
     "answer": "DLL provides superior flexibility:\n1. Bidirectional Traversal: Can be traversed forward and backward.\n2. Simpler Deletions: A node can be deleted without knowing the previous node's address via traversal.\n3. Efficiency: Useful for applications like 'Undo' functionality in software.",
-    "tags": ["DLL", "advantages"],
+    "tags": ["dll_advantages", "dll_vs_sll_benefits"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "SLL vs DLL utility."
@@ -114,7 +111,7 @@
     "id": "S3_DS_M3_013",
     "question": "Explain the Algorithm for DLL Insertion at the Beginning.",
     "answer": "Inserting at the head of a DLL requires updating both forward and backward pointers.\nAlgorithm:\n1. Create a NewNode and set its Data.\n2. Set NewNode->Prev = NULL.\n3. Set NewNode->Next = START.\n4. If START is not NULL, set START->Prev = NewNode.\n5. Set START = NewNode.\nTheory: Because it is a doubly linked list, the Prev pointer of the existing first node must be updated to point to the new node, and the new node's Next must point to the old head.",
-    "tags": ["DLL", "insertion", "algorithm"],
+    "tags": ["dll_insert_beginning", "dll_insert_head", "dll_algo_insert_start", "dll_beginning_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Algorithm for DLL head insertion."
@@ -123,7 +120,7 @@
     "id": "S3_DS_M3_014",
     "question": "Explain the Algorithm for DLL Insertion at the End.",
     "answer": "Adding a node at the end of a DLL involves traversing to the tail and updating bidirectional pointers.\nAlgorithm:\n1. Allocate NewNode and set Data and NewNode->Next = NULL.\n2. If START == NULL, set NewNode->Prev = NULL and START = NewNode.\n3. Else, traverse to the last node (Temp).\n4. Set Temp->Next = NewNode.\n5. Set NewNode->Prev = Temp.\nTheory: Unlike SLL, we must set the 'Prev' pointer of the new node to point back to the former last node.",
-    "tags": ["DLL", "insertion", "algorithm"],
+    "tags": ["dll_insert_end", "dll_insert_tail", "dll_algo_insert_last", "dll_end_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "DLL insertion at end."
@@ -132,7 +129,7 @@
     "id": "S3_DS_M3_015",
     "question": "Explain the Algorithm for DLL Insertion after a Given Node.",
     "answer": "Inserting a node after a specific node in a DLL requires updating four pointers.\nAlgorithm:\n1. Allocate NewNode and set Data.\n2. Traverse to find target node (Temp).\n3. Set NewNode->Next = Temp->Next.\n4. If Temp->Next != NULL, set Temp->Next->Prev = NewNode.\n5. Set NewNode->Prev = Temp.\n6. Set Temp->Next = NewNode.\nTheory: Both the 'Next' and 'Prev' pointers of surrounding nodes must be adjusted to accommodate the new node.",
-    "tags": ["DLL", "insertion", "algorithm"],
+    "tags": ["dll_insert_middle", "dll_insert_after_node", "dll_algo_insert_specific", "dll_middle_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "DLL middle insertion logic."
@@ -141,7 +138,7 @@
     "id": "S3_DS_M3_016",
     "question": "Explain the Algorithm for DLL Deletion from the Beginning.",
     "answer": "Removing the head node in a DLL.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. Set Temp = START.\n3. Set START = START->Next.\n4. If START != NULL, set START->Prev = NULL.\n5. Free(Temp).\nTheory: In addition to moving the START pointer, the 'Prev' pointer of the new first node must be set to NULL.",
-    "tags": ["DLL", "deletion", "algorithm"],
+    "tags": ["dll_delete_beginning", "dll_delete_head", "dll_algo_delete_start", "dll_beginning_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "DLL deletion from start."
@@ -150,7 +147,7 @@
     "id": "S3_DS_M3_017",
     "question": "Explain the Algorithm for DLL Deletion from the End.",
     "answer": "Removing the tail node in a DLL.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. If START->Next == NULL, free START and START = NULL.\n3. Else, traverse to the last node (Temp).\n4. Set Temp->Prev->Next = NULL.\n5. Free(Temp).\nTheory: The 'Next' pointer of the second-to-last node is updated to NULL to finalize the deletion.",
-    "tags": ["DLL", "deletion", "algorithm"],
+    "tags": ["dll_delete_end", "dll_delete_tail", "dll_algo_delete_last", "dll_end_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "DLL deletion from tail."
@@ -159,7 +156,7 @@
     "id": "S3_DS_M3_018",
     "question": "Explain the Algorithm for DLL Deletion of a Given Node.",
     "answer": "Deleting a specific node from a DLL involves updating the links of both the preceding and succeeding nodes.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. Traverse to find the node to be deleted (Temp).\n3. If node not found, Exit.\n4. If Temp is first node, perform deletion from beginning.\n5. Else if Temp is last node, perform deletion from end.\n6. Else:\n   a. Set Temp->Prev->Next = Temp->Next.\n   b. Set Temp->Next->Prev = Temp->Prev.\n   c. Free(Temp).\nTheory: Because each node in a DLL knows its predecessor, middle deletion is more direct than in SLL.",
-    "tags": ["DLL", "deletion", "algorithm"],
+    "tags": ["dll_delete_middle", "dll_delete_specific_node", "dll_algo_delete_value", "dll_middle_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Algorithm for specific node removal in DLL."
@@ -168,17 +165,16 @@
     "id": "S3_DS_M3_019",
     "question": "Explain Circular Linked List (CLL).",
     "answer": "A Circular Linked List is a variation where the last node links back to the first node instead of pointing to NULL.\nTheory: This creates a circular loop. In a Singly Circular Linked List, the 'Next' pointer of the last node points to 'START'. It is useful for implementing recurring tasks like CPU scheduling.",
-    "tags": ["CLL", "circular-linked-list"],
+    "tags": ["cll_theory", "circular_linked_list_explanation", "cll_concept"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL concept."
   },
-  
   {
     "id": "S3_DS_M3_020",
     "question": "Explain the Algorithm for Creation of a Circular Linked List.",
     "answer": "Creation involves setting up the first node such that it points to itself to maintain circularity.\nAlgorithm:\n1. Allocate memory for NewNode and set its Data.\n2. If list is empty:\n   a. Set START = NewNode.\n   b. Set NewNode->Next = START.\n3. Else, follow insertion logic to maintain the circular link from the tail to START.\nTheory: The defining characteristic is that the Next pointer of the last node always points back to START.",
-    "tags": ["CLL", "creation", "algorithm"],
+    "tags": ["cll_creation_algorithm", "cll_algo_init", "circular_list_initialization"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Algorithm to initialize CLL."
@@ -187,7 +183,7 @@
     "id": "S3_DS_M3_021",
     "question": "Explain the Algorithm for CLL Insertion at the Beginning.",
     "answer": "Inserting at the start of a CLL requires updating the pointer of the last node to maintain the circle.\nAlgorithm:\n1. Allocate memory for NewNode and set Data.\n2. If START == NULL:\n   a. Set START = NewNode, Set NewNode->Next = START.\n3. Else:\n   a. Traverse to the last node (Temp).\n   b. Set NewNode->Next = START.\n   c. Set Temp->Next = NewNode.\n   d. Set START = NewNode.\nTheory: The tail must be updated to point to the new head to preserve circularity.",
-    "tags": ["CLL", "insertion", "algorithm"],
+    "tags": ["cll_insert_beginning", "cll_insert_head", "cll_algo_insert_start", "cll_beginning_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL insertion at head logic."
@@ -196,7 +192,7 @@
     "id": "S3_DS_M3_022",
     "question": "Explain the Algorithm for CLL Insertion at the End.",
     "answer": "Adding a node to the end of a CLL.\nAlgorithm:\n1. Allocate memory for NewNode and set Data.\n2. If START == NULL:\n   a. Set START = NewNode, NewNode->Next = START.\n3. Else:\n   a. Traverse to last node (Temp).\n   b. Set Temp->Next = NewNode.\n   c. Set NewNode->Next = START.\nTheory: Similar to SLL end insertion, but the NewNode->Next must point to START instead of NULL.",
-    "tags": ["CLL", "insertion", "algorithm"],
+    "tags": ["cll_insert_end", "cll_insert_tail", "cll_algo_insert_last", "cll_end_insertion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL insertion at tail logic."
@@ -205,7 +201,7 @@
     "id": "S3_DS_M3_023",
     "question": "Explain the Algorithm for CLL Deletion from the Beginning.",
     "answer": "Removing the first node of a circular list requires re-linking the tail node to the new head.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. If START->Next == START:\n   a. Free(START), set START = NULL.\n3. Else:\n   a. Traverse to last node (Temp).\n   b. Set PointerToBeDeleted = START.\n   c. Set START = START->Next.\n   d. Set Temp->Next = START.\n   e. Free(PointerToBeDeleted).\nTheory: The tail's link must be updated so it no longer points to the deleted node.",
-    "tags": ["CLL", "deletion", "algorithm"],
+    "tags": ["cll_delete_beginning", "cll_delete_head", "cll_algo_delete_start", "cll_beginning_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL deletion at head logic."
@@ -214,7 +210,7 @@
     "id": "S3_DS_M3_024",
     "question": "Explain the Algorithm for CLL Deletion from the End.",
     "answer": "Removing the last node of a circular list.\nAlgorithm:\n1. If START == NULL, Underflow.\n2. If START->Next == START, Free(START), set START = NULL.\n3. Else:\n   a. Traverse using Temp and PreTemp until Temp->Next == START.\n   b. Set PreTemp->Next = START.\n   c. Free(Temp).\nTheory: The second-to-last node becomes the new tail and must point to START.",
-    "tags": ["CLL", "deletion", "algorithm"],
+    "tags": ["cll_delete_end", "cll_delete_tail", "cll_algo_delete_last", "cll_end_deletion_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL deletion at tail logic."
@@ -223,7 +219,7 @@
     "id": "S3_DS_M3_025",
     "question": "Explain the Algorithm for Traversal of a Circular Linked List.",
     "answer": "Traversal in CLL continues until the pointer returns to the START node.\nAlgorithm:\n1. If START == NULL, Exit.\n2. Set Temp = START.\n3. Repeat:\n   a. Process Temp->Data.\n   b. Set Temp = Temp->Next.\n   Until Temp == START.\nTheory: Because there is no NULL terminator, the condition 'Temp == START' is used to stop the loop after visiting every node exactly once.",
-    "tags": ["CLL", "traversal", "algorithm"],
+    "tags": ["cll_traversal_algorithm", "cll_algo_traverse", "circular_sequential_access"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "CLL sequential access logic."
@@ -232,7 +228,7 @@
     "id": "S3_DS_M3_026",
     "question": "Explain the Linked implementation of a Stack.",
     "answer": "A Stack can be implemented using a Singly Linked List where the top of the stack is the head of the list.\nTheory: The 'START' pointer acts as 'TOP'. For 'Push', a node is inserted at the beginning. For 'Pop', a node is deleted from the beginning. This allows the stack to grow dynamically without the size limits of an array.",
-    "tags": ["stack", "implementation", "linked-list"],
+    "tags": ["stack_linked_list_implementation", "ll_stack_push_pop", "dynamic_stack_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Dynamic stack."
@@ -241,7 +237,7 @@
     "id": "S3_DS_M3_027",
     "question": "Explain the Linked implementation of a Queue.",
     "answer": "A Queue is implemented using a Singly Linked List with two pointers: FRONT and REAR.\nTheory: FRONT points to the first node (head) and REAR points to the last node (tail). 'Enqueue' is performed by adding a node at the REAR, and 'Dequeue' is performed by removing a node from the FRONT.",
-    "tags": ["queue", "implementation", "linked-list"],
+    "tags": ["queue_linked_list_implementation", "ll_queue_front_rear", "dynamic_queue_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Dynamic queue."
@@ -250,17 +246,16 @@
     "id": "S3_DS_M3_028",
     "question": "Explain Polynomial Representation using Linked Lists.",
     "answer": "Linked Lists are used to represent mathematical polynomials where each term is a node.\nTheory: A node stores three values: Coefficient, Exponent, and Pointer to the next term. Terms are typically stored in descending order of their exponents. This representation makes polynomial addition and subtraction efficient.",
-    "tags": ["polynomial", "applications"],
+    "tags": ["ll_polynomial_representation", "polynomial_node_structure"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Linked list application."
   },
-  
   {
     "id": "S3_DS_M3_029",
     "question": "Explain the Algorithm for Polynomial Addition using Linked Lists.",
     "answer": "This algorithm adds two polynomials represented as linked lists by comparing their exponents.\nAlgorithm:\n1. While both lists have nodes:\n   a. If exponents are equal: Add coefficients, create new node in result list, move both pointers.\n   b. If Exponent1 > Exponent2: Create node with Term1 data in result list, move List1 pointer.\n   c. If Exponent2 > Exponent1: Create node with Term2 data in result list, move List2 pointer.\n2. Add any remaining nodes from either List1 or List2 to the result list.\nTheory: The resulting linked list represents the sum of the two polynomials.",
-    "tags": ["polynomial", "addition", "algorithm"],
+    "tags": ["polynomial_addition_algorithm", "ll_poly_add", "polynomial_arithmetic_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Polynomial arithmetic algorithm."
@@ -269,7 +264,7 @@
     "id": "S3_DS_M3_030",
     "question": "Explain the Algorithm for Traversing a Linked List.",
     "answer": "Traversal visits every node to perform an action like counting or printing.\nAlgorithm:\n1. Set Temp = START.\n2. Repeat while Temp != NULL:\n   a. Process Temp->Data.\n   b. Set Temp = Temp->Next.\n3. Exit.",
-    "tags": ["linked-list", "traversal", "algorithm"],
+    "tags": ["ll_traversal_algorithm", "ll_algo_traverse", "ll_sequential_processing"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Basic traversal."
@@ -278,7 +273,7 @@
     "id": "S3_DS_M3_031",
     "question": "Explain the Algorithm for Counting number of nodes in a Linked List.",
     "answer": "This algorithm iterates through the list to count the total number of nodes.\nAlgorithm:\n1. Set Count = 0.\n2. Set Temp = START.\n3. While Temp != NULL:\n   a. Set Count = Count + 1.\n   b. Set Temp = Temp->Next.\n4. Return Count.",
-    "tags": ["linked-list", "counting", "algorithm"],
+    "tags": ["ll_count_nodes_algorithm", "ll_algo_count", "ll_length_calculation"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Node counting logic."
@@ -287,18 +282,9 @@
     "id": "S3_DS_M3_032",
     "question": "Explain the Algorithm for Searching an element in the Linked List.",
     "answer": "This algorithm searches for a specific value by traversing the list sequentially.\nAlgorithm:\n1. Set Temp = START.\n2. While Temp != NULL:\n   a. If Temp->Data == Target, Return Success/Position.\n   b. Set Temp = Temp->Next.\n3. Return Not Found.",
-    "tags": ["linked-list", "searching", "algorithm"],
+    "tags": ["ll_search_algorithm", "ll_algo_search", "ll_linear_search_logic"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-03T22:00:00+05:30",
     "notes": "Sequential search logic."
-  },
-  {
-    "id": "S3_DS_M2_028",
-    "question": "What are the common applications of Queues?",
-    "answer": "Queues are used in scenarios requiring order and resource sharing: \n1. CPU Scheduling: Managing the order of processes to be executed. \n2. Disk Scheduling: Organizing I/O requests for the disk. \n3. Buffers: Handling asynchronous data transfers (e.g., keyboard buffers, printer spooling). \n4. Networking: Routing data packets in a specific order. \n5. Call Center Systems: Managing a queue of incoming customer calls.",
-    "tags": ["queue", "applications"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-03T21:40:00+05:30",
-    "notes": "Use cases overview."
   }
 ]
