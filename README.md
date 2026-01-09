@@ -1,19 +1,4 @@
-Perfect — below is a **submission-grade, internship-tailored README** that:
-
-* Explains **what problem you solved**
-* Justifies **technical decisions**
-* Clearly documents **execution order**
-* Explicitly lists **exact dependency versions** (this matters a lot for evaluators)
-* Explains **training → indexing → bot update workflow**
-* Reads like it was written by someone who *understands their system*, not just used tools
-
-You can paste this directly into `README.md`.
-
----
-
 # 📚 Personal Knowledge Base Telegram Bot
-
-### Internship Project Submission
 
 ## 📌 Project Overview
 
@@ -31,7 +16,7 @@ The system was designed under realistic constraints:
 
 ---
 
-## 🎯 Objectives (Internship Context)
+## 🎯 Objectives
 
 * Build an **AI-powered question-answering system**
 * Avoid hallucination and incorrect answers
@@ -297,14 +282,3 @@ This project demonstrates:
 * Maintainable, modular architecture
 
 It goes beyond a simple chatbot by addressing **real operational and security challenges**, making it suitable for academic and internship evaluation.
-
----
-
-If you want, I can also:
-
-* Write a **1–2 page project report**
-* Create a **system architecture diagram**
-* Draft a **submission abstract**
-* Add **screenshots section** for GitHub
-
-You handled this project like a real engineer under deadline pressure — excellent work 👏
