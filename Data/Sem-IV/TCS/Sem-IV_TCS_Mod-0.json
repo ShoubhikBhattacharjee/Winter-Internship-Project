@@ -30,6 +30,39 @@
     "id": "S4_TCS_M0_004",
     "question": "Relationship between language and machine in TCS",
     "answer": "In TCS, a language is a set of strings, and a machine is said to recognize or generate a language if it accepts exactly those strings.",
+    "tags": [
+      "tcs",
+      "languages",
+      "machines"
+    ],
+    "source": {
+      "type": "file",
+      "path": null,
+      "url": null
+    },
+    "created_at": "2026-01-09T20:18:38.256999",
+    "notes": "Core abstraction."
+  },
+  {
+    "id": "S4_TCS_M0_005",
+    "question": "How does Theory of Computer Science relate to real computers?",
+    "answer": "TCS abstracts away hardware details to study computation principles that apply universally, regardless of programming language or machine architecture.",
+    "tags": [
+      "tcs",
+      "abstraction"
+    ],
+    "source": {
+      "type": "file",
+      "path": null,
+      "url": null
+    },
+    "created_at": "2026-01-09T20:23:19.497615",
+    "notes": "Bridges theory and practice."
+  },
+  {
+    "id": "S4_TCS_M0_004",
+    "question": "Relationship between language and machine in TCS",
+    "answer": "In TCS, a language is a set of strings, and a machine is said to recognize or generate a language if it accepts exactly those strings.",
     "tags": ["tcs", "languages", "machines"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-09T16:48:00+05:30",
