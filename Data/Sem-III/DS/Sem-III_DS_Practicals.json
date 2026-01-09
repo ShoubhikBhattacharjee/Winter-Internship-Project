@@ -1,72 +1,82 @@
 [
   {
-    "id": "DS_EXP_001",
+    "id": "S3_DS_P_001",
     "question": "DS Experiment 1",
     "answer": "Aim: Implement Stack ADT using an array.",
     "tags": ["ds_practical", "ds_experiment_1", "ds_lab_expt1", "ds_practicals_file", "ds_experiment1_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-1.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-1.pdf" },
+    "created_at": "2025-12-15T10:00:00+05:30"
   },
   {
-    "id": "DS_EXP_002",
+    "id": "S3_DS_P_002",
     "question": "DS Experiment 2",
     "answer": "Aim: Convert an Infix expression to postfix expression using stack ADT.",
     "tags": ["ds_practical", "ds_experiment_2", "ds_lab_expt2", "ds_practicals_file", "ds_experiment2_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-2.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-2.pdf" },
+    "created_at": "2025-12-15T11:00:00+05:30"
   },
   {
-    "id": "DS_EXP_003",
+    "id": "S3_DS_P_003",
     "question": "DS Experiment 3",
     "answer": "Aim: WAP to check if an expression contains balanced brackets: (), {}, and [].",
     "tags": ["ds_practical", "ds_experiment_3", "ds_lab_expt3", "ds_practicals_file", "ds_experiment3_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-3.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-3.pdf" },
+    "created_at": "2025-12-16T10:00:00+05:30"
   },
   {
-    "id": "DS_EXP_004",
+    "id": "S3_DS_P_004",
     "question": "DS Experiment 4",
     "answer": "Aim: Implement Linear Queue ADT using an array.",
     "tags": ["ds_practical", "ds_experiment_4", "ds_lab_expt4", "ds_practicals_file", "ds_experiment4_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-4.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-4.pdf" },
+    "created_at": "2025-12-16T11:30:00+05:30"
   },
   {
-    "id": "DS_EXP_005",
+    "id": "S3_DS_P_005",
     "question": "DS Experiment 5",
     "answer": "Aim: Implementation of Circular Queue using Array.",
     "tags": ["ds_practical", "ds_experiment_5", "ds_lab_expt5", "ds_practicals_file", "ds_experiment5_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-5.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-5.pdf" },
+    "created_at": "2025-12-17T09:00:00+05:30"
   },
   {
-    "id": "DS_EXP_006",
+    "id": "S3_DS_P_006",
     "question": "DS Experiment 6",
     "answer": "Aim: Implement a Singly Linked List.",
     "tags": ["ds_practical", "ds_experiment_6", "ds_lab_expt6", "ds_practicals_file", "ds_experiment6_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-6.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-6.pdf" },
+    "created_at": "2025-12-17T14:00:00+05:30"
   },
   {
-    "id": "DS_EXP_007",
+    "id": "S3_DS_P_007",
     "question": "DS Experiment 7",
     "answer": "Aim: Implement Doubly Linked List ADT.",
     "tags": ["ds_practical", "ds_experiment_7", "ds_lab_expt7", "ds_practicals_file", "ds_experiment7_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-7.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-7.pdf" },
+    "created_at": "2025-12-18T10:00:00+05:30"
   },
   {
-    "id": "DS_EXP_008",
+    "id": "S3_DS_P_008",
     "question": "DS Experiment 8",
     "answer": "Aim: Binary search tree ADT.",
     "tags": ["ds_practical", "ds_experiment_8", "ds_lab_expt8", "ds_practicals_file", "ds_experiment8_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-8.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-8.pdf" },
+    "created_at": "2025-12-18T15:00:00+05:30"
   },
   {
-    "id": "DS_EXP_009",
+    "id": "S3_DS_P_009",
     "question": "DS Experiment 9",
     "answer": "Aim: Graph Traversal Techniques (BFS and DFS).",
     "tags": ["ds_practical", "ds_experiment_9", "ds_lab_expt9", "ds_practicals_file", "ds_experiment9_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-9.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-9.pdf" },
+    "created_at": "2025-12-19T10:00:00+05:30"
   },
   {
-    "id": "DS_EXP_010",
+    "id": "S3_DS_P_010",
     "question": "DS Experiment 10",
     "answer": "Aim: To find an element in a sorted array using binary search technique.",
     "tags": ["ds_practical", "ds_experiment_10", "ds_lab_expt10", "ds_practicals_file", "ds_experiment10_aim"],
-    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-10.pdf" }
+    "source": { "type": "file", "path": "/DS_Practicals/DS_Expt-10.pdf" },
+    "created_at": "2025-12-19T11:00:00+05:30"
   }
 ]
