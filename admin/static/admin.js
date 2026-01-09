@@ -100,7 +100,7 @@ function openEdit(id) {
 async function confirmDelete(id) {
   if (!confirm(`Delete entry ${id}?`)) return;
 
-  const res = await fetch(`/api/entry/${id}`, { method: "DELETE" });
+  const res = await fetch(`/api/delete/${id}`, { method: "DELETE" });
 
   if (res.ok) {
     allEntries = allEntries.filter((e) => e.id !== id);
