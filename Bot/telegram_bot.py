@@ -53,7 +53,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-BOT_TOKEN = "8538854872:AAHa38H5p-s01trjVxqLmdpDtY2KcFdKN1Y"
+BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
 
 DATA_DIR = Path("./Data")
 NOTES_DIR = Path("./Notes")

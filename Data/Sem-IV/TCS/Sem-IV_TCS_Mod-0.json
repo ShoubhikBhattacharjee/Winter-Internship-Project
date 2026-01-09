@@ -3,49 +3,45 @@
     "id": "S4_TCS_M0_001",
     "question": "What is Theory of Computer Science?",
     "answer": "Theory of Computer Science studies abstract models of computation, formal languages, and the limits of what can be computed.",
-    "tags": [
-      "tcs",
-      "introduction"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T16:53:13+5:30",
-    "notes": "High - Level definition",
-    "modified": "2026-01-09T18:36:08.938040"
+    "tags": ["tcs", "introduction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:45:00+05:30",
+    "notes": "High-level definition."
   },
   {
     "id": "S4_TCS_M0_002",
     "question": "Why is Theory of Computer Science important?",
     "answer": "TCS helps understand computation limits, design efficient algorithms, reason about correctness, and model real-world problems formally.",
-    "tags": [
-      "tcs",
-      "importance"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T17:19:23.311327",
+    "tags": ["tcs", "importance"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:46:00+05:30",
     "notes": "Motivation question."
   },
   {
     "id": "S4_TCS_M0_003",
     "question": "What is meant by a computational model?",
     "answer": "A computational model is an abstract machine used to define how computations are performed, such as finite automata, pushdown automata, or Turing machines.",
-    "tags": [
-      "tcs",
-      "computational-models"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T19:02:41.248146",
+    "tags": ["tcs", "computational-models"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:47:00+05:30",
     "notes": "Foundation for automata."
+  },
+  {
+    "id": "S4_TCS_M0_004",
+    "question": "Relationship between language and machine in TCS",
+    "answer": "In TCS, a language is a set of strings, and a machine is said to recognize or generate a language if it accepts exactly those strings.",
+    "tags": ["tcs", "languages", "machines"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:48:00+05:30",
+    "notes": "Core abstraction."
+  },
+  {
+    "id": "S4_TCS_M0_005",
+    "question": "How does Theory of Computer Science relate to real computers?",
+    "answer": "TCS abstracts away hardware details to study computation principles that apply universally, regardless of programming language or machine architecture.",
+    "tags": ["tcs", "abstraction"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:49:00+05:30",
+    "notes": "Bridges theory and practice."
   }
 ]

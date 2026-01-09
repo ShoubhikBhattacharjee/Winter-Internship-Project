@@ -2,17 +2,91 @@
   {
     "id": "S4_TCS_M1_001",
     "question": "What is an alphabet in Theory of Computer Science?",
-    "answer": "An alphabet is a finite, non-empty set of symbols, usually denoted by \u03a3.",
-    "tags": [
-      "tcs",
-      "alphabet"
-    ],
-    "source": {
-      "type": "file",
-      "path": null,
-      "url": null
-    },
-    "created_at": "2026-01-09T23:39:05.311068",
+    "answer": "An alphabet is a finite, non-empty set of symbols, usually denoted by Σ.",
+    "tags": ["tcs", "alphabet"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:55:00+05:30",
     "notes": "Basic definition."
+  },
+  {
+    "id": "S4_TCS_M1_002",
+    "question": "What is a string?",
+    "answer": "A string is a finite sequence of symbols taken from an alphabet. The empty string is denoted by ε.",
+    "tags": ["tcs", "string"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:56:00+05:30",
+    "notes": "Core building block."
+  },
+  {
+    "id": "S4_TCS_M1_003",
+    "question": "What is a language?",
+    "answer": "A language is a set of strings formed over a given alphabet.",
+    "tags": ["tcs", "language"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:57:00+05:30",
+    "notes": "Language abstraction."
+  },
+  {
+    "id": "S4_TCS_M1_004",
+    "question": "What is a Finite Automaton?",
+    "answer": "A Finite Automaton is a mathematical model consisting of a finite number of states, transitions between states, an input alphabet, a start state, and accepting states.",
+    "tags": ["tcs", "finite-automata"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:58:00+05:30",
+    "notes": "General FA definition."
+  },
+  {
+    "id": "S4_TCS_M1_005",
+    "question": "Difference between Finite Automaton and Finite State Machine",
+    "answer": "Finite Automata focus on language recognition, while Finite State Machines emphasize output generation and system behavior.",
+    "tags": ["tcs", "fa", "fsm"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T16:59:00+05:30",
+    "notes": "Clarifies terminology."
+  },
+  {
+    "id": "S4_TCS_M1_006",
+    "question": "What is a Deterministic Finite Automaton (DFA)?",
+    "answer": "A DFA is a finite automaton where for every state and input symbol, there is exactly one transition.",
+    "tags": ["tcs", "dfa"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T17:00:00+05:30",
+    "notes": "Determinism explained."
+  },
+  {
+    "id": "S4_TCS_M1_007",
+    "question": "What is a Non-Deterministic Finite Automaton (NFA)?",
+    "answer": "An NFA is a finite automaton where multiple transitions for the same input symbol may exist from a state.",
+    "tags": ["tcs", "nfa"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T17:01:00+05:30",
+    "notes": "Non-determinism concept."
+  },
+  {
+    "id": "S4_TCS_M1_008",
+    "question": "What is an ε-NFA?",
+    "answer": "An ε-NFA is an NFA that allows transitions without consuming any input symbol, called epsilon transitions.",
+    "tags": ["tcs", "epsilon-nfa"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T17:02:00+05:30",
+    "notes": "Epsilon transitions."
+  },
+  {
+    "id": "S4_TCS_M1_009",
+    "question": "Are DFA and NFA equivalent?",
+    "answer": "Yes, DFA and NFA are equivalent in expressive power; every NFA has an equivalent DFA recognizing the same language.",
+    "tags": ["tcs", "dfa-nfa-equivalence"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T17:03:00+05:30",
+    "notes": "Key theorem."
+  },
+  {
+    "id": "S4_TCS_M1_010",
+    "question": "What is DFA minimization?",
+    "answer": "DFA minimization is the process of reducing the number of states in a DFA while preserving the language it recognizes.",
+    "tags": ["tcs", "dfa-minimization"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-09T17:04:00+05:30",
+    "notes": "Optimization concept."
   }
 ]
