@@ -1,7 +1,8 @@
 import json
 from pathlib import Path
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify
+from admin_access import touch_activity
 
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / Path("Data")
@@ -128,6 +129,12 @@ def create_entry_page():
 # ------------------------
 # APIs
 # ------------------------
+
+@app.before_request
+def track_admin_activity():
+    if request.path.startswith("/api") or request.path.startswith("/admin"):
+        touch_activity()
+
 
 @app.route("/api/data")
 def api_data():

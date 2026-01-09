@@ -1,0 +1,83 @@
+import subprocess
+import threading
+import time
+import json
+from pathlib import Path
+
+# =========================================================
+# CONFIG
+# =========================================================
+
+NGROK_PORT = 5000
+INACTIVITY_TIMEOUT = 300  # seconds (5 min)
+
+CONFIG_FILE = Path("admin_config.json")
+
+LAST_ACTIVITY = time.time()
+NGROK_PROCESS = None
+NGROK_URL = None
+
+
+# =========================================================
+# ADMIN CHECK
+# =========================================================
+
+def is_admin(user_id: int) -> bool:
+    data = json.loads(CONFIG_FILE.read_text())
+    return user_id in data.get("admins", [])
+
+
+# =========================================================
+# NGROK CONTROL
+# =========================================================
+
+def start_ngrok():
+    global NGROK_PROCESS, NGROK_URL, LAST_ACTIVITY
+
+    LAST_ACTIVITY = time.time()
+
+    NGROK_PROCESS = subprocess.Popen(
+        ["ngrok", "http", str(NGROK_PORT)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+
+    # Extract URL
+    for line in NGROK_PROCESS.stdout:
+        if "url=" in line:
+            NGROK_URL = line.split("url=")[-1].strip()
+            break
+
+    threading.Thread(target=_watch_inactivity, daemon=True).start()
+    return NGROK_URL
+
+
+def stop_ngrok():
+    global NGROK_PROCESS, NGROK_URL
+    if NGROK_PROCESS:
+        NGROK_PROCESS.terminate()
+        NGROK_PROCESS = None
+        NGROK_URL = None
+        print("ngrok stopped")
+
+
+# =========================================================
+# INACTIVITY WATCHER
+# =========================================================
+
+def _watch_inactivity():
+    global LAST_ACTIVITY
+
+    while NGROK_PROCESS:
+        time.sleep(5)
+
+        if time.time() - LAST_ACTIVITY > INACTIVITY_TIMEOUT:
+            print("Admin inactive — shutting down ngrok")
+            stop_ngrok()
+            break
+
+
+def touch_activity():
+    global LAST_ACTIVITY
+    LAST_ACTIVITY = time.time()

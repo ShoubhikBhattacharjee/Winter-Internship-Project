@@ -3,7 +3,10 @@
     "id": "S4_TCS_M0_001",
     "question": "What is Theory of Computer Science?",
     "answer": "Theory of Computer Science studies abstract models of computation, formal languages, and the limits of what can be computed.",
-    "tags": ["tcs", "introduction"],
+    "tags": [
+      "tcs",
+      "introduction"
+    ],
     "source": {
       "type": "file",
       "path": null,
@@ -17,7 +20,10 @@
     "id": "S4_TCS_M0_002",
     "question": "Why is Theory of Computer Science important?",
     "answer": "TCS helps understand computation limits, design efficient algorithms, reason about correctness, and model real-world problems formally.",
-    "tags": ["tcs", "importance"],
+    "tags": [
+      "tcs",
+      "importance"
+    ],
     "source": {
       "type": "file",
       "path": null,
@@ -30,7 +36,10 @@
     "id": "S4_TCS_M0_003",
     "question": "What is meant by a computational model?",
     "answer": "A computational model is an abstract machine used to define how computations are performed, such as finite automata, pushdown automata, or Turing machines.",
-    "tags": ["tcs", "computational-models"],
+    "tags": [
+      "tcs",
+      "computational-models"
+    ],
     "source": {
       "type": "file",
       "path": null,
