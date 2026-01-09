@@ -12,7 +12,7 @@
     "id": "S3_DBMS_M6_002",
     "question": "What are the ACID properties of a transaction?",
     "answer": "To ensure integrity, transactions must possess four properties known as ACID properties: \n1. Atomicity: Either all operations of the transaction are reflected properly in the database, or none are. It is the 'all or nothing' property.\n2. Consistency: Execution of a transaction in isolation preserves the consistency of the database. The total sum of data values remains the same before and after the transaction.\n3. Isolation: Even though multiple transactions may execute concurrently, each must be unaware of others. Intermediate transaction results must be hidden from other concurrently executing transactions.\n4. Durability: After a transaction completes successfully, the changes it has made to the database must persist, even if there is a system failure.",
-    "tags": ["acid-properties", "transaction"],
+    "tags": ["acid-properties"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Fundamental transaction properties."
@@ -129,7 +129,7 @@
     "id": "S3_DBMS_M6_015",
     "question": "What is the Timestamp-Based Protocol?",
     "answer": "The Timestamp-Based Protocol is a concurrency control method that selects an ordering among transactions in advance. \nTheory: Each transaction Ti is assigned a unique fixed timestamp TS(Ti) when it enters the system. For every data item Q, the system maintains two timestamp values: W-timestamp(Q) (the largest timestamp of any transaction that executed write(Q)) and R-timestamp(Q) (the largest timestamp of any transaction that executed read(Q)). Operations are only allowed if they follow the chronological order of the timestamps, otherwise, the transaction is rolled back.",
-    "tags": ["concurrency-control", "timestamp"],
+    "tags": ["timestamp"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Non-locking concurrency control."
@@ -147,7 +147,7 @@
     "id": "S3_DBMS_M6_017",
     "question": "Explain Deadlock Prevention in detail.",
     "answer": "Deadlock prevention uses protocols that ensure the system will never enter a deadlock. These include:\n1. Pre-declaration: A transaction must lock all its required data items before it begins execution.\n2. Graph-based Protocols: Imposing a partial ordering on data items.\n3. Timestamp-based schemes: \n   - Wait-Die: If an older transaction requests a resource held by a younger one, it waits; if a younger transaction requests a resource held by an older one, it rolls back.\n   - Wound-Wait: If an older transaction requests a resource held by a younger one, it forces the younger one to rollback; if a younger transaction requests a resource held by an older one, it waits.",
-    "tags": ["deadlock", "prevention"],
+    "tags": ["deadlock-prevention"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Prevention strategies."
@@ -156,7 +156,7 @@
     "id": "S3_DBMS_M6_018",
     "question": "How is Deadlock handled in a DBMS?",
     "answer": "There are three primary strategies for handling deadlocks:\n1. Deadlock Prevention: Using protocols like 'Wait-Die' or 'Wound-Wait' (based on timestamps) or pre-locking all items to ensure a deadlock can never occur.\n2. Deadlock Detection: Periodically examining the 'Wait-for Graph' to find cycles. If a cycle exists, a deadlock is present.\n3. Deadlock Recovery: When a deadlock is detected, the system selects a 'victim' transaction to be rolled back to break the cycle.",
-    "tags": ["deadlock", "handling"],
+    "tags": ["deadlock-handling"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Management strategies."
@@ -174,7 +174,7 @@
     "id": "S3_DBMS_M6_020",
     "question": "What is Log-Based Recovery?",
     "answer": "Log-based recovery is a mechanism to restore database consistency after a failure using a log file. \nTheory: The log is a sequence of records recording all update activities. Each record contains info like TransactionID, DataItemID, OldValue, and NewValue. There are two techniques: \n1. Deferred Update: Updates are not written to the disk until the transaction commits.\n2. Immediate Update: Updates are written to the disk as they happen, even before commit. Recovery involves using 'Redo' for committed transactions and 'Undo' for those that failed.",
-    "tags": ["recovery", "log-based"],
+    "tags": ["log-based-recovery"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Primary recovery technique."
@@ -183,7 +183,7 @@
     "id": "S3_DBMS_M6_021",
     "question": "What is Shadow Paging?",
     "answer": "Shadow Paging is a recovery technique that avoids the use of log files in some scenarios. \nTheory: The database is considered a set of pages. Two page tables are maintained: the Current Page Table and the Shadow Page Table. During a transaction, updates are made to a copy of the page. If the transaction succeeds, the current table is updated to point to the new pages. If it fails, the system simply reverts to the shadow table, which points to the old, unmodified pages.",
-    "tags": ["recovery", "shadow-paging"],
+    "tags": ["shadow-paging-recovery"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Alternative recovery method."
@@ -192,7 +192,7 @@
     "id": "S3_DBMS_M6_022",
     "question": "What are Checkpoints in recovery?",
     "answer": "Checkpoints are points in the log where the system ensures that all previous log records and modified data have been physically written to the stable storage (Disk). \nTheory: During recovery, the system only needs to go back to the most recent checkpoint. This reduces the time and overhead required to 'Redo' transactions after a system crash, as operations before the checkpoint are guaranteed to be saved.",
-    "tags": ["recovery", "checkpoint"],
+    "tags": ["checkpoint-recovery"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Optimization for log recovery."

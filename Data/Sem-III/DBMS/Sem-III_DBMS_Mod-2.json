@@ -4,7 +4,7 @@
     "question": "What are the steps involved in the Database Design process?",
     "answer": "The process of database design typically consists of three fundamental steps carried out by a designer:\n1. Determine the data to be stored: Identifying the required data elements in cooperation with domain experts.\n2. Determine data relationships: Identifying dependencies within the data (e.g., an address being dependent on a name).\n3. Logically structure the data: Arranging the information into a structure (like entities) that can be mapped into the DBMS storage objects.",
     "tags": ["database-design", "process", "steps"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
     "notes": "Focuses on the initial planning phase of a database system."
   },
@@ -12,8 +12,8 @@
     "id": "S3_DBMS_M2_002",
     "question": "Explain the common problems in Database Design.",
     "answer": "Two major problems can arise from poor database design:\n- Redundancy: Occurs when the same data is stored in multiple files, leading to data duplication, higher storage costs, and increased access costs.\n- Incompleteness: An incomplete design makes it difficult to model certain real-world scenarios, such as a department that exists but has no employees currently assigned to it.",
-    "tags": ["database-design", "problems", "redundancy", "incompleteness"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "tags": ["problems in database-design", "problems", "redundancy", "incompleteness"],
+    "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
     "notes": "Highlights why structured design is necessary."
   },
@@ -21,7 +21,7 @@
     "id": "S3_DBMS_M2_003",
     "question": "Define Entity and its classifications.",
     "answer": "An Entity is a real-world object or thing that is distinguishable from other objects based on its properties. It is represented by a rectangle.\n\n\n\nTypes of Entities:\n1. Regular (Strong) Entity: An entity that possesses its own primary key and exists independently (e.g., EMPLOYEE identified by Emp_ID).\n2. Weak Entity: An entity that lacks a primary key and depends on a strong entity for identification, represented by a double rectangle (e.g., DEPENDENT).",
-    "tags": ["er-model", "entity", "types"],
+    "tags": ["entity", "types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:35:00+05:30",
     "notes": "Entity classifications."
@@ -30,7 +30,7 @@
     "id": "S3_DBMS_M2_004",
     "question": "Define Regular (Strong) Entity.",
     "answer": "A regular entity (also called a strong entity) is an entity that possesses its own primary key and exists independently of any other entity in the database. It is represented by a single rectangle. Example: EMPLOYEE is a strong entity because it is identified by a unique Emp_ID.",
-    "tags": ["er-model", "strong-entity"],
+    "tags": ["strong-entity", "regular-entity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Independent existence."
@@ -39,7 +39,7 @@
     "id": "S3_DBMS_M2_005",
     "question": "Define Weak Entity.",
     "answer": "A weak entity is an entity that does not have its own primary key and depends on a strong or identifying entity for its identification and existence. It is represented by a double rectangle. Example: DEPENDENT is a weak entity because it cannot exist in the system without an associated EMPLOYEE.",
-    "tags": ["er-model", "weak-entity"],
+    "tags": ["weak-entity" , "dependent-entity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Weak entities use partial keys."
@@ -48,7 +48,7 @@
     "id": "S3_DBMS_M2_006",
     "question": "Define Entity Type.",
     "answer": "An Entity Type is a logical definition or blueprint describing a collection of entities that share the same attributes. It is represented by a rectangle. Example: STUDENT is an entity type that defines common attributes like ID and Major.",
-    "tags": ["er-model", "entity-type"],
+    "tags": ["entity-type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Acts as a schema for entities."
@@ -57,16 +57,16 @@
     "id": "S3_DBMS_M2_007",
     "question": "Define Entity Set.",
     "answer": "An Entity Set is the actual collection of all entity instances belonging to a specific entity type at a given point in time. Example: The group of all students currently attending a university constitutes the STUDENT entity set.",
-    "tags": ["er-model", "entity-set"],
+    "tags": ["entity-set"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Represents the population of a type."
   },
   {
     "id": "S3_DBMS_M2_008",
-    "question": "Define Attribute and explain its various types.",
-    "answer": "An Attribute is a characteristic or property of an entity that describes it. Attributes provide the details used to identify and distinguish entities within an entity set.\n\n\n\nTypes of Attributes:\n1. Simple Attribute: An atomic attribute that cannot be subdivided (e.g., student_age).\n2. Composite Attribute: An attribute that can be divided into smaller sub-parts (e.g., student_name into First_name, Last_name).\n3. Single-valued Attribute: An attribute that holds only one value for an entity instance (e.g., Date_of_Birth).\n4. Multi-valued Attribute: An attribute that can store more than one value, represented by double ovals (e.g., student_contactno).\n5. Derived Attribute: An attribute calculated from others, represented by a dashed oval (e.g., Age calculated from Date_of_Birth).\n6. Key Attribute: An attribute that uniquely identifies an entity, represented by an underline (e.g., Roll_No).",
-    "tags": ["er-model", "attribute", "types"],
+    "question": "Define Attribute",
+    "answer": "An Attribute is a characteristic or property of an entity that describes it. Attributes provide the details used to identify and distinguish entities within an entity set.",
+    "tags": ["attribute-definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:35:00+05:30",
     "notes": "Consolidated attribute theory."
@@ -75,7 +75,7 @@
     "id": "S3_DBMS_M2_009",
     "question": "Define Simple Attribute.",
     "answer": "A simple attribute is an atomic attribute that cannot be further subdivided into smaller components with independent meaning. Example: student_age or gender are simple attributes as they represent a single, indivisible value.",
-    "tags": ["er-model", "attribute", "simple"],
+    "tags": ["attribute-simple", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Also called atomic attributes."
@@ -84,7 +84,7 @@
     "id": "S3_DBMS_M2_010",
     "question": "Define Composite Attribute.",
     "answer": "A composite attribute is an attribute that can be divided into smaller sub-parts, each representing basic attributes with independent meanings. Example: student_name is a composite attribute because it can be split into First_name, Middle_name, and Last_name.",
-    "tags": ["er-model", "attribute", "composite"],
+    "tags": ["attribute-composite", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Used for grouping related properties."
@@ -93,7 +93,7 @@
     "id": "S3_DBMS_M2_011",
     "question": "Define Multi-valued Attribute.",
     "answer": "A multi-valued attribute is an attribute that can store more than one value for a single entity. It is represented by double ovals in an ER diagram. Example: student_contactno is a multi-valued attribute because a student can have multiple phone numbers.",
-    "tags": ["er-model", "attribute", "multi-valued"],
+    "tags": ["attribute-multi-valued", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Handled with care during relational mapping."
@@ -102,7 +102,7 @@
     "id": "S3_DBMS_M2_012",
     "question": "Define Single-valued Attribute.",
     "answer": "A single-valued attribute is an attribute that holds only one value for a specific entity instance. Example: Date_of_Birth is a single-valued attribute because an individual can only have one birth date.",
-    "tags": ["er-model", "attribute", "single-valued"],
+    "tags": ["attribute-single-valued", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Contrasts with multi-valued attributes."
@@ -111,7 +111,7 @@
     "id": "S3_DBMS_M2_013",
     "question": "Define Derived Attribute.",
     "answer": "A derived attribute is an attribute whose value is not physically stored in the database but is instead calculated from other existing attributes. It is represented by a dashed oval. Example: Age is a derived attribute because it can be calculated using the Date_of_Birth attribute and the current date.",
-    "tags": ["er-model", "attribute", "derived"],
+    "tags": ["attribute-derived", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Prevents data redundancy."
@@ -120,16 +120,16 @@
     "id": "S3_DBMS_M2_014",
     "question": "Define Key Attribute.",
     "answer": "A key attribute is an attribute that uniquely identifies an entity within an entity set. In an ER diagram, the name of a key attribute is underlined. Example: Roll_No for a student or Employee_ID for an employee.",
-    "tags": ["er-model", "attribute", "key"],
+    "tags": ["attribute-key", "attribute-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Essential for entity identification."
   },
-  {
+ {
     "id": "S3_DBMS_M2_015",
-    "question": "Define Key and its specialized types.",
-    "answer": "A Key is an attribute or set of attributes that allows the unique identification of an entity within an entity set and helps in establishing relationships between tables.\n\nTypes of Keys:\n- Super Key: A set of one or more attributes that collectively identify an entity instance uniquely.\n- Candidate Key: A minimal super key; a set of attributes that can uniquely identify a record with no redundant attributes.\n- Primary Key: A specific candidate key chosen to uniquely identify each record in a table. It cannot be NULL.\n- Foreign Key: An attribute in one table that refers to the primary key of another table.\n- Alternate Key: Any candidate key that was not chosen as the primary key.\n- Composite Key: A primary key that consists of two or more attributes.\n- Artificial Key: A unique identifier created by the system that has no real-world meaning.",
-    "tags": ["dbms", "keys", "types"],
+    "question": "Define Key",
+    "answer": "A Key is an attribute or set of attributes that allows the unique identification of an entity within an entity set and helps in establishing relationships between tables.",
+    "tags": ["key-definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:35:00+05:30",
     "notes": "Consolidated key definitions."
@@ -138,7 +138,7 @@
     "id": "S3_DBMS_M2_016",
     "question": "Define Super Key.",
     "answer": "A super key is a set of one or more attributes that collectively identify an entity instance uniquely. It may contain redundant attributes. Example: the combination of Emp_ID and Emp_Name is a super key because Emp_ID alone is enough for uniqueness.",
-    "tags": ["dbms", "super-key"],
+    "tags": ["dbms-super-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "The broadest set of identifiers."
@@ -147,7 +147,7 @@
     "id": "S3_DBMS_M2_017",
     "question": "Define Candidate Key.",
     "answer": "A candidate key is a minimal super key; it is a set of attributes that can uniquely identify a record such that no subset of those attributes can uniquely identify the record. Example: In an employee table, both Emp_ID and Passport_No could be candidate keys.",
-    "tags": ["dbms", "candidate-key"],
+    "tags": ["dbms-candidate-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "All candidate keys are potential primary keys."
@@ -156,7 +156,7 @@
     "id": "S3_DBMS_M2_018",
     "question": "Define Primary Key.",
     "answer": "A primary key is a specific candidate key chosen by the database designer to uniquely identify each record in a table. It cannot contain NULL values. Example: Customer_ID in a banking table.",
-    "tags": ["dbms", "primary-key"],
+    "tags": ["dbms-primary-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Unique non-null identifier."
@@ -165,7 +165,7 @@
     "id": "S3_DBMS_M2_019",
     "question": "Define Foreign Key.",
     "answer": "A foreign key is an attribute in one table that refers to the primary key of another table, used to maintain referential integrity and link data between tables. Example: Dept_ID in an EMPLOYEE table referencing the Dept_ID in a DEPARTMENT table.",
-    "tags": ["dbms", "foreign-key"],
+    "tags": ["dbms-foreign-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Enforces table associations."
@@ -174,7 +174,7 @@
     "id": "S3_DBMS_M2_020",
     "question": "Define Alternate Key.",
     "answer": "An alternate key is any candidate key that was not selected to be the primary key of the table. Example: If Emp_ID is the primary key, then Passport_No would be an alternate key.",
-    "tags": ["dbms", "alternate-key"],
+    "tags": ["dbms-alternate-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Secondary unique identifiers."
@@ -183,7 +183,7 @@
     "id": "S3_DBMS_M2_021",
     "question": "Define Composite Key.",
     "answer": "A composite key is a primary key that consists of two or more attributes that together uniquely identify a record. Example: The combination of Student_ID and Course_ID in an ENROLLMENT table.",
-    "tags": ["dbms", "composite-key"],
+    "tags": ["dbms-composite-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Used when no single attribute is unique."
@@ -192,152 +192,179 @@
     "id": "S3_DBMS_M2_022",
     "question": "Define Artificial Key.",
     "answer": "An artificial key is a unique identifier assigned by the system that has no inherent business or real-world meaning. Example: An auto-incrementing row ID in a database table.",
-    "tags": ["dbms", "artificial-key"],
+    "tags": ["dbms-artificial-key", "key-types-list"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Often used for performance or simplicity."
   },
   {
     "id": "S3_DBMS_M2_023",
-    "question": "Define Relationship and its Degree types.",
-    "answer": "A Relationship is a meaningful association or link between two or more entities. It is represented by a diamond. \n\nTypes by Degree:\n1. Unary: Involves one entity type (e.g., an EMPLOYEE managing another EMPLOYEE).\n2. Binary: Involves two entity types (e.g., STUDENT and COURSE).\n3. Ternary: Involves three entity types (e.g., TEACHER, STUDENT, and CLASSROOM).\n\n\n\n4. Quaternary Relationship: Involves the association of four different entity types. Example: A relationship connecting Employee, Management Faculty, Teaching Faculty, and Non-Teaching Faculty.",
-    "tags": ["er-model", "relationship", "degree"],
+    "question": "Define Relationship",
+    "answer": "A Relationship is a meaningful association or link between two or more entities. It is represented by a diamond symbol in an ER diagram.",
+    "tags": ["relationship-definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:35:00+05:30",
-    "notes": "Relationship classifications including quaternary degree."
+    "notes": "General definition of a relationship."
   },
   {
     "id": "S3_DBMS_M2_024",
-    "question": "Define Recursive (Unary) Relationship.",
-    "answer": "Recursive (Unary) Relationship exists when an entity relates to itself. For example, in a 'Supervision' relationship, an Employee entity can be both a supervisor and a subordinate.\n\n",
-    "tags": ["er-model", "relationship", "recursive"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "question": "Define Unary (Recursive) Relationship.",
+    "answer": "A Unary relationship, also known as a recursive relationship, exists when an entity relates to itself. Example: In a 'Supervision' relationship, an EMPLOYEE entity can be both a supervisor and a subordinate.",
+    "tags": ["relationship-unary", "relationship-recursive", "relationship-types-list"],
+    "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
-    "notes": "Entity participating twice in the same relationship."
+    "notes": "Degree 1 relationship."
   },
   {
     "id": "S3_DBMS_M2_025",
+    "question": "Define Binary Relationship.",
+    "answer": "A Binary relationship is a relationship between two different entity types. This is the most common degree of relationship in ER modeling. Example: A STUDENT 'Enrolls' in a COURSE.",
+    "tags": ["relationship-binary", "relationship-types-list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T23:45:00+05:30",
+    "notes": "Degree 2 relationship."
+  },
+  {
+    "id": "S3_DBMS_M2_026",
+    "question": "Define Ternary Relationship.",
+    "answer": "A Ternary relationship involves the simultaneous association of three different entity types. Example: A relationship between TEACHER, STUDENT, and CLASSROOM to represent a specific lecture session.",
+    "tags": ["relationship-ternary", "relationship-types-list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T23:45:00+05:30",
+    "notes": "Degree 3 relationship."
+  },
+  {
+    "id": "S3_DBMS_M2_027",
+    "question": "Define Quaternary Relationship.",
+    "answer": "A Quaternary relationship involves the association of four different entity types. Example: A relationship connecting Employee, Management Faculty, Teaching Faculty, and Non-Teaching Faculty for a specific institutional committee.",
+    "tags": ["relationship-quaternary", "relationship-types-list"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-02T23:45:00+05:30",
+    "notes": "Degree 4 relationship."
+  },
+  {
+    "id": "S3_DBMS_M2_028",
     "question": "Define Cardinality and its different mapping types.",
-    "answer": "Cardinality (or Mapping Cardinality) defines the maximum number of entity instances in one entity set that can be associated with entity instances in another set via a relationship set.\n\n\n\nTypes of Mapping Cardinality:\n1. One-to-One (1:1): An entity in A is associated with at most one entity in B, and vice versa (e.g., One CITIZEN has one PASSPORT).\n2. One-to-Many (1:N): An entity in A can be associated with any number of entities in B, but B is associated with at most one in A (e.g., One DEPARTMENT has many EMPLOYEES).\n3. Many-to-One (N:1): Many entities in A can be associated with at most one entity in B (e.g., Many STUDENTS study in one UNIVERSITY).\n4. Many-to-Many (M:N): An entity in A can be associated with any number of entities in B, and vice versa (e.g., Many STUDENTS take many COURSES).",
+    "answer": "Cardinality (or Mapping Cardinality) defines the maximum number of entity instances in one entity set that can be associated with entity instances in another set via a relationship set.\n\nTypes of Mapping Cardinality:\n1. One-to-One (1:1): An entity in A is associated with at most one entity in B, and vice versa.\n2. One-to-Many (1:N): An entity in A can be associated with any number of entities in B, but B is associated with at most one in A.\n3. Many-to-One (N:1): Many entities in A can be associated with at most one entity in B.\n4. Many-to-Many (M:N): An entity in A can be associated with any number of entities in B, and vice versa.",
     "tags": ["er-model", "cardinality", "types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:35:00+05:30",
     "notes": "Consolidated cardinality theory."
   },
   {
-    "id": "S3_DBMS_M2_026",
+    "id": "S3_DBMS_M2_029",
     "question": "Define Total Participation.",
     "answer": "Total Participation occurs when every entity in an entity set must participate in at least one relationship instance. It is represented by a double line. Example: Every STUDENT must be enrolled in at least one COURSE.",
-    "tags": ["er-model", "participation", "total"],
+    "tags": ["total participation"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Indicates existential dependency."
   },
   {
-    "id": "S3_DBMS_M2_027",
+    "id": "S3_DBMS_M2_030",
     "question": "Define Partial Participation.",
     "answer": "Partial Participation occurs when some entities in an entity set might not participate in the relationship. It is represented by a single line. Example: Not every EMPLOYEE in a company is a Manager.",
-    "tags": ["er-model", "participation", "partial"],
+    "tags": ["partial participation"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Default participation constraint."
   },
   {
-    "id": "S3_DBMS_M2_028",
+    "id": "S3_DBMS_M2_031",
     "question": "Where should descriptive attributes be placed in different relationship types?",
-    "answer": "The placement of attributes depends on the cardinality of the relationship:\n- One-to-One (1:1): Attributes (like Start_Date) can be associated with either participating entity rather than the relationship itself.\n- One-to-Many (1:N): Attributes should generally be assigned to the 'Many' side entity (e.g., assigning a start date to the Employee rather than the department they work for).\n- Many-to-Many (M:N): The designer is forced to assign the attribute to the relationship itself to accurately track data for each unique pair (e.g., tracking 'Hours_Worked' for each specific Employee-Project combination).",
+    "answer": "The placement of attributes depends on the cardinality of the relationship:\n- One-to-One (1:1): Attributes (like Start_Date) can be associated with either participating entity rather than the relationship itself.\n- One-to-Many (1:N): Attributes should generally be assigned to the 'Many' side entity.\n- Many-to-Many (M:N): The designer is forced to assign the attribute to the relationship itself to accurately track data for each unique pair.",
     "tags": ["er-model", "relationship-attributes", "mapping"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "source": { "type": "file", "path": null , "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
     "notes": "Critical for successful ER-to-Relational conversion."
   },
   {
-    "id": "S3_DBMS_M2_029",
+    "id": "S3_DBMS_M2_032",
     "question": "Define Aggregation.",
-    "answer": "Aggregation is an abstraction through which a relationship set (and its participating entities) is treated as a higher-level entity so that it can participate in other relationships. Example: Treating the Work relationship between EMPLOYEE and PROJECT as an entity so a MANAGER can Manages that combination.\n\n",
-    "tags": ["er-model", "aggregation"],
+    "answer": "Aggregation is an abstraction through which a relationship set (and its participating entities) is treated as a higher-level entity so that it can participate in other relationships.",
+    "tags": ["aggregation"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Relationship of relationships."
   },
   {
-    "id": "S3_DBMS_M2_030",
+    "id": "S3_DBMS_M2_033",
     "question": "Define EER Diagram Features.",
-    "answer": "Extended Entity-Relationship (EER) diagrams include advanced features such as subclasses/superclasses, specialization/generalization, attribute inheritance, union types, and aggregation for modeling complex real-world systems.",
-    "tags": ["eer-model", "features"],
+    "answer": "Extended Entity-Relationship (EER) diagrams include advanced features such as subclasses/superclasses, specialization/generalization, attribute inheritance, union types, and aggregation.",
+    "tags": ["eer-model", "features of eer"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Extension of standard ER model."
   },
   {
-    "id": "S3_DBMS_M2_031",
+    "id": "S3_DBMS_M2_034",
     "question": "Define Specialization.",
-    "answer": "Specialization is a top-down design process where a high-level entity is divided into several low-level entities (subclasses) based on distinguishing features. Example: An EMPLOYEE entity is specialized into ENGINEER and SECRETARY.\n\n",
+    "answer": "Specialization is a top-down design process where a high-level entity is divided into several low-level entities (subclasses) based on distinguishing features.",
     "tags": ["eer-model", "specialization"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Inheritance-based refinement."
   },
   {
-    "id": "S3_DBMS_M2_032",
+    "id": "S3_DBMS_M2_035",
     "question": "Define Generalization.",
-    "answer": "Generalization is a bottom-up design process where common attributes and relationships of several low-level entities are combined into a single high-level entity. Example: CAR and TRUCK entities are generalized into a higher-level VEHICLE entity.\n\n",
+    "answer": "Generalization is a bottom-up design process where common attributes and relationships of several low-level entities are combined into a single high-level entity.",
     "tags": ["eer-model", "generalization"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Inheritance-based grouping."
   },
   {
-    "id": "S3_DBMS_M2_033",
+    "id": "S3_DBMS_M2_036",
     "question": "Define Disjoint Constraint.",
-    "answer": "A Disjoint constraint (denoted by d) specifies that a superclass entity instance can belong to at most one subclass at any given time. Example: A VEHICLE can be either a CAR or a TRUCK, but never both.",
-    "tags": ["eer-model", "constraint", "disjoint"],
+    "answer": "A Disjoint constraint (denoted by d) specifies that a superclass entity instance can belong to at most one subclass at any given time.",
+    "tags": ["disjoint constraint"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Exclusive membership."
   },
   {
-    "id": "S3_DBMS_M2_034",
+    "id": "S3_DBMS_M2_037",
     "question": "Define Overlapping Constraint.",
-    "answer": "An Overlapping constraint (denoted by o) specifies that a superclass entity instance can simultaneously belong to more than one subclass. Example: In a university, a PERSON can be both a STUDENT and an EMPLOYEE.",
-    "tags": ["eer-model", "constraint", "overlapping"],
+    "answer": "An Overlapping constraint (denoted by o) specifies that a superclass entity instance can simultaneously belong to more than one subclass.",
+    "tags": ["overlapping constraint"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Non-exclusive membership."
   },
   {
-    "id": "S3_DBMS_M2_035",
+    "id": "S3_DBMS_M2_038",
     "question": "Define Shared Subclass.",
-    "answer": "A shared subclass is a subclass that has more than one superclass, representing the concept of multiple inheritance. Example: A TEACHING_ASSISTANT is a shared subclass that inherits attributes from both the STUDENT and EMPLOYEE superclasses.",
+    "answer": "A shared subclass is a subclass that has more than one superclass, representing the concept of multiple inheritance.",
     "tags": ["eer-model", "shared-subclass", "inheritance"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Models entities with dual roles."
   },
   {
-    "id": "S3_DBMS_M2_036",
+    "id": "S3_DBMS_M2_039",
     "question": "Define Union Type (Category).",
-    "answer": "A Union Type or Category represents a collection of objects that is a subset of the union of two or more distinct entity types. Example: A OWNER entity might be a union of PERSON, BANK, and COMPANY.",
+    "answer": "A Union Type or Category represents a collection of objects that is a subset of the union of two or more distinct entity types.",
     "tags": ["eer-model", "union-type", "category"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:25:00+05:30",
     "notes": "Advanced EER modeling concept."
   },
   {
-    "id": "S3_DBMS_M2_037",
+    "id": "S3_DBMS_M2_040",
     "question": "What are the naming conventions for an ER Diagram?",
-    "answer": "Standard conventions ensure clarity and uniqueness:\n- Entities: Use singular nouns (e.g., 'Employee', not 'Employees') with the first letter in uppercase.\n- Attributes: Use nouns and ensure names are unique; underscores can join words (e.g., 'Date_of_Birth').\n- Relationships: Use verbs that fit the sentence structure (e.g., 'Manages', 'Works_For').",
+    "answer": "Standard conventions include using singular nouns for Entities, unique nouns for Attributes, and verbs for Relationships.",
     "tags": ["er-model", "naming-conventions", "best-practices"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "source": { "type": "file", "path": null , "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
     "notes": "Helps in maintaining a professional and readable schema."
   },
   {
-    "id": "S3_DBMS_M2_038",
+    "id": "S3_DBMS_M2_041",
     "question": "List the drawbacks of the ER Model.",
-    "answer": "While useful for high-level design, the ER model has limitations:\n1. Loss of information: Some detailed information can be hidden or lost during modeling.\n2. Limited representation: It offers less comprehensive relationship representation compared to models like the Relational model.\n3. No data manipulation: It is difficult to represent how data will be manipulated (inserted, updated, or deleted) within the diagram.",
-    "tags": ["er-model", "drawbacks", "limitations"],
-    "source": { "type": "file", "path": "Module-2.pdf", "url": null },
+    "answer": "Drawbacks include loss of information during modeling, limited representation compared to the Relational model, and difficulty representing data manipulation.",
+    "tags": ["er-model", "drawbacks of er model", "limitations"],
+    "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-02T23:45:00+05:30",
     "notes": "Contrasts the ER model with lower-level implementation models."
   }

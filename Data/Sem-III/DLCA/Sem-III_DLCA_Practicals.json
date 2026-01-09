@@ -1,72 +1,82 @@
 [
   {
-    "id": "DLCA_EXP_001",
+    "id": "S3_DS_P_001",
     "question": "DLCA Experiment 1",
     "answer": "Aim: To Verify the Behaviour of Logic Gates using Truth Table. This experiment involves getting familiar with the Digital Trainer Kit and verifying the operations of basic gates.",
     "tags": ["dlca_practical", "dlca_experiment_1", "dlca_lab_expt1", "dlca_practicals_file", "dlca_experiment1_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-1.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-1.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_002",
+    "id": "S3_DS_P_002",
     "question": "DLCA Experiment 2",
     "answer": "Aim: To Design of Ripple Carry Adders.",
     "tags": ["dlca_practical", "dlca_experiment_2", "dlca_lab_expt2", "dlca_practicals_file", "dlca_experiment2_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-2.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-2.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_003",
+    "id": "S3_DS_P_003",
     "question": "DLCA Experiment 3",
     "answer": "Aim: To implement 4-bit carry look ahead adder.",
     "tags": ["dlca_practical", "dlca_experiment_3", "dlca_lab_expt3", "dlca_practicals_file", "dlca_experiment3_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-3.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-3.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_004",
+    "id": "S3_DS_P_004",
     "question": "DLCA Experiment 4",
     "answer": "Aim: To implement 4-bit Arithmetic Logic Unit.",
     "tags": ["dlca_practical", "dlca_experiment_4", "dlca_lab_expt4", "dlca_practicals_file", "dlca_experiment4_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-4.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-4.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_005",
+    "id": "S3_DS_P_005",
     "question": "DLCA Experiment 5",
     "answer": "Aim: To implement Memory Design.",
     "tags": ["dlca_practical", "dlca_experiment_5", "dlca_lab_expt5", "dlca_practicals_file", "dlca_experiment5_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-5.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-5.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_006",
+    "id": "S3_DS_P_006",
     "question": "DLCA Experiment 6",
     "answer": "Aim: To study Half and Full adder circuits.",
     "tags": ["dlca_practical", "dlca_experiment_6", "dlca_lab_expt6", "dlca_practicals_file", "dlca_experiment6_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-6.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-6.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_007",
+    "id": "S3_DS_P_007",
     "question": "DLCA Experiment 7",
     "answer": "Aim: Implementation of 4x1 Multiplexer and 1x4 Demultiplexer using logic gates.",
     "tags": ["dlca_practical", "dlca_experiment_7", "dlca_lab_expt7", "dlca_practicals_file", "dlca_experiment7_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-7.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-7.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_008",
+    "id": "S3_DS_P_008",
     "question": "DLCA Experiment 8",
     "answer": "Aim: To Study of flip flop IC.",
     "tags": ["dlca_practical", "dlca_experiment_8", "dlca_lab_expt8", "dlca_practicals_file", "dlca_experiment8_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-8.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-8.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_009",
+    "id": "S3_DS_P_009",
     "question": "DLCA Experiment 9",
     "answer": "Aim: To implement Booth's algorithm.",
     "tags": ["dlca_practical", "dlca_experiment_9", "dlca_lab_expt9", "dlca_practicals_file", "dlca_experiment9_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-9.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-9.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   },
   {
-    "id": "DLCA_EXP_010",
+    "id": "S3_DS_P_010",
     "question": "DLCA Experiment 10",
     "answer": "Aim: To implement a restoring division algorithm.",
     "tags": ["dlca_practical", "dlca_experiment_10", "dlca_lab_expt10", "dlca_practicals_file", "dlca_experiment10_aim"],
-    "source": { "type": "file", "path": "./Notes/DLCA_Practicals/DLCA_Expt-10.pdf" }
+    "source": { "type": "file", "path": "/DLCA_Practicals/DLCA_Expt-10.pdf" },
+    "created_at": "2026-01-09T18:27:00Z"
   }
 ]

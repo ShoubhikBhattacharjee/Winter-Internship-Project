@@ -3,7 +3,7 @@
     "id": "S3_DBMS_M4_001",
     "question": "What is SQL?",
     "answer": "SQL stands for Structured Query Language. It is a standard non-procedural language used to communicate with a relational database management system to perform operations such as retrieval, insertion, updation, and deletion of data. The steps required to execute SQL statements are handled transparently by the SQL database. Unlike procedural languages where details of operations must be specified (opening/closing tables, searching indexes), SQL allows the user to specify 'what' to do rather than 'how' to do it.",
-    "tags": ["sql", "definition"],
+    "tags": ["sql_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Core definition."
@@ -12,7 +12,7 @@
     "id": "S3_DBMS_M4_002",
     "question": "What is Data Definition Language (DDL)?",
     "answer": "Data Definition Language (DDL) consists of SQL commands used to define, modify, and manage the structure of database objects like tables, indexes, and views. DDL operations are auto-committed, meaning changes are saved permanently immediately after execution and cannot be rolled back. It is typically used by DBAs during the design or maintenance phase of the database lifecycle.",
-    "tags": ["ddl", "definition"],
+    "tags": ["ddl_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Structural commands."
@@ -20,18 +20,17 @@
   {
     "id": "S3_DBMS_M4_003",
     "question": "What are the types of DDL commands?",
-    "answer": "The primary DDL commands are CREATE, ALTER, DROP, RENAME, and TRUNCATE. \n1. CREATE: Used to create new database objects such as tables, schemas, or indexes.\n2. ALTER: Used to modify the structure of an existing database object, such as adding, deleting, or renaming columns in a table.\n3. DROP: Used to delete an entire database object, such as a table, along with all its data, indexes, and constraints.\n4. RENAME: Used to change the name of an existing database object.\n5. TRUNCATE: Used to remove all records from a table while preserving the table structure for future use; it de-allocates the space used by the records.",
-    "tags": ["ddl", "types"],
+    "answer": "The primary DDL commands are CREATE, ALTER, DROP, RENAME, and TRUNCATE. ",
+    "tags": ["ddl_types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "DDL classification with definitions."
   },
-  
   {
     "id": "S3_DBMS_M4_004",
     "question": "What is the CREATE command?",
     "answer": "The CREATE command is a DDL statement used to create new database objects such as tables, schemas, or indexes. It defines the structure by specifying the table name, column names, data types, and any initial constraints required for the table.",
-    "tags": ["ddl", "create"],
+    "tags": ["ddl_types", "create_command"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific DDL command."
@@ -40,7 +39,7 @@
     "id": "S3_DBMS_M4_005",
     "question": "What is the ALTER command?",
     "answer": "The ALTER command is used to modify the structure of an existing database object. This includes adding a new column to a table, dropping an existing column, modifying the data type of a column, or renaming an attribute. It allows schema evolution without losing the existing data in the table.",
-    "tags": ["ddl", "alter"],
+    "tags": ["ddl_types", "alter_command"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific DDL command."
@@ -49,7 +48,7 @@
     "id": "S3_DBMS_M4_006",
     "question": "What is the DROP command?",
     "answer": "The DROP command is used to delete an entire database object, such as a table, along with all its data, indexes, and constraints. Once an object is dropped, it is completely removed from the data dictionary and the operation cannot be undone.",
-    "tags": ["ddl", "drop"],
+    "tags": ["ddl_types", "drop_command"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific DDL command."
@@ -58,7 +57,7 @@
     "id": "S3_DBMS_M4_007",
     "question": "What is the TRUNCATE command?",
     "answer": "The TRUNCATE command is used to remove all records from a table while preserving the table structure for future use. It de-allocates the space used by the records and is generally faster than a DELETE statement because it does not log individual row deletions.",
-    "tags": ["ddl", "truncate"],
+    "tags": ["ddl_types", "truncate_command"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific DDL command."
@@ -67,7 +66,7 @@
     "id": "S3_DBMS_M4_008",
     "question": "What is Data Manipulation Language (DML)?",
     "answer": "Data Manipulation Language (DML) consists of SQL commands used for managing and manipulating data within existing database objects. These operations are not auto-committed and can be rolled back if within a transaction. They are used by developers and users during routine database operations.",
-    "tags": ["dml", "definition"],
+    "tags": ["dml_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Data level commands."
@@ -76,7 +75,7 @@
     "id": "S3_DBMS_M4_009",
     "question": "What are the types of DML commands?",
     "answer": "Common DML commands include SELECT, INSERT, UPDATE, and DELETE. \n1. SELECT: Used to retrieve data from one or more tables or views.\n2. INSERT: Used to add new rows of data into a table.\n3. UPDATE: Used to modify existing data values within a table based on a condition.\n4. DELETE: Used to remove specific records from a table while keeping the structure intact.",
-    "tags": ["dml", "types"],
+    "tags": ["dml_types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "DML classification with definitions."
@@ -85,7 +84,7 @@
     "id": "S3_DBMS_M4_010",
     "question": "What is an Integrity Constraint?",
     "answer": "An integrity constraint is a rule applied to database tables to ensure the accuracy, reliability, and consistency of the data by preventing invalid data entry. It ensures that the changes made to the database by authorized users do not result in a loss of data consistency.",
-    "tags": ["integrity-constraints", "definition"],
+    "tags": ["integrity_constraints_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Data quality rules."
@@ -94,17 +93,16 @@
     "id": "S3_DBMS_M4_011",
     "question": "What are the types of Integrity Constraints?",
     "answer": "The four main types are Domain Integrity Constraints, Entity Integrity Constraints, Referential Integrity Constraints, and Enterprise (Semantic) Constraints.\n1. Domain Integrity: Defines the valid set of values for a specific attribute, including rules for data types, ranges, and formats.\n2. Entity Integrity: Ensures that every row in a table is uniquely identifiable, typically through a Primary Key which cannot be null.\n3. Referential Integrity: Ensures that relationships between tables remain consistent; a foreign key must match a primary key in another table.\n4. Enterprise Constraints: Additional rules specified by users or administrators based on specific business requirements (also known as Semantic constraints).",
-    "tags": ["integrity-constraints", "types"],
+    "tags": ["integrity_constraints"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Integrity classification with definitions."
   },
-  
   {
     "id": "S3_DBMS_M4_012",
     "question": "What is a Domain Integrity Constraint?",
     "answer": "Domain integrity constraints define the valid set of values for a specific attribute. This includes: \n1. Data Types: Ensuring values are of the correct type (Integer, Varchar, etc.).\n2. NOT NULL: Ensuring a column cannot have a null value.\n3. CHECK: Validating that data falls within a specific range or meets a Boolean condition (e.g., age > 18).\n4. DEFAULT: Providing a value if none is specified.",
-    "tags": ["integrity-constraints", "domain"],
+    "tags": ["integrity_constraints", "domain_integrity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Column level constraints."
@@ -113,7 +111,7 @@
     "id": "S3_DBMS_M4_013",
     "question": "What is an Entity Integrity Constraint?",
     "answer": "Entity integrity constraints ensure that every row in a table is uniquely identifiable. This is achieved using a Primary Key, which must be unique and cannot contain null values. It ensures that no two rows are identical and that every record can be referenced individually.",
-    "tags": ["integrity-constraints", "entity"],
+    "tags": ["integrity_constraints", "entity_integrity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Row level constraints."
@@ -122,7 +120,7 @@
     "id": "S3_DBMS_M4_014",
     "question": "What is Referential Integrity?",
     "answer": "Referential integrity ensures that relationships between tables remain consistent. It requires that a foreign key in a child table must match an existing primary key in a parent table or be null. This prevents 'orphaned' records that point to non-existent data in other tables.",
-    "tags": ["integrity-constraints", "referential"],
+    "tags": ["integrity_constraints", "referential_integrity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Relationship consistency."
@@ -131,7 +129,7 @@
     "id": "S3_DBMS_M4_015",
     "question": "What is an Enterprise Constraint?",
     "answer": "Also known as Semantic constraints, these are additional rules specified by users or administrators based on specific business logic that cannot be expressed by standard integrity constraints. Examples include: \n1. A class can have a maximum of 30 students.\n2. An employee cannot take part in more than 5 projects.\n3. Salary of an employee cannot exceed the salary of their manager.",
-    "tags": ["integrity-constraints", "enterprise"],
+    "tags": ["integrity_constraints", "enterprise_integrity"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Business logic rules."
@@ -139,18 +137,17 @@
   {
     "id": "S3_DBMS_M4_016",
     "question": "What are Set Operations in SQL?",
-    "answer": "Set operations allow the results of multiple queries to be combined into a single result set. The queries must be 'set compatible,' meaning they have the same number of columns with compatible data types. The different Set Operators are: \n1. UNION: Combines the results of two or more SELECT statements and removes duplicate rows.\n2. UNION ALL: Combines results from multiple SELECT statements but preserves all duplicate rows.\n3. INTERSECT: Returns only the rows that are common to both SELECT statements.\n4. MINUS (EXCEPT): Returns rows from the first SELECT statement that are not present in the results of the second.",
-    "tags": ["set-operations", "types"],
+    "answer": "Set operations allow the results of multiple queries to be combined into a single result set. The queries must be 'set compatible,' meaning they have the same number of columns with compatible data types. ",
+    "tags": ["set_operations"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Set theory in SQL with definitions."
   },
-  
   {
     "id": "S3_DBMS_M4_017",
     "question": "What is the UNION operator?",
     "answer": "The UNION operator combines the results of two or more SELECT statements. After performing the operation, duplicate rows are automatically eliminated from the results. It effectively performs a distinct merge of the two sets.",
-    "tags": ["set-operations", "union"],
+    "tags": ["set_operations", "union_op"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific set operator."
@@ -159,7 +156,7 @@
     "id": "S3_DBMS_M4_018",
     "question": "What is the UNION ALL operator?",
     "answer": "The UNION ALL operator combines results from multiple SELECT statements. Unlike the standard UNION, it preserves all rows from both queries, including duplicates. This makes it faster as it does not require a duplicate removal step.",
-    "tags": ["set-operations", "union-all"],
+    "tags": ["set_operations", "union_all_op"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific set operator."
@@ -168,7 +165,7 @@
     "id": "S3_DBMS_M4_019",
     "question": "What is the INTERSECT operator?",
     "answer": "The INTERSECT operator returns only the rows that are common to both SELECT statements. If a row appears in the result of the first query and the second query, it will be included in the final output.",
-    "tags": ["set-operations", "intersect"],
+    "tags": ["set_operations", "intersect_op"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific set operator."
@@ -177,7 +174,7 @@
     "id": "S3_DBMS_M4_020",
     "question": "What is the MINUS (EXCEPT) operator?",
     "answer": "The MINUS operator (or EXCEPT) returns rows from the first SELECT statement that are not present in the results of the second SELECT statement. It acts like a set subtraction, removing common elements from the first set.",
-    "tags": ["set-operations", "minus"],
+    "tags": ["set_operations", "minus_op"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Specific set operator."
@@ -186,7 +183,7 @@
     "id": "S3_DBMS_M4_021",
     "question": "What are Aggregate Functions?",
     "answer": "Aggregate functions perform a calculation on a set of values in a column and return a single summarized value. These are typically used to perform mathematical calculations like finding totals, averages, or counts across many rows.",
-    "tags": ["aggregate-functions", "definition"],
+    "tags": ["aggregate_functions"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Summary calculations."
@@ -194,8 +191,8 @@
   {
     "id": "S3_DBMS_M4_022",
     "question": "What are the types of Aggregate Functions?",
-    "answer": "The standard aggregate functions are AVG, SUM, MIN, MAX, and COUNT. \n1. AVG: Calculates the average (arithmetic mean) value of a numeric column.\n2. SUM: Returns the total sum of all values in a numeric column.\n3. MIN: Finds the smallest (minimum) value in a column.\n4. MAX: Finds the largest (maximum) value in a column.\n5. COUNT: Returns the total number of rows or non-null values in a column.",
-    "tags": ["aggregate-functions", "types"],
+    "answer": "The standard aggregate functions are AVG, SUM, MIN, MAX, and COUNT.",
+    "tags": ["aggregate_functions", "aggregate_types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Aggregate types with definitions."
@@ -204,7 +201,7 @@
     "id": "S3_DBMS_M4_023",
     "question": "What is the SUM aggregate function?",
     "answer": "The SUM function returns the total sum of a numeric column. It ignores NULL values in the calculation.",
-    "tags": ["aggregate-functions", "sum"],
+    "tags": ["aggregate_functions", "sum_agg"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual aggregate function."
@@ -213,7 +210,7 @@
     "id": "S3_DBMS_M4_024",
     "question": "What is the AVG aggregate function?",
     "answer": "The AVG function calculates the average value of a numeric column by dividing the sum of all values by the count of values. It ignores NULL values.",
-    "tags": ["aggregate-functions", "avg"],
+    "tags": ["aggregate_functions", "avg_agg"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual aggregate function."
@@ -222,7 +219,7 @@
     "id": "S3_DBMS_M4_025",
     "question": "What is the MIN aggregate function?",
     "answer": "The MIN function finds the smallest value in the specified column. It can be used with numeric, string, and date types.",
-    "tags": ["aggregate-functions", "min"],
+    "tags": ["aggregate_functions", "min_agg"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual aggregate function."
@@ -231,7 +228,7 @@
     "id": "S3_DBMS_M4_026",
     "question": "What is the MAX aggregate function?",
     "answer": "The MAX function finds the largest value in the specified column. It can be used with numeric, string, and date types.",
-    "tags": ["aggregate-functions", "max"],
+    "tags": ["aggregate_functions", "max_agg"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual aggregate function."
@@ -240,7 +237,7 @@
     "id": "S3_DBMS_M4_027",
     "question": "What is the COUNT aggregate function?",
     "answer": "The COUNT function returns the number of rows that match a specific criterion. COUNT(*) counts all rows, including NULLs, while COUNT(column) counts non-null values in that column.",
-    "tags": ["aggregate-functions", "count"],
+    "tags": ["aggregate_functions", "count_agg"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual aggregate function."
@@ -249,7 +246,7 @@
     "id": "S3_DBMS_M4_028",
     "question": "What is the GROUP BY clause?",
     "answer": "The GROUP BY clause is used to arrange identical data into groups. It is frequently used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to provide summary data for each specific group rather than the whole table. All columns in the SELECT list that are not part of an aggregate function must be included in the GROUP BY clause.",
-    "tags": ["aggregate-functions", "group-by"],
+    "tags": ["group_by_clause"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Data grouping."
@@ -258,7 +255,7 @@
     "id": "S3_DBMS_M4_029",
     "question": "What is the HAVING clause?",
     "answer": "The HAVING clause is used to filter groups created by the GROUP BY clause based on a specified condition. It serves as a filter for aggregate results. While the WHERE clause filters rows before grouping, the HAVING clause filters the resulting groups after the aggregation is performed.",
-    "tags": ["aggregate-functions", "having"],
+    "tags": ["having_clause"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Group filtering."
@@ -267,7 +264,7 @@
     "id": "S3_DBMS_M4_030",
     "question": "What is a View?",
     "answer": "A view is a virtual table whose contents are defined by a query. It does not store data physically; instead, it behaves like a window into the data stored in underlying base tables. It is created using the 'CREATE VIEW' statement and can be used to simplify complex queries or provide a layer of security by restricting access to certain columns.",
-    "tags": ["views", "definition"],
+    "tags": ["views"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Virtual table concept."
@@ -276,7 +273,7 @@
     "id": "S3_DBMS_M4_031",
     "question": "What are the types of Views?",
     "answer": "Views are categorized based on their complexity and updateability into Simple Views and Complex Views.\n1. Simple View: Created from a single base table without using aggregate functions (SUM, AVG, etc.) or groupings (GROUP BY). It usually allows DML operations like INSERT, UPDATE, and DELETE.\n2. Complex View: Created from multiple tables using Joins or contains aggregate functions and groupings. Because of its complexity, it often restricts or prevents direct DML operations.",
-    "tags": ["views", "types"],
+    "tags": ["views", "view_types"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "View classification with definitions."
@@ -285,7 +282,7 @@
     "id": "S3_DBMS_M4_032",
     "question": "What is a Simple View?",
     "answer": "A Simple View is a view created from only one base table. It does not contain groups or aggregate functions. Most simple views are updateable, meaning you can perform DML operations through the view that affect the base table.",
-    "tags": ["views", "simple-view"],
+    "tags": ["views", "simple_view_def"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual view type."
@@ -294,7 +291,7 @@
     "id": "S3_DBMS_M4_033",
     "question": "What is a Complex View?",
     "answer": "A Complex View is a view created from multiple base tables (using Joins) or one that contains aggregate functions and GROUP BY clauses. DML operations are generally not allowed on complex views.",
-    "tags": ["views", "complex-view"],
+    "tags": ["views", "complex_view_def"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual view type."
@@ -303,125 +300,115 @@
     "id": "S3_DBMS_M4_034",
     "question": "What is a Join operation?",
     "answer": "A join operation is used to combine columns from one or more tables by using values common to each table. It links records between tables based on a logical relationship, such as a Primary Key matching a Foreign Key.",
-    "tags": ["joins", "definition"],
+    "tags": ["joins_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Data combination."
   },
   {
     "id": "S3_DBMS_M4_035",
-    "question": "What are the types of Joins?",
-    "answer": "There are six primary types of Joins: \n1. INNER JOIN: Returns records that have matching values in both tables.\n2. LEFT OUTER JOIN: Returns all records from the left table and the matched records from the right table. If no match exists, NULL values are returned for right table columns.\n3. RIGHT OUTER JOIN: Returns all records from the right table and the matched records from the left table. If no match exists, NULL values are returned for left table columns.\n4. FULL OUTER JOIN: Returns all records when there is a match in either the left or right table.\n5. SELF JOIN: A regular join where a table is joined with itself to compare rows within the same table.\n6. CROSS JOIN: Returns the Cartesian product of the two tables (every row of the first table joined with every row of the second).",
-    "tags": ["joins", "types"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Join classification with definitions."
-  },
-  
-  {
-    "id": "S3_DBMS_M4_036",
     "question": "What is an Inner Join?",
     "answer": "An Inner Join selects records that have matching values in both tables. If a row in the left table does not have a corresponding match in the right table (and vice-versa), it is not included in the result set.",
-    "tags": ["joins", "inner-join"],
+    "tags": ["types_of_joins", "inner_join_type"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Individual join type."
+  },
+  {
+    "id": "S3_DBMS_M4_036",
+    "question": "What is a Left Outer Join?",
+    "answer": "A Left Outer Join returns all records from the left table, and the matched records from the right table. If there is no match, the result is NULL from the right side.",
+    "tags": ["types_of_joins", "left_join_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual join type."
   },
   {
     "id": "S3_DBMS_M4_037",
-    "question": "What is a Left Outer Join?",
-    "answer": "A Left Outer Join returns all records from the left table, and the matched records from the right table. If there is no match, the result is NULL from the right side.",
-    "tags": ["joins", "left-join"],
+    "question": "What is a Right Outer Join?",
+    "answer": "A Right Outer Join returns all records from the right table, and the matched records from the left table. If there is no match, the result is NULL from the left side.",
+    "tags": ["types_of_joins", "right_join_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual join type."
   },
   {
     "id": "S3_DBMS_M4_038",
-    "question": "What is a Right Outer Join?",
-    "answer": "A Right Outer Join returns all records from the right table, and the matched records from the left table. If there is no match, the result is NULL from the left side.",
-    "tags": ["joins", "right-join"],
+    "question": "What is a Full Outer Join?",
+    "answer": "A Full Outer Join returns all records when there is a match in either the left or right table. It combines the effect of both Left and Right Outer Joins.",
+    "tags": ["types_of_joins", "full_join_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual join type."
   },
   {
     "id": "S3_DBMS_M4_039",
-    "question": "What is a Full Outer Join?",
-    "answer": "A Full Outer Join returns all records when there is a match in either the left or right table. It combines the effect of both Left and Right Outer Joins.",
-    "tags": ["joins", "full-join"],
+    "question": "What is a Self Join?",
+    "answer": "A Self Join is a join where a table is joined with itself. It is useful for querying hierarchical data or comparing rows within the same table. It requires the use of table aliases to distinguish the two instances of the table.",
+    "tags": ["types_of_joins", "self_join_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual join type."
   },
   {
     "id": "S3_DBMS_M4_040",
-    "question": "What is a Self Join?",
-    "answer": "A Self Join is a join where a table is joined with itself. It is useful for querying hierarchical data or comparing rows within the same table. It requires the use of table aliases to distinguish the two instances of the table.",
-    "tags": ["joins", "self-join"],
+    "question": "What is a Cross Join?",
+    "answer": "A Cross Join returns the Cartesian product of the two tables. Every row from the first table is combined with every row from the second table, resulting in (n * m) rows.",
+    "tags": ["types_of_joins", "cross_join_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual join type."
   },
   {
     "id": "S3_DBMS_M4_041",
-    "question": "What is a Cross Join?",
-    "answer": "A Cross Join returns the Cartesian product of the two tables. Every row from the first table is combined with every row from the second table, resulting in (n * m) rows.",
-    "tags": ["joins", "cross-join"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Individual join type."
-  },
-  {
-    "id": "S3_DBMS_M4_042",
     "question": "What is a Trigger?",
     "answer": "A trigger is a stored procedure in a database that is automatically executed (fired) in response to a specific event such as an INSERT, UPDATE, or DELETE on a table. Triggers are used to maintain complex integrity rules, audit changes, or synchronize data across different tables automatically.",
-    "tags": ["triggers", "definition"],
+    "tags": ["triggers_definition"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Database automation."
   },
   {
-    "id": "S3_DBMS_M4_043",
+    "id": "S3_DBMS_M4_042",
     "question": "How are triggers classified?",
     "answer": "Triggers are classified in three ways: by timing, by level, and by event type. \n1. Timing: Classified as BEFORE (fires before the DML operation) or AFTER (fires after the DML operation).\n2. Level: Classified as Row-level (fires for every individual row affected by the SQL statement) or Statement-level (fires once for the entire SQL statement, regardless of how many rows are affected).\n3. Event Type: Classified based on the specific DML operation that triggers it: INSERT, UPDATE, or DELETE.",
-    "tags": ["triggers", "classification"],
+    "tags": ["types_of_triggers"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Trigger types with definitions."
   },
   {
-    "id": "S3_DBMS_M4_044",
+    "id": "S3_DBMS_M4_043",
     "question": "What is a BEFORE Trigger?",
     "answer": "A BEFORE trigger fires before the triggering DML statement (INSERT, UPDATE, or DELETE) is executed on the table. It is often used to validate or modify data before it is saved.",
-    "tags": ["triggers", "before-trigger"],
+    "tags": ["types_of_triggers", "before_trigger_type"],
+    "source": { "type": "file", "path": null, "url": null },
+    "created_at": "2026-01-05T13:00:00+05:30",
+    "notes": "Individual trigger type."
+  },
+  {
+    "id": "S3_DBMS_M4_044",
+    "question": "What is an AFTER Trigger?",
+    "answer": "An AFTER trigger fires after the triggering DML statement has been executed and the data has been modified in the table. It is commonly used for logging, auditing, or updating other related tables.",
+    "tags": ["types_of_triggers", "after_trigger_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual trigger type."
   },
   {
     "id": "S3_DBMS_M4_045",
-    "question": "What is an AFTER Trigger?",
-    "answer": "An AFTER trigger fires after the triggering DML statement has been executed and the data has been modified in the table. It is commonly used for logging, auditing, or updating other related tables.",
-    "tags": ["triggers", "after-trigger"],
+    "question": "What is a Row-level Trigger?",
+    "answer": "A Row-level trigger fires once for each row that is affected by the triggering DML statement. If an UPDATE statement modifies 10 rows, a row-level trigger will execute 10 times.",
+    "tags": ["types_of_triggers", "row_level_trigger_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual trigger type."
   },
   {
     "id": "S3_DBMS_M4_046",
-    "question": "What is a Row-level Trigger?",
-    "answer": "A Row-level trigger fires once for each row that is affected by the triggering DML statement. If an UPDATE statement modifies 10 rows, a row-level trigger will execute 10 times.",
-    "tags": ["triggers", "row-level"],
-    "source": { "type": "file", "path": null, "url": null },
-    "created_at": "2026-01-05T13:00:00+05:30",
-    "notes": "Individual trigger type."
-  },
-  {
-    "id": "S3_DBMS_M4_047",
     "question": "What is a Statement-level Trigger?",
     "answer": "A Statement-level trigger fires once for the entire DML statement, regardless of the number of rows affected. Even if the statement modifies 100 rows, the trigger executes only once.",
-    "tags": ["triggers", "statement-level"],
+    "tags": ["types_of_triggers", "statement_level_trigger_type"],
     "source": { "type": "file", "path": null, "url": null },
     "created_at": "2026-01-05T13:00:00+05:30",
     "notes": "Individual trigger type."
