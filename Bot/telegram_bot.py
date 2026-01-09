@@ -35,6 +35,8 @@ import logging
 
 import numpy as np
 
+# from admin_access import is_admin, start_ngrok
+
 # ============================================================
 # Configuration
 # ============================================================
@@ -86,6 +88,9 @@ DOMINANCE_MARGIN = 0.12
 MIN_COMMON_TAGS = 2
 
 CONCEPT_SIM_THRESHOLD = 0.60  # tunable
+
+ADMIN_STATE_FILE = Path("admin_state.json")
+ADMIN_CONFIG_FILE = Path("admin_config.json")
 
 # ============================================================
 # Load models and data (once at startup)
@@ -207,6 +212,15 @@ def merge_prefix(confidence: str) -> str:
 def merge_answers(results):
     """Merge multiple KB answers safely by concatenation."""
     return "\n\n---\n\n".join(item["answer"].strip() for _, item in results)
+
+# ----------------------------
+# Admin check (bot-side)
+# ----------------------------
+
+def is_admin(user_id: int) -> bool:
+    data = json.loads(ADMIN_CONFIG_FILE.read_text())
+    return user_id in data.get("admins", [])
+
 
 # ============================================================
 # Telegram handlers
@@ -406,6 +420,41 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             "Hi! Ask me anything — I’ll search my knowledge base and help if I can."
         )
 
+"""
+async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+
+    if not user or not is_admin(user.id):
+        await update.message.reply_text("⛔ You are not authorized.")
+        return
+
+    url = start_ngrok()
+    await update.message.reply_text(
+        f"🛠 Admin panel is live:\n\n{url}\n\n"
+        "⏱ It will auto-close after inactivity."
+    )
+"""
+
+async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    if not user or not is_admin(user.id):
+        await update.message.reply_text("⛔ You are not authorized.")
+        return
+
+    state = json.loads(ADMIN_STATE_FILE.read_text())
+
+    if not state.get("active"):
+        await update.message.reply_text(
+            "⚠ Admin panel is currently offline.\n"
+            "Please start admin_access.py."
+        )
+        return
+
+    await update.message.reply_text(
+        f"🛠 Admin panel access:\n\n{state['ngrok_url']}\n\n"
+        "⏱ Auto-closes on inactivity."
+    )
+
 # ============================================================
 # Entrypoint
 # ============================================================
@@ -416,6 +465,7 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
     app.add_handler(CallbackQueryHandler(handle_callback))
+    app.add_handler(CommandHandler("admin", admin))
 
     print("Bot running... just message it anything!")
     app.run_polling()
